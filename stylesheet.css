@@ -61,7 +61,8 @@ footer p, footer h1, footer h2, footer h3 {
   margin-bottom: 0.5rem;
 }
 
-header p:last-child, footer p:last-child {
+header p:last-child, header h1:last-child, header h2:last-child, header h3:last-child,
+footer p:last-child, footer h1:last-child, footer h2:last-child, footer h3:last-child {
   margin-bottom: 0;
 }
 
