@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Zomboid Build Planner</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Project Zomboid Build Planner">
+    <meta property="og:description" content="Character traits and occupation build planner with limited mod support">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="ScottyThePilot">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="/main.js"></script>
+  </head>
+  <body>
+    <div id="planner-container">
+      <header>
+        <h1>Project Zomboid Build Planner</h1>
+      </header>
+
+      <div id="planner-main">
+        <div id="panel-professions" class="panel">
+          <h3>Occupations</h3>
+          <div class="panel-inner"></div>
+        </div>
+        <div id="panel-traits-positive" class="panel">
+          <h3>Positive Traits</h3>
+          <div class="panel-inner"></div>
+        </div>
+        <div id="panel-traits-negative" class="panel">
+          <h3>Negative Traits</h3>
+          <div class="panel-inner"></div>
+        </div>
+        <div id="panel-traits-chosen" class="panel">
+          <h3>Chosen Traits</h3>
+          <div class="panel-inner"></div>
+        </div>
+        <div id="panel-major-skills" class="panel">
+          <h3>Major Skills</h3>
+          <div class="panel-inner"></div>
+          <div class="panel-bottom">
+            <button id="reset-build">Reset</button>
+            <div id="panel-bottom-points">
+              <span>Points:</span>
+              <span id="points">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="planner-settings">
+        <div title="Show/hide singleplayer-only traits">
+          <input type="checkbox" id="setting-is-multiplayer">
+          <label for="setting-is-multiplayer">Multiplayer?</label>
+        </div>
+        <div title="Show/hide sleep related traits">
+          <input type="checkbox" id="setting-is-sleep-enabled">
+          <label for="setting-is-sleep-enabled">Sleep Enabled?</label>
+        </div>
+        <div title="Show/hide traits that cannot be chosen">
+          <input type="checkbox" id="setting-show-unavailable">
+          <label for="setting-show-unavailable">Show Unavailable Traits?</label>
+        </div>
+      </div>
+
+      <div id="planner-mods">
+        <h3>Mods</h3>
+        <div id="planner-mods-list"></div>
+      </div>
+
+      <footer>
+        <p><a href="https://github.com/ScottyThePilot/pz-buildplanner">View on GitHub</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+html {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, p, a, span, h1, h2, h3, div, button, label, input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 123456789abcdef */
+
+body a {
+  color: #9cf;
+}
+
+body a:hover {
+  color: #8be;
+}
+
+button {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 1px 3px;
+}
+
+button:hover {
+  color: #bbb;
+  border-color: #bbb;
+}
+
+button:active {
+  color: #777;
+  border-color: #777;
+}
+
+.positive {
+  color: #080;
+}
+
+.negative {
+  color: #d00;
+}
+
+div.pip {
+  background-color: #080;
+  margin: 3px 0;
+  height: 12px;
+  width: 6px;
+}
+
+div.pips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1px;
+
+  user-select: none;
+}
+
+
+
+#planner-main button:disabled {
+  color: #d00;
+  border-color: #d00;
+}
+
+#planner-main button:disabled:hover {
+  color: #c00;
+  border-color: #c00;
+}
+
+#planner-main div.planner-trait,
+#planner-main div.planner-profession {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  user-select: none;
+  padding: 0.25rem 0.5rem;
+}
+
+#planner-main div.planner-trait:hover,
+#planner-main div.planner-profession:hover,
+#planner-main div.planner-profession.selected,
+#planner-main div.planner-skill:hover {
+  background-color: #222;
+}
+
+#planner-main div.planner-trait.unavailable {
+  color: #777;
+}
+
+#planner-main div.planner-trait-name,
+#planner-main div.planner-profession-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#planner-main div.planner-trait-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+#planner-main div.planner-profession-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  min-height: 64px;
+}
+
+#planner-main div.planner-skill {
+  color: #080;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  padding: 0.25rem 0.5rem;
+}
+
+#planner-mods-list div.planner-mod {
+  user-select: none;
+  padding: 0.5rem 0.5rem;
+}
+
+#planner-mods-list div.planner-mod:hover {
+  background-color: #222;
+}
+
+#planner-mods-list div.planner-mod button.mod-enabled {
+  background-color: #080;
+}
+
+#planner-mods-list div.planner-mod button:hover.mod-enabled {
+  background-color: #070;
+}
+
+#planner-mods-list div.planner-mod button.mod-disabled {
+  background-color: #d00;
+}
+
+#planner-mods-list div.planner-mod button:hover.mod-disabled {
+  background-color: #c00;
+}
+
+#planner-main span.skill-name {
+  display: inline-block;
+  width: 100%;
+}
+
+#planner-main div.skill-level {
+  width: 69px;
+  flex-shrink: 0;
+}
+
+#planner-main span.skill-xp-boost, #points {
+  text-align: right;
+  display: inline-block;
+  width: 5rem;
+  flex-shrink: 0;
+}
+
+#planner-mods-list,
+div.panel > div.panel-inner {
+  border: 1px solid #fff;
+  overflow-y: scroll;
+}
+
+#planner-mods-list div.planner-mod,
+div.panel > div.panel-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+@media (hover: none) {
+  /* devices that cannot hover */
+}
+
+@media (hover: hover) {
+  /* devices that can hover */
+}
+
+@media only screen and (min-width: 40rem) {
+  /* viewports bigger than 40rem (480px) */
+  #planner-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 90rem;
+    min-width: 30rem;
+
+    padding: 1rem;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  #planner-main {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    height: 60rem;
+    max-height: 60rem;
+
+    gap: 1rem;
+  }
+
+  #planner-settings {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #planner-mods {
+    display: flex;
+    flex-direction: column;
+    height: 30rem;
+    gap: 0.25rem;
+  }
+
+  #planner-mods-list {
+    height: 100%;
+  }
+
+  div.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    min-height: 0;
+  }
+
+  div.panel > div.panel-inner {
+    height: 100%;
+    max-height: 100%;
+  }
+
+  #panel-professions {
+    grid-area: span 2 / span 1;
+  }
+
+  #panel-traits-positive,
+  #panel-traits-negative,
+  #panel-traits-chosen,
+  #panel-major-skills {
+    grid-area: span 1;
+  }
+}
+
+@media only screen and not (min-width: 40rem) {
+  /* viewports smaller than or equal to 40rem (480px) */
+  #planner-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  #planner-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #planner-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  div.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
+  div.panel > div.panel-inner {
+    height: 100px;
+  }
+}
