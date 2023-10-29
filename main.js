@@ -438,33 +438,23 @@ class State {
   }
 
   loadFromCookies() {
-    try {
-      const enabledModsCookie = Cookies.get("saved_enabled_mods");
-      if (enabledModsCookie != null) {
-        const enabledMods = new Set(JSON.parse(enabledModsCookie));
-        for (const mod of this.loadedMods.values()) {
-          mod.enabled = (mod.id == "Vanilla" || enabledMods.has(mod.id));
-        }
-      }
-
-      const buildCookie = Cookies.get("saved_build");
-      if (buildCookie != null) {
-        const { chosenTraits, chosenProfession } = JSON.parse(buildCookie);
-        this.chosenTraits = new Set(chosenTraits);
-        this.chosenProfession = chosenProfession;
-      }
-    } catch (err) {
-      console.log(err);
+    const enabledMods = new Set(getOrDefaultCookie("saved_enabled_mods", []));
+    for (const mod of this.loadedMods.values()) {
+      mod.enabled = (mod.id == "Vanilla" || enabledMods.has(mod.id));
     }
+
+    const { chosenTraits = [], chosenProfession = null } = getOrDefaultCookie("saved_enabled_mods", {});
+    this.chosenTraits = new Set(chosenTraits);
+    this.chosenProfession = chosenProfession;
   }
 
   saveToCookies() {
     const enabledMods = Array.from(this.getEnabledMods().values());
-    Cookies.set("saved_enabled_mods", JSON.stringify(enabledMods));
-    Cookies.set("saved_build", JSON.stringify({
+    setCookie("saved_enabled_mods", enabledMods);
+    setCookie("saved_build", {
       chosenTraits: Array.from(this.chosenTraits.values()),
       chosenProfession: this.chosenProfession
-    }));
+    });
   }
 
   /** @param {State} state */
@@ -493,9 +483,7 @@ class Settings {
   }
 
   static loadFromCookies() {
-    const settingsCookie = Cookies.get("saved_settings");
-    if (settingsCookie == null) return new Settings();
-    const settings = JSON.parse(settingsCookie);
+    const settings = getOrDefaultCookie("saved_settings", {});
     return new Settings(
       settings.isMultiplayer,
       settings.isSleepEnabled,
@@ -504,7 +492,7 @@ class Settings {
   }
 
   saveToCookies() {
-    Cookies.set("saved_settings", JSON.stringify(this));
+    setCookie("saved_settings", JSON.stringify(this));
   }
 }
 
@@ -520,6 +508,30 @@ function getPointsPolarity(points) {
     case points > 0: return "positive";
     case points < 0: return "negative";
     default: return null;
+  }
+}
+
+/**
+ * @param {string} cookieName
+ * @param {any} value
+ */
+function setCookie(cookieName, value) {
+  Cookies.set(cookieName, JSON.stringify(value));
+}
+
+/**
+ * @param {string} cookieName
+ * @param {any} defaultValue
+ * @returns {any}
+ */
+function getOrDefaultCookie(cookieName, defaultValue) {
+  try {
+    const cookieContent = Cookies.get(cookieName);
+    if (cookieContent == null) return defaultValue;
+    return JSON.parse(cookieContent);
+  } catch (err) {
+    console.log(err);
+    return defaultValue;
   }
 }
 
