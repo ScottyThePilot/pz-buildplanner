@@ -1,0 +1,13 @@
+{
+  "id": "ToadTraitsDisableSpec",
+  "name": "More Traits - Disable Specialization Traits",
+  "author": "HypnoToadTrance",
+  "requires": [
+    "ToadTraits"
+  ],
+  "workshop_id": 1299328280,
+  "traits": {},
+  "professions": {},
+  "mutual_exclusives": [],
+  "lang": {}
+}

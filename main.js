@@ -3,7 +3,11 @@
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
   "/data/Vanilla.json",
-  "/data/MoreDescriptionForTraits4166.json"
+  "/data/MoreDescriptionForTraits4166.json",
+  "/data/ToadTraits.json",
+  "/data/ToadTraitsDisablePrepared.json",
+  "/data/ToadTraitsDisableSpec.json",
+  "/data/ToadTraitsDynamic.json"
 ];
 
 const SKILL_NAMES = new Map();
@@ -79,6 +83,7 @@ $(window).on("load", function () {
     if (State.instance == null) return;
     const state = State.get();
     state.settings.showUnavailable = this.checked;
+    state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.settings.saveToCookies();
   });
@@ -88,6 +93,7 @@ $(window).on("load", function () {
     const state = State.get();
     state.chosenProfession = null;
     state.chosenTraits = new Set();
+    state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.saveToCookies();
   });
@@ -127,9 +133,14 @@ function createModElement(mod) {
     modElement.append([modName, modToggleButtonFake]);
   } else {
     const isIncompatible = mod.incompatible.some(id => State.get().loadedMods.get(id).enabled);
-    const modLink = $("<a>").attr("href", link(mod.workshop_id)).text(mod.name);
-    const modAuthor = $("<span>").text("by " + mod.author);
-    const modName = $("<span>").append([modLink, " ", modAuthor]);
+    const modAuthor = $("<span>").text(mod.author);
+    const modLink = $("<a>").text(mod.name).attr({
+      href: link(mod.workshop_id),
+      target: "_blank",
+      rel: "noopener noreferrer"
+    });
+
+    const modName = $("<span>").append([modLink, " by ", modAuthor]);
     const modToggleButton = $("<button>")
       .addClass(isIncompatible ? "" : (mod.enabled ? "mod-enabled" : "mod-disabled"))
       .text(isIncompatible ? "Incompatible" : (mod.enabled ? "Enabled" : "Disabled"));
@@ -347,21 +358,23 @@ class State {
     xpBoosts.set("Fitness", 5);
     xpBoosts.set("Strength", 5);
 
+    /** @type {(skill: string, boost: integer) => void} */
+    const putXpBoost = (skill, boost) => {
+      const boostCurrent = xpBoosts.get(skill);
+      xpBoosts.set(skill, clamp(0, 10, (boostCurrent || 0) + boost));
+    };
+
     for (const trait of this.currentModData.traits.values()) {
       if (!this.isTraitChosen(trait.id)) continue;
       for (const skill in trait.xpBoosts) {
-        const boost = trait.xpBoosts[skill];
-        const boostCurrent = xpBoosts.get(skill);
-        xpBoosts.set(skill, (boostCurrent != null ? boostCurrent : 0) + boost);
+        putXpBoost(skill, trait.xpBoosts[skill]);
       }
     }
 
     const currentProfession = this.currentModData.professions.get(this.chosenProfession);
     if (currentProfession != null) {
       for (const skill in currentProfession.xpBoosts) {
-        const boost = currentProfession.xpBoosts[skill];
-        const boostCurrent = xpBoosts.get(skill);
-        xpBoosts.set(skill, (boostCurrent != null ? boostCurrent : 0) + boost);
+        putXpBoost(skill, currentProfession.xpBoosts[skill]);
       }
     }
 
@@ -648,6 +661,10 @@ function testCondition(condition, ids) {
  */
 function filterSet(set, predicate) {
   return new Set(Array.from(set.values()).filter(predicate));
+}
+
+function clamp(min, max, value) {
+  return Math.max(min, Math.min(max, value));
 }
 
 /**

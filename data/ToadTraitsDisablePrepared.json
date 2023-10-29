@@ -1,0 +1,13 @@
+{
+  "id": "ToadTraitsDisablePrepared",
+  "name": "More Traits - Disable Prepared Traits",
+  "author": "HypnoToadTrance",
+  "requires": [
+    "ToadTraits"
+  ],
+  "workshop_id": 1299328280,
+  "traits": {},
+  "professions": {},
+  "mutual_exclusives": [],
+  "lang": {}
+}

@@ -30,8 +30,6 @@ body {
   color: #fff;
 }
 
-/* 123456789abcdef */
-
 body a {
   color: #9cf;
 }
@@ -56,6 +54,20 @@ button:hover {
 button:active {
   color: #777;
   border-color: #777;
+}
+
+header p, header h1, header h2, header h3,
+footer p, footer h1, footer h2, footer h3 {
+  margin-bottom: 0.5rem;
+}
+
+header p:last-child, footer p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
 }
 
 .positive {
@@ -187,7 +199,7 @@ div.pips {
 #planner-main span.skill-xp-boost, #points {
   text-align: right;
   display: inline-block;
-  width: 5rem;
+  width: 4rem;
   flex-shrink: 0;
 }
 
