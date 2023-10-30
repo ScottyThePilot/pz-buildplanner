@@ -2,12 +2,12 @@
 
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
-  "data/Vanilla.json",
-  "data/MoreDescriptionForTraits4166.json",
-  "data/ToadTraits.json",
-  "data/ToadTraitsDisablePrepared.json",
-  "data/ToadTraitsDisableSpec.json",
-  "data/ToadTraitsDynamic.json"
+  window.location.href + "data/Vanilla.json",
+  window.location.href + "data/MoreDescriptionForTraits4166.json",
+  window.location.href + "data/ToadTraits.json",
+  window.location.href + "data/ToadTraitsDisablePrepared.json",
+  window.location.href + "data/ToadTraitsDisableSpec.json",
+  window.location.href + "data/ToadTraitsDynamic.json"
 ];
 
 const SKILL_NAMES = new Map();
