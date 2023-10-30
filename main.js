@@ -443,7 +443,7 @@ class State {
       mod.enabled = (mod.id == "Vanilla" || enabledMods.has(mod.id));
     }
 
-    const { chosenTraits = [], chosenProfession = null } = getOrDefaultCookie("saved_enabled_mods", {});
+    const { chosenTraits = [], chosenProfession = null } = getOrDefaultCookie("saved_build", {});
     this.chosenTraits = new Set(chosenTraits);
     this.chosenProfession = chosenProfession;
   }
@@ -492,7 +492,7 @@ class Settings {
   }
 
   saveToCookies() {
-    setCookie("saved_settings", JSON.stringify(this));
+    setCookie("saved_settings", this);
   }
 }
 
@@ -516,6 +516,7 @@ function getPointsPolarity(points) {
  * @param {any} value
  */
 function setCookie(cookieName, value) {
+  console.log("saved cookie " + cookieName);
   Cookies.set(cookieName, JSON.stringify(value));
 }
 
