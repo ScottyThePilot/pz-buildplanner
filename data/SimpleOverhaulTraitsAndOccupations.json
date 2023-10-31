@@ -1,0 +1,3103 @@
+{
+  "id": "SimpleOverhaulTraitsAndOccupations",
+  "name": "Simple Overhaul: Traits and Occupations (SOTO)",
+  "author": "hea",
+  "incompatible": [
+    "MoreSimpleTraits",
+    "MoreSimpleTraitsMini",
+    "MoreSimpleTraitsVanilla"
+  ],
+  "workshop_id": 2840805724,
+  "traits": {
+    "Stout": {
+      "name_key": "UI_trait_stout",
+      "description_key": "UI_trait_stoutdesc",
+      "icon_path": "https://pzwiki.net/w/images/d/da/Trait_stout.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Strength": 2
+      }
+    },
+    "Strong": {
+      "name_key": "UI_trait_strong",
+      "description_key": "UI_trait_strongdesc",
+      "icon_path": "https://pzwiki.net/w/images/c/c2/Trait_strong.png",
+      "cost": 12,
+      "xp_boosts": {
+        "Strength": 4
+      }
+    },
+    "Feeble": {
+      "name_key": "UI_trait_feeble",
+      "description_key": "UI_trait_feebledesc",
+      "icon_path": "https://pzwiki.net/w/images/8/87/Trait_feeble.png",
+      "cost": -6,
+      "xp_boosts": {
+        "Strength": -2
+      }
+    },
+    "Weak": {
+      "name_key": "UI_trait_weak",
+      "description_key": "UI_trait_weakdesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f7/Trait_weak.png",
+      "cost": -12,
+      "xp_boosts": {
+        "Strength": -4
+      }
+    },
+    "Fit": {
+      "name_key": "UI_trait_fit",
+      "description_key": "UI_trait_fitdesc",
+      "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_fit.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Fitness": 2
+      }
+    },
+    "Athletic": {
+      "name_key": "UI_trait_athletic",
+      "description_key": "UI_trait_athleticdesc",
+      "icon_path": "https://pzwiki.net/w/images/0/08/Trait_athletic.png",
+      "cost": 12,
+      "xp_boosts": {
+        "Fitness": 4
+      }
+    },
+    "Out of Shape": {
+      "name_key": "UI_trait_outofshape",
+      "description_key": "UI_trait_outofshapedesc",
+      "icon_path": "https://pzwiki.net/w/images/9/93/Trait_out_of_shape.png",
+      "cost": -6,
+      "xp_boosts": {
+        "Fitness": -2
+      }
+    },
+    "Unfit": {
+      "name_key": "UI_trait_unfit",
+      "description_key": "UI_trait_unfitdesc",
+      "icon_path": "https://pzwiki.net/w/images/0/00/Trait_unfit.png",
+      "cost": -12,
+      "xp_boosts": {
+        "Fitness": -4
+      }
+    },
+    "Underweight": {
+      "name_key": "UI_trait_underweight",
+      "description_key": "UI_trait_underweightdesc",
+      "icon_path": "https://pzwiki.net/w/images/3/36/Trait_underweight.png",
+      "cost": -5,
+      "xp_boosts": {
+        "Strength": -1
+      }
+    },
+    "Very Underweight": {
+      "name_key": "UI_trait_veryunderweight",
+      "description_key": "UI_trait_veryunderweightdesc",
+      "icon_path": "https://pzwiki.net/w/images/8/8b/Trait_very_underweight.png",
+      "cost": -10,
+      "xp_boosts": {
+        "Strength": -2
+      }
+    },
+    "Emaciated": {
+      "name_key": "UI_trait_emaciated",
+      "description_key": "UI_trait_emaciateddesc",
+      "icon_path": "https://pzwiki.net/w/images/f/fa/Trait_emaciated.png",
+      "cost": -10,
+      "is_profession_trait": true
+    },
+    "Overweight": {
+      "name_key": "UI_trait_overweight",
+      "description_key": "UI_trait_overweightdesc",
+      "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_overweight.png",
+      "cost": -6,
+      "xp_boosts": {
+        "Fitness": -1
+      }
+    },
+    "Obese": {
+      "name_key": "UI_trait_obese",
+      "description_key": "UI_trait_obesedesc",
+      "icon_path": "https://pzwiki.net/w/images/f/ff/Trait_obese.png",
+      "cost": -12,
+      "xp_boosts": {
+        "Fitness": -2
+      }
+    },
+    "Taut": {
+      "name_key": "UI_trait_taut",
+      "description_key": "UI_trait_tautdesc",
+      "icon_path": "#/data/images/traits/soto_mst/taut.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Strength": 1
+      }
+    },
+    "Slack": {
+      "name_key": "UI_trait_slack",
+      "description_key": "UI_trait_slackdesc",
+      "icon_path": "#/data/images/traits/soto_mst/slack.png",
+      "cost": -6,
+      "xp_boosts": {
+        "Fitness": -1,
+        "Strength": -1
+      }
+    },
+    "Jogger": {
+      "name_key": "UI_trait_Jogger",
+      "description_key": "UI_trait_JoggerDesc",
+      "icon_path": "https://pzwiki.net/w/images/4/46/Trait_jogger.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Sprinting": 1
+      }
+    },
+    "Sneaky": {
+      "name_key": "UI_trait_sneaky",
+      "description_key": "UI_trait_sneakydesc",
+      "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Sneaking": 1
+      }
+    },
+    "Lightfooted": {
+      "name_key": "UI_trait_lightfooted",
+      "description_key": "UI_trait_lightfooteddesc",
+      "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
+      "cost": 1,
+      "xp_boosts": {
+        "Lightfooted": 1
+      }
+    },
+    "Nimble": {
+      "name_key": "UI_trait_nimble",
+      "description_key": "UI_trait_nimbledesc",
+      "icon_path": "#/data/images/traits/soto_mst/agile.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Nimble": 1
+      }
+    },
+    "Gymnast": {
+      "name_key": "UI_trait_Gymnast",
+      "description_key": "UI_trait_GymnastDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/a5/Trait_gymnast.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Nimble": 1
+      }
+    },
+    "Gymnast2": {
+      "name_key": "UI_trait_Gymnast",
+      "description_key": "UI_trait_Gymnast2desc",
+      "icon_path": "https://pzwiki.net/w/images/a/a5/Trait_gymnast.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Fishing": {
+      "name_key": "UI_trait_Fishing",
+      "description_key": "UI_trait_FishingDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_fishing.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Fishing": 1
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod"
+      ]
+    },
+    "Gardener": {
+      "name_key": "UI_trait_Gardener",
+      "description_key": "UI_trait_GardenerDesc",
+      "icon_path": "https://pzwiki.net/w/images/6/67/Trait_gardener.png",
+      "cost": 1,
+      "xp_boosts": {
+        "Farming": 1
+      },
+      "free_recipes": [
+        "Make Mildew Cure",
+        "Make Flies Cure"
+      ]
+    },
+    "Gardener2": {
+      "name_key": "UI_trait_Gardener",
+      "description_key": "UI_trait_Gardener2Desc",
+      "icon_path": "https://pzwiki.net/w/images/6/67/Trait_gardener.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Forager": {
+      "name_key": "UI_trait_forager",
+      "description_key": "UI_trait_foragerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/forager.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Foraging": 1
+      }
+    },
+    "Trapper": {
+      "name_key": "UI_trait_trapper",
+      "description_key": "UI_trait_trapperdesc",
+      "icon_path": "#/data/images/traits/soto_mst/trapper.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Trapping": 1
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Wooden Box Trap"
+      ]
+    },
+    "Hiker": {
+      "name_key": "UI_trait_Hiker",
+      "description_key": "UI_trait_SOHikerDesc",
+      "icon_path": "https://pzwiki.net/w/images/4/4f/Trait_hiker.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Fishing": 1,
+        "Foraging": 1,
+        "Trapping": 1
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Box Trap"
+      ]
+    },
+    "MushroomPicker": {
+      "name_key": "UI_trait_mushroompicker",
+      "description_key": "UI_trait_mushroompickerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/mushroom_picker.png",
+      "cost": 1
+    },
+    "Entomologist": {
+      "name_key": "UI_trait_entomologist",
+      "description_key": "UI_trait_entomologistdesc",
+      "icon_path": "#/data/images/traits/soto_mst/entomologist.png",
+      "cost": 1
+    },
+    "FirstAid": {
+      "name_key": "UI_trait_FirstAid",
+      "description_key": "UI_trait_FirstAidDesc",
+      "icon_path": "https://pzwiki.net/w/images/c/c7/Trait_firstaid.png",
+      "cost": 1,
+      "xp_boosts": {
+        "FirstAid": 1
+      }
+    },
+    "FirstAid2": {
+      "name_key": "UI_trait_FirstAid",
+      "description_key": "UI_trait_FirstAid2Desc",
+      "icon_path": "#/data/images/traits/soto_mst/first_aider.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Tailor": {
+      "name_key": "UI_trait_Tailor",
+      "description_key": "UI_trait_TailorDesc",
+      "icon_path": "https://pzwiki.net/w/images/4/4b/Trait_tailor.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Tailoring": 1
+      }
+    },
+    "Cook": {
+      "name_key": "UI_trait_Cook",
+      "description_key": "UI_trait_CookDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_cook.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Cooking": 2
+      },
+      "free_recipes": [
+        "Make Cake Batter",
+        "Make Pie Dough",
+        "Make Bread Dough",
+        "Make Cake Batter",
+        "Make Pie Dough",
+        "Make Bread Dough",
+        "Make Biscuits",
+        "Make Chocolate Cookie Dough",
+        "Make Chocolate Chip Cookie Dough",
+        "Make Oatmeal Cookie Dough",
+        "Make Shortbread Cookie Dough",
+        "Make Sugar Cookie Dough",
+        "Make Pizza"
+      ]
+    },
+    "Cook2": {
+      "name_key": "UI_trait_Cook",
+      "description_key": "UI_trait_Cook2Desc",
+      "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_cook.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Handy": {
+      "name_key": "UI_trait_handy",
+      "description_key": "UI_trait_handydesc",
+      "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_handy.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Carpentry": 1,
+        "Maintenance": 1
+      }
+    },
+    "Handy2": {
+      "name_key": "UI_trait_handy",
+      "description_key": "UI_trait_handydesc",
+      "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_handy.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Scullion": {
+      "name_key": "UI_trait_scullion",
+      "description_key": "UI_trait_sculliondesc",
+      "icon_path": "#/data/images/traits/soto_mst/scullion.png",
+      "cost": 1,
+      "xp_boosts": {
+        "Cooking": 1
+      }
+    },
+    "Carpenter": {
+      "name_key": "UI_trait_carpenter",
+      "description_key": "UI_trait_carpenterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Carpentry": 1
+      }
+    },
+    "ElectricTech": {
+      "name_key": "UI_trait_electrictech",
+      "description_key": "UI_trait_electrictechdesc",
+      "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Electrical": 1
+      }
+    },
+    "AutoMechanic": {
+      "name_key": "UI_trait_automechanic",
+      "description_key": "UI_trait_automechanicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Mechanics": 1
+      }
+    },
+    "MetalWelder": {
+      "name_key": "UI_trait_metalwelder",
+      "description_key": "UI_trait_metalwelderdesc",
+      "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Metalworking": 1
+      }
+    },
+    "BaseballPlayer": {
+      "name_key": "UI_trait_PlaysBaseball",
+      "description_key": "UI_trait_PlaysBaseballDesc",
+      "icon_path": "https://pzwiki.net/w/images/4/4d/Trait_baseballplayer.png",
+      "cost": 4,
+      "xp_boosts": {
+        "LongBlunt": 1
+      }
+    },
+    "Stabber": {
+      "name_key": "UI_trait_stabber",
+      "description_key": "UI_trait_stabberdesc",
+      "icon_path": "#/data/images/traits/soto_mst/stabber.png",
+      "cost": 2,
+      "xp_boosts": {
+        "ShortBlade": 1
+      }
+    },
+    "Crusher": {
+      "name_key": "UI_trait_crusher",
+      "description_key": "UI_trait_crusherdesc",
+      "icon_path": "#/data/images/traits/soto_mst/crusher.png",
+      "cost": 3,
+      "xp_boosts": {
+        "ShortBlunt": 1
+      }
+    },
+    "Cutter": {
+      "name_key": "UI_trait_cutter",
+      "description_key": "UI_trait_cutterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/cutter.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Axe": 1
+      }
+    },
+    "Spearman": {
+      "name_key": "UI_trait_spearman",
+      "description_key": "UI_trait_spearmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/lancer.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Spear": 1
+      }
+    },
+    "Swordsman": {
+      "name_key": "UI_trait_swordsman",
+      "description_key": "UI_trait_swordsmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
+      "cost": 4,
+      "xp_boosts": {
+        "LongBlade": 1
+      }
+    },
+    "Durab": {
+      "name_key": "UI_trait_durab",
+      "description_key": "UI_trait_durabdesc",
+      "icon_path": "#/data/images/traits/soto_mst/durability.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Maintenance": 1
+      }
+    },
+    "Shooter": {
+      "name_key": "UI_trait_shooter",
+      "description_key": "UI_trait_shooterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/shooter1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Aiming": 1,
+        "Reloading": 1
+      }
+    },
+    "Shooter2": {
+      "name_key": "UI_trait_shooter",
+      "description_key": "UI_trait_shooter2desc",
+      "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "ExpShooter": {
+      "name_key": "UI_trait_expshooter",
+      "description_key": "UI_trait_expshooterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sharpshooter.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Aiming": 2,
+        "Reloading": 2
+      }
+    },
+    "Sniper": {
+      "name_key": "UI_trait_sniper",
+      "description_key": "UI_trait_sniperdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sniper.png",
+      "cost": 6,
+      "is_profession_trait": true,
+      "xp_boosts": {
+        "Aiming": 2
+      }
+    },
+    "Hunter": {
+      "name_key": "UI_trait_Hunter",
+      "description_key": "UI_trait_HunterDesc",
+      "icon_path": "https://pzwiki.net/w/images/9/9b/Trait_hunter.png",
+      "cost": 9,
+      "xp_boosts": {
+        "Aiming": 1,
+        "ShortBlade": 1,
+        "Sneaking": 1,
+        "Trapping": 1
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Box Trap",
+        "Make Trap Box",
+        "Make Cage Trap"
+      ]
+    },
+    "Formerscout": {
+      "name_key": "UI_trait_Scout",
+      "description_key": "UI_trait_ScoutDesc",
+      "icon_path": "https://pzwiki.net/w/images/1/18/Trait_formerscout.png",
+      "cost": 3,
+      "xp_boosts": {
+        "FirstAid": 1,
+        "Foraging": 1
+      }
+    },
+    "Formerscout2": {
+      "name_key": "UI_trait_Scout",
+      "description_key": "UI_trait_Scout2Desc",
+      "icon_path": "https://pzwiki.net/w/images/1/18/Trait_formerscout.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Brawler": {
+      "name_key": "UI_trait_BarFighter",
+      "description_key": "UI_trait_BarFighterDesc2",
+      "icon_path": "https://pzwiki.net/w/images/c/cf/Trait_brawler.png",
+      "cost": 5,
+      "xp_boosts": {
+        "Strength": 1
+      }
+    },
+    "Mechanics": {
+      "name_key": "UI_trait_Mechanics",
+      "description_key": "UI_trait_MechanicsDesc",
+      "icon_path": "https://pzwiki.net/w/images/2/24/Trait_mechanics.png",
+      "cost": 2,
+      "free_recipes": [
+        "Basic Mechanics",
+        "Intermediate Mechanics"
+      ]
+    },
+    "Mechanics2": {
+      "name_key": "UI_trait_Mechanics",
+      "description_key": "UI_trait_Mechanics2Desc",
+      "icon_path": "https://pzwiki.net/w/images/2/24/Trait_mechanics.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Herbalist": {
+      "name_key": "UI_trait_Herbalist",
+      "description_key": "UI_trait_HerbalistDesc",
+      "icon_path": "https://pzwiki.net/w/images/b/b6/Trait_herbalist.png",
+      "cost": 2,
+      "free_recipes": [
+        "Herbalist"
+      ]
+    },
+    "Herbalist2": {
+      "name_key": "UI_trait_Herbalist",
+      "description_key": "UI_trait_HerbalistDesc",
+      "icon_path": "https://pzwiki.net/w/images/b/b6/Trait_herbalist.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "GenExp": {
+      "name_key": "UI_trait_genexp",
+      "description_key": "UI_trait_genexpdesc",
+      "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
+      "cost": 1,
+      "free_recipes": [
+        "Generator"
+      ]
+    },
+    "GenExp2": {
+      "name_key": "UI_trait_genexp",
+      "description_key": "UI_trait_genexpdesc",
+      "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "MarathonRunner": {
+      "name_key": "UI_trait_marathonrunner",
+      "description_key": "UI_trait_marathonrunnerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/marathon_runner.png",
+      "cost": 2
+    },
+    "Relentless": {
+      "name_key": "UI_trait_relentless",
+      "description_key": "UI_trait_relentlessdesc",
+      "icon_path": "#/data/images/traits/soto_mst/relentless.png",
+      "cost": 2
+    },
+    "NinjaWay": {
+      "name_key": "UI_trait_ninjaway",
+      "description_key": "UI_trait_ninjawaydesc",
+      "icon_path": "#/data/images/traits/soto_mst/between_the_shadows.png",
+      "cost": 2
+    },
+    "BreathingTech": {
+      "name_key": "UI_trait_breathingtech",
+      "description_key": "UI_trait_breathingtechdesc",
+      "icon_path": "#/data/images/traits/soto_mst/breathing_technique.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "BreathingTech2": {
+      "name_key": "UI_trait_breathingtech",
+      "description_key": "UI_trait_breathingtechdesc",
+      "icon_path": "#/data/images/traits/soto_mst/breathing_technique.png",
+      "cost": 2
+    },
+    "SpeedDemon": {
+      "name_key": "UI_trait_SpeedDemon",
+      "description_key": "UI_trait_SpeedDemonDesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_speeddemon.png",
+      "cost": 1
+    },
+    "SpeedDemon2": {
+      "name_key": "UI_trait_SpeedDemon",
+      "description_key": "UI_trait_SpeedDemonDesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_speeddemon.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "SundayDriver": {
+      "name_key": "UI_trait_SundayDriver",
+      "description_key": "UI_trait_SundayDriverDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_sundaydriver.png",
+      "cost": -3
+    },
+    "ShortSighted": {
+      "name_key": "UI_trait_shortsigh",
+      "description_key": "UI_trait_shortsighdesc",
+      "icon_path": "https://pzwiki.net/w/images/b/ba/Trait_shortsighted.png",
+      "cost": -2
+    },
+    "EagleEyed": {
+      "name_key": "UI_trait_eagleeyed",
+      "description_key": "UI_trait_eagleeyeddesc",
+      "icon_path": "https://pzwiki.net/w/images/e/e1/Trait_eagleeyed.png",
+      "cost": 2
+    },
+    "EagleEyed2": {
+      "name_key": "UI_trait_eagleeyed",
+      "description_key": "UI_trait_eagleeyeddesc",
+      "icon_path": "https://pzwiki.net/w/images/e/e1/Trait_eagleeyed.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "NightVision": {
+      "name_key": "UI_trait_NightVision",
+      "description_key": "UI_trait_NightVisionDesc",
+      "icon_path": "https://pzwiki.net/w/images/0/0f/Trait_nightvision.png",
+      "cost": 2
+    },
+    "NightVision2": {
+      "name_key": "UI_trait_NightVision",
+      "description_key": "UI_trait_NightVisionDesc",
+      "icon_path": "https://pzwiki.net/w/images/0/0f/Trait_nightvision.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "KeenHearing": {
+      "name_key": "UI_trait_keenhearing",
+      "description_key": "UI_trait_keenhearingdesc",
+      "icon_path": "https://pzwiki.net/w/images/1/16/Trait_keenhearing.png",
+      "cost": 5
+    },
+    "KeenHearing2": {
+      "name_key": "UI_trait_keenhearing",
+      "description_key": "UI_trait_keenhearingdesc",
+      "icon_path": "https://pzwiki.net/w/images/1/16/Trait_keenhearing.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "HardOfHearing": {
+      "name_key": "UI_trait_hardhear",
+      "description_key": "UI_trait_hardheardesc",
+      "icon_path": "https://pzwiki.net/w/images/5/5a/Trait_hardofhearing.png",
+      "cost": -5
+    },
+    "Deaf": {
+      "name_key": "UI_trait_deaf",
+      "description_key": "UI_trait_deafdesc",
+      "icon_path": "https://pzwiki.net/w/images/4/4b/Trait_deaf.png",
+      "cost": -12
+    },
+    "Inconspicuous": {
+      "name_key": "UI_trait_Inconspicuous",
+      "description_key": "UI_trait_InconspicuousDesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_inconspicuous.png",
+      "cost": 2
+    },
+    "Inconspicuous2": {
+      "name_key": "UI_trait_Inconspicuous",
+      "description_key": "UI_trait_InconspicuousDesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_inconspicuous.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Conspicuous": {
+      "name_key": "UI_trait_Conspicuous",
+      "description_key": "UI_trait_ConspicuousDesc",
+      "icon_path": "https://pzwiki.net/w/images/e/ed/Trait_conspicuous.png",
+      "cost": -4
+    },
+    "AdrenalineJunkie": {
+      "name_key": "UI_trait_AdrenalineJunkie",
+      "description_key": "UI_trait_AdrenalineJunkieDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_adrenalinejunkie.png",
+      "cost": 2
+    },
+    "AdrenalineJunkie2": {
+      "name_key": "UI_trait_AdrenalineJunkie",
+      "description_key": "UI_trait_AdrenalineJunkieDesc",
+      "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_adrenalinejunkie.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Desensitized2": {
+      "name_key": "UI_trait_Desensitized",
+      "description_key": "UI_trait_DesensitizedDesc",
+      "icon_path": "https://pzwiki.net/w/images/7/72/Trait_desensitized.png",
+      "cost": 8
+    },
+    "Desensitized": {
+      "name_key": "UI_trait_Desensitized",
+      "description_key": "UI_trait_DesensitizedDesc",
+      "icon_path": "https://pzwiki.net/w/images/7/72/Trait_desensitized.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Brave": {
+      "name_key": "UI_trait_brave",
+      "description_key": "UI_trait_bravedesc",
+      "icon_path": "https://pzwiki.net/w/images/c/c8/Trait_brave.png",
+      "cost": 3
+    },
+    "Brave2": {
+      "name_key": "UI_trait_brave",
+      "description_key": "UI_trait_bravedesc",
+      "icon_path": "https://pzwiki.net/w/images/c/c8/Trait_brave.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Cowardly": {
+      "name_key": "UI_trait_cowardly",
+      "description_key": "UI_trait_cowardlydesc",
+      "icon_path": "https://pzwiki.net/w/images/1/11/Trait_cowardly.png",
+      "cost": -3
+    },
+    "Graceful": {
+      "name_key": "UI_trait_graceful",
+      "description_key": "UI_trait_gracefuldesc",
+      "icon_path": "https://pzwiki.net/w/images/8/87/Trait_graceful.png",
+      "cost": 2
+    },
+    "Graceful2": {
+      "name_key": "UI_trait_graceful",
+      "description_key": "UI_trait_gracefuldesc",
+      "icon_path": "https://pzwiki.net/w/images/8/87/Trait_graceful.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Clumsy": {
+      "name_key": "UI_trait_clumsy",
+      "description_key": "UI_trait_clumsydesc",
+      "icon_path": "https://pzwiki.net/w/images/4/48/Trait_clumsy.png",
+      "cost": -4
+    },
+    "FastReader": {
+      "name_key": "UI_trait_FastReader",
+      "description_key": "UI_trait_FastReaderDesc",
+      "icon_path": "https://pzwiki.net/w/images/8/87/Trait_fastreader.png",
+      "cost": 1
+    },
+    "FastReader2": {
+      "name_key": "UI_trait_FastReader",
+      "description_key": "UI_trait_FastReaderDesc",
+      "icon_path": "https://pzwiki.net/w/images/8/87/Trait_fastreader.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "SlowReader": {
+      "name_key": "UI_trait_SlowReader",
+      "description_key": "UI_trait_SlowReaderDesc",
+      "icon_path": "https://pzwiki.net/w/images/1/13/Trait_slowreader.png",
+      "cost": -1
+    },
+    "Illiterate": {
+      "name_key": "UI_trait_Illiterate",
+      "description_key": "UI_trait_IlliterateDesc",
+      "icon_path": "https://pzwiki.net/w/images/5/59/Trait_illiterate.png",
+      "cost": -8
+    },
+    "LifelongLearner": {
+      "name_key": "UI_trait_lifelonglearner",
+      "description_key": "UI_trait_lifelonglearnerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/lifelong_learner.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Lucky": {
+      "name_key": "UI_trait_lucky",
+      "description_key": "UI_trait_luckydesc",
+      "icon_path": "https://pzwiki.net/w/images/d/dd/Trait_lucky.png",
+      "cost": 3,
+      "is_disabled_in_mp": true
+    },
+    "Unlucky": {
+      "name_key": "UI_trait_unlucky",
+      "description_key": "UI_trait_unluckydesc",
+      "icon_path": "https://pzwiki.net/w/images/d/d6/Trait_unlucky.png",
+      "cost": -3,
+      "is_disabled_in_mp": true
+    },
+    "Agoraphobic": {
+      "name_key": "UI_trait_agoraphobic",
+      "description_key": "UI_trait_agoraphobicdesc",
+      "icon_path": "https://pzwiki.net/w/images/0/08/Trait_agoraphobic.png",
+      "cost": -6
+    },
+    "Claustophobic": {
+      "name_key": "UI_trait_claustro",
+      "description_key": "UI_trait_claustrodesc",
+      "icon_path": "https://pzwiki.net/w/images/7/7b/Trait_claustophobic.png",
+      "cost": -4
+    },
+    "Hemophobic": {
+      "name_key": "UI_trait_Hemophobic",
+      "description_key": "UI_trait_Hemophobic2Desc",
+      "icon_path": "https://pzwiki.net/w/images/8/89/Trait_hemophobic.png",
+      "cost": -6
+    },
+    "FearoftheDark": {
+      "name_key": "UI_trait_fearofthedark",
+      "description_key": "UI_trait_fearofthedarkdesc",
+      "icon_path": "#/data/images/traits/soto_mst/nyctophobic.png",
+      "cost": -1
+    },
+    "Nutritionist": {
+      "name_key": "UI_trait_nutritionist",
+      "description_key": "UI_trait_nutritionistdesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f1/Trait_nutritionist.png",
+      "cost": 1
+    },
+    "Nutritionist2": {
+      "name_key": "UI_trait_nutritionist",
+      "description_key": "UI_trait_nutritionistdesc",
+      "icon_path": "https://pzwiki.net/w/images/f/f1/Trait_nutritionist.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Outdoorsman": {
+      "name_key": "UI_trait_outdoorsman",
+      "description_key": "UI_trait_outdoorsmandesc",
+      "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_outdoorsman.png",
+      "cost": 2
+    },
+    "Outdoorsman2": {
+      "name_key": "UI_trait_outdoorsman",
+      "description_key": "UI_trait_outdoorsmandesc",
+      "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_outdoorsman.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Mesomorph": {
+      "name_key": "UI_trait_mesomorph",
+      "description_key": "UI_trait_mesomorphdesc",
+      "icon_path": "#/data/images/traits/soto_mst/mesomorph.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Ectomorph": {
+      "name_key": "UI_trait_ectomorph",
+      "description_key": "UI_trait_ectomorphdesc",
+      "icon_path": "#/data/images/traits/soto_mst/ectomorph.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Fitness": 1
+      }
+    },
+    "Endomorph": {
+      "name_key": "UI_trait_endomorph",
+      "description_key": "UI_trait_endomorphdesc",
+      "icon_path": "#/data/images/traits/soto_mst/endomorph.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Strength": 1
+      }
+    },
+    "FragileHealth": {
+      "name_key": "UI_trait_fragilehealth",
+      "description_key": "UI_trait_fragilehealthdesc",
+      "icon_path": "#/data/images/traits/soto_mst/fragile.png",
+      "cost": -3
+    },
+    "AccMetabolism": {
+      "name_key": "UI_trait_accmetabolism",
+      "description_key": "UI_trait_accmetabolismdesc",
+      "icon_path": "#/data/images/traits/soto_mst/accelerated_metabolism.png",
+      "cost": 4
+    },
+    "FastLearner": {
+      "name_key": "UI_trait_FastLearner",
+      "description_key": "UI_trait_FastLearnerDesc",
+      "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_fastlearner.png",
+      "cost": 7
+    },
+    "SlowLearner": {
+      "name_key": "UI_trait_SlowLearner",
+      "description_key": "UI_trait_SlowLearnerDesc",
+      "icon_path": "https://pzwiki.net/w/images/c/cc/Trait_slowlearner.png",
+      "cost": -7
+    },
+    "Cruelty": {
+      "name_key": "UI_trait_cruelty",
+      "description_key": "UI_trait_crueltydesc",
+      "icon_path": "#/data/images/traits/soto_mst/cruel.png",
+      "cost": 4
+    },
+    "Cruelty2": {
+      "name_key": "UI_trait_cruelty",
+      "description_key": "UI_trait_crueltydesc",
+      "icon_path": "#/data/images/traits/soto_mst/cruel.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Pacifist": {
+      "name_key": "UI_trait_Pacifist",
+      "description_key": "UI_trait_PacifistDesc",
+      "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_pacifist.png",
+      "cost": -5
+    },
+    "Pacifist2": {
+      "name_key": "UI_trait_Pacifist",
+      "description_key": "UI_trait_PacifistDesc",
+      "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_pacifist.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "IronGut": {
+      "name_key": "UI_trait_IronGut",
+      "description_key": "UI_trait_IronGutDesc",
+      "icon_path": "https://pzwiki.net/w/images/8/80/Trait_irongut.png",
+      "cost": 1
+    },
+    "WeakStomach": {
+      "name_key": "UI_trait_WeakStomach",
+      "description_key": "UI_trait_WeakStomachDesc",
+      "icon_path": "https://pzwiki.net/w/images/0/02/Trait_weakstomach.png",
+      "cost": -2
+    },
+    "SensitiveDigestion": {
+      "name_key": "UI_trait_sensitivedigestion",
+      "description_key": "UI_trait_sensitivedigestiondesc",
+      "icon_path": "#/data/images/traits/soto_mst/sensitive_digestion.png",
+      "cost": -2
+    },
+    "Smoker": {
+      "name_key": "UI_trait_Smoker",
+      "description_key": "UI_trait_SOSmokerDesc",
+      "icon_path": "https://pzwiki.net/w/images/d/de/Trait_smoker.png",
+      "cost": -4
+    },
+    "SOAlcoholic": {
+      "name_key": "UI_trait_soalcoholic",
+      "description_key": "UI_trait_soalcoholicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/alcoholic.png",
+      "cost": -6
+    },
+    "LessSweaty": {
+      "name_key": "UI_trait_lesssweaty",
+      "description_key": "UI_trait_lesssweatydesc",
+      "icon_path": "#/data/images/traits/soto_mst/low_sweating.png",
+      "cost": 1
+    },
+    "HighSweaty": {
+      "name_key": "UI_trait_highsweaty",
+      "description_key": "UI_trait_highsweatydesc",
+      "icon_path": "#/data/images/traits/soto_mst/high_sweating.png",
+      "cost": -2
+    },
+    "Organized": {
+      "name_key": "UI_trait_Packmule",
+      "description_key": "UI_trait_PackmuleDesc",
+      "icon_path": "https://pzwiki.net/w/images/7/7f/Trait_organized.png",
+      "cost": 5
+    },
+    "Organized2": {
+      "name_key": "UI_trait_Packmule",
+      "description_key": "UI_trait_PackmuleDesc",
+      "icon_path": "https://pzwiki.net/w/images/7/7f/Trait_organized.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Disorganized": {
+      "name_key": "UI_trait_Disorganized",
+      "description_key": "UI_trait_DisorganizedDesc",
+      "icon_path": "https://pzwiki.net/w/images/d/df/Trait_disorganized.png",
+      "cost": -5
+    },
+    "StrongBack": {
+      "name_key": "UI_trait_strongback",
+      "description_key": "UI_trait_strongbackdesc",
+      "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
+      "cost": 2
+    },
+    "StrongBack2": {
+      "name_key": "UI_trait_strongback",
+      "description_key": "UI_trait_strongbackdesc",
+      "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "WeakBack": {
+      "name_key": "UI_trait_weakback",
+      "description_key": "UI_trait_weakbackdesc",
+      "icon_path": "#/data/images/traits/soto_mst/weak_back.png",
+      "cost": -4
+    },
+    "Dextrous": {
+      "name_key": "UI_trait_Dexterous",
+      "description_key": "UI_trait_DexterousDesc2",
+      "icon_path": "https://pzwiki.net/w/images/d/d4/Trait_dextrous.png",
+      "cost": 2
+    },
+    "Dextrous2": {
+      "name_key": "UI_trait_Dexterous",
+      "description_key": "UI_trait_DexterousDesc2",
+      "icon_path": "https://pzwiki.net/w/images/d/d4/Trait_dextrous.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "AllThumbs": {
+      "name_key": "UI_trait_AllThumbs",
+      "description_key": "UI_trait_AllThumbsDesc2",
+      "icon_path": "https://pzwiki.net/w/images/9/97/Trait_allthumbs.png",
+      "cost": -4
+    },
+    "LiquidBlood": {
+      "name_key": "UI_trait_liquidblood",
+      "description_key": "UI_trait_liquidblooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/thin_blooded2.png",
+      "cost": -6
+    },
+    "ThickBlood": {
+      "name_key": "UI_trait_thickblood",
+      "description_key": "UI_trait_thickblooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/thick_blooded2.png",
+      "cost": 3
+    },
+    "LowThirst": {
+      "name_key": "UI_trait_LowThirst",
+      "description_key": "UI_trait_LowThirstDesc",
+      "icon_path": "https://pzwiki.net/w/images/9/92/Trait_lowthirst.png",
+      "cost": 2
+    },
+    "HighThirst": {
+      "name_key": "UI_trait_HighThirst",
+      "description_key": "UI_trait_HighThirstDesc",
+      "icon_path": "https://pzwiki.net/w/images/2/29/Trait_highthirst.png",
+      "cost": -4
+    },
+    "LightEater": {
+      "name_key": "UI_trait_lighteater",
+      "description_key": "UI_trait_lighteaterdesc",
+      "icon_path": "https://pzwiki.net/w/images/5/57/Trait_lighteater.png",
+      "cost": 2
+    },
+    "HeartyAppitite": {
+      "name_key": "UI_trait_heartyappetite",
+      "description_key": "UI_trait_heartyappetitedesc",
+      "icon_path": "https://pzwiki.net/w/images/4/46/Trait_heartyappetite.png",
+      "cost": -4
+    },
+    "Asthmatic": {
+      "name_key": "UI_trait_Asthmatic",
+      "description_key": "UI_trait_AsthmaticDesc",
+      "icon_path": "https://pzwiki.net/w/images/c/ce/Trait_asthmatic.png",
+      "cost": -6
+    },
+    "FastHealer": {
+      "name_key": "UI_trait_FastHealer",
+      "description_key": "UI_trait_FastHealerDesc",
+      "icon_path": "https://pzwiki.net/w/images/f/ff/Trait_fasthealer.png",
+      "cost": 4
+    },
+    "SlowHealer": {
+      "name_key": "UI_trait_SlowHealer",
+      "description_key": "UI_trait_SlowHealerDesc",
+      "icon_path": "https://pzwiki.net/w/images/1/1c/Trait_slowhealer.png",
+      "cost": -4
+    },
+    "Resilient": {
+      "name_key": "UI_trait_resilient",
+      "description_key": "UI_trait_resilientdesc",
+      "icon_path": "https://pzwiki.net/w/images/f/fe/Trait_resilient.png",
+      "cost": 2
+    },
+    "ProneToIllness": {
+      "name_key": "UI_trait_pronetoillness",
+      "description_key": "UI_trait_pronetoillness2desc",
+      "icon_path": "https://pzwiki.net/w/images/b/b9/Trait_hypercondriac.png",
+      "cost": -4
+    },
+    "ThickSkinned": {
+      "name_key": "UI_trait_thickskinned",
+      "description_key": "UI_trait_thickskinneddesc",
+      "icon_path": "https://pzwiki.net/w/images/2/26/Trait_thickskinned.png",
+      "cost": 6
+    },
+    "Thinskinned": {
+      "name_key": "UI_trait_ThinSkinned",
+      "description_key": "UI_trait_ThinSkinnedDesc",
+      "icon_path": "https://pzwiki.net/w/images/b/b8/Trait_thinskinned.png",
+      "cost": -6
+    },
+    "NeedsLessSleep": {
+      "name_key": "UI_trait_LessSleep",
+      "description_key": "UI_trait_LessSleepDesc",
+      "icon_path": "https://pzwiki.net/w/images/b/bc/Trait_needslesssleep.png",
+      "cost": 4,
+      "is_sleep_trait": true
+    },
+    "NeedsMoreSleep": {
+      "name_key": "UI_trait_MoreSleep",
+      "description_key": "UI_trait_MoreSleepDesc",
+      "icon_path": "https://pzwiki.net/w/images/4/4f/Trait_needsmoresleep.png",
+      "cost": -4,
+      "is_sleep_trait": true
+    },
+    "Insomniac": {
+      "name_key": "UI_trait_Insomniac",
+      "description_key": "UI_trait_InsomniacDesc",
+      "icon_path": "https://pzwiki.net/w/images/5/50/Trait_insomniac.png",
+      "cost": -6,
+      "is_sleep_trait": true
+    },
+    "OwlPerson": {
+      "name_key": "UI_trait_owlperson",
+      "description_key": "UI_trait_owlpersondesc",
+      "icon_path": "#/data/images/traits/soto_mst/owl.png",
+      "cost": -1,
+      "is_sleep_trait": true
+    },
+    "LarkPerson": {
+      "name_key": "UI_trait_larkperson",
+      "description_key": "UI_trait_larkpersondesc",
+      "icon_path": "#/data/images/traits/soto_mst/lark.png",
+      "cost": -1,
+      "is_sleep_trait": true
+    },
+    "Optimist": {
+      "name_key": "UI_trait_optimistmood",
+      "description_key": "UI_trait_optimistmooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/optimist.png",
+      "cost": 2
+    },
+    "Depressive": {
+      "name_key": "UI_trait_depressivemood",
+      "description_key": "UI_trait_depressivemooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/depressive.png",
+      "cost": -3
+    },
+    "WeatherSensitive": {
+      "name_key": "UI_trait_weathersensitive",
+      "description_key": "UI_trait_weathersensitivedesc",
+      "icon_path": "#/data/images/traits/soto_mst/weather_sensitive.png",
+      "cost": -2,
+      "is_disabled_in_mp": true
+    },
+    "Snorer": {
+      "name_key": "UI_trait_snorer",
+      "description_key": "UI_trait_snorerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/snorer.png",
+      "cost": -2,
+      "is_sleep_trait": true
+    },
+    "Allergic": {
+      "name_key": "UI_trait_allergic",
+      "description_key": "UI_trait_allergicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/allergic.png",
+      "cost": -3
+    },
+    "PanicAttacks": {
+      "name_key": "UI_trait_panicattacks",
+      "description_key": "UI_trait_panicattacksdesc",
+      "icon_path": "#/data/images/traits/soto_mst/panic_attacks.png",
+      "cost": -4
+    },
+    "SoreLegs": {
+      "name_key": "UI_trait_sorelegs",
+      "description_key": "UI_trait_sorelegsdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sore_legs.png",
+      "cost": -8
+    },
+    "Axeman": {
+      "name_key": "UI_trait_axeman",
+      "description_key": "UI_trait_axemandesc",
+      "icon_path": "https://pzwiki.net/w/images/0/04/Trait_axeman.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Burglar": {
+      "name_key": "UI_prof_Burglar",
+      "description_key": "UI_trait_BurglarDesc",
+      "icon_path": "https://pzwiki.net/w/images/0/0a/Trait_burglar.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Marksman": {
+      "name_key": "UI_trait_marksman",
+      "description_key": "UI_trait_marksmandesc",
+      "icon_path": "https://pzwiki.net/w/images/0/04/Trait_axeman.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "NightOwl": {
+      "name_key": "UI_trait_nightowl",
+      "description_key": "UI_trait_nightowldesc",
+      "icon_path": "https://pzwiki.net/w/images/b/b0/Trait_nightowl.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "CommDriver": {
+      "name_key": "UI_trait_commdriver",
+      "description_key": "UI_trait_commdriverdesc",
+      "icon_path": "#/data/images/traits/soto_mst/commercial_driver.png",
+      "cost": 0,
+      "is_profession_trait": true,
+      "free_recipes": [
+        "Intermediate Mechanics"
+      ]
+    },
+    "EnjoytheRide": {
+      "name_key": "UI_trait_enjoytheride",
+      "description_key": "UI_trait_enjoytheridedesc",
+      "icon_path": "#/data/images/traits/soto_mst/ride_with_the_wind.png",
+      "cost": 0,
+      "is_profession_trait": true,
+      "free_recipes": [
+        "Advanced Mechanics"
+      ]
+    },
+    "UsedToCorpses": {
+      "name_key": "UI_trait_usedtocorpses",
+      "description_key": "UI_trait_usedtocorpsesdesc",
+      "icon_path": "#/data/images/traits/soto_mst/accustomed_to_dead.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "ImprovisedCleaning": {
+      "name_key": "UI_trait_improvisedcleaning",
+      "description_key": "UI_trait_improvisedcleaningdesc",
+      "icon_path": "#/data/images/traits/soto_mst/improvised_cleaning.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "priestspirit": {
+      "name_key": "UI_trait_priestspirit",
+      "description_key": "UI_trait_priestspiritdesc",
+      "icon_path": "#/data/images/traits/soto_mst/priestly_spirituality.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "WoodAxeMyBeloved": {
+      "name_key": "UI_trait_woodaxemybeloved",
+      "description_key": "UI_trait_woodaxemybeloveddesc",
+      "icon_path": "#/data/images/traits/soto_mst/wood_axe_my_beloved.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "DemoStrongGrip": {
+      "name_key": "UI_trait_demostronggrip",
+      "description_key": "UI_trait_demostronggripdesc",
+      "icon_path": "#/data/images/traits/soto_mst/strong_grip.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "GasManagement": {
+      "name_key": "UI_trait_gasmanagement",
+      "description_key": "UI_trait_gasmanagementdesc",
+      "icon_path": "#/data/images/traits/soto_mst/experienced_refueler.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "BladeTools": {
+      "name_key": "UI_trait_bladetools",
+      "description_key": "UI_trait_bladetoolsdesc",
+      "icon_path": "#/data/images/traits/soto_mst/blade_tools.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "MinersEndurance": {
+      "name_key": "UI_trait_minersendurance",
+      "description_key": "UI_trait_minersendurancedesc",
+      "icon_path": "#/data/images/traits/soto_mst/miners_endurance.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "nimblefingers": {
+      "name_key": "UI_trait_nimblefingers",
+      "description_key": "UI_trait_nimblefingersDesc",
+      "icon_path": null,
+      "cost": 0,
+      "is_profession_trait": true,
+      "free_recipes": [
+        "Lockpicking",
+        "Alarm check",
+        "Create BobbyPin"
+      ],
+      "condition": {
+        "mod_is_present": "betterLockpicking"
+      }
+    },
+    "DoctorPerk": {
+      "name_key": "UI_prof_DoctorPerk",
+      "description_key": "UI_prof_DoctorPerk_Desc",
+      "icon_path": null,
+      "cost": 0,
+      "is_profession_trait": true,
+      "condition": {
+        "mod_is_present": "piesfirstaidoverhaul"
+      }
+    },
+    "NursePerk": {
+      "name_key": "UI_prof_NursePerk",
+      "description_key": "UI_prof_NursePerk_Desc",
+      "icon_path": null,
+      "cost": 0,
+      "is_profession_trait": true,
+      "condition": {
+        "mod_is_present": "piesfirstaidoverhaul"
+      }
+    },
+    "FastMedical": {
+      "name_key": "UI_prof_FastMedical",
+      "description_key": "UI_prof_FastMedical_Desc",
+      "icon_path": null,
+      "cost": 0,
+      "is_profession_trait": true,
+      "condition": {
+        "mod_is_present": "piesfirstaidoverhaul"
+      }
+    },
+    "MedicalPractitioner": {
+      "name_key": "UI_trait_MedicalPractitioner",
+      "description_key": "UI_trait_MedicalPractitionerDesc",
+      "icon_path": null,
+      "cost": 0,
+      "is_profession_trait": true,
+      "condition": {
+        "mod_is_present": "BB_FirstAidOverhaul"
+      }
+    }
+  },
+  "professions": {
+    "unemployed": {
+      "name_key": "UI_prof_unemployed",
+      "icon_path": "#/data/images/professions/soto/unemployed.png",
+      "points": 10
+    },
+    "fireofficer": {
+      "name_key": "UI_prof_fireoff",
+      "description_key": "UI_profdesc_fireoff",
+      "icon_path": "https://pzwiki.net/w/images/2/24/Profession_fireofficer2.png",
+      "points": -4,
+      "xp_boosts": {
+        "Axe": 1,
+        "Fitness": 1,
+        "Sprinting": 1,
+        "Strength": 1
+      },
+      "free_traits": [
+        "Axeman"
+      ]
+    },
+    "policeofficer": {
+      "name_key": "UI_prof_policeoff",
+      "description_key": "UI_profdesc_policeoff",
+      "icon_path": "https://pzwiki.net/w/images/a/a0/Profession_policeofficer2.png",
+      "points": -4,
+      "xp_boosts": {
+        "Aiming": 2,
+        "Nimble": 1,
+        "Reloading": 2,
+        "ShortBlunt": 1
+      }
+    },
+    "parkranger": {
+      "name_key": "UI_prof_parkranger",
+      "description_key": "UI_profdesc_parkranger",
+      "icon_path": "https://pzwiki.net/w/images/1/18/Profession_parkranger2.png",
+      "points": 2,
+      "xp_boosts": {
+        "Foraging": 2,
+        "Trapping": 1,
+        "Woodcutting": 2
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Box Trap",
+        "Make Trap Box",
+        "Make Cage Trap"
+      ]
+    },
+    "constructionworker": {
+      "name_key": "UI_prof_constructionworker",
+      "description_key": "UI_profdesc_constructionworker",
+      "icon_path": "https://pzwiki.net/w/images/2/2c/Profession_constructionworker2.png",
+      "points": 0,
+      "xp_boosts": {
+        "Carpentry": 1,
+        "ShortBlunt": 2
+      },
+      "free_traits": [
+        "StrongBack2"
+      ]
+    },
+    "securityguard": {
+      "name_key": "UI_prof_securityguard",
+      "description_key": "UI_profdesc_securityguard",
+      "icon_path": "https://pzwiki.net/w/images/2/29/Profession_securityguard2.png",
+      "points": 1,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Sprinting": 1
+      },
+      "free_traits": [
+        "NightOwl",
+        "KeenHearing2"
+      ]
+    },
+    "carpenter": {
+      "name_key": "UI_prof_Carpenter",
+      "description_key": "UI_profdesc_Carpenter",
+      "icon_path": "https://pzwiki.net/w/images/1/16/Profession_hammer2.png",
+      "points": -1,
+      "xp_boosts": {
+        "Carpentry": 2,
+        "Maintenance": 1,
+        "ShortBlunt": 1
+      },
+      "free_traits": [
+        "Handy2"
+      ]
+    },
+    "burglar": {
+      "name_key": "UI_prof_Burglar",
+      "description_key": "UI_profdesc_Burglar",
+      "icon_path": "https://pzwiki.net/w/images/1/1f/Profession_burglar2.png",
+      "points": 0,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Nimble": 1,
+        "Sneaking": 1
+      },
+      "free_recipes": [
+        "Lockpicking",
+        "Alarm check",
+        "Create BobbyPin"
+      ],
+      "free_traits": [
+        "Burglar",
+        "nimblefingers"
+      ]
+    },
+    "chef": {
+      "name_key": "UI_prof_Chef",
+      "description_key": "UI_profdesc_Chef",
+      "icon_path": "https://pzwiki.net/w/images/5/54/Profession_chef2.png",
+      "points": 6,
+      "xp_boosts": {
+        "Cooking": 4
+      },
+      "free_recipes": [
+        "Make Cake Batter",
+        "Make Pie Dough",
+        "Make Bread Dough",
+        "Make Biscuits",
+        "Make Chocolate Cookie Dough",
+        "Make Chocolate Chip Cookie Dough",
+        "Make Oatmeal Cookie Dough",
+        "Make Shortbread Cookie Dough",
+        "Make Sugar Cookie Dough",
+        "Make Pizza"
+      ],
+      "free_traits": [
+        "Cook2",
+        "Nutritionist2"
+      ]
+    },
+    "repairman": {
+      "name_key": "UI_prof_Repairman",
+      "description_key": "UI_profdesc_Repairman",
+      "icon_path": "https://pzwiki.net/w/images/f/fb/Profession_repairman2.png",
+      "points": 1,
+      "xp_boosts": {
+        "Carpentry": 1,
+        "Maintenance": 2
+      },
+      "free_traits": [
+        "Handy2"
+      ]
+    },
+    "farmer": {
+      "name_key": "UI_prof_Farmer",
+      "description_key": "UI_profdesc_Farmer",
+      "icon_path": "https://pzwiki.net/w/images/6/6c/Profession_farmer2.png",
+      "points": 0,
+      "xp_boosts": {
+        "Farming": 4,
+        "Foraging": 1,
+        "Spear": 1,
+        "Woodcutting": 1
+      },
+      "free_recipes": [
+        "Make Mildew Cure",
+        "Make Flies Cure"
+      ],
+      "free_traits": [
+        "Gardener2"
+      ]
+    },
+    "fisherman": {
+      "name_key": "UI_prof_Fisherman",
+      "description_key": "UI_profdesc_Fisherman",
+      "icon_path": "https://pzwiki.net/w/images/7/7b/Profession_fisher2.png",
+      "points": 3,
+      "xp_boosts": {
+        "Fishing": 2
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod",
+        "Get Wire Back",
+        "Make Fishing Net"
+      ],
+      "free_traits": [
+        "Outdoorsman2"
+      ]
+    },
+    "doctor": {
+      "name_key": "UI_prof_Doctor",
+      "description_key": "UI_profdesc_Doctor",
+      "icon_path": "https://pzwiki.net/w/images/6/69/Profession_doctor2.png",
+      "points": 7,
+      "xp_boosts": {
+        "FirstAid": 4
+      },
+      "free_traits": [
+        "FirstAid2",
+        "DoctorPerk",
+        "MedicalPractitioner"
+      ]
+    },
+    "veteran": {
+      "name_key": "UI_prof_Veteran",
+      "description_key": "UI_profdesc_Veteran",
+      "icon_path": "https://pzwiki.net/w/images/d/df/Profession_veteran2.png",
+      "points": -8,
+      "xp_boosts": {
+        "Aiming": 2,
+        "Reloading": 2,
+        "ShortBlade": 1
+      },
+      "free_traits": [
+        "Desensitized",
+        "Metalstrongback2"
+      ]
+    },
+    "nurse": {
+      "name_key": "UI_prof_Nurse",
+      "description_key": "UI_profdesc_Nurse",
+      "icon_path": "https://pzwiki.net/w/images/7/7b/Profession_nurse.png",
+      "points": 6,
+      "xp_boosts": {
+        "FirstAid": 2,
+        "Lightfooted": 1
+      },
+      "free_recipes": [
+        "Make Cotton Ball (Nurse)",
+        "Make Suture Needles (Nurse)",
+        "Make Disinfectant (Nurse)"
+      ],
+      "free_traits": [
+        "NightOwl",
+        "NursePerk",
+        "MedicalPractitioner"
+      ]
+    },
+    "lumberjack": {
+      "name_key": "UI_prof_Lumberjack",
+      "description_key": "UI_profdesc_Lumberjack",
+      "icon_path": "https://pzwiki.net/w/images/d/d2/Profession_lumberjack.png",
+      "points": -5,
+      "xp_boosts": {
+        "Axe": 2,
+        "Strength": 1,
+        "Woodcutting": 3
+      },
+      "free_traits": [
+        "Axeman",
+        "WoodAxeMyBeloved",
+        "Metalstrongback2"
+      ]
+    },
+    "fitnessInstructor": {
+      "name_key": "UI_prof_FitnessInstructor",
+      "description_key": "UI_profdesc_FitnessInstructor",
+      "icon_path": "https://pzwiki.net/w/images/6/6f/Profession_fitnessinstructor.png",
+      "points": -3,
+      "xp_boosts": {
+        "Fitness": 3,
+        "Sprinting": 2
+      },
+      "free_traits": [
+        "Nutritionist2",
+        "Strongback2"
+      ]
+    },
+    "burgerflipper": {
+      "name_key": "UI_prof_BurgerFlipper",
+      "description_key": "UI_profdesc_BurgerFlipper",
+      "icon_path": "https://pzwiki.net/w/images/d/df/Profession_burgerflipper.png",
+      "points": 3,
+      "xp_boosts": {
+        "Cooking": 1,
+        "Maintenance": 1,
+        "Nimble": 1
+      }
+    },
+    "electrician": {
+      "name_key": "UI_prof_Electrician",
+      "description_key": "UI_profdesc_Electrician",
+      "icon_path": "https://pzwiki.net/w/images/2/2b/Profession_electrician.png",
+      "points": 5,
+      "xp_boosts": {
+        "Electrical": 2
+      },
+      "free_recipes": [
+        "Make Remote Controller V1",
+        "Make Remote Controller V2",
+        "Make Remote Controller V3",
+        "Make Remote Trigger",
+        "Make Timer",
+        "Craft Makeshift Radio",
+        "Craft Makeshift HAM Radio",
+        "Craft Makeshift Walkie Talkie",
+        "Generator"
+      ],
+      "free_traits": [
+        "GenExp2"
+      ]
+    },
+    "engineer": {
+      "name_key": "UI_prof_Engineer",
+      "description_key": "UI_profdesc_Engineer",
+      "icon_path": "https://pzwiki.net/w/images/c/cd/Profession_engineer.png",
+      "points": 0,
+      "xp_boosts": {
+        "Carpentry": 1,
+        "Electrical": 1
+      },
+      "free_recipes": [
+        "Make Aerosol bomb",
+        "Make Flame bomb",
+        "Make Pipe bomb",
+        "Make Noise generator",
+        "Make Smoke Bomb"
+      ],
+      "free_traits": [
+        "Burglar"
+      ]
+    },
+    "metalworker": {
+      "name_key": "UI_prof_MetalWorker",
+      "description_key": "UI_profdesc_MetalWorker",
+      "icon_path": "https://pzwiki.net/w/images/b/b8/Profession_metalworker.png",
+      "points": 2,
+      "xp_boosts": {
+        "Maintenance": 1,
+        "Metalworking": 2
+      },
+      "free_recipes": [
+        "Make Metal Walls",
+        "Make Metal Fences",
+        "Make Metal Containers",
+        "Make Metal Sheet",
+        "Make Small Metal Sheet",
+        "Make Metal Roof"
+      ]
+    },
+    "mechanics": {
+      "name_key": "UI_prof_Mechanics",
+      "description_key": "UI_profdesc_mechanics",
+      "icon_path": "https://pzwiki.net/w/images/7/70/Profession_mechanic.png",
+      "points": 4,
+      "xp_boosts": {
+        "Mechanics": 2
+      },
+      "free_recipes": [
+        "Basic Mechanics",
+        "Intermediate Mechanics",
+        "Advanced Mechanics"
+      ],
+      "free_traits": [
+        "Mechanics2"
+      ]
+    },
+    "tailor": {
+      "name_key": "UI_prof_tailor",
+      "description_key": "UI_profdesc_tailor",
+      "icon_path": "#/data/images/professions/soto/tailor.png",
+      "points": 4,
+      "xp_boosts": {
+        "Tailoring": 2
+      },
+      "free_traits": [
+        "Dextrous2"
+      ]
+    },
+    "deliveryman": {
+      "name_key": "UI_prof_deliveryman",
+      "description_key": "UI_profdesc_deliveryman",
+      "icon_path": "#/data/images/professions/soto/delivery_man.png",
+      "points": -2,
+      "xp_boosts": {
+        "Nimble": 1,
+        "Sprinting": 2
+      },
+      "free_traits": [
+        "Organized2"
+      ]
+    },
+    "loader": {
+      "name_key": "UI_prof_loader",
+      "description_key": "UI_profdesc_loader",
+      "icon_path": "#/data/images/professions/soto/loader.png",
+      "points": -1,
+      "xp_boosts": {
+        "Nimble": 1,
+        "Strength": 2
+      },
+      "free_traits": [
+        "StrongBack2",
+        "Metalstrongback2"
+      ]
+    },
+    "trucker": {
+      "name_key": "UI_prof_trucker",
+      "description_key": "UI_profdesc_trucker",
+      "icon_path": "#/data/images/professions/soto/trucker.png",
+      "points": 4,
+      "xp_boosts": {
+        "Driving": 2,
+        "Maintenance": 1,
+        "Mechanics": 1
+      },
+      "free_traits": [
+        "CommDriver"
+      ]
+    },
+    "soldier": {
+      "name_key": "UI_prof_soldier",
+      "description_key": "UI_profdesc_soldier",
+      "icon_path": "#/data/images/professions/soto/soldier.png",
+      "points": -8,
+      "xp_boosts": {
+        "Aiming": 2,
+        "Fitness": 1,
+        "Reloading": 2,
+        "ShortBlade": 1,
+        "Strength": 1
+      },
+      "free_traits": [
+        "NightOwl",
+        "Metalstrongback2"
+      ]
+    },
+    "botanist": {
+      "name_key": "UI_prof_botanist",
+      "description_key": "UI_profdesc_botanist",
+      "icon_path": "#/data/images/professions/soto/botanist.png",
+      "points": 1,
+      "xp_boosts": {
+        "Farming": 1,
+        "Foraging": 2
+      },
+      "free_recipes": [
+        "Herbalist"
+      ],
+      "free_traits": [
+        "Herbalist2"
+      ]
+    },
+    "graveman": {
+      "name_key": "UI_prof_graveman",
+      "description_key": "UI_profdesc_graveman",
+      "icon_path": "#/data/images/professions/soto/grave_digger.png",
+      "points": -2,
+      "xp_boosts": {
+        "LongBlunt": 1,
+        "Maintenance": 1,
+        "Strength": 1
+      },
+      "free_traits": [
+        "UsedToCorpses"
+      ]
+    },
+    "dancerocc": {
+      "name_key": "UI_prof_dancerocc",
+      "description_key": "UI_profdesc_dancerocc",
+      "icon_path": "#/data/images/professions/soto/dancer.png",
+      "points": -2,
+      "xp_boosts": {
+        "Dancing": 2,
+        "Fitness": 1,
+        "Lightfooted": 1,
+        "Nimble": 2
+      },
+      "free_recipes": [
+        "BobTA African Noodle",
+        "BobTA African Rainbow",
+        "BobTA Arms Hip Hop",
+        "BobTA Arm Push",
+        "BobTA Arm Wave One",
+        "BobTA Arm Wave Two",
+        "BobTA Around The World",
+        "BobTA Bboy Hip Hop One",
+        "BobTA Bboy Hip Hop Three",
+        "BobTA Bboy Hip Hop Two",
+        "BobTA Body Wave",
+        "BobTA Booty Step",
+        "BobTA Breakdance Brooklyn Uprock",
+        "BobTA Cabbage Patch",
+        "BobTA Can Can",
+        "BobTA Chicken",
+        "BobTA Crazy Legs",
+        "BobTA Defile De Samba Parade",
+        "BobTA Hokey Pokey",
+        "BobTA Kick Step",
+        "BobTA Macarena",
+        "BobTA Maraschino",
+        "BobTA MoonWalk One",
+        "BobTA Northern Soul Spin",
+        "BobTA Northern Soul Spin On Floor",
+        "BobTA Raise The Roof",
+        "BobTA Really Twirl",
+        "BobTA Rib Pops",
+        "BobTA Rockette Kick",
+        "BobTA Rumba Dancing",
+        "BobTA Running Man One",
+        "BobTA Running Man Three",
+        "BobTA Running Man Two",
+        "BobTA Salsa",
+        "BobTA Salsa Double Twirl",
+        "BobTA Salsa Double Twirl and Clap",
+        "BobTA Salsa Side to Side",
+        "BobTA Shimmy",
+        "BobTA Shim Sham",
+        "BobTA Shuffling",
+        "BobTA Side to Side",
+        "BobTA Twist One",
+        "BobTA Twist Two",
+        "BobTA Uprock Indian Step",
+        "BobTA YMCA"
+      ],
+      "free_traits": [
+        "Graceful2",
+        "Gymnast2"
+      ]
+    },
+    "priestocc": {
+      "name_key": "UI_prof_priestocc",
+      "description_key": "UI_profdesc_priestocc",
+      "icon_path": "#/data/images/professions/soto/priest.png",
+      "points": 12,
+      "xp_boosts": {
+        "Lightfooted": 2
+      },
+      "free_recipes": [
+        "Write A Prayer"
+      ],
+      "free_traits": [
+        "Pacifist2",
+        "priestspirit"
+      ]
+    },
+    "heavyathinstructor": {
+      "name_key": "UI_prof_heavyathinstructor",
+      "description_key": "UI_profdesc_heavyathinstructor",
+      "icon_path": "#/data/images/professions/soto/weightlifting_instructor.png",
+      "points": -4,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Strength": 3
+      },
+      "free_traits": [
+        "StrongBack2",
+        "Nutritionist2",
+        "Metalstrongback2"
+      ]
+    },
+    "detective": {
+      "name_key": "UI_prof_detective",
+      "description_key": "UI_profdesc_detective",
+      "icon_path": "#/data/images/professions/soto/detective.png",
+      "points": 0,
+      "xp_boosts": {
+        "Aiming": 1,
+        "Foraging": 1,
+        "Reloading": 1,
+        "Scavenging": 1,
+        "Sneaking": 1
+      }
+    },
+    "teacherocc": {
+      "name_key": "UI_prof_teacherocc",
+      "description_key": "UI_profdesc_teacherocc",
+      "icon_path": "#/data/images/professions/soto/teacher.png",
+      "points": 8,
+      "xp_boosts": {
+        "Lightfooted": 1
+      },
+      "free_traits": [
+        "FastReader2",
+        "LifelongLearner"
+      ]
+    },
+    "cleanerman": {
+      "name_key": "UI_prof_cleanerman",
+      "description_key": "UI_profdesc_cleanerman",
+      "icon_path": "#/data/images/professions/soto/janitor.png",
+      "points": 2,
+      "xp_boosts": {
+        "Maintenance": 1,
+        "Scavenging": 1,
+        "Spear": 1
+      },
+      "free_recipes": [
+        "Make Cleaning Liquid",
+        "Make Bleach"
+      ],
+      "free_traits": [
+        "ImprovisedCleaning"
+      ]
+    },
+    "stuntman": {
+      "name_key": "UI_prof_stuntman",
+      "description_key": "UI_profdesc_stuntman",
+      "icon_path": "#/data/images/professions/soto/stuntman.png",
+      "points": 0,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Nimble": 1,
+        "Sprinting": 1
+      },
+      "free_traits": [
+        "AdrenalineJunkie2"
+      ]
+    },
+    "gasstationoperator": {
+      "name_key": "UI_prof_gasstationoperator",
+      "description_key": "UI_profdesc_gasstationoperator",
+      "icon_path": "#/data/images/professions/soto/gas_station_operator.png",
+      "points": 0,
+      "xp_boosts": {
+        "Maintenance": 1,
+        "Mechanics": 1,
+        "Nimble": 1
+      },
+      "free_traits": [
+        "GasManagement"
+      ]
+    },
+    "campcouns": {
+      "name_key": "UI_prof_campcouns",
+      "description_key": "UI_profdesc_campcouns",
+      "icon_path": "#/data/images/professions/soto/camp_counselor.png",
+      "points": 1,
+      "xp_boosts": {
+        "FirstAid": 1,
+        "Fishing": 1,
+        "Foraging": 1,
+        "Tailoring": 1,
+        "Woodcutting": 2
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod",
+        "Get Wire Back"
+      ],
+      "free_traits": [
+        "Formerscout2"
+      ]
+    },
+    "dragracerocc": {
+      "name_key": "UI_prof_dragracerocc",
+      "description_key": "UI_profdesc_dragracerocc",
+      "icon_path": "#/data/images/professions/soto/drag_racer.png",
+      "points": 3,
+      "xp_boosts": {
+        "Driving": 2,
+        "Mechanics": 1,
+        "Nimble": 1
+      },
+      "free_recipes": [
+        "Advanced Mechanics"
+      ],
+      "free_traits": [
+        "SpeedDemon2",
+        "EnjoytheRide"
+      ]
+    },
+    "junkyardworker": {
+      "name_key": "UI_prof_junkyardworker",
+      "description_key": "UI_profdesc_junkyardworker",
+      "icon_path": "#/data/images/professions/soto/junkyard_worker.png",
+      "points": 4,
+      "xp_boosts": {
+        "Mechanics": 1,
+        "Metalworking": 1,
+        "Scavenging": 1
+      },
+      "free_recipes": [
+        "Make Metal Fences",
+        "Make Metal Sheet",
+        "Make Small Metal Sheet"
+      ]
+    },
+    "lifeguard": {
+      "name_key": "UI_prof_lifeguard",
+      "description_key": "UI_profdesc_lifeguard",
+      "icon_path": "#/data/images/professions/soto/lifeguard.png",
+      "points": 0,
+      "xp_boosts": {
+        "FirstAid": 1,
+        "Fitness": 1,
+        "Sprinting": 1
+      },
+      "free_traits": [
+        "BreathingTech",
+        "EagleEyed2",
+        "MedicalPractitioner"
+      ]
+    },
+    "demoworker": {
+      "name_key": "UI_prof_demoworker",
+      "description_key": "UI_profdesc_demoworker",
+      "icon_path": "#/data/images/professions/soto/demolition_worker.png",
+      "points": -2,
+      "xp_boosts": {
+        "LongBlunt": 2,
+        "Strength": 1
+      },
+      "free_traits": [
+        "DemoStrongGrip"
+      ]
+    },
+    "butcherocc": {
+      "name_key": "UI_prof_butcherocc",
+      "description_key": "UI_profdesc_butcherocc",
+      "icon_path": "#/data/images/professions/soto/butcher.png",
+      "points": 3,
+      "xp_boosts": {
+        "LongBlade": 1,
+        "ShortBlade": 1
+      },
+      "free_traits": [
+        "BladeTools"
+      ]
+    },
+    "paparazziocc": {
+      "name_key": "UI_prof_paparazziocc",
+      "description_key": "UI_profdesc_paparazziocc",
+      "icon_path": "#/data/images/professions/soto/paparazzi.png",
+      "points": 3,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Sneaking": 2
+      },
+      "free_traits": [
+        "Inconspicuous2"
+      ]
+    },
+    "minerocc": {
+      "name_key": "UI_prof_minerocc",
+      "description_key": "UI_profdesc_minerocc",
+      "icon_path": "#/data/images/professions/soto/miner.png",
+      "points": -3,
+      "xp_boosts": {
+        "Axe": 1,
+        "Fitness": 1,
+        "Maintenance": 1
+      },
+      "free_traits": [
+        "NightVision2",
+        "MinersEndurance"
+      ]
+    },
+    "cashierocc": {
+      "name_key": "UI_prof_cashierocc",
+      "description_key": "UI_profdesc_cashierocc",
+      "icon_path": "#/data/images/professions/soto/store_employee.png",
+      "points": 4,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Maintenance": 1
+      },
+      "free_traits": [
+        "Dextrous2"
+      ]
+    },
+    "criminalocc": {
+      "name_key": "UI_prof_criminalocc",
+      "description_key": "UI_profdesc_criminalocc",
+      "icon_path": "#/data/images/professions/soto/criminal.png",
+      "points": -1,
+      "xp_boosts": {
+        "Nimble": 1,
+        "ShortBlade": 1,
+        "Sprinting": 1
+      },
+      "free_traits": [
+        "Cruelty2"
+      ]
+    },
+    "animalcontrolofficer": {
+      "name_key": "UI_prof_animalcontrolofficer",
+      "description_key": "UI_profdesc_animalcontrolofficer",
+      "icon_path": "#/data/images/professions/soto/animal_control_officer.png",
+      "points": 0,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Scavenging": 1,
+        "Sprinting": 1,
+        "Trapping": 2
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Box Trap",
+        "Make Trap Box",
+        "Make Cage Trap"
+      ]
+    }
+  },
+  "mutual_exclusives": [
+    [
+      "EagleEyed",
+      "ShortSighted"
+    ],
+    [
+      "EagleEyed2",
+      "ShortSighted"
+    ],
+    [
+      "EagleEyed",
+      "EagleEyed2"
+    ],
+    [
+      "NightVision",
+      "NightVision2"
+    ],
+    [
+      "FearoftheDark",
+      "NightVision"
+    ],
+    [
+      "FearoftheDark",
+      "NightVision2"
+    ],
+    [
+      "Desensitized",
+      "FearoftheDark"
+    ],
+    [
+      "Desensitized2",
+      "FearoftheDark"
+    ],
+    [
+      "Brave",
+      "FearoftheDark"
+    ],
+    [
+      "Brave2",
+      "FearoftheDark"
+    ],
+    [
+      "SpeedDemon",
+      "SpeedDemon2"
+    ],
+    [
+      "SpeedDemon",
+      "SundayDriver"
+    ],
+    [
+      "SpeedDemon2",
+      "SundayDriver"
+    ],
+    [
+      "CommDriver",
+      "SundayDriver"
+    ],
+    [
+      "AllThumbs",
+      "Dextrous"
+    ],
+    [
+      "AllThumbs",
+      "Dextrous2"
+    ],
+    [
+      "Dextrous",
+      "Dextrous2"
+    ],
+    [
+      "AllThumbs",
+      "GasManagement"
+    ],
+    [
+      "Disorganized",
+      "Organized"
+    ],
+    [
+      "Disorganized",
+      "Organized2"
+    ],
+    [
+      "Organized",
+      "Organized2"
+    ],
+    [
+      "Lucky",
+      "Unlucky"
+    ],
+    [
+      "Handy",
+      "Handy2"
+    ],
+    [
+      "Cook",
+      "Cook2"
+    ],
+    [
+      "Cook",
+      "Scullion"
+    ],
+    [
+      "Cook2",
+      "Scullion"
+    ],
+    [
+      "Nutritionist",
+      "Nutritionist2"
+    ],
+    [
+      "Mechanics",
+      "Mechanics2"
+    ],
+    [
+      "Brave",
+      "Brave2"
+    ],
+    [
+      "Brave2",
+      "Desensitized"
+    ],
+    [
+      "Agoraphobic",
+      "Brave2"
+    ],
+    [
+      "Brave2",
+      "Claustophobic"
+    ],
+    [
+      "Brave2",
+      "Hemophobic"
+    ],
+    [
+      "Brave2",
+      "Cowardly"
+    ],
+    [
+      "GenExp",
+      "GenExp2"
+    ],
+    [
+      "StrongBack",
+      "StrongBack2"
+    ],
+    [
+      "StrongBack2",
+      "WeakBack"
+    ],
+    [
+      "StrongBack2",
+      "Weak"
+    ],
+    [
+      "Gardener",
+      "Gardener2"
+    ],
+    [
+      "FirstAid",
+      "FirstAid2"
+    ],
+    [
+      "Strongback",
+      "WeakBack"
+    ],
+    [
+      "Strongback2",
+      "WeakBack"
+    ],
+    [
+      "Metalstrongback",
+      "WeakBack"
+    ],
+    [
+      "Metalstrongback2",
+      "WeakBack"
+    ],
+    [
+      "Herbalist",
+      "Herbalist2"
+    ],
+    [
+      "Formerscout",
+      "Formerscout2"
+    ],
+    [
+      "FastHealer",
+      "SlowHealer"
+    ],
+    [
+      "ThickSkinned",
+      "Thinskinned"
+    ],
+    [
+      "ProneToIllness",
+      "Resilient"
+    ],
+    [
+      "IronGut",
+      "WeakStomach"
+    ],
+    [
+      "HighThirst",
+      "LowThirst"
+    ],
+    [
+      "HeartyAppitite",
+      "LightEater"
+    ],
+    [
+      "HeartyAppitite",
+      "Very Underweight"
+    ],
+    [
+      "LightEater",
+      "Obese"
+    ],
+    [
+      "FastLearner",
+      "SlowLearner"
+    ],
+    [
+      "FastReader",
+      "SlowReader"
+    ],
+    [
+      "FastReader",
+      "FastReader2"
+    ],
+    [
+      "FastReader2",
+      "SlowReader"
+    ],
+    [
+      "FastReader2",
+      "Illiterate"
+    ],
+    [
+      "Illiterate",
+      "priestspirit"
+    ],
+    [
+      "Illiterate",
+      "SlowReader"
+    ],
+    [
+      "FastReader",
+      "Illiterate"
+    ],
+    [
+      "NeedsLessSleep",
+      "NeedsMoreSleep"
+    ],
+    [
+      "Conspicuous",
+      "Inconspicuous"
+    ],
+    [
+      "Conspicuous",
+      "Inconspicuous2"
+    ],
+    [
+      "Inconspicuous",
+      "Inconspicuous2"
+    ],
+    [
+      "Clumsy",
+      "Graceful"
+    ],
+    [
+      "Clumsy",
+      "Graceful2"
+    ],
+    [
+      "Graceful",
+      "Graceful2"
+    ],
+    [
+      "Graceful2",
+      "Obese"
+    ],
+    [
+      "Gymnast",
+      "Gymnast2"
+    ],
+    [
+      "Clumsy",
+      "Gymnast"
+    ],
+    [
+      "Athletic",
+      "Fit"
+    ],
+    [
+      "Athletic",
+      "Out of Shape"
+    ],
+    [
+      "Athletic",
+      "Unfit"
+    ],
+    [
+      "Fit",
+      "Out of Shape"
+    ],
+    [
+      "Fit",
+      "Unfit"
+    ],
+    [
+      "Out of Shape",
+      "Unfit"
+    ],
+    [
+      "Stout",
+      "Strong"
+    ],
+    [
+      "Feeble",
+      "Strong"
+    ],
+    [
+      "Strong",
+      "Weak"
+    ],
+    [
+      "Feeble",
+      "Stout"
+    ],
+    [
+      "Stout",
+      "Weak"
+    ],
+    [
+      "Feeble",
+      "Weak"
+    ],
+    [
+      "Underweight",
+      "Very Underweight"
+    ],
+    [
+      "Obese",
+      "Very Underweight"
+    ],
+    [
+      "Overweight",
+      "Very Underweight"
+    ],
+    [
+      "Obese",
+      "Underweight"
+    ],
+    [
+      "Overweight",
+      "Underweight"
+    ],
+    [
+      "Obese",
+      "Overweight"
+    ],
+    [
+      "Strong",
+      "Very Underweight"
+    ],
+    [
+      "Stout",
+      "Very Underweight"
+    ],
+    [
+      "Athletic",
+      "Obese"
+    ],
+    [
+      "Fit",
+      "Obese"
+    ],
+    [
+      "HardOfHearing",
+      "KeenHearing"
+    ],
+    [
+      "Deaf",
+      "HardOfHearing"
+    ],
+    [
+      "Deaf",
+      "KeenHearing"
+    ],
+    [
+      "KeenHearing",
+      "KeenHearing2"
+    ],
+    [
+      "HardOfHearing",
+      "KeenHearing2"
+    ],
+    [
+      "Deaf",
+      "KeenHearing2"
+    ],
+    [
+      "FirstAid2",
+      "Hemophobic"
+    ],
+    [
+      "BreathingTech",
+      "BreathingTech2"
+    ],
+    [
+      "Agoraphobic",
+      "Claustophobic"
+    ],
+    [
+      "AdrenalineJunkie",
+      "AdrenalineJunkie2"
+    ],
+    [
+      "AdrenalineJunkie",
+      "Desensitized"
+    ],
+    [
+      "AdrenalineJunkie2",
+      "Desensitized2"
+    ],
+    [
+      "Desensitized",
+      "Hemophobic"
+    ],
+    [
+      "Cowardly",
+      "Desensitized"
+    ],
+    [
+      "Brave",
+      "Desensitized"
+    ],
+    [
+      "Agoraphobic",
+      "Desensitized"
+    ],
+    [
+      "Claustophobic",
+      "Desensitized"
+    ],
+    [
+      "AdrenalineJunkie",
+      "Desensitized2"
+    ],
+    [
+      "Desensitized2",
+      "Hemophobic"
+    ],
+    [
+      "Cowardly",
+      "Desensitized2"
+    ],
+    [
+      "Brave",
+      "Desensitized2"
+    ],
+    [
+      "Agoraphobic",
+      "Desensitized2"
+    ],
+    [
+      "Claustophobic",
+      "Desensitized2"
+    ],
+    [
+      "Desensitized",
+      "Desensitized2"
+    ],
+    [
+      "Pacifist",
+      "Pacifist2"
+    ],
+    [
+      "Pacifist",
+      "Shooter"
+    ],
+    [
+      "Pacifist",
+      "Shooter2"
+    ],
+    [
+      "ExpShooter",
+      "Pacifist"
+    ],
+    [
+      "Pacifist",
+      "Sniper"
+    ],
+    [
+      "Brawler",
+      "Pacifist"
+    ],
+    [
+      "Pacifist2",
+      "Shooter"
+    ],
+    [
+      "Pacifist2",
+      "Shooter2"
+    ],
+    [
+      "ExpShooter",
+      "Pacifist2"
+    ],
+    [
+      "Pacifist2",
+      "Sniper"
+    ],
+    [
+      "Brawler",
+      "Pacifist2"
+    ],
+    [
+      "Cruelty",
+      "Cruelty2"
+    ],
+    [
+      "Cruelty",
+      "Pacifist"
+    ],
+    [
+      "Cruelty",
+      "Pacifist2"
+    ],
+    [
+      "Cruelty2",
+      "Pacifist"
+    ],
+    [
+      "Hunter",
+      "Pacifist"
+    ],
+    [
+      "Hunter",
+      "Pacifist2"
+    ],
+    [
+      "ExpShooter",
+      "Shooter"
+    ],
+    [
+      "Agoraphobic",
+      "Brave"
+    ],
+    [
+      "Brave",
+      "Claustophobic"
+    ],
+    [
+      "Brave",
+      "Cowardly"
+    ],
+    [
+      "Athletic",
+      "Slack"
+    ],
+    [
+      "Slack",
+      "Strong"
+    ],
+    [
+      "Slack",
+      "Taut"
+    ],
+    [
+      "Taut",
+      "Unfit"
+    ],
+    [
+      "Taut",
+      "Weak"
+    ],
+    [
+      "AccMetabolism",
+      "LightEater"
+    ],
+    [
+      "AccMetabolism",
+      "FragileHealth"
+    ],
+    [
+      "AccMetabolism",
+      "Ectomorph"
+    ],
+    [
+      "AccMetabolism",
+      "Endomorph"
+    ],
+    [
+      "FragileHealth",
+      "Strong"
+    ],
+    [
+      "Athletic",
+      "FragileHealth"
+    ],
+    [
+      "FragileHealth",
+      "StrongBack"
+    ],
+    [
+      "FragileHealth",
+      "StrongBack2"
+    ],
+    [
+      "Ectomorph",
+      "Endomorph"
+    ],
+    [
+      "Endomorph",
+      "Underweight"
+    ],
+    [
+      "Endomorph",
+      "Very Underweight"
+    ],
+    [
+      "Athletic",
+      "Endomorph"
+    ],
+    [
+      "Ectomorph",
+      "Overweight"
+    ],
+    [
+      "Ectomorph",
+      "Obese"
+    ],
+    [
+      "Ectomorph",
+      "Strong"
+    ],
+    [
+      "MarathonRunner",
+      "Unfit"
+    ],
+    [
+      "MarathonRunner",
+      "Obese"
+    ],
+    [
+      "Asthmatic",
+      "MarathonRunner"
+    ],
+    [
+      "Relentless",
+      "Weak"
+    ],
+    [
+      "Obese",
+      "Relentless"
+    ],
+    [
+      "Relentless",
+      "Unfit"
+    ],
+    [
+      "Relentless",
+      "Very Underweight"
+    ],
+    [
+      "Asthmatic",
+      "Relentless"
+    ],
+    [
+      "Conspicuous",
+      "NinjaWay"
+    ],
+    [
+      "Clumsy",
+      "NinjaWay"
+    ],
+    [
+      "NinjaWay",
+      "Obese"
+    ],
+    [
+      "NinjaWay",
+      "Unfit"
+    ],
+    [
+      "Asthmatic",
+      "NinjaWay"
+    ],
+    [
+      "Conspicuous",
+      "Sneaky"
+    ],
+    [
+      "Clumsy",
+      "Lightfooted"
+    ],
+    [
+      "LarkPerson",
+      "OwlPerson"
+    ],
+    [
+      "MarathonRunner",
+      "SoreLegs"
+    ],
+    [
+      "Hiker",
+      "SoreLegs"
+    ],
+    [
+      "Jogger",
+      "SoreLegs"
+    ],
+    [
+      "Gymnast",
+      "SoreLegs"
+    ],
+    [
+      "Gymnast2",
+      "SoreLegs"
+    ],
+    [
+      "StrongBack",
+      "WeakBack"
+    ],
+    [
+      "Strong",
+      "WeakBack"
+    ],
+    [
+      "StrongBack",
+      "Weak"
+    ],
+    [
+      "LiquidBlood",
+      "ThickBlood"
+    ],
+    [
+      "Allergic",
+      "Resilient"
+    ],
+    [
+      "Depressive",
+      "Optimist"
+    ],
+    [
+      "ShortSighted",
+      "Sniper"
+    ],
+    [
+      "Shooter",
+      "Shooter2"
+    ],
+    [
+      "HighSweaty",
+      "LessSweaty"
+    ],
+    [
+      "Outdoorsman",
+      "Outdoorsman2"
+    ],
+    [
+      "Agoraphobic",
+      "Hiker"
+    ],
+    [
+      "Alcoholic",
+      "SOAlcoholic"
+    ]
+  ],
+  "lang": {
+    "UI_prof_animalcontrolofficer": "Animal Control Officer",
+    "UI_prof_botanist": "Botanist",
+    "UI_prof_butcherocc": "Butcher",
+    "UI_prof_campcouns": "Camp Counselor",
+    "UI_prof_cashierocc": "Store Employee",
+    "UI_prof_cleanerman": "Janitor",
+    "UI_prof_criminalocc": "Criminal",
+    "UI_prof_dancerocc": "Dancer",
+    "UI_prof_deliveryman": "Deliveryman",
+    "UI_prof_demoworker": "Demolition Worker",
+    "UI_prof_detective": "Detective",
+    "UI_prof_dragracerocc": "Drag Racer",
+    "UI_prof_gasstationoperator": "Gas Station Operator",
+    "UI_prof_graveman": "Grave Digger",
+    "UI_prof_heavyathinstructor": "Weightlifting Instructor",
+    "UI_prof_junkyardworker": "Junkyard Worker",
+    "UI_prof_lifeguard": "Lifeguard",
+    "UI_prof_loader": "Loader",
+    "UI_prof_minerocc": "Miner",
+    "UI_prof_paparazziocc": "Paparazzi",
+    "UI_prof_priestocc": "Priest",
+    "UI_prof_soldier": "Soldier",
+    "UI_prof_stuntman": "Stuntman",
+    "UI_prof_tailor": "Tailor",
+    "UI_prof_teacherocc": "School Teacher",
+    "UI_prof_trucker": "Truck Driver",
+    "UI_profdesc_animalcontrolofficer": "Knows all trap recipes.\nCan find items more often in Search Mode.",
+    "UI_profdesc_botanist": "Proficient in Herbalism.\nCan find items much more often in Search Mode.",
+    "UI_profdesc_campcouns": "Knows how to make and fix a fishing rod, how to get the wire back.\nCan find items much more often in Search Mode.",
+    "UI_profdesc_chef": "Knows how to make dough for cake, pie, bread and pizza.\nCan find items more often in Search Mode.",
+    "UI_profdesc_cleanerman": "Can find items more often in Search Mode.",
+    "UI_profdesc_detective": "Can find items much more often in Search Mode.",
+    "UI_profdesc_dragracerocc": "Prefers to drive at high speeds.",
+    "UI_profdesc_electrician": "Can operate generators.\nKnows how to make remote controllers, remote triggers, timers and makeshift radios.",
+    "UI_profdesc_engineer": "Can make trap and explosives.\nKnows how to make different bombs and noise generators.",
+    "UI_profdesc_farmer": "Knows how to make sprays to cure plant diseases.\nCan find items more often in Search Mode.",
+    "UI_profdesc_fisherman": "Knows how to make and fix a fishing rod, how to get the wire back, and how to make a fishing net.\nCan find items more often in Search Mode.",
+    "UI_profdesc_graveman": "Can find items more often in Search Mode.",
+    "UI_profdesc_junkyardworker": "Knows some metalworking recipes.\nCan find items much more often in Search Mode.",
+    "UI_profdesc_lumberjack": "Allows slightly faster movement through forests and woodland.\nCan find items more often in Search Mode.",
+    "UI_profdesc_metalworker": "Can weld foraged metals to create items and barricades.\nKnows all metalworking recipes.",
+    "UI_profdesc_parkranger": "Allows much faster movement through forests and woodland.\nKnows all trap recipes.\nCan find items much more often in Search Mode.",
+    "UI_profdesc_soldier": "Can find items more often in Search Mode.",
+    "UI_profdesc_stuntman": "Feels comfortable in extreme situations.",
+    "UI_profdesc_unemployed": "10 free trait points.",
+    "UI_profdesc_veteran": "Can find items more often in Search Mode.",
+    "UI_trait_AllThumbsDesc2": "Transfers inventory items slowly.\n(+100% inventory transferring time.)",
+    "UI_trait_BarFighterDesc2": "Used to getting in trouble.\nSuccessful attacks in melee have a chance to reduce unhappiness.",
+    "UI_trait_DexterousDesc2": "Transfers inventory items quickly.\n(-50% inventory transferring time.)",
+    "UI_trait_FirstAid2Desc": "Has skills in First Aid.",
+    "UI_trait_Gardener2Desc": "Has skills in Farming.",
+    "UI_trait_Gymnast2desc": "Has skills in Nimble and Lightfooted.",
+    "UI_trait_Hemophobic2Desc": "Panic when performing first aid on self and butchering animals.\t\nCannot perform first aid on others.\nGets stressed and unhappy when covered in blood.",
+    "UI_trait_Mechanics2Desc": "Knows how to service and repair all types of vehicles.",
+    "UI_trait_MechanicsDesc": "Knows how to service and repair standard and heavy vehicles.",
+    "UI_trait_SOHikerDesc": "Experienced in hiking long distances.\n(Reduced accumulation of hunger, thirst and fatigue if walking for a while without stopping.\nKnows how to make Snare Trap, a Stick Trap and Wooden Cage Trap.)",
+    "UI_trait_SOSmokerDesc": "Has a tobacco addiction.\nSlightly increased endurance loss while running or fighting.\nMay cough when exhausted.\nTobacco smoking reduces stress, unhappiness and hunger.\nAbstaining from smoking increases stress, unhappiness and hunger.\n(Can get rid of this bad habit if do not smoke tobacco for a month.)",
+    "UI_trait_Scout2Desc": "Has skills in First Aid and Foraging.",
+    "UI_trait_accmetabolism": "Accelerated Metabolism",
+    "UI_trait_accmetabolismdesc": "Trains Strength and Fitness faster if not hungry.\nProne to maintain ideal weight.\n(+30% Strength and Fitness XP if hunger level not higher than Peckish,\n-30% calorie burn if weight is less than 78,\n+30% calorie burn if weight is over than 82.)",
+    "UI_trait_allergic": "Allergic",
+    "UI_trait_allergicdesc": "Sneezes involuntary from time to time.\n(May attract zombies.\nSneeze can be muffled with Tissue or Toilet paper.)",
+    "UI_trait_automechanic": "Auto Mechanic",
+    "UI_trait_bladetools": "Blade Tools",
+    "UI_trait_bladetoolsdesc": "More effective with blade weapons.\n(Using Short Blades gains 15% additional XP for Long Blades and vice versa.)",
+    "UI_trait_breathingtech": "Breathing Technique",
+    "UI_trait_breathingtechdesc": "Increased endurance recovery while not moving.\n(More effective if sitting on the ground.)",
+    "UI_trait_carpenter": "Carpenter",
+    "UI_trait_commdriver": "Commercial Driver",
+    "UI_trait_commdriverdesc": "Reduced fatigue gain when driving a moving vehicle.\nAble to repair heavy vehicles.",
+    "UI_trait_cruelty": "Cruel",
+    "UI_trait_crueltydesc": "More effective with weapons.\n(+25% XP for all weapon skills, Maintenance skill and Aiming skill.)",
+    "UI_trait_crusher": "Crusher",
+    "UI_trait_cutter": "Cutter",
+    "UI_trait_demostronggrip": "Strong Grip",
+    "UI_trait_demostronggripdesc": "Can use Sledgehammer more effectively in combat.\n(Sledgehammer swings faster and cost less endurance.)",
+    "UI_trait_depressivemood": "Depressive",
+    "UI_trait_depressivemooddesc": "Often sad. May become depressed for no reason.\nBad mood can affect productivity.\n(Unhappiness builds up over time.\nSudden depression may occur once every few days.\nReduces XP gain in all skills depending on\nUnhappiness moodle, up to -10%.)",
+    "UI_trait_durab": "Durability",
+    "UI_trait_ectomorph": "Ectomorph",
+    "UI_trait_ectomorphdesc": "Trains Fitness faster, but trains Strength slower.\nProne to lose weight.\n(+30% Fitness XP, -30% Strength XP,\n+30% calorie burn if weight is over than 70.)",
+    "UI_trait_electrictech": "Electrical-technician",
+    "UI_trait_endomorph": "Endomorph",
+    "UI_trait_endomorphdesc": "Trains Strength faster, but trains Fitness slower.\nProne to gain weight.\n(+30% Strength XP, -30% Fitness XP,\n-30% calorie burn if weight is less than 90.)",
+    "UI_trait_enjoytheride": "Ride with the Wind",
+    "UI_trait_enjoytheridedesc": "Driving at high speed reduces Stress and Unhappiness.\nAble to repair sport vehicles.\n(Vehicle speed must be over 60 MPH.)",
+    "UI_trait_entomologist": "Entomologist",
+    "UI_trait_entomologistdesc": "Increased chance to find insects in Search mode.",
+    "UI_trait_expshooter": "Sharpshooter",
+    "UI_trait_fearofthedark": "Nyctophobic",
+    "UI_trait_fearofthedarkdesc": "Fear of the dark. Gets panicked without light sources.\nBeing in the dark for a long time also increases stress.",
+    "UI_trait_forager": "Forager",
+    "UI_trait_fragilehealth": "Fragile",
+    "UI_trait_fragilehealthdesc": "Trains Strength and Fitness slower.\nCarrying too much may cause health problems.\n(-30% Strength and Fitness XP,\nHeavy Load moodle gradually reduces health to 50%.)",
+    "UI_trait_gasmanagement": "Experienced Refueler",
+    "UI_trait_gasmanagementdesc": "Transfers inventory items, refuels vehicles and drains gasoline faster.\n(-25% inventory transferring time, refueling vehicles and draining gasoline.\nUp to -60% inventory transferring time with \\\"Dextrous\\\" trait.)",
+    "UI_trait_genexp": "Generator Expert",
+    "UI_trait_genexpdesc": "Knows how to operate and repair generators.\n(Repairing a generator increases its condition by an additional 5%.)",
+    "UI_trait_highsweaty": "Excessive Sweating",
+    "UI_trait_highsweatydesc": "Increases wetness generated.\n(Sweating increases during combat, running or doing fitness.)",
+    "UI_trait_improvisedcleaning": "Improvised Cleaning",
+    "UI_trait_improvisedcleaningdesc": "Can make improvised cleaning supplies.\n(Knows how to make Bleach and Cleaning Liquid.)",
+    "UI_trait_larkperson": "Lark",
+    "UI_trait_larkpersondesc": "Prefers to be awake in the morning.\n(Fatigue accumulates more slowly in the morning (05:00 a.m. - 10:00 a.m.),\nbut faster in the evening (05:00 p.m. - 10:00 p.m.)).",
+    "UI_trait_lesssweaty": "Low Sweating",
+    "UI_trait_lesssweatydesc": "Reduces wetness generated.\n(May be less effective while under rain.)",
+    "UI_trait_lifelonglearner": "Lifelong Learner",
+    "UI_trait_lifelonglearnerdesc": "Does not get bored while reading educational literature.",
+    "UI_trait_lightfooted": "Light-footed",
+    "UI_trait_liquidblood": "Thin-blooded",
+    "UI_trait_liquidblooddesc": "Wounds bleed more.\n(+100% damage from bleeding.)",
+    "UI_trait_marathonrunner": "Marathon Runner",
+    "UI_trait_marathonrunnerdesc": "Increased endurance recovery while running or sprinting.\n(Does not affect running while sneaking.)",
+    "UI_trait_mesomorph": "Mesomorph",
+    "UI_trait_mesomorphdesc": "Average body type with no pros or cons.",
+    "UI_trait_metalwelder": "Metalwelder",
+    "UI_trait_minersendurance": "Miner's Endurance",
+    "UI_trait_minersendurancedesc": "Can use Pickaxe more effectively in combat.\n(Pickaxe swings faster and cost less endurance.)",
+    "UI_trait_mushroompicker": "Mushroom Picker",
+    "UI_trait_mushroompickerdesc": "Increased chance to find mushrooms in Search mode.",
+    "UI_trait_nimble": "Agile",
+    "UI_trait_ninjaway": "Between the Shadows",
+    "UI_trait_ninjawaydesc": "Increased endurance recovery while sneaking.\n(More effective if running or not moving while sneaking.)",
+    "UI_trait_optimistmood": "Optimist",
+    "UI_trait_optimistmooddesc": "Less bored. May not be depressed for a long time.\n(-50% passive boredom generation.\nUnhappiness can't get higher than 50% for 48 hours.)",
+    "UI_trait_owlperson": "Owl",
+    "UI_trait_owlpersondesc": "Prefers to stay awake in the evenings.\n(Fatigue accumulates more slowly in the evening (05:00 p.m. - 10:00 p.m.),\nbut faster in the morning (05:00 a.m. - 10:00 a.m.)).",
+    "UI_trait_panicattacks": "Panic Attacks",
+    "UI_trait_panicattacksdesc": "Suffering from sudden panic attacks.\nAny panic passes more slowly.\n(May wake up from a panic attack.\nPanic attacks become less frequent with survived time.)",
+    "UI_trait_priestspirit": "Priestly Spirituality",
+    "UI_trait_priestspiritdesc": "Can write prayers to improve mental state.\n(Prayers slightly reduce stress, boredom and unhappiness.)",
+    "UI_trait_pronetoillness2desc": "More prone to disease. May accidentally catch a cold.\nFaster rate of zombification.\n(+25% zombification speed, +70% chance of catching a cold,\n+20% cold strength, +50% cold progression speed,\nhas a negligible chance of catching a cold while outside.)",
+    "UI_trait_relentless": "Relentless",
+    "UI_trait_relentlessdesc": "Can recover endurance when swinging a weapon.\n(Has a chance to restore half of the weapon's base swing cost.)",
+    "UI_trait_scullion": "Scullion",
+    "UI_trait_sensitivedigestion": "Sensitive Digestion",
+    "UI_trait_sensitivedigestiondesc": "Experiencing pain in the stomach and nausea when overeating.\n(The larger the portion, the stronger the pain and nausea can be.)",
+    "UI_trait_shooter": "Shooter",
+    "UI_trait_shooter2desc": "Has skills in Aiming and Reloading.",
+    "UI_trait_slack": "Slack",
+    "UI_trait_sneaky": "Sneaky",
+    "UI_trait_sniper": "Sniper",
+    "UI_trait_snorer": "Snorer",
+    "UI_trait_snorerdesc": "Snoring loudly while sleeping.\n(May attract zombies while sleeping.)",
+    "UI_trait_soalcoholic": "Alcoholic",
+    "UI_trait_soalcoholicdesc": "Has an alcohol addiction.\nDrinking alcohol does not cause fatigue.\nAbstinence from alcohol increases stress, unhappiness and thirst.\nProlonged abstinence increases fatigue, headache and nausea.\n(Can get rid of this bad habit if do not drink alcohol for a month and a half.)",
+    "UI_trait_sorelegs": "Sore Legs",
+    "UI_trait_sorelegsdesc": "Experiencing pain in the legs when walking, running, sprinting, doing fitness and stomping.\nWhile sprinting, the pain and endurance consumption is much higher.\n(Sprinting level reducing pain while running and sprinting.\nLightfooted level reducing walking and stomping pain.)",
+    "UI_trait_spearman": "Lancer",
+    "UI_trait_stabber": "Stabber",
+    "UI_trait_strongback": "Strong Back",
+    "UI_trait_strongbackdesc": "Increased carry weight.\n(Plus 1-2 carry weight depending on Strength level.)",
+    "UI_trait_swordsman": "Swordsman",
+    "UI_trait_taut": "Taut",
+    "UI_trait_thickblood": "Thick-blooded",
+    "UI_trait_thickblooddesc": "Wounds bleed less.\n(-50% damage from bleeding.)",
+    "UI_trait_trapper": "Trapper",
+    "UI_trait_trapperdesc": "(Knows how to make Stick Trap and Wooden Cage Trap.)",
+    "UI_trait_usedtocorpses": "Accustomed to the Dead",
+    "UI_trait_usedtocorpsesdesc": "Decaying corpses do not cause nausea.\n(If do not have nausea at the moment. Does not affect zombification sickness.)",
+    "UI_trait_weakback": "Weak Back",
+    "UI_trait_weakbackdesc": "Reduced carry weight.\n(Minus 1-3 carry weight depending on Strength level.)",
+    "UI_trait_weathersensitive": "Weather Sensitive",
+    "UI_trait_weathersensitivedesc": "May experience headaches when the weather changes and when it rains/snows.",
+    "UI_trait_woodaxemybeloved": "Wood Axe My Beloved",
+    "UI_trait_woodaxemybeloveddesc": "Gain additional Axe experience when chopping trees.\nCan use Wood Axe more effectively in combat.\n(Wood Axe swings faster and cost less endurance.)"
+  }
+}

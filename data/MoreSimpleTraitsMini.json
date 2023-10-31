@@ -1,0 +1,196 @@
+{
+  "id": "MoreSimpleTraitsMini",
+  "name": "More Simple Traits - Mini (PICK ONLY ONE)",
+  "author": "hea",
+  "incompatible": [
+    "MoreSimpleTraits",
+    "MoreSimpleTraitsVanilla",
+    "SimpleOverhaulTraitsAndOccupations"
+  ],
+  "workshop_id": 2792245343,
+  "traits": {
+    "Sneaky": {
+      "name_key": "UI_trait_sneaky",
+      "description_key": "UI_trait_sneakydesc",
+      "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Sneaking": 1
+      }
+    },
+    "Lightfooted": {
+      "name_key": "UI_trait_lightfooted",
+      "description_key": "UI_trait_lightfooteddesc",
+      "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Lightfooted": 1
+      }
+    },
+    "Nimble": {
+      "name_key": "UI_trait_nimble",
+      "description_key": "UI_trait_nimbledesc",
+      "icon_path": "#/data/images/traits/soto_mst/agile.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Nimble": 1
+      }
+    },
+    "AMForager": {
+      "name_key": "UI_trait_amforager",
+      "description_key": "UI_trait_amforagerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/forager.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Foraging": 1
+      }
+    },
+    "AMTrapper": {
+      "name_key": "UI_trait_amtrapper",
+      "description_key": "UI_trait_amtrapperdesc",
+      "icon_path": "#/data/images/traits/soto_mst/trapper.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Trapping": 1
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Cage Trap",
+        "Make Trap Box",
+        "Make Cage Trap"
+      ]
+    },
+    "AMCook": {
+      "name_key": "UI_trait_amcook",
+      "description_key": "UI_trait_amcookdesc",
+      "icon_path": "#/data/images/traits/soto_mst/scullion.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Cooking": 1
+      }
+    },
+    "AMElectrician": {
+      "name_key": "UI_trait_amelectrician",
+      "description_key": "UI_trait_amelectriciandesc",
+      "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Electrical": 1
+      }
+    },
+    "AMMechanic": {
+      "name_key": "UI_trait_ammechanic",
+      "description_key": "UI_trait_ammechanicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Mechanics": 1
+      }
+    },
+    "AMCarpenter": {
+      "name_key": "UI_trait_amcarpenter",
+      "description_key": "UI_trait_amcarpenterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Carpentry": 1
+      }
+    },
+    "AMMetalworker": {
+      "name_key": "UI_trait_ammetalworker",
+      "description_key": "UI_trait_ammetalworkerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Metalworking": 1
+      }
+    },
+    "Durabile": {
+      "name_key": "UI_trait_durabile",
+      "description_key": "UI_trait_durabiledesc",
+      "icon_path": "#/data/images/traits/soto_mst/durability.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Maintenance": 1
+      }
+    },
+    "Shortbladefan": {
+      "name_key": "UI_trait_shortbladefan",
+      "description_key": "UI_trait_shortbladefandesc",
+      "icon_path": "#/data/images/traits/soto_mst/stabber.png",
+      "cost": 2,
+      "xp_boosts": {
+        "ShortBlade": 1
+      }
+    },
+    "Shortbluntfan": {
+      "name_key": "UI_trait_shortbluntfan",
+      "description_key": "UI_trait_shortbluntfandesc",
+      "icon_path": "#/data/images/traits/soto_mst/crusher.png",
+      "cost": 3,
+      "xp_boosts": {
+        "ShortBlunt": 1
+      }
+    },
+    "Cutter": {
+      "name_key": "UI_trait_cutter",
+      "description_key": "UI_trait_cutterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/cutter.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Axe": 1
+      }
+    },
+    "Spearman": {
+      "name_key": "UI_trait_spearman",
+      "description_key": "UI_trait_spearmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/lancer.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Spear": 1
+      }
+    },
+    "Swordsman": {
+      "name_key": "UI_trait_swordsman",
+      "description_key": "UI_trait_swordsmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
+      "cost": 4,
+      "xp_boosts": {
+        "LongBlade": 1
+      }
+    },
+    "Gunfan": {
+      "name_key": "UI_trait_gunfan",
+      "description_key": "UI_trait_gunfandesc",
+      "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Aiming": 1,
+        "Reloading": 1
+      }
+    }
+  },
+  "professions": {},
+  "mutual_exclusives": [],
+  "lang": {
+    "UI_trait_amcarpenter": "Carpenter",
+    "UI_trait_amcook": "Scullion",
+    "UI_trait_amelectrician": "Electrical-technician",
+    "UI_trait_amforager": "Forager",
+    "UI_trait_ammechanic": "Auto Mechanic",
+    "UI_trait_ammetalworker": "Metalwelder",
+    "UI_trait_amtrapper": "Trapper",
+    "UI_trait_amtrapperdesc": "(Knows some recipes for traps.)",
+    "UI_trait_cutter": "Cutter",
+    "UI_trait_durabile": "Durability",
+    "UI_trait_gunfan": "Shooter",
+    "UI_trait_lightfooted": "Lightfooted",
+    "UI_trait_nimble": "Nimble",
+    "UI_trait_shortbladefan": "Piercer",
+    "UI_trait_shortbluntfan": "Crusher",
+    "UI_trait_sneaky": "Sneaky",
+    "UI_trait_spearman": "Lancer",
+    "UI_trait_swordsman": "Swordsman"
+  }
+}

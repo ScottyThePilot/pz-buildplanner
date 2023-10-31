@@ -1,0 +1,632 @@
+{
+  "id": "MoreSimpleTraitsVanilla",
+  "name": "More Simple Traits - Vanilla (PICK ONLY ONE)",
+  "author": "hea",
+  "incompatible": [
+    "MoreSimpleTraits",
+    "MoreSimpleTraitsMini",
+    "SimpleOverhaulTraitsAndOccupations"
+  ],
+  "workshop_id": 2792245343,
+  "traits": {
+    "Sneaky": {
+      "name_key": "UI_trait_sneaky",
+      "description_key": "UI_trait_sneakydesc",
+      "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Sneaking": 1
+      }
+    },
+    "Lightfooted": {
+      "name_key": "UI_trait_lightfooted",
+      "description_key": "UI_trait_lightfooteddesc",
+      "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Lightfooted": 1
+      }
+    },
+    "Nimble": {
+      "name_key": "UI_trait_nimble",
+      "description_key": "UI_trait_nimbledesc",
+      "icon_path": "#/data/images/traits/soto_mst/agile.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Nimble": 1
+      }
+    },
+    "MarathonRunner": {
+      "name_key": "UI_trait_marathonrunner",
+      "description_key": "UI_trait_marathonrunnerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/marathon_runner.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Sprinting": 1
+      }
+    },
+    "StrongNimble": {
+      "name_key": "UI_trait_strongnimble",
+      "description_key": "UI_trait_strongnimbledesc",
+      "icon_path": "#/data/images/traits/soto_mst/relentless.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Nimble": 1,
+        "Strength": 1
+      }
+    },
+    "Taut": {
+      "name_key": "UI_trait_taut",
+      "description_key": "UI_trait_tautdesc",
+      "icon_path": "#/data/images/traits/soto_mst/taut.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Fitness": 1,
+        "Strength": 1
+      }
+    },
+    "NinjaWay": {
+      "name_key": "UI_trait_ninjaway",
+      "description_key": "UI_trait_ninjawaydesc",
+      "icon_path": "#/data/images/traits/soto_mst/between_the_shadows.png",
+      "cost": 5,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Sneaking": 1
+      }
+    },
+    "AMForager": {
+      "name_key": "UI_trait_amforager",
+      "description_key": "UI_trait_amforagerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/forager.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Foraging": 1
+      }
+    },
+    "AMTrapper": {
+      "name_key": "UI_trait_amtrapper",
+      "description_key": "UI_trait_amtrapperdesc",
+      "icon_path": "#/data/images/traits/soto_mst/trapper.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Trapping": 1
+      },
+      "free_recipes": [
+        "Make Stick Trap",
+        "Make Snare Trap",
+        "Make Wooden Box Trap",
+        "Make Trap Box",
+        "Make Cage Trap"
+      ]
+    },
+    "Mushroomer": {
+      "name_key": "UI_trait_mushroomer",
+      "description_key": "UI_trait_mushroomerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/mushroom_picker.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Foraging": 1
+      },
+      "free_recipes": [
+        "Herbalist"
+      ]
+    },
+    "AMCook": {
+      "name_key": "UI_trait_amcook",
+      "description_key": "UI_trait_amcookdesc",
+      "icon_path": "#/data/images/traits/soto_mst/scullion.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Cooking": 1
+      }
+    },
+    "AMElectrician": {
+      "name_key": "UI_trait_amelectrician",
+      "description_key": "UI_trait_amelectriciandesc",
+      "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Electrical": 1
+      }
+    },
+    "AMMechanic": {
+      "name_key": "UI_trait_ammechanic",
+      "description_key": "UI_trait_ammechanicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Mechanics": 1
+      }
+    },
+    "AMCarpenter": {
+      "name_key": "UI_trait_amcarpenter",
+      "description_key": "UI_trait_amcarpenterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Carpentry": 1
+      }
+    },
+    "AMMetalworker": {
+      "name_key": "UI_trait_ammetalworker",
+      "description_key": "UI_trait_ammetalworkerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Metalworking": 1
+      }
+    },
+    "Durabile": {
+      "name_key": "UI_trait_durabile",
+      "description_key": "UI_trait_durabiledesc",
+      "icon_path": "#/data/images/traits/soto_mst/durability.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Maintenance": 1
+      }
+    },
+    "Shortbladefan": {
+      "name_key": "UI_trait_shortbladefan",
+      "description_key": "UI_trait_shortbladefandesc",
+      "icon_path": "#/data/images/traits/soto_mst/stabber.png",
+      "cost": 2,
+      "xp_boosts": {
+        "ShortBlade": 1
+      }
+    },
+    "Shortbluntfan": {
+      "name_key": "UI_trait_shortbluntfan",
+      "description_key": "UI_trait_shortbluntfandesc",
+      "icon_path": "#/data/images/traits/soto_mst/crusher.png",
+      "cost": 3,
+      "xp_boosts": {
+        "ShortBlunt": 1
+      }
+    },
+    "Cutter": {
+      "name_key": "UI_trait_cutter",
+      "description_key": "UI_trait_cutterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/cutter.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Axe": 1
+      }
+    },
+    "Spearman": {
+      "name_key": "UI_trait_spearman",
+      "description_key": "UI_trait_spearmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/lancer.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Spear": 1
+      }
+    },
+    "Swordsman": {
+      "name_key": "UI_trait_swordsman",
+      "description_key": "UI_trait_swordsmandesc",
+      "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
+      "cost": 4,
+      "xp_boosts": {
+        "LongBlade": 1
+      }
+    },
+    "Cruelty": {
+      "name_key": "UI_trait_cruelty",
+      "description_key": "UI_trait_crueltydesc",
+      "icon_path": "#/data/images/traits/soto_mst/cruel.png",
+      "cost": 4
+    },
+    "Gunfan": {
+      "name_key": "UI_trait_gunfan",
+      "description_key": "UI_trait_gunfandesc",
+      "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Aiming": 1,
+        "Reloading": 1
+      }
+    },
+    "Gunfan2": {
+      "name_key": "UI_trait_gunfan2",
+      "description_key": "UI_trait_gunfan2desc",
+      "icon_path": "#/data/images/traits/soto_mst/sharpshooter.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Aiming": 2,
+        "Reloading": 2
+      }
+    },
+    "Sharpshooter": {
+      "name_key": "UI_trait_sharpshooter",
+      "description_key": "UI_trait_sharpshooterdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sniper.png",
+      "cost": 0,
+      "is_profession_trait": true,
+      "xp_boosts": {
+        "Aiming": 2
+      }
+    },
+    "OwlPerson": {
+      "name_key": "UI_trait_owlperson",
+      "description_key": "UI_trait_owlpersondesc",
+      "icon_path": "#/data/images/traits/soto_mst/owl.png",
+      "cost": -1,
+      "is_sleep_trait": true
+    },
+    "LarkPerson": {
+      "name_key": "UI_trait_larkperson",
+      "description_key": "UI_trait_larkpersondesc",
+      "icon_path": "#/data/images/traits/soto_mst/lark.png",
+      "cost": -1,
+      "is_sleep_trait": true
+    },
+    "Slack": {
+      "name_key": "UI_trait_slack",
+      "description_key": "UI_trait_slackdesc",
+      "icon_path": "#/data/images/traits/soto_mst/slack.png",
+      "cost": -6,
+      "xp_boosts": {
+        "Fitness": -1,
+        "Strength": -1
+      }
+    },
+    "WeatherSensitive": {
+      "name_key": "UI_trait_weathersensitive",
+      "description_key": "UI_trait_weathersensitivedesc",
+      "icon_path": "#/data/images/traits/soto_mst/weather_sensitive.png",
+      "cost": -2,
+      "is_disabled_in_mp": true
+    },
+    "SoreLegsTrait": {
+      "name_key": "UI_trait_sorelegstrait",
+      "description_key": "UI_trait_sorelegstraitdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sore_legs.png",
+      "cost": -8
+    },
+    "SensitiveStomach": {
+      "name_key": "UI_trait_sensitivestomach",
+      "description_key": "UI_trait_sensitivestomachdesc",
+      "icon_path": "#/data/images/traits/soto_mst/sensitive_digestion.png",
+      "cost": -2
+    },
+    "PanicAttacks": {
+      "name_key": "UI_trait_panicattacks",
+      "description_key": "UI_trait_panicattacksdesc",
+      "icon_path": "#/data/images/traits/soto_mst/panic_attacks.png",
+      "cost": -4
+    },
+    "MSTAllergic": {
+      "name_key": "UI_trait_MSTAllergic",
+      "description_key": "UI_trait_MSTAllergicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/allergic.png",
+      "cost": -3
+    },
+    "FearoftheDark": {
+      "name_key": "UI_trait_fearofthedark",
+      "description_key": "UI_trait_fearofthedarkdesc",
+      "icon_path": "#/data/images/traits/soto_mst/nyctophobic.png",
+      "cost": -1
+    },
+    "Snorer": {
+      "name_key": "UI_trait_snorer",
+      "description_key": "UI_trait_snorerdesc",
+      "icon_path": "#/data/images/traits/soto_mst/snorer.png",
+      "cost": -2,
+      "is_sleep_trait": true
+    },
+    "LessSweaty": {
+      "name_key": "UI_trait_lesssweaty",
+      "description_key": "UI_trait_lesssweatydesc",
+      "icon_path": "#/data/images/traits/soto_mst/low_sweating.png",
+      "cost": 2
+    },
+    "HighSweaty": {
+      "name_key": "UI_trait_highsweaty",
+      "description_key": "UI_trait_highsweatydesc",
+      "icon_path": "#/data/images/traits/soto_mst/high_sweating.png",
+      "cost": -3
+    },
+    "CanGrabMore": {
+      "name_key": "UI_trait_cangrabmore",
+      "description_key": "UI_trait_cangrabmoredesc",
+      "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
+      "cost": 2,
+      "condition": {
+        "mod_is_absent": "ToadTraits"
+      }
+    },
+    "CanGrabLess": {
+      "name_key": "UI_trait_cangrabless",
+      "description_key": "UI_trait_cangrablessdesc",
+      "icon_path": "#/data/images/traits/soto_mst/weak_back.png",
+      "cost": -2,
+      "condition": {
+        "mod_is_absent": "ToadTraits"
+      }
+    },
+    "HeavilyBleedingWounds": {
+      "name_key": "UI_trait_hbwounds",
+      "description_key": "UI_trait_hbwoundsdesc",
+      "icon_path": "#/data/images/traits/soto_mst/thin_blooded1.png",
+      "cost": -4,
+      "condition": {
+        "mod_is_absent": "ToadTraits"
+      }
+    },
+    "WeaklyBleedingWounds": {
+      "name_key": "UI_trait_wbwounds",
+      "description_key": "UI_trait_wbwoundsdesc",
+      "icon_path": "#/data/images/traits/soto_mst/thick_blooded1.png",
+      "cost": 3,
+      "condition": {
+        "mod_is_absent": "ToadTraits"
+      }
+    },
+    "AccMetabolism": {
+      "name_key": "UI_trait_accmetabolism",
+      "description_key": "UI_trait_accmetabolismdesc",
+      "icon_path": "#/data/images/traits/soto_mst/accelerated_metabolism.png",
+      "cost": 2,
+      "condition": {
+        "mod_is_absent": "ToadTraits"
+      }
+    },
+    "MSTAlcoholic": {
+      "name_key": "UI_trait_MSTAlcoholic",
+      "description_key": "UI_trait_MSTAlcoholicdesc",
+      "icon_path": "#/data/images/traits/soto_mst/alcoholic.png",
+      "cost": -8
+    },
+    "MSTOptimist": {
+      "name_key": "UI_trait_optimistmood",
+      "description_key": "UI_trait_optimistmooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/optimist.png",
+      "cost": 2
+    },
+    "MSTDepressive": {
+      "name_key": "UI_trait_depressivemood",
+      "description_key": "UI_trait_depressivemooddesc",
+      "icon_path": "#/data/images/traits/soto_mst/depressive.png",
+      "cost": -4
+    },
+    "GenExp": {
+      "name_key": "UI_trait_genexp",
+      "description_key": "UI_trait_genexpdesc",
+      "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
+      "cost": 2,
+      "free_recipes": [
+        "Generator"
+      ]
+    },
+    "GenExp2": {
+      "name_key": "UI_trait_genexp",
+      "description_key": "UI_trait_genexpdesc",
+      "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
+      "cost": 0,
+      "is_profession_trait": true
+    }
+  },
+  "professions": {},
+  "mutual_exclusives": [
+    [
+      "Herbalist",
+      "Mushroomer"
+    ],
+    [
+      "MarathonRunner",
+      "Slack"
+    ],
+    [
+      "Slack",
+      "StrongNimble"
+    ],
+    [
+      "Athletic",
+      "Slack"
+    ],
+    [
+      "Slack",
+      "Strong"
+    ],
+    [
+      "Slack",
+      "Taut"
+    ],
+    [
+      "Slack",
+      "Unfit"
+    ],
+    [
+      "Slack",
+      "Weak"
+    ],
+    [
+      "Taut",
+      "Unfit"
+    ],
+    [
+      "Taut",
+      "Weak"
+    ],
+    [
+      "MarathonRunner",
+      "Unfit"
+    ],
+    [
+      "MarathonRunner",
+      "Obese"
+    ],
+    [
+      "Asthmatic",
+      "MarathonRunner"
+    ],
+    [
+      "StrongNimble",
+      "Weak"
+    ],
+    [
+      "StrongNimble",
+      "Very Underweight"
+    ],
+    [
+      "Conspicuous",
+      "Sneaky"
+    ],
+    [
+      "Clumsy",
+      "Lightfooted"
+    ],
+    [
+      "Conspicuous",
+      "NinjaWay"
+    ],
+    [
+      "Clumsy",
+      "NinjaWay"
+    ],
+    [
+      "LarkPerson",
+      "OwlPerson"
+    ],
+    [
+      "Alcoholic",
+      "MSTAlcoholic"
+    ],
+    [
+      "MarathonRunner",
+      "SoreLegsTrait"
+    ],
+    [
+      "CanGrabLess",
+      "CanGrabMore"
+    ],
+    [
+      "CanGrabLess",
+      "Strong"
+    ],
+    [
+      "CanGrabMore",
+      "Weak"
+    ],
+    [
+      "HeavilyBleedingWounds",
+      "WeaklyBleedingWounds"
+    ],
+    [
+      "MSTAllergic",
+      "Resilient"
+    ],
+    [
+      "MSTDepressive",
+      "MSTOptimist"
+    ],
+    [
+      "AccMetabolism",
+      "LightEater"
+    ],
+    [
+      "GenExp",
+      "GenExp2"
+    ],
+    [
+      "HighSweaty",
+      "LessSweaty"
+    ],
+    [
+      "FearoftheDark",
+      "NightVision"
+    ],
+    [
+      "Desensitized",
+      "FearoftheDark"
+    ],
+    [
+      "Brave",
+      "FearoftheDark"
+    ],
+    [
+      "Cruelty",
+      "Pacifist"
+    ],
+    [
+      "Gunfan",
+      "Gunfan2"
+    ]
+  ],
+  "lang": {
+    "UI_trait_MSTAlcoholic": "Alcoholic",
+    "UI_trait_MSTAlcoholicdesc": "Easily tolerates strong drunkenness.\nOverall condition will worsen if alcohol not been drunk for a long time:\nCan affect unhappiness, stress, fatigue, thirst, hunger, headache and sickness.",
+    "UI_trait_MSTAllergic": "Allergic",
+    "UI_trait_MSTAllergicdesc": "Sneezes involuntary from time to time.",
+    "UI_trait_accmetabolism": "Accelerated Metabolism",
+    "UI_trait_accmetabolismdesc": "+25% XP for Strength and Fitness if not Hungry.",
+    "UI_trait_amcarpenter": "Carpenter",
+    "UI_trait_amcook": "Scullion",
+    "UI_trait_amelectrician": "Electrical-technician",
+    "UI_trait_amforager": "Forager",
+    "UI_trait_ammechanic": "Auto Mechanic",
+    "UI_trait_ammetalworker": "Metalwelder",
+    "UI_trait_amtrapper": "Trapper",
+    "UI_trait_amtrapperdesc": "(Knows some recipes for traps.)",
+    "UI_trait_cangrabless": "Weak Back",
+    "UI_trait_cangrablessdesc": "Carries less weight.\n(penalty: minus 1-3 max weight depending on Strength,\nmore Strength, more penalty).",
+    "UI_trait_cangrabmore": "Strong Back",
+    "UI_trait_cangrabmoredesc": "Can carry more weight.\n(bonus: plus 1-2 max weight depending on Strength,\nmore Strength, more bonus).",
+    "UI_trait_cruelty": "Cruel",
+    "UI_trait_crueltydesc": "More effective with weapons.\n(+20% XP for all weapon skills, Maintenance skill and Aiming skill.)",
+    "UI_trait_cutter": "Cutter",
+    "UI_trait_depressivemood": "Depressive",
+    "UI_trait_depressivemooddesc": "Often sad. Sometimes get Depressed for no reason.",
+    "UI_trait_durabile": "Durability",
+    "UI_trait_fearofthedark": "Nyctophobic",
+    "UI_trait_fearofthedarkdesc": "Fear of the Dark. Gets panicked without light sources.\nBeing in the dark for a long time also increases stress.",
+    "UI_trait_genexp": "Generator Expert",
+    "UI_trait_genexpdesc": "Can operate and fix generators.",
+    "UI_trait_gunfan": "Shooter",
+    "UI_trait_gunfan2": "Sharpshooter",
+    "UI_trait_hbwounds": "Liquid Blood",
+    "UI_trait_hbwoundsdesc": "Wounds bleed more.\n(+100% Bleeding damage).",
+    "UI_trait_highsweaty": "Excessive Sweating",
+    "UI_trait_highsweatydesc": "Sweats profusely during various activities.",
+    "UI_trait_larkperson": "Lark",
+    "UI_trait_larkpersondesc": "Prefers to be awake in the morning.\n(Drowsiness accumulates more slowly in the early morning (05:00 a.m. - 10:00 a.m.),\nbut faster in the late evening (06:00 p.m. - 11:00 p.m.)).",
+    "UI_trait_lesssweaty": "Low Sweating",
+    "UI_trait_lesssweatydesc": "Sweats less.",
+    "UI_trait_lightfooted": "Lightfooted",
+    "UI_trait_marathonrunner": "Marathon Runner",
+    "UI_trait_marathonrunnerdesc": "Can run longer without getting tired.\n(Does not affect sneak running.)",
+    "UI_trait_mushroomer": "Mushroom Picker",
+    "UI_trait_mushroomerdesc": "Increased chance to find mushrooms in search mode.\nKnows Herbalist recipe:\nCan find medical herbs and craft medicines and poultices from them.\n(Can identify poisonous food.)",
+    "UI_trait_nimble": "Agile",
+    "UI_trait_ninjaway": "Between the Shadows",
+    "UI_trait_ninjawaydesc": "While sneaking:\nRunning consumes less endurance.\nWalking or standing still restores endurance.",
+    "UI_trait_optimistmood": "Optimist",
+    "UI_trait_optimistmooddesc": "Bored less. Can't get Depressed for a long time.",
+    "UI_trait_owlperson": "Owl",
+    "UI_trait_owlpersondesc": "Prefers to stay awake in the evenings.\n(Drowsiness accumulates more slowly in the late evening (06:00 p.m. - 11:00 p.m.),\nbut faster in the early morning (05:00 a.m. - 10:00 a.m.)).",
+    "UI_trait_panicattacks": "Panic Attacks",
+    "UI_trait_panicattacksdesc": "Sometimes suffer from panic attacks.\nAny panic passes more slowly.",
+    "UI_trait_sensitivestomach": "Sensitive Digestion",
+    "UI_trait_sensitivestomachdesc": "Overeating cause stomach pain and nausea.",
+    "UI_trait_sharpshooter": "Sniper",
+    "UI_trait_shortbladefan": "Piercer",
+    "UI_trait_shortbluntfan": "Crusher",
+    "UI_trait_slack": "Slack",
+    "UI_trait_sneaky": "Sneaky",
+    "UI_trait_snorer": "Snorer",
+    "UI_trait_snorerdesc": "Snoring loudly while sleeping.",
+    "UI_trait_sorelegstrait": "Sore Legs",
+    "UI_trait_sorelegstraitdesc": "Legs begin to hurt while walking, running, doing fitness and stomping.\nWhen sprinting, the legs hurt much more and exhale much faster.",
+    "UI_trait_spearman": "Lancer",
+    "UI_trait_strongnimble": "Relentless",
+    "UI_trait_strongnimbledesc": "Can fight with melee weapons a little longer without getting tired.\n(Has a chance to spend less endurance when swinging melee weapons.)",
+    "UI_trait_swordsman": "Swordsman",
+    "UI_trait_taut": "Taut",
+    "UI_trait_wbwounds": "Thick Blood",
+    "UI_trait_wbwoundsdesc": "Wounds bleed less.\n(-50% Bleeding damage).",
+    "UI_trait_weathersensitive": "Weather Sensitive",
+    "UI_trait_weathersensitivedesc": "Head aches when the weather changes.\nAlso head may ache when it rains or snows."
+  }
+}

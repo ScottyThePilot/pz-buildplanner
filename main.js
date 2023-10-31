@@ -1,13 +1,19 @@
 "use strict";
 
+const BASE = (window.location.origin + window.location.pathname).replace(/index\.html$/i, "");
+
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
-  window.location.href + "data/Vanilla.json",
-  window.location.href + "data/MoreDescriptionForTraits4166.json",
-  window.location.href + "data/ToadTraits.json",
-  window.location.href + "data/ToadTraitsDisablePrepared.json",
-  window.location.href + "data/ToadTraitsDisableSpec.json",
-  window.location.href + "data/ToadTraitsDynamic.json"
+  "#/data/Vanilla.json",
+  "#/data/MoreDescriptionForTraits4166.json",
+  "#/data/MoreSimpleTraits.json",
+  "#/data/MoreSimpleTraitsMini.json",
+  "#/data/MoreSimpleTraitsVanilla.json",
+  "#/data/SimpleOverhaulTraitsAndOccupations.json",
+  "#/data/ToadTraits.json",
+  "#/data/ToadTraitsDisablePrepared.json",
+  "#/data/ToadTraitsDisableSpec.json",
+  "#/data/ToadTraitsDynamic.json"
 ];
 
 const SKILL_NAMES = new Map();
@@ -101,8 +107,9 @@ $(window).on("load", function () {
 
 /** @param {string[]} modUrls */
 async function reload(modUrls) {
+  const expandedModUrls = modUrls.map(expandLink);
   let loadedMods = new Map();
-  for (let mod of await Promise.all(modUrls.map(fetchJSON))) {
+  for (let mod of await Promise.all(expandedModUrls.map(fetchJSON))) {
     mod.enabled = mod.id === "Vanilla";
     mod.requires = mod.requires || [];
     mod.incompatible = mod.incompatible || [];
@@ -135,7 +142,7 @@ function createModElement(mod) {
     const isIncompatible = mod.incompatible.some(id => State.get().loadedMods.get(id).enabled);
     const modAuthor = $("<span>").text(mod.author);
     const modLink = $("<a>").text(mod.name).attr({
-      href: link(mod.workshop_id),
+      href: steamWorkshopLink(mod.workshop_id),
       target: "_blank",
       rel: "noopener noreferrer"
     });
@@ -180,7 +187,7 @@ function createTraitElement(trait) {
   let traitElement = $("<div>").addClass("planner-trait");
   let traitNameElement = $("<div>").addClass("planner-trait-name").append([
     $("<div>").addClass("planner-trait-icon-container").append(trait.icon ? [
-      $("<img>").addClass("planner-trait-icon").attr("src", trait.icon)
+      $("<img>").addClass("planner-trait-icon").attr("src", expandLink(trait.icon))
     ] : []),
     $("<span>").text(trait.name)
   ]);
@@ -219,7 +226,7 @@ function createProfessionElement(profession) {
   let professionNameElement = $("<div>").addClass("planner-profession-name");
   professionNameElement.append([
     $("<div>").addClass("planner-profession-icon-container").append(profession.icon ? [
-      $("<img>").addClass("planner-profession-icon").attr("src", profession.icon)
+      $("<img>").addClass("planner-profession-icon").attr("src", expandLink(profession.icon))
     ] : []),
     $("<span>").text(profession.name)
   ]);
@@ -705,7 +712,16 @@ async function fetchJSON(path) {
   return await response.json();
 }
 
-function link(workshop) {
+/** @param {string} link @returns {string} */
+function expandLink(link) {
+  if (link.startsWith("#")) {
+    return BASE + link.replace(/^#\/*/, "");
+  } else {
+    return link;
+  }
+}
+
+function steamWorkshopLink(workshop) {
   return `https://steamcommunity.com/sharedfiles/filedetails?id=${workshop}`;
 }
 
