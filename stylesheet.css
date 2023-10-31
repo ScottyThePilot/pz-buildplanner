@@ -185,10 +185,16 @@ div.pips {
   flex-shrink: 0;
 }
 
-#planner-main span.skill-xp-boost, #points {
+#planner-main span.skill-xp-boost {
   text-align: right;
   display: inline-block;
   width: 50%;
+}
+
+#points {
+  text-align: right;
+  display: inline-block;
+  width: 2rem;
 }
 
 #planner-settings {
