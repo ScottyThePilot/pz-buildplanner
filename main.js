@@ -164,12 +164,13 @@ function createModElement(mod) {
 /** @param {string} skill @param {integer} boost */
 function createSkillElement(skill, boost) {
   const skillNameElement = $("<span>").addClass("skill-name").text(SKILL_NAMES.get(skill));
-  const skillLevelElement = $("<div>").addClass("skill-level pips");
-  for (let i = 0; i < boost; i ++) skillLevelElement.append($("<div>").addClass("pip"));
+  const skillLevelElement = $("<span>").addClass("skill-level").text(boost);
+  const skillLevelBarElement = $("<div>").addClass("skill-level-bar pips");
+  for (let i = 0; i < boost; i ++) skillLevelBarElement.append($("<div>").addClass("pip"));
   const xpBoostText = skill === "Strength" || skill === "Fitness" ? null : getXpBoostText(boost);
   const skillXpBoostElement = $("<span>").addClass("skill-xp-boost").text(xpBoostText || "");
   return $("<div>").addClass("planner-skill").append([
-    skillNameElement, skillLevelElement, skillXpBoostElement
+    skillNameElement, skillLevelElement, skillLevelBarElement, skillXpBoostElement
   ]);
 }
 
@@ -303,7 +304,7 @@ class State {
     const skillsElement = $("#panel-major-skills > div.panel-inner").empty();
 
     const skills = this.getSkills();
-    for (const skill of SKILL_NAMES.values()) {
+    for (const skill of SKILL_NAMES.keys()) {
       if (skills.has(skill) && skills.get(skill) !== 0) {
         skillsElement.append(createSkillElement(skill, skills.get(skill)));
       }
@@ -319,8 +320,9 @@ class State {
 
   /** @returns {integer} */
   getPointTotal() {
+    const freePoints = this.settings.freePoints;
     const currentProfession = this.currentModData.professions.get(this.chosenProfession);
-    let base = currentProfession != null ? currentProfession.points : 0;
+    let base = freePoints + (currentProfession != null ? currentProfession.points : 0);
     for (const id of this.chosenTraits.values()) {
       base -= this.currentModData.traits.get(id).cost;
     }
@@ -473,22 +475,24 @@ class State {
 }
 
 class Settings {
-  constructor(isMultiplayer = false, isSleepEnabled = false, showUnavailable = false) {
+  constructor({
+    isMultiplayer = false,
+    isSleepEnabled = false,
+    showUnavailable = false,
+    freePoints = 0
+  }) {
     /** @type {boolean} */
     this.isMultiplayer = isMultiplayer;
     /** @type {boolean} */
     this.isSleepEnabled = isSleepEnabled;
     /** @type {boolean} */
     this.showUnavailable = showUnavailable;
+    /** @type {integer} */
+    this.freePoints = freePoints;
   }
 
   static loadFromCookies() {
-    const settings = getOrDefaultCookie("saved_settings", {});
-    return new Settings(
-      settings.isMultiplayer,
-      settings.isSleepEnabled,
-      settings.showUnavailable
-    );
+    return new Settings(getOrDefaultCookie("saved_settings", {}));
   }
 
   saveToCookies() {
@@ -516,7 +520,6 @@ function getPointsPolarity(points) {
  * @param {any} value
  */
 function setCookie(cookieName, value) {
-  console.log("saved cookie " + cookieName);
   Cookies.set(cookieName, JSON.stringify(value));
 }
 

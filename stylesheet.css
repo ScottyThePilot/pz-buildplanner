@@ -38,7 +38,7 @@ body a:hover {
   color: #8be;
 }
 
-button {
+button, input[type=text], input[type=number] {
   color: #fff;
   background-color: transparent;
   border: 1px solid #fff;
@@ -54,6 +54,14 @@ button:hover {
 button:active {
   color: #777;
   border-color: #777;
+}
+
+input[type=text], input[type=number] {
+  background-color: #111;
+}
+
+input[type=number] {
+  padding: 1px 0 1px 3px;
 }
 
 header p, header h1, header h2, header h3,
@@ -94,8 +102,6 @@ div.pips {
 
   user-select: none;
 }
-
-
 
 #planner-main button:disabled {
   color: #d00;
@@ -162,6 +168,47 @@ div.pips {
   padding: 0.25rem 0.5rem;
 }
 
+#planner-main span.skill-name {
+  display: inline-block;
+  width: 100%;
+}
+
+#planner-main span.skill-level {
+  text-align: center;
+  display: inline-block;
+  width: 1rem;
+  flex-shrink: 0;
+}
+
+#planner-main div.skill-level-bar {
+  width: 69px;
+  flex-shrink: 0;
+}
+
+#planner-main span.skill-xp-boost, #points {
+  text-align: right;
+  display: inline-block;
+  width: 50%;
+}
+
+#planner-settings {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+#setting-free-points {
+  width: 6rem;
+}
+
+#planner-mods {
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  gap: 0.25rem;
+}
+
 #planner-mods-list div.planner-mod {
   user-select: none;
   padding: 0.5rem 0.5rem;
@@ -187,21 +234,8 @@ div.pips {
   background-color: #c00;
 }
 
-#planner-main span.skill-name {
-  display: inline-block;
-  width: 100%;
-}
-
-#planner-main div.skill-level {
-  width: 69px;
-  flex-shrink: 0;
-}
-
-#planner-main span.skill-xp-boost, #points {
-  text-align: right;
-  display: inline-block;
-  width: 4rem;
-  flex-shrink: 0;
+#planner-mods-list {
+  height: 100%;
 }
 
 #planner-mods-list,
@@ -247,26 +281,8 @@ div.panel > div.panel-bottom {
     grid-template-rows: repeat(2, 1fr);
 
     height: 60rem;
-    max-height: 60rem;
 
     gap: 1rem;
-  }
-
-  #planner-settings {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  #planner-mods {
-    display: flex;
-    flex-direction: column;
-    height: 30rem;
-    gap: 0.25rem;
-  }
-
-  #planner-mods-list {
-    height: 100%;
   }
 
   div.panel {
@@ -279,7 +295,6 @@ div.panel > div.panel-bottom {
 
   div.panel > div.panel-inner {
     height: 100%;
-    max-height: 100%;
   }
 
   #panel-professions {
@@ -313,20 +328,15 @@ div.panel > div.panel-bottom {
     gap: 1rem;
   }
 
-  #planner-settings {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   div.panel {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.25rem;
+    height: 30rem;
   }
 
   div.panel > div.panel-inner {
-    height: 100px;
+    height: 100%;
   }
 }
