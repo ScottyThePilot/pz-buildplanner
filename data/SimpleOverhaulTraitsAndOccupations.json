@@ -8,10 +8,12 @@
     "MoreSimpleTraitsVanilla"
   ],
   "workshop_id": 2840805724,
+  "shortcut": 5,
   "traits": {
     "Stout": {
       "name_key": "UI_trait_stout",
       "description_key": "UI_trait_stoutdesc",
+      "shortcut": 192,
       "icon_path": "https://pzwiki.net/w/images/d/da/Trait_stout.png",
       "cost": 6,
       "xp_boosts": {
@@ -21,6 +23,7 @@
     "Strong": {
       "name_key": "UI_trait_strong",
       "description_key": "UI_trait_strongdesc",
+      "shortcut": 193,
       "icon_path": "https://pzwiki.net/w/images/c/c2/Trait_strong.png",
       "cost": 12,
       "xp_boosts": {
@@ -30,6 +33,7 @@
     "Feeble": {
       "name_key": "UI_trait_feeble",
       "description_key": "UI_trait_feebledesc",
+      "shortcut": 194,
       "icon_path": "https://pzwiki.net/w/images/8/87/Trait_feeble.png",
       "cost": -6,
       "xp_boosts": {
@@ -39,6 +43,7 @@
     "Weak": {
       "name_key": "UI_trait_weak",
       "description_key": "UI_trait_weakdesc",
+      "shortcut": 195,
       "icon_path": "https://pzwiki.net/w/images/f/f7/Trait_weak.png",
       "cost": -12,
       "xp_boosts": {
@@ -48,6 +53,7 @@
     "Fit": {
       "name_key": "UI_trait_fit",
       "description_key": "UI_trait_fitdesc",
+      "shortcut": 196,
       "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_fit.png",
       "cost": 6,
       "xp_boosts": {
@@ -57,6 +63,7 @@
     "Athletic": {
       "name_key": "UI_trait_athletic",
       "description_key": "UI_trait_athleticdesc",
+      "shortcut": 197,
       "icon_path": "https://pzwiki.net/w/images/0/08/Trait_athletic.png",
       "cost": 12,
       "xp_boosts": {
@@ -66,6 +73,7 @@
     "Out of Shape": {
       "name_key": "UI_trait_outofshape",
       "description_key": "UI_trait_outofshapedesc",
+      "shortcut": 198,
       "icon_path": "https://pzwiki.net/w/images/9/93/Trait_out_of_shape.png",
       "cost": -6,
       "xp_boosts": {
@@ -75,6 +83,7 @@
     "Unfit": {
       "name_key": "UI_trait_unfit",
       "description_key": "UI_trait_unfitdesc",
+      "shortcut": 199,
       "icon_path": "https://pzwiki.net/w/images/0/00/Trait_unfit.png",
       "cost": -12,
       "xp_boosts": {
@@ -84,6 +93,7 @@
     "Underweight": {
       "name_key": "UI_trait_underweight",
       "description_key": "UI_trait_underweightdesc",
+      "shortcut": 200,
       "icon_path": "https://pzwiki.net/w/images/3/36/Trait_underweight.png",
       "cost": -5,
       "xp_boosts": {
@@ -93,6 +103,7 @@
     "Very Underweight": {
       "name_key": "UI_trait_veryunderweight",
       "description_key": "UI_trait_veryunderweightdesc",
+      "shortcut": 201,
       "icon_path": "https://pzwiki.net/w/images/8/8b/Trait_very_underweight.png",
       "cost": -10,
       "xp_boosts": {
@@ -102,6 +113,7 @@
     "Emaciated": {
       "name_key": "UI_trait_emaciated",
       "description_key": "UI_trait_emaciateddesc",
+      "shortcut": 202,
       "icon_path": "https://pzwiki.net/w/images/f/fa/Trait_emaciated.png",
       "cost": -10,
       "is_profession_trait": true
@@ -109,6 +121,7 @@
     "Overweight": {
       "name_key": "UI_trait_overweight",
       "description_key": "UI_trait_overweightdesc",
+      "shortcut": 203,
       "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_overweight.png",
       "cost": -6,
       "xp_boosts": {
@@ -118,6 +131,7 @@
     "Obese": {
       "name_key": "UI_trait_obese",
       "description_key": "UI_trait_obesedesc",
+      "shortcut": 204,
       "icon_path": "https://pzwiki.net/w/images/f/ff/Trait_obese.png",
       "cost": -12,
       "xp_boosts": {
@@ -127,6 +141,7 @@
     "Taut": {
       "name_key": "UI_trait_taut",
       "description_key": "UI_trait_tautdesc",
+      "shortcut": 205,
       "icon_path": "#/data/images/traits/soto_mst/taut.png",
       "cost": 6,
       "xp_boosts": {
@@ -137,6 +152,7 @@
     "Slack": {
       "name_key": "UI_trait_slack",
       "description_key": "UI_trait_slackdesc",
+      "shortcut": 206,
       "icon_path": "#/data/images/traits/soto_mst/slack.png",
       "cost": -6,
       "xp_boosts": {
@@ -147,6 +163,7 @@
     "Jogger": {
       "name_key": "UI_trait_Jogger",
       "description_key": "UI_trait_JoggerDesc",
+      "shortcut": 207,
       "icon_path": "https://pzwiki.net/w/images/4/46/Trait_jogger.png",
       "cost": 2,
       "xp_boosts": {
@@ -156,6 +173,7 @@
     "Sneaky": {
       "name_key": "UI_trait_sneaky",
       "description_key": "UI_trait_sneakydesc",
+      "shortcut": 208,
       "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
       "cost": 2,
       "xp_boosts": {
@@ -165,6 +183,7 @@
     "Lightfooted": {
       "name_key": "UI_trait_lightfooted",
       "description_key": "UI_trait_lightfooteddesc",
+      "shortcut": 209,
       "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
       "cost": 1,
       "xp_boosts": {
@@ -174,6 +193,7 @@
     "Nimble": {
       "name_key": "UI_trait_nimble",
       "description_key": "UI_trait_nimbledesc",
+      "shortcut": 210,
       "icon_path": "#/data/images/traits/soto_mst/agile.png",
       "cost": 3,
       "xp_boosts": {
@@ -183,6 +203,7 @@
     "Gymnast": {
       "name_key": "UI_trait_Gymnast",
       "description_key": "UI_trait_GymnastDesc",
+      "shortcut": 211,
       "icon_path": "https://pzwiki.net/w/images/a/a5/Trait_gymnast.png",
       "cost": 4,
       "xp_boosts": {
@@ -193,6 +214,7 @@
     "Gymnast2": {
       "name_key": "UI_trait_Gymnast",
       "description_key": "UI_trait_Gymnast2desc",
+      "shortcut": 212,
       "icon_path": "https://pzwiki.net/w/images/a/a5/Trait_gymnast.png",
       "cost": 0,
       "is_profession_trait": true
@@ -200,6 +222,7 @@
     "Fishing": {
       "name_key": "UI_trait_Fishing",
       "description_key": "UI_trait_FishingDesc",
+      "shortcut": 213,
       "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_fishing.png",
       "cost": 2,
       "xp_boosts": {
@@ -213,6 +236,7 @@
     "Gardener": {
       "name_key": "UI_trait_Gardener",
       "description_key": "UI_trait_GardenerDesc",
+      "shortcut": 214,
       "icon_path": "https://pzwiki.net/w/images/6/67/Trait_gardener.png",
       "cost": 1,
       "xp_boosts": {
@@ -226,6 +250,7 @@
     "Gardener2": {
       "name_key": "UI_trait_Gardener",
       "description_key": "UI_trait_Gardener2Desc",
+      "shortcut": 215,
       "icon_path": "https://pzwiki.net/w/images/6/67/Trait_gardener.png",
       "cost": 0,
       "is_profession_trait": true
@@ -233,6 +258,7 @@
     "Forager": {
       "name_key": "UI_trait_forager",
       "description_key": "UI_trait_foragerdesc",
+      "shortcut": 216,
       "icon_path": "#/data/images/traits/soto_mst/forager.png",
       "cost": 2,
       "xp_boosts": {
@@ -242,6 +268,7 @@
     "Trapper": {
       "name_key": "UI_trait_trapper",
       "description_key": "UI_trait_trapperdesc",
+      "shortcut": 217,
       "icon_path": "#/data/images/traits/soto_mst/trapper.png",
       "cost": 2,
       "xp_boosts": {
@@ -255,6 +282,7 @@
     "Hiker": {
       "name_key": "UI_trait_Hiker",
       "description_key": "UI_trait_SOHikerDesc",
+      "shortcut": 218,
       "icon_path": "https://pzwiki.net/w/images/4/4f/Trait_hiker.png",
       "cost": 6,
       "xp_boosts": {
@@ -271,18 +299,21 @@
     "MushroomPicker": {
       "name_key": "UI_trait_mushroompicker",
       "description_key": "UI_trait_mushroompickerdesc",
+      "shortcut": 219,
       "icon_path": "#/data/images/traits/soto_mst/mushroom_picker.png",
       "cost": 1
     },
     "Entomologist": {
       "name_key": "UI_trait_entomologist",
       "description_key": "UI_trait_entomologistdesc",
+      "shortcut": 220,
       "icon_path": "#/data/images/traits/soto_mst/entomologist.png",
       "cost": 1
     },
     "FirstAid": {
       "name_key": "UI_trait_FirstAid",
       "description_key": "UI_trait_FirstAidDesc",
+      "shortcut": 221,
       "icon_path": "https://pzwiki.net/w/images/c/c7/Trait_firstaid.png",
       "cost": 1,
       "xp_boosts": {
@@ -292,6 +323,7 @@
     "FirstAid2": {
       "name_key": "UI_trait_FirstAid",
       "description_key": "UI_trait_FirstAid2Desc",
+      "shortcut": 222,
       "icon_path": "#/data/images/traits/soto_mst/first_aider.png",
       "cost": 0,
       "is_profession_trait": true
@@ -299,6 +331,7 @@
     "Tailor": {
       "name_key": "UI_trait_Tailor",
       "description_key": "UI_trait_TailorDesc",
+      "shortcut": 223,
       "icon_path": "https://pzwiki.net/w/images/4/4b/Trait_tailor.png",
       "cost": 2,
       "xp_boosts": {
@@ -308,6 +341,7 @@
     "Cook": {
       "name_key": "UI_trait_Cook",
       "description_key": "UI_trait_CookDesc",
+      "shortcut": 224,
       "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_cook.png",
       "cost": 2,
       "xp_boosts": {
@@ -332,6 +366,7 @@
     "Cook2": {
       "name_key": "UI_trait_Cook",
       "description_key": "UI_trait_Cook2Desc",
+      "shortcut": 225,
       "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_cook.png",
       "cost": 0,
       "is_profession_trait": true
@@ -339,6 +374,7 @@
     "Handy": {
       "name_key": "UI_trait_handy",
       "description_key": "UI_trait_handydesc",
+      "shortcut": 226,
       "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_handy.png",
       "cost": 6,
       "xp_boosts": {
@@ -349,6 +385,7 @@
     "Handy2": {
       "name_key": "UI_trait_handy",
       "description_key": "UI_trait_handydesc",
+      "shortcut": 227,
       "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_handy.png",
       "cost": 0,
       "is_profession_trait": true
@@ -356,6 +393,7 @@
     "Scullion": {
       "name_key": "UI_trait_scullion",
       "description_key": "UI_trait_sculliondesc",
+      "shortcut": 228,
       "icon_path": "#/data/images/traits/soto_mst/scullion.png",
       "cost": 1,
       "xp_boosts": {
@@ -365,6 +403,7 @@
     "Carpenter": {
       "name_key": "UI_trait_carpenter",
       "description_key": "UI_trait_carpenterdesc",
+      "shortcut": 229,
       "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
       "cost": 2,
       "xp_boosts": {
@@ -374,6 +413,7 @@
     "ElectricTech": {
       "name_key": "UI_trait_electrictech",
       "description_key": "UI_trait_electrictechdesc",
+      "shortcut": 230,
       "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
       "cost": 2,
       "xp_boosts": {
@@ -383,6 +423,7 @@
     "AutoMechanic": {
       "name_key": "UI_trait_automechanic",
       "description_key": "UI_trait_automechanicdesc",
+      "shortcut": 231,
       "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
       "cost": 2,
       "xp_boosts": {
@@ -392,6 +433,7 @@
     "MetalWelder": {
       "name_key": "UI_trait_metalwelder",
       "description_key": "UI_trait_metalwelderdesc",
+      "shortcut": 232,
       "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
       "cost": 2,
       "xp_boosts": {
@@ -401,6 +443,7 @@
     "BaseballPlayer": {
       "name_key": "UI_trait_PlaysBaseball",
       "description_key": "UI_trait_PlaysBaseballDesc",
+      "shortcut": 233,
       "icon_path": "https://pzwiki.net/w/images/4/4d/Trait_baseballplayer.png",
       "cost": 4,
       "xp_boosts": {
@@ -410,6 +453,7 @@
     "Stabber": {
       "name_key": "UI_trait_stabber",
       "description_key": "UI_trait_stabberdesc",
+      "shortcut": 234,
       "icon_path": "#/data/images/traits/soto_mst/stabber.png",
       "cost": 2,
       "xp_boosts": {
@@ -419,6 +463,7 @@
     "Crusher": {
       "name_key": "UI_trait_crusher",
       "description_key": "UI_trait_crusherdesc",
+      "shortcut": 235,
       "icon_path": "#/data/images/traits/soto_mst/crusher.png",
       "cost": 3,
       "xp_boosts": {
@@ -428,6 +473,7 @@
     "Cutter": {
       "name_key": "UI_trait_cutter",
       "description_key": "UI_trait_cutterdesc",
+      "shortcut": 236,
       "icon_path": "#/data/images/traits/soto_mst/cutter.png",
       "cost": 4,
       "xp_boosts": {
@@ -437,6 +483,7 @@
     "Spearman": {
       "name_key": "UI_trait_spearman",
       "description_key": "UI_trait_spearmandesc",
+      "shortcut": 237,
       "icon_path": "#/data/images/traits/soto_mst/lancer.png",
       "cost": 4,
       "xp_boosts": {
@@ -446,6 +493,7 @@
     "Swordsman": {
       "name_key": "UI_trait_swordsman",
       "description_key": "UI_trait_swordsmandesc",
+      "shortcut": 238,
       "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
       "cost": 4,
       "xp_boosts": {
@@ -455,6 +503,7 @@
     "Durab": {
       "name_key": "UI_trait_durab",
       "description_key": "UI_trait_durabdesc",
+      "shortcut": 239,
       "icon_path": "#/data/images/traits/soto_mst/durability.png",
       "cost": 3,
       "xp_boosts": {
@@ -464,6 +513,7 @@
     "Shooter": {
       "name_key": "UI_trait_shooter",
       "description_key": "UI_trait_shooterdesc",
+      "shortcut": 240,
       "icon_path": "#/data/images/traits/soto_mst/shooter1.png",
       "cost": 4,
       "xp_boosts": {
@@ -474,6 +524,7 @@
     "Shooter2": {
       "name_key": "UI_trait_shooter",
       "description_key": "UI_trait_shooter2desc",
+      "shortcut": 241,
       "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
       "cost": 0,
       "is_profession_trait": true
@@ -481,6 +532,7 @@
     "ExpShooter": {
       "name_key": "UI_trait_expshooter",
       "description_key": "UI_trait_expshooterdesc",
+      "shortcut": 242,
       "icon_path": "#/data/images/traits/soto_mst/sharpshooter.png",
       "cost": 8,
       "xp_boosts": {
@@ -491,6 +543,7 @@
     "Sniper": {
       "name_key": "UI_trait_sniper",
       "description_key": "UI_trait_sniperdesc",
+      "shortcut": 243,
       "icon_path": "#/data/images/traits/soto_mst/sniper.png",
       "cost": 6,
       "is_profession_trait": true,
@@ -501,6 +554,7 @@
     "Hunter": {
       "name_key": "UI_trait_Hunter",
       "description_key": "UI_trait_HunterDesc",
+      "shortcut": 244,
       "icon_path": "https://pzwiki.net/w/images/9/9b/Trait_hunter.png",
       "cost": 9,
       "xp_boosts": {
@@ -520,6 +574,7 @@
     "Formerscout": {
       "name_key": "UI_trait_Scout",
       "description_key": "UI_trait_ScoutDesc",
+      "shortcut": 245,
       "icon_path": "https://pzwiki.net/w/images/1/18/Trait_formerscout.png",
       "cost": 3,
       "xp_boosts": {
@@ -530,6 +585,7 @@
     "Formerscout2": {
       "name_key": "UI_trait_Scout",
       "description_key": "UI_trait_Scout2Desc",
+      "shortcut": 246,
       "icon_path": "https://pzwiki.net/w/images/1/18/Trait_formerscout.png",
       "cost": 0,
       "is_profession_trait": true
@@ -537,6 +593,7 @@
     "Brawler": {
       "name_key": "UI_trait_BarFighter",
       "description_key": "UI_trait_BarFighterDesc2",
+      "shortcut": 247,
       "icon_path": "https://pzwiki.net/w/images/c/cf/Trait_brawler.png",
       "cost": 5,
       "xp_boosts": {
@@ -546,6 +603,7 @@
     "Mechanics": {
       "name_key": "UI_trait_Mechanics",
       "description_key": "UI_trait_MechanicsDesc",
+      "shortcut": 248,
       "icon_path": "https://pzwiki.net/w/images/2/24/Trait_mechanics.png",
       "cost": 2,
       "free_recipes": [
@@ -556,6 +614,7 @@
     "Mechanics2": {
       "name_key": "UI_trait_Mechanics",
       "description_key": "UI_trait_Mechanics2Desc",
+      "shortcut": 249,
       "icon_path": "https://pzwiki.net/w/images/2/24/Trait_mechanics.png",
       "cost": 0,
       "is_profession_trait": true
@@ -563,6 +622,7 @@
     "Herbalist": {
       "name_key": "UI_trait_Herbalist",
       "description_key": "UI_trait_HerbalistDesc",
+      "shortcut": 250,
       "icon_path": "https://pzwiki.net/w/images/b/b6/Trait_herbalist.png",
       "cost": 2,
       "free_recipes": [
@@ -572,6 +632,7 @@
     "Herbalist2": {
       "name_key": "UI_trait_Herbalist",
       "description_key": "UI_trait_HerbalistDesc",
+      "shortcut": 251,
       "icon_path": "https://pzwiki.net/w/images/b/b6/Trait_herbalist.png",
       "cost": 0,
       "is_profession_trait": true
@@ -579,6 +640,7 @@
     "GenExp": {
       "name_key": "UI_trait_genexp",
       "description_key": "UI_trait_genexpdesc",
+      "shortcut": 252,
       "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
       "cost": 1,
       "free_recipes": [
@@ -588,6 +650,7 @@
     "GenExp2": {
       "name_key": "UI_trait_genexp",
       "description_key": "UI_trait_genexpdesc",
+      "shortcut": 253,
       "icon_path": "#/data/images/traits/soto_mst/generator_expert.png",
       "cost": 0,
       "is_profession_trait": true
@@ -595,24 +658,28 @@
     "MarathonRunner": {
       "name_key": "UI_trait_marathonrunner",
       "description_key": "UI_trait_marathonrunnerdesc",
+      "shortcut": 254,
       "icon_path": "#/data/images/traits/soto_mst/marathon_runner.png",
       "cost": 2
     },
     "Relentless": {
       "name_key": "UI_trait_relentless",
       "description_key": "UI_trait_relentlessdesc",
+      "shortcut": 255,
       "icon_path": "#/data/images/traits/soto_mst/relentless.png",
       "cost": 2
     },
     "NinjaWay": {
       "name_key": "UI_trait_ninjaway",
       "description_key": "UI_trait_ninjawaydesc",
+      "shortcut": 256,
       "icon_path": "#/data/images/traits/soto_mst/between_the_shadows.png",
       "cost": 2
     },
     "BreathingTech": {
       "name_key": "UI_trait_breathingtech",
       "description_key": "UI_trait_breathingtechdesc",
+      "shortcut": 257,
       "icon_path": "#/data/images/traits/soto_mst/breathing_technique.png",
       "cost": 0,
       "is_profession_trait": true
@@ -620,18 +687,21 @@
     "BreathingTech2": {
       "name_key": "UI_trait_breathingtech",
       "description_key": "UI_trait_breathingtechdesc",
+      "shortcut": 258,
       "icon_path": "#/data/images/traits/soto_mst/breathing_technique.png",
       "cost": 2
     },
     "SpeedDemon": {
       "name_key": "UI_trait_SpeedDemon",
       "description_key": "UI_trait_SpeedDemonDesc",
+      "shortcut": 259,
       "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_speeddemon.png",
       "cost": 1
     },
     "SpeedDemon2": {
       "name_key": "UI_trait_SpeedDemon",
       "description_key": "UI_trait_SpeedDemonDesc",
+      "shortcut": 260,
       "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_speeddemon.png",
       "cost": 0,
       "is_profession_trait": true
@@ -639,24 +709,28 @@
     "SundayDriver": {
       "name_key": "UI_trait_SundayDriver",
       "description_key": "UI_trait_SundayDriverDesc",
+      "shortcut": 261,
       "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_sundaydriver.png",
       "cost": -3
     },
     "ShortSighted": {
       "name_key": "UI_trait_shortsigh",
       "description_key": "UI_trait_shortsighdesc",
+      "shortcut": 262,
       "icon_path": "https://pzwiki.net/w/images/b/ba/Trait_shortsighted.png",
       "cost": -2
     },
     "EagleEyed": {
       "name_key": "UI_trait_eagleeyed",
       "description_key": "UI_trait_eagleeyeddesc",
+      "shortcut": 263,
       "icon_path": "https://pzwiki.net/w/images/e/e1/Trait_eagleeyed.png",
       "cost": 2
     },
     "EagleEyed2": {
       "name_key": "UI_trait_eagleeyed",
       "description_key": "UI_trait_eagleeyeddesc",
+      "shortcut": 264,
       "icon_path": "https://pzwiki.net/w/images/e/e1/Trait_eagleeyed.png",
       "cost": 0,
       "is_profession_trait": true
@@ -664,12 +738,14 @@
     "NightVision": {
       "name_key": "UI_trait_NightVision",
       "description_key": "UI_trait_NightVisionDesc",
+      "shortcut": 265,
       "icon_path": "https://pzwiki.net/w/images/0/0f/Trait_nightvision.png",
       "cost": 2
     },
     "NightVision2": {
       "name_key": "UI_trait_NightVision",
       "description_key": "UI_trait_NightVisionDesc",
+      "shortcut": 266,
       "icon_path": "https://pzwiki.net/w/images/0/0f/Trait_nightvision.png",
       "cost": 0,
       "is_profession_trait": true
@@ -677,12 +753,14 @@
     "KeenHearing": {
       "name_key": "UI_trait_keenhearing",
       "description_key": "UI_trait_keenhearingdesc",
+      "shortcut": 267,
       "icon_path": "https://pzwiki.net/w/images/1/16/Trait_keenhearing.png",
       "cost": 5
     },
     "KeenHearing2": {
       "name_key": "UI_trait_keenhearing",
       "description_key": "UI_trait_keenhearingdesc",
+      "shortcut": 268,
       "icon_path": "https://pzwiki.net/w/images/1/16/Trait_keenhearing.png",
       "cost": 0,
       "is_profession_trait": true
@@ -690,24 +768,28 @@
     "HardOfHearing": {
       "name_key": "UI_trait_hardhear",
       "description_key": "UI_trait_hardheardesc",
+      "shortcut": 269,
       "icon_path": "https://pzwiki.net/w/images/5/5a/Trait_hardofhearing.png",
       "cost": -5
     },
     "Deaf": {
       "name_key": "UI_trait_deaf",
       "description_key": "UI_trait_deafdesc",
+      "shortcut": 270,
       "icon_path": "https://pzwiki.net/w/images/4/4b/Trait_deaf.png",
       "cost": -12
     },
     "Inconspicuous": {
       "name_key": "UI_trait_Inconspicuous",
       "description_key": "UI_trait_InconspicuousDesc",
+      "shortcut": 271,
       "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_inconspicuous.png",
       "cost": 2
     },
     "Inconspicuous2": {
       "name_key": "UI_trait_Inconspicuous",
       "description_key": "UI_trait_InconspicuousDesc",
+      "shortcut": 272,
       "icon_path": "https://pzwiki.net/w/images/f/f2/Trait_inconspicuous.png",
       "cost": 0,
       "is_profession_trait": true
@@ -715,18 +797,21 @@
     "Conspicuous": {
       "name_key": "UI_trait_Conspicuous",
       "description_key": "UI_trait_ConspicuousDesc",
+      "shortcut": 273,
       "icon_path": "https://pzwiki.net/w/images/e/ed/Trait_conspicuous.png",
       "cost": -4
     },
     "AdrenalineJunkie": {
       "name_key": "UI_trait_AdrenalineJunkie",
       "description_key": "UI_trait_AdrenalineJunkieDesc",
+      "shortcut": 274,
       "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_adrenalinejunkie.png",
       "cost": 2
     },
     "AdrenalineJunkie2": {
       "name_key": "UI_trait_AdrenalineJunkie",
       "description_key": "UI_trait_AdrenalineJunkieDesc",
+      "shortcut": 275,
       "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_adrenalinejunkie.png",
       "cost": 0,
       "is_profession_trait": true
@@ -734,12 +819,14 @@
     "Desensitized2": {
       "name_key": "UI_trait_Desensitized",
       "description_key": "UI_trait_DesensitizedDesc",
+      "shortcut": 276,
       "icon_path": "https://pzwiki.net/w/images/7/72/Trait_desensitized.png",
       "cost": 8
     },
     "Desensitized": {
       "name_key": "UI_trait_Desensitized",
       "description_key": "UI_trait_DesensitizedDesc",
+      "shortcut": 277,
       "icon_path": "https://pzwiki.net/w/images/7/72/Trait_desensitized.png",
       "cost": 0,
       "is_profession_trait": true
@@ -747,12 +834,14 @@
     "Brave": {
       "name_key": "UI_trait_brave",
       "description_key": "UI_trait_bravedesc",
+      "shortcut": 278,
       "icon_path": "https://pzwiki.net/w/images/c/c8/Trait_brave.png",
       "cost": 3
     },
     "Brave2": {
       "name_key": "UI_trait_brave",
       "description_key": "UI_trait_bravedesc",
+      "shortcut": 279,
       "icon_path": "https://pzwiki.net/w/images/c/c8/Trait_brave.png",
       "cost": 0,
       "is_profession_trait": true
@@ -760,18 +849,21 @@
     "Cowardly": {
       "name_key": "UI_trait_cowardly",
       "description_key": "UI_trait_cowardlydesc",
+      "shortcut": 280,
       "icon_path": "https://pzwiki.net/w/images/1/11/Trait_cowardly.png",
       "cost": -3
     },
     "Graceful": {
       "name_key": "UI_trait_graceful",
       "description_key": "UI_trait_gracefuldesc",
+      "shortcut": 281,
       "icon_path": "https://pzwiki.net/w/images/8/87/Trait_graceful.png",
       "cost": 2
     },
     "Graceful2": {
       "name_key": "UI_trait_graceful",
       "description_key": "UI_trait_gracefuldesc",
+      "shortcut": 282,
       "icon_path": "https://pzwiki.net/w/images/8/87/Trait_graceful.png",
       "cost": 0,
       "is_profession_trait": true
@@ -779,18 +871,21 @@
     "Clumsy": {
       "name_key": "UI_trait_clumsy",
       "description_key": "UI_trait_clumsydesc",
+      "shortcut": 283,
       "icon_path": "https://pzwiki.net/w/images/4/48/Trait_clumsy.png",
       "cost": -4
     },
     "FastReader": {
       "name_key": "UI_trait_FastReader",
       "description_key": "UI_trait_FastReaderDesc",
+      "shortcut": 284,
       "icon_path": "https://pzwiki.net/w/images/8/87/Trait_fastreader.png",
       "cost": 1
     },
     "FastReader2": {
       "name_key": "UI_trait_FastReader",
       "description_key": "UI_trait_FastReaderDesc",
+      "shortcut": 285,
       "icon_path": "https://pzwiki.net/w/images/8/87/Trait_fastreader.png",
       "cost": 0,
       "is_profession_trait": true
@@ -798,18 +893,21 @@
     "SlowReader": {
       "name_key": "UI_trait_SlowReader",
       "description_key": "UI_trait_SlowReaderDesc",
+      "shortcut": 286,
       "icon_path": "https://pzwiki.net/w/images/1/13/Trait_slowreader.png",
       "cost": -1
     },
     "Illiterate": {
       "name_key": "UI_trait_Illiterate",
       "description_key": "UI_trait_IlliterateDesc",
+      "shortcut": 287,
       "icon_path": "https://pzwiki.net/w/images/5/59/Trait_illiterate.png",
       "cost": -8
     },
     "LifelongLearner": {
       "name_key": "UI_trait_lifelonglearner",
       "description_key": "UI_trait_lifelonglearnerdesc",
+      "shortcut": 288,
       "icon_path": "#/data/images/traits/soto_mst/lifelong_learner.png",
       "cost": 0,
       "is_profession_trait": true
@@ -817,6 +915,7 @@
     "Lucky": {
       "name_key": "UI_trait_lucky",
       "description_key": "UI_trait_luckydesc",
+      "shortcut": 289,
       "icon_path": "https://pzwiki.net/w/images/d/dd/Trait_lucky.png",
       "cost": 3,
       "is_disabled_in_mp": true
@@ -824,6 +923,7 @@
     "Unlucky": {
       "name_key": "UI_trait_unlucky",
       "description_key": "UI_trait_unluckydesc",
+      "shortcut": 290,
       "icon_path": "https://pzwiki.net/w/images/d/d6/Trait_unlucky.png",
       "cost": -3,
       "is_disabled_in_mp": true
@@ -831,36 +931,42 @@
     "Agoraphobic": {
       "name_key": "UI_trait_agoraphobic",
       "description_key": "UI_trait_agoraphobicdesc",
+      "shortcut": 291,
       "icon_path": "https://pzwiki.net/w/images/0/08/Trait_agoraphobic.png",
       "cost": -6
     },
     "Claustophobic": {
       "name_key": "UI_trait_claustro",
       "description_key": "UI_trait_claustrodesc",
+      "shortcut": 292,
       "icon_path": "https://pzwiki.net/w/images/7/7b/Trait_claustophobic.png",
       "cost": -4
     },
     "Hemophobic": {
       "name_key": "UI_trait_Hemophobic",
       "description_key": "UI_trait_Hemophobic2Desc",
+      "shortcut": 293,
       "icon_path": "https://pzwiki.net/w/images/8/89/Trait_hemophobic.png",
       "cost": -6
     },
     "FearoftheDark": {
       "name_key": "UI_trait_fearofthedark",
       "description_key": "UI_trait_fearofthedarkdesc",
+      "shortcut": 294,
       "icon_path": "#/data/images/traits/soto_mst/nyctophobic.png",
       "cost": -1
     },
     "Nutritionist": {
       "name_key": "UI_trait_nutritionist",
       "description_key": "UI_trait_nutritionistdesc",
+      "shortcut": 295,
       "icon_path": "https://pzwiki.net/w/images/f/f1/Trait_nutritionist.png",
       "cost": 1
     },
     "Nutritionist2": {
       "name_key": "UI_trait_nutritionist",
       "description_key": "UI_trait_nutritionistdesc",
+      "shortcut": 296,
       "icon_path": "https://pzwiki.net/w/images/f/f1/Trait_nutritionist.png",
       "cost": 0,
       "is_profession_trait": true
@@ -868,12 +974,14 @@
     "Outdoorsman": {
       "name_key": "UI_trait_outdoorsman",
       "description_key": "UI_trait_outdoorsmandesc",
+      "shortcut": 297,
       "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_outdoorsman.png",
       "cost": 2
     },
     "Outdoorsman2": {
       "name_key": "UI_trait_outdoorsman",
       "description_key": "UI_trait_outdoorsmandesc",
+      "shortcut": 298,
       "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_outdoorsman.png",
       "cost": 0,
       "is_profession_trait": true
@@ -881,6 +989,7 @@
     "Mesomorph": {
       "name_key": "UI_trait_mesomorph",
       "description_key": "UI_trait_mesomorphdesc",
+      "shortcut": 299,
       "icon_path": "#/data/images/traits/soto_mst/mesomorph.png",
       "cost": 0,
       "is_profession_trait": true
@@ -888,6 +997,7 @@
     "Ectomorph": {
       "name_key": "UI_trait_ectomorph",
       "description_key": "UI_trait_ectomorphdesc",
+      "shortcut": 300,
       "icon_path": "#/data/images/traits/soto_mst/ectomorph.png",
       "cost": 3,
       "xp_boosts": {
@@ -897,6 +1007,7 @@
     "Endomorph": {
       "name_key": "UI_trait_endomorph",
       "description_key": "UI_trait_endomorphdesc",
+      "shortcut": 301,
       "icon_path": "#/data/images/traits/soto_mst/endomorph.png",
       "cost": 3,
       "xp_boosts": {
@@ -906,36 +1017,42 @@
     "FragileHealth": {
       "name_key": "UI_trait_fragilehealth",
       "description_key": "UI_trait_fragilehealthdesc",
+      "shortcut": 302,
       "icon_path": "#/data/images/traits/soto_mst/fragile.png",
       "cost": -3
     },
     "AccMetabolism": {
       "name_key": "UI_trait_accmetabolism",
       "description_key": "UI_trait_accmetabolismdesc",
+      "shortcut": 303,
       "icon_path": "#/data/images/traits/soto_mst/accelerated_metabolism.png",
       "cost": 4
     },
     "FastLearner": {
       "name_key": "UI_trait_FastLearner",
       "description_key": "UI_trait_FastLearnerDesc",
+      "shortcut": 304,
       "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_fastlearner.png",
       "cost": 7
     },
     "SlowLearner": {
       "name_key": "UI_trait_SlowLearner",
       "description_key": "UI_trait_SlowLearnerDesc",
+      "shortcut": 305,
       "icon_path": "https://pzwiki.net/w/images/c/cc/Trait_slowlearner.png",
       "cost": -7
     },
     "Cruelty": {
       "name_key": "UI_trait_cruelty",
       "description_key": "UI_trait_crueltydesc",
+      "shortcut": 306,
       "icon_path": "#/data/images/traits/soto_mst/cruel.png",
       "cost": 4
     },
     "Cruelty2": {
       "name_key": "UI_trait_cruelty",
       "description_key": "UI_trait_crueltydesc",
+      "shortcut": 307,
       "icon_path": "#/data/images/traits/soto_mst/cruel.png",
       "cost": 0,
       "is_profession_trait": true
@@ -943,12 +1060,14 @@
     "Pacifist": {
       "name_key": "UI_trait_Pacifist",
       "description_key": "UI_trait_PacifistDesc",
+      "shortcut": 308,
       "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_pacifist.png",
       "cost": -5
     },
     "Pacifist2": {
       "name_key": "UI_trait_Pacifist",
       "description_key": "UI_trait_PacifistDesc",
+      "shortcut": 309,
       "icon_path": "https://pzwiki.net/w/images/d/d7/Trait_pacifist.png",
       "cost": 0,
       "is_profession_trait": true
@@ -956,54 +1075,63 @@
     "IronGut": {
       "name_key": "UI_trait_IronGut",
       "description_key": "UI_trait_IronGutDesc",
+      "shortcut": 310,
       "icon_path": "https://pzwiki.net/w/images/8/80/Trait_irongut.png",
       "cost": 1
     },
     "WeakStomach": {
       "name_key": "UI_trait_WeakStomach",
       "description_key": "UI_trait_WeakStomachDesc",
+      "shortcut": 311,
       "icon_path": "https://pzwiki.net/w/images/0/02/Trait_weakstomach.png",
       "cost": -2
     },
     "SensitiveDigestion": {
       "name_key": "UI_trait_sensitivedigestion",
       "description_key": "UI_trait_sensitivedigestiondesc",
+      "shortcut": 312,
       "icon_path": "#/data/images/traits/soto_mst/sensitive_digestion.png",
       "cost": -2
     },
     "Smoker": {
       "name_key": "UI_trait_Smoker",
       "description_key": "UI_trait_SOSmokerDesc",
+      "shortcut": 313,
       "icon_path": "https://pzwiki.net/w/images/d/de/Trait_smoker.png",
       "cost": -4
     },
     "SOAlcoholic": {
       "name_key": "UI_trait_soalcoholic",
       "description_key": "UI_trait_soalcoholicdesc",
+      "shortcut": 314,
       "icon_path": "#/data/images/traits/soto_mst/alcoholic.png",
       "cost": -6
     },
     "LessSweaty": {
       "name_key": "UI_trait_lesssweaty",
       "description_key": "UI_trait_lesssweatydesc",
+      "shortcut": 315,
       "icon_path": "#/data/images/traits/soto_mst/low_sweating.png",
       "cost": 1
     },
     "HighSweaty": {
       "name_key": "UI_trait_highsweaty",
       "description_key": "UI_trait_highsweatydesc",
+      "shortcut": 316,
       "icon_path": "#/data/images/traits/soto_mst/high_sweating.png",
       "cost": -2
     },
     "Organized": {
       "name_key": "UI_trait_Packmule",
       "description_key": "UI_trait_PackmuleDesc",
+      "shortcut": 317,
       "icon_path": "https://pzwiki.net/w/images/7/7f/Trait_organized.png",
       "cost": 5
     },
     "Organized2": {
       "name_key": "UI_trait_Packmule",
       "description_key": "UI_trait_PackmuleDesc",
+      "shortcut": 318,
       "icon_path": "https://pzwiki.net/w/images/7/7f/Trait_organized.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1011,18 +1139,21 @@
     "Disorganized": {
       "name_key": "UI_trait_Disorganized",
       "description_key": "UI_trait_DisorganizedDesc",
+      "shortcut": 319,
       "icon_path": "https://pzwiki.net/w/images/d/df/Trait_disorganized.png",
       "cost": -5
     },
     "StrongBack": {
       "name_key": "UI_trait_strongback",
       "description_key": "UI_trait_strongbackdesc",
+      "shortcut": 320,
       "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
       "cost": 2
     },
     "StrongBack2": {
       "name_key": "UI_trait_strongback",
       "description_key": "UI_trait_strongbackdesc",
+      "shortcut": 321,
       "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1030,18 +1161,21 @@
     "WeakBack": {
       "name_key": "UI_trait_weakback",
       "description_key": "UI_trait_weakbackdesc",
+      "shortcut": 322,
       "icon_path": "#/data/images/traits/soto_mst/weak_back.png",
       "cost": -4
     },
     "Dextrous": {
       "name_key": "UI_trait_Dexterous",
       "description_key": "UI_trait_DexterousDesc2",
+      "shortcut": 323,
       "icon_path": "https://pzwiki.net/w/images/d/d4/Trait_dextrous.png",
       "cost": 2
     },
     "Dextrous2": {
       "name_key": "UI_trait_Dexterous",
       "description_key": "UI_trait_DexterousDesc2",
+      "shortcut": 324,
       "icon_path": "https://pzwiki.net/w/images/d/d4/Trait_dextrous.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1049,90 +1183,105 @@
     "AllThumbs": {
       "name_key": "UI_trait_AllThumbs",
       "description_key": "UI_trait_AllThumbsDesc2",
+      "shortcut": 325,
       "icon_path": "https://pzwiki.net/w/images/9/97/Trait_allthumbs.png",
       "cost": -4
     },
     "LiquidBlood": {
       "name_key": "UI_trait_liquidblood",
       "description_key": "UI_trait_liquidblooddesc",
+      "shortcut": 326,
       "icon_path": "#/data/images/traits/soto_mst/thin_blooded2.png",
       "cost": -6
     },
     "ThickBlood": {
       "name_key": "UI_trait_thickblood",
       "description_key": "UI_trait_thickblooddesc",
+      "shortcut": 327,
       "icon_path": "#/data/images/traits/soto_mst/thick_blooded2.png",
       "cost": 3
     },
     "LowThirst": {
       "name_key": "UI_trait_LowThirst",
       "description_key": "UI_trait_LowThirstDesc",
+      "shortcut": 328,
       "icon_path": "https://pzwiki.net/w/images/9/92/Trait_lowthirst.png",
       "cost": 2
     },
     "HighThirst": {
       "name_key": "UI_trait_HighThirst",
       "description_key": "UI_trait_HighThirstDesc",
+      "shortcut": 329,
       "icon_path": "https://pzwiki.net/w/images/2/29/Trait_highthirst.png",
       "cost": -4
     },
     "LightEater": {
       "name_key": "UI_trait_lighteater",
       "description_key": "UI_trait_lighteaterdesc",
+      "shortcut": 330,
       "icon_path": "https://pzwiki.net/w/images/5/57/Trait_lighteater.png",
       "cost": 2
     },
     "HeartyAppitite": {
       "name_key": "UI_trait_heartyappetite",
       "description_key": "UI_trait_heartyappetitedesc",
+      "shortcut": 331,
       "icon_path": "https://pzwiki.net/w/images/4/46/Trait_heartyappetite.png",
       "cost": -4
     },
     "Asthmatic": {
       "name_key": "UI_trait_Asthmatic",
       "description_key": "UI_trait_AsthmaticDesc",
+      "shortcut": 332,
       "icon_path": "https://pzwiki.net/w/images/c/ce/Trait_asthmatic.png",
       "cost": -6
     },
     "FastHealer": {
       "name_key": "UI_trait_FastHealer",
       "description_key": "UI_trait_FastHealerDesc",
+      "shortcut": 333,
       "icon_path": "https://pzwiki.net/w/images/f/ff/Trait_fasthealer.png",
       "cost": 4
     },
     "SlowHealer": {
       "name_key": "UI_trait_SlowHealer",
       "description_key": "UI_trait_SlowHealerDesc",
+      "shortcut": 334,
       "icon_path": "https://pzwiki.net/w/images/1/1c/Trait_slowhealer.png",
       "cost": -4
     },
     "Resilient": {
       "name_key": "UI_trait_resilient",
       "description_key": "UI_trait_resilientdesc",
+      "shortcut": 335,
       "icon_path": "https://pzwiki.net/w/images/f/fe/Trait_resilient.png",
       "cost": 2
     },
     "ProneToIllness": {
       "name_key": "UI_trait_pronetoillness",
       "description_key": "UI_trait_pronetoillness2desc",
+      "shortcut": 336,
       "icon_path": "https://pzwiki.net/w/images/b/b9/Trait_hypercondriac.png",
       "cost": -4
     },
     "ThickSkinned": {
       "name_key": "UI_trait_thickskinned",
       "description_key": "UI_trait_thickskinneddesc",
+      "shortcut": 337,
       "icon_path": "https://pzwiki.net/w/images/2/26/Trait_thickskinned.png",
       "cost": 6
     },
     "Thinskinned": {
       "name_key": "UI_trait_ThinSkinned",
       "description_key": "UI_trait_ThinSkinnedDesc",
+      "shortcut": 338,
       "icon_path": "https://pzwiki.net/w/images/b/b8/Trait_thinskinned.png",
       "cost": -6
     },
     "NeedsLessSleep": {
       "name_key": "UI_trait_LessSleep",
       "description_key": "UI_trait_LessSleepDesc",
+      "shortcut": 339,
       "icon_path": "https://pzwiki.net/w/images/b/bc/Trait_needslesssleep.png",
       "cost": 4,
       "is_sleep_trait": true
@@ -1140,6 +1289,7 @@
     "NeedsMoreSleep": {
       "name_key": "UI_trait_MoreSleep",
       "description_key": "UI_trait_MoreSleepDesc",
+      "shortcut": 340,
       "icon_path": "https://pzwiki.net/w/images/4/4f/Trait_needsmoresleep.png",
       "cost": -4,
       "is_sleep_trait": true
@@ -1147,6 +1297,7 @@
     "Insomniac": {
       "name_key": "UI_trait_Insomniac",
       "description_key": "UI_trait_InsomniacDesc",
+      "shortcut": 341,
       "icon_path": "https://pzwiki.net/w/images/5/50/Trait_insomniac.png",
       "cost": -6,
       "is_sleep_trait": true
@@ -1154,6 +1305,7 @@
     "OwlPerson": {
       "name_key": "UI_trait_owlperson",
       "description_key": "UI_trait_owlpersondesc",
+      "shortcut": 342,
       "icon_path": "#/data/images/traits/soto_mst/owl.png",
       "cost": -1,
       "is_sleep_trait": true
@@ -1161,6 +1313,7 @@
     "LarkPerson": {
       "name_key": "UI_trait_larkperson",
       "description_key": "UI_trait_larkpersondesc",
+      "shortcut": 343,
       "icon_path": "#/data/images/traits/soto_mst/lark.png",
       "cost": -1,
       "is_sleep_trait": true
@@ -1168,18 +1321,21 @@
     "Optimist": {
       "name_key": "UI_trait_optimistmood",
       "description_key": "UI_trait_optimistmooddesc",
+      "shortcut": 344,
       "icon_path": "#/data/images/traits/soto_mst/optimist.png",
       "cost": 2
     },
     "Depressive": {
       "name_key": "UI_trait_depressivemood",
       "description_key": "UI_trait_depressivemooddesc",
+      "shortcut": 345,
       "icon_path": "#/data/images/traits/soto_mst/depressive.png",
       "cost": -3
     },
     "WeatherSensitive": {
       "name_key": "UI_trait_weathersensitive",
       "description_key": "UI_trait_weathersensitivedesc",
+      "shortcut": 346,
       "icon_path": "#/data/images/traits/soto_mst/weather_sensitive.png",
       "cost": -2,
       "is_disabled_in_mp": true
@@ -1187,6 +1343,7 @@
     "Snorer": {
       "name_key": "UI_trait_snorer",
       "description_key": "UI_trait_snorerdesc",
+      "shortcut": 347,
       "icon_path": "#/data/images/traits/soto_mst/snorer.png",
       "cost": -2,
       "is_sleep_trait": true
@@ -1194,24 +1351,28 @@
     "Allergic": {
       "name_key": "UI_trait_allergic",
       "description_key": "UI_trait_allergicdesc",
+      "shortcut": 348,
       "icon_path": "#/data/images/traits/soto_mst/allergic.png",
       "cost": -3
     },
     "PanicAttacks": {
       "name_key": "UI_trait_panicattacks",
       "description_key": "UI_trait_panicattacksdesc",
+      "shortcut": 349,
       "icon_path": "#/data/images/traits/soto_mst/panic_attacks.png",
       "cost": -4
     },
     "SoreLegs": {
       "name_key": "UI_trait_sorelegs",
       "description_key": "UI_trait_sorelegsdesc",
+      "shortcut": 350,
       "icon_path": "#/data/images/traits/soto_mst/sore_legs.png",
       "cost": -8
     },
     "Axeman": {
       "name_key": "UI_trait_axeman",
       "description_key": "UI_trait_axemandesc",
+      "shortcut": 351,
       "icon_path": "https://pzwiki.net/w/images/0/04/Trait_axeman.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1219,6 +1380,7 @@
     "Burglar": {
       "name_key": "UI_prof_Burglar",
       "description_key": "UI_trait_BurglarDesc",
+      "shortcut": 352,
       "icon_path": "https://pzwiki.net/w/images/0/0a/Trait_burglar.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1226,6 +1388,7 @@
     "Marksman": {
       "name_key": "UI_trait_marksman",
       "description_key": "UI_trait_marksmandesc",
+      "shortcut": 353,
       "icon_path": "https://pzwiki.net/w/images/0/04/Trait_axeman.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1233,6 +1396,7 @@
     "NightOwl": {
       "name_key": "UI_trait_nightowl",
       "description_key": "UI_trait_nightowldesc",
+      "shortcut": 354,
       "icon_path": "https://pzwiki.net/w/images/b/b0/Trait_nightowl.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1240,6 +1404,7 @@
     "CommDriver": {
       "name_key": "UI_trait_commdriver",
       "description_key": "UI_trait_commdriverdesc",
+      "shortcut": 355,
       "icon_path": "#/data/images/traits/soto_mst/commercial_driver.png",
       "cost": 0,
       "is_profession_trait": true,
@@ -1250,6 +1415,7 @@
     "EnjoytheRide": {
       "name_key": "UI_trait_enjoytheride",
       "description_key": "UI_trait_enjoytheridedesc",
+      "shortcut": 356,
       "icon_path": "#/data/images/traits/soto_mst/ride_with_the_wind.png",
       "cost": 0,
       "is_profession_trait": true,
@@ -1260,6 +1426,7 @@
     "UsedToCorpses": {
       "name_key": "UI_trait_usedtocorpses",
       "description_key": "UI_trait_usedtocorpsesdesc",
+      "shortcut": 357,
       "icon_path": "#/data/images/traits/soto_mst/accustomed_to_dead.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1267,6 +1434,7 @@
     "ImprovisedCleaning": {
       "name_key": "UI_trait_improvisedcleaning",
       "description_key": "UI_trait_improvisedcleaningdesc",
+      "shortcut": 358,
       "icon_path": "#/data/images/traits/soto_mst/improvised_cleaning.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1274,6 +1442,7 @@
     "priestspirit": {
       "name_key": "UI_trait_priestspirit",
       "description_key": "UI_trait_priestspiritdesc",
+      "shortcut": 359,
       "icon_path": "#/data/images/traits/soto_mst/priestly_spirituality.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1281,6 +1450,7 @@
     "WoodAxeMyBeloved": {
       "name_key": "UI_trait_woodaxemybeloved",
       "description_key": "UI_trait_woodaxemybeloveddesc",
+      "shortcut": 360,
       "icon_path": "#/data/images/traits/soto_mst/wood_axe_my_beloved.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1288,6 +1458,7 @@
     "DemoStrongGrip": {
       "name_key": "UI_trait_demostronggrip",
       "description_key": "UI_trait_demostronggripdesc",
+      "shortcut": 361,
       "icon_path": "#/data/images/traits/soto_mst/strong_grip.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1295,6 +1466,7 @@
     "GasManagement": {
       "name_key": "UI_trait_gasmanagement",
       "description_key": "UI_trait_gasmanagementdesc",
+      "shortcut": 362,
       "icon_path": "#/data/images/traits/soto_mst/experienced_refueler.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1302,6 +1474,7 @@
     "BladeTools": {
       "name_key": "UI_trait_bladetools",
       "description_key": "UI_trait_bladetoolsdesc",
+      "shortcut": 363,
       "icon_path": "#/data/images/traits/soto_mst/blade_tools.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1309,6 +1482,7 @@
     "MinersEndurance": {
       "name_key": "UI_trait_minersendurance",
       "description_key": "UI_trait_minersendurancedesc",
+      "shortcut": 364,
       "icon_path": "#/data/images/traits/soto_mst/miners_endurance.png",
       "cost": 0,
       "is_profession_trait": true
@@ -1316,6 +1490,7 @@
     "nimblefingers": {
       "name_key": "UI_trait_nimblefingers",
       "description_key": "UI_trait_nimblefingersDesc",
+      "shortcut": 365,
       "icon_path": null,
       "cost": 0,
       "is_profession_trait": true,
@@ -1331,6 +1506,7 @@
     "DoctorPerk": {
       "name_key": "UI_prof_DoctorPerk",
       "description_key": "UI_prof_DoctorPerk_Desc",
+      "shortcut": 366,
       "icon_path": null,
       "cost": 0,
       "is_profession_trait": true,
@@ -1341,6 +1517,7 @@
     "NursePerk": {
       "name_key": "UI_prof_NursePerk",
       "description_key": "UI_prof_NursePerk_Desc",
+      "shortcut": 367,
       "icon_path": null,
       "cost": 0,
       "is_profession_trait": true,
@@ -1351,6 +1528,7 @@
     "FastMedical": {
       "name_key": "UI_prof_FastMedical",
       "description_key": "UI_prof_FastMedical_Desc",
+      "shortcut": 368,
       "icon_path": null,
       "cost": 0,
       "is_profession_trait": true,
@@ -1361,6 +1539,7 @@
     "MedicalPractitioner": {
       "name_key": "UI_trait_MedicalPractitioner",
       "description_key": "UI_trait_MedicalPractitionerDesc",
+      "shortcut": 369,
       "icon_path": null,
       "cost": 0,
       "is_profession_trait": true,
@@ -1372,12 +1551,14 @@
   "professions": {
     "unemployed": {
       "name_key": "UI_prof_unemployed",
+      "shortcut": 22,
       "icon_path": "#/data/images/professions/soto/unemployed.png",
       "points": 10
     },
     "fireofficer": {
       "name_key": "UI_prof_fireoff",
       "description_key": "UI_profdesc_fireoff",
+      "shortcut": 23,
       "icon_path": "https://pzwiki.net/w/images/2/24/Profession_fireofficer2.png",
       "points": -4,
       "xp_boosts": {
@@ -1393,6 +1574,7 @@
     "policeofficer": {
       "name_key": "UI_prof_policeoff",
       "description_key": "UI_profdesc_policeoff",
+      "shortcut": 24,
       "icon_path": "https://pzwiki.net/w/images/a/a0/Profession_policeofficer2.png",
       "points": -4,
       "xp_boosts": {
@@ -1405,6 +1587,7 @@
     "parkranger": {
       "name_key": "UI_prof_parkranger",
       "description_key": "UI_profdesc_parkranger",
+      "shortcut": 25,
       "icon_path": "https://pzwiki.net/w/images/1/18/Profession_parkranger2.png",
       "points": 2,
       "xp_boosts": {
@@ -1423,6 +1606,7 @@
     "constructionworker": {
       "name_key": "UI_prof_constructionworker",
       "description_key": "UI_profdesc_constructionworker",
+      "shortcut": 26,
       "icon_path": "https://pzwiki.net/w/images/2/2c/Profession_constructionworker2.png",
       "points": 0,
       "xp_boosts": {
@@ -1436,6 +1620,7 @@
     "securityguard": {
       "name_key": "UI_prof_securityguard",
       "description_key": "UI_profdesc_securityguard",
+      "shortcut": 27,
       "icon_path": "https://pzwiki.net/w/images/2/29/Profession_securityguard2.png",
       "points": 1,
       "xp_boosts": {
@@ -1450,6 +1635,7 @@
     "carpenter": {
       "name_key": "UI_prof_Carpenter",
       "description_key": "UI_profdesc_Carpenter",
+      "shortcut": 28,
       "icon_path": "https://pzwiki.net/w/images/1/16/Profession_hammer2.png",
       "points": -1,
       "xp_boosts": {
@@ -1464,6 +1650,7 @@
     "burglar": {
       "name_key": "UI_prof_Burglar",
       "description_key": "UI_profdesc_Burglar",
+      "shortcut": 29,
       "icon_path": "https://pzwiki.net/w/images/1/1f/Profession_burglar2.png",
       "points": 0,
       "xp_boosts": {
@@ -1484,6 +1671,7 @@
     "chef": {
       "name_key": "UI_prof_Chef",
       "description_key": "UI_profdesc_Chef",
+      "shortcut": 30,
       "icon_path": "https://pzwiki.net/w/images/5/54/Profession_chef2.png",
       "points": 6,
       "xp_boosts": {
@@ -1509,6 +1697,7 @@
     "repairman": {
       "name_key": "UI_prof_Repairman",
       "description_key": "UI_profdesc_Repairman",
+      "shortcut": 31,
       "icon_path": "https://pzwiki.net/w/images/f/fb/Profession_repairman2.png",
       "points": 1,
       "xp_boosts": {
@@ -1522,6 +1711,7 @@
     "farmer": {
       "name_key": "UI_prof_Farmer",
       "description_key": "UI_profdesc_Farmer",
+      "shortcut": 32,
       "icon_path": "https://pzwiki.net/w/images/6/6c/Profession_farmer2.png",
       "points": 0,
       "xp_boosts": {
@@ -1541,6 +1731,7 @@
     "fisherman": {
       "name_key": "UI_prof_Fisherman",
       "description_key": "UI_profdesc_Fisherman",
+      "shortcut": 33,
       "icon_path": "https://pzwiki.net/w/images/7/7b/Profession_fisher2.png",
       "points": 3,
       "xp_boosts": {
@@ -1559,6 +1750,7 @@
     "doctor": {
       "name_key": "UI_prof_Doctor",
       "description_key": "UI_profdesc_Doctor",
+      "shortcut": 34,
       "icon_path": "https://pzwiki.net/w/images/6/69/Profession_doctor2.png",
       "points": 7,
       "xp_boosts": {
@@ -1573,6 +1765,7 @@
     "veteran": {
       "name_key": "UI_prof_Veteran",
       "description_key": "UI_profdesc_Veteran",
+      "shortcut": 35,
       "icon_path": "https://pzwiki.net/w/images/d/df/Profession_veteran2.png",
       "points": -8,
       "xp_boosts": {
@@ -1588,6 +1781,7 @@
     "nurse": {
       "name_key": "UI_prof_Nurse",
       "description_key": "UI_profdesc_Nurse",
+      "shortcut": 36,
       "icon_path": "https://pzwiki.net/w/images/7/7b/Profession_nurse.png",
       "points": 6,
       "xp_boosts": {
@@ -1608,6 +1802,7 @@
     "lumberjack": {
       "name_key": "UI_prof_Lumberjack",
       "description_key": "UI_profdesc_Lumberjack",
+      "shortcut": 37,
       "icon_path": "https://pzwiki.net/w/images/d/d2/Profession_lumberjack.png",
       "points": -5,
       "xp_boosts": {
@@ -1624,6 +1819,7 @@
     "fitnessInstructor": {
       "name_key": "UI_prof_FitnessInstructor",
       "description_key": "UI_profdesc_FitnessInstructor",
+      "shortcut": 38,
       "icon_path": "https://pzwiki.net/w/images/6/6f/Profession_fitnessinstructor.png",
       "points": -3,
       "xp_boosts": {
@@ -1638,6 +1834,7 @@
     "burgerflipper": {
       "name_key": "UI_prof_BurgerFlipper",
       "description_key": "UI_profdesc_BurgerFlipper",
+      "shortcut": 39,
       "icon_path": "https://pzwiki.net/w/images/d/df/Profession_burgerflipper.png",
       "points": 3,
       "xp_boosts": {
@@ -1649,6 +1846,7 @@
     "electrician": {
       "name_key": "UI_prof_Electrician",
       "description_key": "UI_profdesc_Electrician",
+      "shortcut": 40,
       "icon_path": "https://pzwiki.net/w/images/2/2b/Profession_electrician.png",
       "points": 5,
       "xp_boosts": {
@@ -1672,6 +1870,7 @@
     "engineer": {
       "name_key": "UI_prof_Engineer",
       "description_key": "UI_profdesc_Engineer",
+      "shortcut": 41,
       "icon_path": "https://pzwiki.net/w/images/c/cd/Profession_engineer.png",
       "points": 0,
       "xp_boosts": {
@@ -1692,6 +1891,7 @@
     "metalworker": {
       "name_key": "UI_prof_MetalWorker",
       "description_key": "UI_profdesc_MetalWorker",
+      "shortcut": 42,
       "icon_path": "https://pzwiki.net/w/images/b/b8/Profession_metalworker.png",
       "points": 2,
       "xp_boosts": {
@@ -1710,6 +1910,7 @@
     "mechanics": {
       "name_key": "UI_prof_Mechanics",
       "description_key": "UI_profdesc_mechanics",
+      "shortcut": 43,
       "icon_path": "https://pzwiki.net/w/images/7/70/Profession_mechanic.png",
       "points": 4,
       "xp_boosts": {
@@ -1727,6 +1928,7 @@
     "tailor": {
       "name_key": "UI_prof_tailor",
       "description_key": "UI_profdesc_tailor",
+      "shortcut": 44,
       "icon_path": "#/data/images/professions/soto/tailor.png",
       "points": 4,
       "xp_boosts": {
@@ -1739,6 +1941,7 @@
     "deliveryman": {
       "name_key": "UI_prof_deliveryman",
       "description_key": "UI_profdesc_deliveryman",
+      "shortcut": 45,
       "icon_path": "#/data/images/professions/soto/delivery_man.png",
       "points": -2,
       "xp_boosts": {
@@ -1752,6 +1955,7 @@
     "loader": {
       "name_key": "UI_prof_loader",
       "description_key": "UI_profdesc_loader",
+      "shortcut": 46,
       "icon_path": "#/data/images/professions/soto/loader.png",
       "points": -1,
       "xp_boosts": {
@@ -1766,6 +1970,7 @@
     "trucker": {
       "name_key": "UI_prof_trucker",
       "description_key": "UI_profdesc_trucker",
+      "shortcut": 47,
       "icon_path": "#/data/images/professions/soto/trucker.png",
       "points": 4,
       "xp_boosts": {
@@ -1780,6 +1985,7 @@
     "soldier": {
       "name_key": "UI_prof_soldier",
       "description_key": "UI_profdesc_soldier",
+      "shortcut": 48,
       "icon_path": "#/data/images/professions/soto/soldier.png",
       "points": -8,
       "xp_boosts": {
@@ -1797,6 +2003,7 @@
     "botanist": {
       "name_key": "UI_prof_botanist",
       "description_key": "UI_profdesc_botanist",
+      "shortcut": 49,
       "icon_path": "#/data/images/professions/soto/botanist.png",
       "points": 1,
       "xp_boosts": {
@@ -1813,6 +2020,7 @@
     "graveman": {
       "name_key": "UI_prof_graveman",
       "description_key": "UI_profdesc_graveman",
+      "shortcut": 50,
       "icon_path": "#/data/images/professions/soto/grave_digger.png",
       "points": -2,
       "xp_boosts": {
@@ -1827,6 +2035,7 @@
     "dancerocc": {
       "name_key": "UI_prof_dancerocc",
       "description_key": "UI_profdesc_dancerocc",
+      "shortcut": 51,
       "icon_path": "#/data/images/professions/soto/dancer.png",
       "points": -2,
       "xp_boosts": {
@@ -1890,6 +2099,7 @@
     "priestocc": {
       "name_key": "UI_prof_priestocc",
       "description_key": "UI_profdesc_priestocc",
+      "shortcut": 52,
       "icon_path": "#/data/images/professions/soto/priest.png",
       "points": 12,
       "xp_boosts": {
@@ -1906,6 +2116,7 @@
     "heavyathinstructor": {
       "name_key": "UI_prof_heavyathinstructor",
       "description_key": "UI_profdesc_heavyathinstructor",
+      "shortcut": 53,
       "icon_path": "#/data/images/professions/soto/weightlifting_instructor.png",
       "points": -4,
       "xp_boosts": {
@@ -1921,6 +2132,7 @@
     "detective": {
       "name_key": "UI_prof_detective",
       "description_key": "UI_profdesc_detective",
+      "shortcut": 54,
       "icon_path": "#/data/images/professions/soto/detective.png",
       "points": 0,
       "xp_boosts": {
@@ -1934,6 +2146,7 @@
     "teacherocc": {
       "name_key": "UI_prof_teacherocc",
       "description_key": "UI_profdesc_teacherocc",
+      "shortcut": 55,
       "icon_path": "#/data/images/professions/soto/teacher.png",
       "points": 8,
       "xp_boosts": {
@@ -1947,6 +2160,7 @@
     "cleanerman": {
       "name_key": "UI_prof_cleanerman",
       "description_key": "UI_profdesc_cleanerman",
+      "shortcut": 56,
       "icon_path": "#/data/images/professions/soto/janitor.png",
       "points": 2,
       "xp_boosts": {
@@ -1965,6 +2179,7 @@
     "stuntman": {
       "name_key": "UI_prof_stuntman",
       "description_key": "UI_profdesc_stuntman",
+      "shortcut": 57,
       "icon_path": "#/data/images/professions/soto/stuntman.png",
       "points": 0,
       "xp_boosts": {
@@ -1979,6 +2194,7 @@
     "gasstationoperator": {
       "name_key": "UI_prof_gasstationoperator",
       "description_key": "UI_profdesc_gasstationoperator",
+      "shortcut": 58,
       "icon_path": "#/data/images/professions/soto/gas_station_operator.png",
       "points": 0,
       "xp_boosts": {
@@ -1993,6 +2209,7 @@
     "campcouns": {
       "name_key": "UI_prof_campcouns",
       "description_key": "UI_profdesc_campcouns",
+      "shortcut": 59,
       "icon_path": "#/data/images/professions/soto/camp_counselor.png",
       "points": 1,
       "xp_boosts": {
@@ -2014,6 +2231,7 @@
     "dragracerocc": {
       "name_key": "UI_prof_dragracerocc",
       "description_key": "UI_profdesc_dragracerocc",
+      "shortcut": 60,
       "icon_path": "#/data/images/professions/soto/drag_racer.png",
       "points": 3,
       "xp_boosts": {
@@ -2032,6 +2250,7 @@
     "junkyardworker": {
       "name_key": "UI_prof_junkyardworker",
       "description_key": "UI_profdesc_junkyardworker",
+      "shortcut": 61,
       "icon_path": "#/data/images/professions/soto/junkyard_worker.png",
       "points": 4,
       "xp_boosts": {
@@ -2048,6 +2267,7 @@
     "lifeguard": {
       "name_key": "UI_prof_lifeguard",
       "description_key": "UI_profdesc_lifeguard",
+      "shortcut": 62,
       "icon_path": "#/data/images/professions/soto/lifeguard.png",
       "points": 0,
       "xp_boosts": {
@@ -2064,6 +2284,7 @@
     "demoworker": {
       "name_key": "UI_prof_demoworker",
       "description_key": "UI_profdesc_demoworker",
+      "shortcut": 63,
       "icon_path": "#/data/images/professions/soto/demolition_worker.png",
       "points": -2,
       "xp_boosts": {
@@ -2077,6 +2298,7 @@
     "butcherocc": {
       "name_key": "UI_prof_butcherocc",
       "description_key": "UI_profdesc_butcherocc",
+      "shortcut": 64,
       "icon_path": "#/data/images/professions/soto/butcher.png",
       "points": 3,
       "xp_boosts": {
@@ -2090,6 +2312,7 @@
     "paparazziocc": {
       "name_key": "UI_prof_paparazziocc",
       "description_key": "UI_profdesc_paparazziocc",
+      "shortcut": 65,
       "icon_path": "#/data/images/professions/soto/paparazzi.png",
       "points": 3,
       "xp_boosts": {
@@ -2103,6 +2326,7 @@
     "minerocc": {
       "name_key": "UI_prof_minerocc",
       "description_key": "UI_profdesc_minerocc",
+      "shortcut": 66,
       "icon_path": "#/data/images/professions/soto/miner.png",
       "points": -3,
       "xp_boosts": {
@@ -2118,6 +2342,7 @@
     "cashierocc": {
       "name_key": "UI_prof_cashierocc",
       "description_key": "UI_profdesc_cashierocc",
+      "shortcut": 67,
       "icon_path": "#/data/images/professions/soto/store_employee.png",
       "points": 4,
       "xp_boosts": {
@@ -2131,6 +2356,7 @@
     "criminalocc": {
       "name_key": "UI_prof_criminalocc",
       "description_key": "UI_profdesc_criminalocc",
+      "shortcut": 68,
       "icon_path": "#/data/images/professions/soto/criminal.png",
       "points": -1,
       "xp_boosts": {
@@ -2145,6 +2371,7 @@
     "animalcontrolofficer": {
       "name_key": "UI_prof_animalcontrolofficer",
       "description_key": "UI_profdesc_animalcontrolofficer",
+      "shortcut": 69,
       "icon_path": "#/data/images/professions/soto/animal_control_officer.png",
       "points": 0,
       "xp_boosts": {

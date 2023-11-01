@@ -1,7 +1,6 @@
 "use strict";
 
 const BASE = (window.location.origin + window.location.pathname).replace(/index\.html$/i, "");
-const URL_PARAMS = new URLSearchParams(window.location.search);
 
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
@@ -55,7 +54,7 @@ $(window).on("load", function () {
     // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
-    state.saveToCookies();
+    state.save();
   });
 
   $("#setting-is-sleep-enabled").on("change", function () {
@@ -65,7 +64,7 @@ $(window).on("load", function () {
     // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
-    state.saveToCookies();
+    state.save();
   });
 
   $("#setting-show-unavailable").on("change", function () {
@@ -74,7 +73,7 @@ $(window).on("load", function () {
     state.preset.settings.showUnavailable = this.checked;
     state.update();
     state.rebuildInterfaceTraitsProfessions();
-    state.saveToCookies();
+    state.save();
   });
 
   $("#reset-build").on("click", function () {
@@ -83,7 +82,7 @@ $(window).on("load", function () {
     state.preset.reset();
     state.update();
     state.rebuildInterfaceTraitsProfessions();
-    state.saveToCookies();
+    state.save();
   });
 });
 
@@ -99,10 +98,10 @@ async function reload(modUrls) {
     loadedMods.set(mod.id, mod);
   }
 
-  State.set(State.loadFromCookies(loadedMods));
+  State.set(State.load(loadedMods));
   State.get().applySettingsVisual();
   State.get().rebuildInterfaceFull();
-  State.get().saveToCookies();
+  State.get().save();
 }
 
 /** @param {Mod} mod */
@@ -136,7 +135,7 @@ function createModElement(mod) {
         const state = State.get();
         state.toggleMod(mod.id);
         state.rebuildInterfaceFull();
-        state.saveToCookies();
+        state.save();
       });
     }
 
@@ -187,7 +186,7 @@ function createTraitElement(trait) {
         const state = State.get();
         state.toggleTrait(trait);
         state.rebuildInterfaceTraitsProfessions();
-        state.saveToCookies();
+        state.save();
       });
     } else {
       traitElement.addClass("unavailable");
@@ -222,7 +221,7 @@ function createProfessionElement(profession) {
     const state = State.get();
     state.preset.profession = profession.id;
     state.rebuildInterfaceTraitsProfessions();
-    state.saveToCookies();
+    state.save();
   });
 
   return professionElement;
@@ -412,11 +411,22 @@ class State {
   }
 
   /** @param {Map<string, Mod>} loadedMods */
-  static loadFromCookies(loadedMods) {
-    return new State(loadedMods, Preset.loadFromCookies());
+  static load(loadedMods) {
+    // "It's a bit hacky, I admit, but JavaScript is by design."
+    // https://youtu.be/Uo3cL4nrGOk&t=255
+    const state = new State(loadedMods, Preset.loadFromCookies());
+    if (window.location.search.length !== 0) {
+      state.preset = Preset.fromURLParams(window.location.search, state.currentModData.shortcuts);
+      state.update();
+    }
+
+    return state;
   }
 
-  saveToCookies() {
+  save() {
+    const url = new URL(window.location.href);
+    url.search = "?" + this.preset.toURLParams().toString();
+    window.history.replaceState(null, null, url);
     this.preset.saveToCookies();
   }
 
@@ -483,6 +493,45 @@ class Preset {
     this.traits = filterSet(this.traits, id => modData.traits.has(id) && predicate(modData.traits.get(id)));
   }
 
+  /**
+   * @param {URLSearchParams | string} urlParams
+   * @param {Shortcuts} shortcuts
+   * @returns {Preset}
+   */
+  static fromURLParams(urlParams, shortcuts) {
+    if (typeof urlParams === "string") urlParams = new URLSearchParams(urlParams);
+    const settingsList = urlParams.has("s") ? splitWhitespace(urlParams.get("s")).map(parseShortBoolean) : [];
+    const enabledMods = urlParams.has("m") ? splitWhitespace(urlParams.get("m")).map(i => parseInt(i, 10)) : [];
+    const profession = urlParams.has("o") ? parseInt(urlParams.get("o"), 10) : null;
+    const traits = urlParams.has("t") ? splitWhitespace(urlParams.get("t")).map(i => parseInt(i, 10)) : [];
+
+    return new Preset({
+      settings: new Settings({
+        isMultiplayer: settingsList[0],
+        isSleepEnabled: settingsList[1],
+        showUnavailable: settingsList[2]
+      }),
+      enabledMods: enabledMods.map(id => shortcuts.mods.get(id)),
+      profession: shortcuts.professions.get(profession),
+      traits: traits.map(id => shortcuts.traits.get(id))
+    });
+  }
+
+  /** @returns {URLSearchParams} */
+  toURLParams() {
+    const state = State.get();
+    const enabledMods = Array.from(this.enabledMods.values());
+    const profession = state.currentModData.professions.get(this.profession);
+    const traits = Array.from(this.traits.values());
+    let urlParams = new URLSearchParams();
+
+    urlParams.set("s", this.settings.toArray().map(b => b ? "t" : "f").join(" "));
+    if (enabledMods.length !== 0) urlParams.set("m", enabledMods.map(id => state.loadedMods.get(id).shortcut).join(" "));
+    if (profession != null) urlParams.set("o", profession.shortcut);
+    if (traits.length !== 0) urlParams.set("t", traits.map(id => state.currentModData.traits.get(id).shortcut).join(" "));
+    return urlParams;
+  }
+
   static loadFromCookies() {
     return new Preset(getOrDefaultCookie("saved_preset", {}));
   }
@@ -512,6 +561,23 @@ class Settings {
     this.showUnavailable = showUnavailable;
     /** @type {integer} */
     this.freePoints = freePoints;
+  }
+
+  static fromArray(array = []) {
+    return new Settings({
+      isMultiplayer: array[0],
+      isSleepEnabled: array[1],
+      showUnavailable: array[2],
+      freePoints: array[3]
+    });
+  }
+
+  toArray() {
+    return [
+      this.isMultiplayer,
+      this.isSleepEnabled,
+      this.showUnavailable
+    ];
   }
 
   static loadFromCookies() {
@@ -632,10 +698,26 @@ function mergeMods(mods) {
   const traitsMerged = mergeObjects(mods.map(mod => mod.traits));
   const professionsMerged = mergeObjects(mods.map(mod => mod.professions));
 
+  /** @type {Shortcuts} */
+  let shortcuts = {
+    mods: new Map(),
+    traits: new Map(),
+    professions: new Map()
+  };
+
+  for (const mod of mods) {
+    if (shortcuts.mods.has(mod.shortcut))
+      throw new Error(`Shortcut ID for mod ${mod.shortcut} already exists`);
+    shortcuts.mods.set(mod.shortcut, mod.id);
+  }
+
   /** @type {Map<string, Trait>} */
   let traits = new Map();
   for (const id in traitsMerged) {
     const trait = traitsMerged[id];
+    if (shortcuts.traits.has(trait.shortcut))
+      throw new Error(`Shortcut ID for trait ${trait.shortcut}`);
+    shortcuts.traits.set(trait.shortcut, id);
     if (testCondition(trait.condition, ids)) {
       traits.set(id, convertTrait(id, trait, mutualExclusives, lang));
     }
@@ -645,12 +727,20 @@ function mergeMods(mods) {
   let professions = new Map();
   for (const id in professionsMerged) {
     const profession = professionsMerged[id];
+    if (shortcuts.professions.has(profession.shortcut))
+      throw new Error(`Shortcut ID for profession ${profession.shortcut}`);
+    shortcuts.professions.set(profession.shortcut, id);
     if (testCondition(profession.condition, ids)) {
       professions.set(id, convertProfession(id, profession, traits, lang));
     }
   }
 
-  return { ids, traits, professions };
+  return {
+    ids,
+    traits,
+    professions,
+    shortcuts
+  };
 }
 
 /**
@@ -671,6 +761,7 @@ function convertTrait(id, trait, mutualExclusives, lang) {
     id,
     name: lang[trait.name_key] || null,
     description: lang[trait.description_key] || null,
+    shortcut: trait.shortcut,
     icon: trait.icon_path,
     cost: trait.cost,
     isProfessionTrait: trait.is_profession_trait || false,
@@ -694,6 +785,7 @@ function convertProfession(id, profession, traits, lang) {
     id,
     name: lang[profession.name_key] || null,
     description: lang[profession.description_key] || null,
+    shortcut: profession.shortcut,
     icon: profession.icon_path,
     points: profession.points,
     xpBoosts: profession.xp_boosts || {},
@@ -775,7 +867,7 @@ function steamWorkshopLink(workshop) {
  * @typedef {object} Mod
  * @property {string} id
  * @property {string} name
- * @property {boolean} enabled
+ * @property {integer} shortcut
  * @property {string} author
  * @property {string[]} requires
  * @property {string[]} incompatible
@@ -791,12 +883,21 @@ function steamWorkshopLink(workshop) {
  * @property {Set<string>} ids
  * @property {Map<string, Trait>} traits
  * @property {Map<string, Profession>} professions
+ * @property {Shortcuts} shortcuts
+ */
+
+/**
+ * @typedef {object} Shortcuts
+ * @property {Map<integer, string>} mods
+ * @property {Map<integer, string>} traits
+ * @property {Map<integer, string>} professions
  */
 
 /**
  * @typedef {object} TraitBase
  * @property {string} name_key
  * @property {string} description_key
+ * @property {integer} shortcut
  * @property {string?} icon_path
  * @property {integer} cost
  * @property {boolean?} is_profession_trait
@@ -812,6 +913,7 @@ function steamWorkshopLink(workshop) {
  * @property {string} id
  * @property {string?} name
  * @property {string?} description
+ * @property {integer} shortcut
  * @property {string?} icon
  * @property {integer} cost
  * @property {boolean} isProfessionTrait
@@ -826,6 +928,7 @@ function steamWorkshopLink(workshop) {
  * @typedef {object} ProfessionBase
  * @property {string} name_key
  * @property {string?} description_key
+ * @property {integer} shortcut
  * @property {string?} icon_path
  * @property {integer} points
  * @property {{ [n: string]: integer }?} xp_boosts
@@ -839,6 +942,7 @@ function steamWorkshopLink(workshop) {
  * @property {string} id
  * @property {string?} name
  * @property {string?} description
+ * @property {integer} shortcut
  * @property {string?} icon
  * @property {integer} points
  * @property {{ [n: string]: integer }} xpBoosts

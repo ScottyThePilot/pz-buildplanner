@@ -12,7 +12,6 @@ You can use it here: https://scottythepilot.github.io/pz-buildplanner/.
 
 ## Planned Features
 - Saving and loading builds (presets)
-- Sharing builds via link
 - Support for modded skills?
 
 ## License

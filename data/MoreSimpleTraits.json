@@ -8,10 +8,12 @@
     "SimpleOverhaulTraitsAndOccupations"
   ],
   "workshop_id": 2792245343,
+  "shortcut": 2,
   "traits": {
     "Sneaky": {
       "name_key": "UI_trait_sneaky",
       "description_key": "UI_trait_sneakydesc",
+      "shortcut": 85,
       "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
       "cost": 2,
       "xp_boosts": {
@@ -21,6 +23,7 @@
     "Lightfooted": {
       "name_key": "UI_trait_lightfooted",
       "description_key": "UI_trait_lightfooteddesc",
+      "shortcut": 86,
       "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
       "cost": 2,
       "xp_boosts": {
@@ -30,6 +33,7 @@
     "Nimble": {
       "name_key": "UI_trait_nimble",
       "description_key": "UI_trait_nimbledesc",
+      "shortcut": 87,
       "icon_path": "#/data/images/traits/soto_mst/agile.png",
       "cost": 3,
       "xp_boosts": {
@@ -39,6 +43,7 @@
     "MarathonRunner": {
       "name_key": "UI_trait_marathonrunner",
       "description_key": "UI_trait_marathonrunnerdesc",
+      "shortcut": 88,
       "icon_path": "#/data/images/traits/soto_mst/marathon_runner.png",
       "cost": 5,
       "xp_boosts": {
@@ -49,6 +54,7 @@
     "StrongNimble": {
       "name_key": "UI_trait_strongnimble",
       "description_key": "UI_trait_strongnimbledesc",
+      "shortcut": 89,
       "icon_path": "#/data/images/traits/soto_mst/relentless.png",
       "cost": 7,
       "xp_boosts": {
@@ -59,6 +65,7 @@
     "Taut": {
       "name_key": "UI_trait_taut",
       "description_key": "UI_trait_tautdesc",
+      "shortcut": 90,
       "icon_path": "#/data/images/traits/soto_mst/taut.png",
       "cost": 6,
       "xp_boosts": {
@@ -69,6 +76,7 @@
     "NinjaWay": {
       "name_key": "UI_trait_ninjaway",
       "description_key": "UI_trait_ninjawaydesc",
+      "shortcut": 91,
       "icon_path": "#/data/images/traits/soto_mst/between_the_shadows.png",
       "cost": 5,
       "xp_boosts": {
@@ -79,6 +87,7 @@
     "AMForager": {
       "name_key": "UI_trait_amforager",
       "description_key": "UI_trait_amforagerdesc",
+      "shortcut": 92,
       "icon_path": "#/data/images/traits/soto_mst/forager.png",
       "cost": 1,
       "xp_boosts": {
@@ -88,6 +97,7 @@
     "AMTrapper": {
       "name_key": "UI_trait_amtrapper",
       "description_key": "UI_trait_amtrapperdesc",
+      "shortcut": 93,
       "icon_path": "#/data/images/traits/soto_mst/trapper.png",
       "cost": 1,
       "xp_boosts": {
@@ -104,6 +114,7 @@
     "Mushroomer": {
       "name_key": "UI_trait_mushroomer",
       "description_key": "UI_trait_mushroomerdesc",
+      "shortcut": 94,
       "icon_path": "#/data/images/traits/soto_mst/mushroom_picker.png",
       "cost": 4,
       "xp_boosts": {
@@ -116,6 +127,7 @@
     "AMCook": {
       "name_key": "UI_trait_amcook",
       "description_key": "UI_trait_amcookdesc",
+      "shortcut": 95,
       "icon_path": "#/data/images/traits/soto_mst/scullion.png",
       "cost": 1,
       "xp_boosts": {
@@ -125,6 +137,7 @@
     "AMElectrician": {
       "name_key": "UI_trait_amelectrician",
       "description_key": "UI_trait_amelectriciandesc",
+      "shortcut": 96,
       "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
       "cost": 1,
       "xp_boosts": {
@@ -134,6 +147,7 @@
     "AMMechanic": {
       "name_key": "UI_trait_ammechanic",
       "description_key": "UI_trait_ammechanicdesc",
+      "shortcut": 97,
       "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
       "cost": 2,
       "xp_boosts": {
@@ -143,6 +157,7 @@
     "AMCarpenter": {
       "name_key": "UI_trait_amcarpenter",
       "description_key": "UI_trait_amcarpenterdesc",
+      "shortcut": 98,
       "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
       "cost": 1,
       "xp_boosts": {
@@ -152,6 +167,7 @@
     "AMMetalworker": {
       "name_key": "UI_trait_ammetalworker",
       "description_key": "UI_trait_ammetalworkerdesc",
+      "shortcut": 99,
       "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
       "cost": 2,
       "xp_boosts": {
@@ -161,6 +177,7 @@
     "Durabile": {
       "name_key": "UI_trait_durabile",
       "description_key": "UI_trait_durabiledesc",
+      "shortcut": 100,
       "icon_path": "#/data/images/traits/soto_mst/durability.png",
       "cost": 3,
       "xp_boosts": {
@@ -170,6 +187,7 @@
     "Shortbladefan": {
       "name_key": "UI_trait_shortbladefan",
       "description_key": "UI_trait_shortbladefandesc",
+      "shortcut": 101,
       "icon_path": "#/data/images/traits/soto_mst/stabber.png",
       "cost": 2,
       "xp_boosts": {
@@ -179,6 +197,7 @@
     "Shortbluntfan": {
       "name_key": "UI_trait_shortbluntfan",
       "description_key": "UI_trait_shortbluntfandesc",
+      "shortcut": 102,
       "icon_path": "#/data/images/traits/soto_mst/crusher.png",
       "cost": 3,
       "xp_boosts": {
@@ -188,6 +207,7 @@
     "Cutter": {
       "name_key": "UI_trait_cutter",
       "description_key": "UI_trait_cutterdesc",
+      "shortcut": 103,
       "icon_path": "#/data/images/traits/soto_mst/cutter.png",
       "cost": 4,
       "xp_boosts": {
@@ -197,6 +217,7 @@
     "Spearman": {
       "name_key": "UI_trait_spearman",
       "description_key": "UI_trait_spearmandesc",
+      "shortcut": 104,
       "icon_path": "#/data/images/traits/soto_mst/lancer.png",
       "cost": 5,
       "xp_boosts": {
@@ -206,6 +227,7 @@
     "Swordsman": {
       "name_key": "UI_trait_swordsman",
       "description_key": "UI_trait_swordsmandesc",
+      "shortcut": 105,
       "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
       "cost": 5,
       "xp_boosts": {
@@ -215,12 +237,14 @@
     "Cruelty": {
       "name_key": "UI_trait_cruelty",
       "description_key": "UI_trait_crueltydesc",
+      "shortcut": 106,
       "icon_path": "#/data/images/traits/soto_mst/cruel.png",
       "cost": 4
     },
     "Gunfan": {
       "name_key": "UI_trait_gunfan",
       "description_key": "UI_trait_gunfandesc",
+      "shortcut": 107,
       "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
       "cost": 4,
       "xp_boosts": {
@@ -231,6 +255,7 @@
     "Sharpshooter": {
       "name_key": "UI_trait_sharpshooter",
       "description_key": "UI_trait_sharpshooterdesc",
+      "shortcut": 108,
       "icon_path": "#/data/images/traits/soto_mst/sniper.png",
       "cost": 6,
       "xp_boosts": {
@@ -240,6 +265,7 @@
     "OwlPerson": {
       "name_key": "UI_trait_owlperson",
       "description_key": "UI_trait_owlpersondesc",
+      "shortcut": 109,
       "icon_path": "#/data/images/traits/soto_mst/owl.png",
       "cost": -1,
       "is_sleep_trait": true,
@@ -250,6 +276,7 @@
     "LarkPerson": {
       "name_key": "UI_trait_larkperson",
       "description_key": "UI_trait_larkpersondesc",
+      "shortcut": 110,
       "icon_path": "#/data/images/traits/soto_mst/lark.png",
       "cost": -1,
       "is_sleep_trait": true,
@@ -260,6 +287,7 @@
     "Slack": {
       "name_key": "UI_trait_slack",
       "description_key": "UI_trait_slackdesc",
+      "shortcut": 111,
       "icon_path": "#/data/images/traits/soto_mst/slack.png",
       "cost": -6,
       "xp_boosts": {
@@ -270,6 +298,7 @@
     "WeatherSensitive": {
       "name_key": "UI_trait_weathersensitive",
       "description_key": "UI_trait_weathersensitivedesc",
+      "shortcut": 112,
       "icon_path": "#/data/images/traits/soto_mst/weather_sensitive.png",
       "cost": -2,
       "is_disabled_in_mp": true
@@ -277,36 +306,42 @@
     "SoreLegsTrait": {
       "name_key": "UI_trait_sorelegstrait",
       "description_key": "UI_trait_sorelegstraitdesc",
+      "shortcut": 113,
       "icon_path": "#/data/images/traits/soto_mst/sore_legs.png",
       "cost": -8
     },
     "SensitiveStomach": {
       "name_key": "UI_trait_sensitivestomach",
       "description_key": "UI_trait_sensitivestomachdesc",
+      "shortcut": 114,
       "icon_path": "#/data/images/traits/soto_mst/sensitive_digestion.png",
       "cost": -2
     },
     "PanicAttacks": {
       "name_key": "UI_trait_panicattacks",
       "description_key": "UI_trait_panicattacksdesc",
+      "shortcut": 115,
       "icon_path": "#/data/images/traits/soto_mst/panic_attacks.png",
       "cost": -4
     },
     "MSTAllergic": {
       "name_key": "UI_trait_MSTAllergic",
       "description_key": "UI_trait_MSTAllergicdesc",
+      "shortcut": 116,
       "icon_path": "#/data/images/traits/soto_mst/allergic.png",
       "cost": -3
     },
     "FearoftheDark": {
       "name_key": "UI_trait_fearofthedark",
       "description_key": "UI_trait_fearofthedarkdesc",
+      "shortcut": 117,
       "icon_path": "#/data/images/traits/soto_mst/nyctophobic.png",
       "cost": -1
     },
     "Snorer": {
       "name_key": "UI_trait_snorer",
       "description_key": "UI_trait_snorerdesc",
+      "shortcut": 118,
       "icon_path": "#/data/images/traits/soto_mst/snorer.png",
       "cost": -2,
       "is_sleep_trait": true
@@ -314,18 +349,21 @@
     "LessSweaty": {
       "name_key": "UI_trait_lesssweaty",
       "description_key": "UI_trait_lesssweatydesc",
+      "shortcut": 119,
       "icon_path": "#/data/images/traits/soto_mst/low_sweating.png",
       "cost": 2
     },
     "HighSweaty": {
       "name_key": "UI_trait_highsweaty",
       "description_key": "UI_trait_highsweatydesc",
+      "shortcut": 120,
       "icon_path": "#/data/images/traits/soto_mst/high_sweating.png",
       "cost": -3
     },
     "CanGrabMore": {
       "name_key": "UI_trait_cangrabmore",
       "description_key": "UI_trait_cangrabmoredesc",
+      "shortcut": 121,
       "icon_path": "#/data/images/traits/soto_mst/strong_back.png",
       "cost": 2,
       "condition": {
@@ -335,6 +373,7 @@
     "CanGrabLess": {
       "name_key": "UI_trait_cangrabless",
       "description_key": "UI_trait_cangrablessdesc",
+      "shortcut": 122,
       "icon_path": "#/data/images/traits/soto_mst/weak_back.png",
       "cost": -2,
       "condition": {
@@ -344,6 +383,7 @@
     "HeavilyBleedingWounds": {
       "name_key": "UI_trait_hbwounds",
       "description_key": "UI_trait_hbwoundsdesc",
+      "shortcut": 123,
       "icon_path": "#/data/images/traits/soto_mst/thin_blooded1.png",
       "cost": -4,
       "condition": {
@@ -353,6 +393,7 @@
     "WeaklyBleedingWounds": {
       "name_key": "UI_trait_wbwounds",
       "description_key": "UI_trait_wbwoundsdesc",
+      "shortcut": 124,
       "icon_path": "#/data/images/traits/soto_mst/thick_blooded1.png",
       "cost": 3,
       "condition": {
@@ -362,6 +403,7 @@
     "AccMetabolism": {
       "name_key": "UI_trait_accmetabolism",
       "description_key": "UI_trait_accmetabolismdesc",
+      "shortcut": 125,
       "icon_path": "#/data/images/traits/soto_mst/accelerated_metabolism.png",
       "cost": 2,
       "condition": {
@@ -371,12 +413,14 @@
     "MSTOptimist": {
       "name_key": "UI_trait_optimistmood",
       "description_key": "UI_trait_optimistmooddesc",
+      "shortcut": 126,
       "icon_path": "#/data/images/traits/soto_mst/optimist.png",
       "cost": 2
     },
     "MSTDepressive": {
       "name_key": "UI_trait_depressivemood",
       "description_key": "UI_trait_depressivemooddesc",
+      "shortcut": 127,
       "icon_path": "#/data/images/traits/soto_mst/depressive.png",
       "cost": -4
     }

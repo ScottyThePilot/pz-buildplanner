@@ -3,10 +3,12 @@
   "name": "More Traits",
   "author": "HypnoToadTrance",
   "workshop_id": 1299328280,
+  "shortcut": 6,
   "traits": {
     "gunspecialist": {
       "name_key": "UI_trait_gunspecialist",
       "description_key": "UI_trait_gunspecialistdesc",
+      "shortcut": 370,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_gunspecialist.png",
       "cost": 8,
       "xp_boosts": {
@@ -17,6 +19,7 @@
     "preparedfood": {
       "name_key": "UI_trait_preparedfood",
       "description_key": "UI_trait_preparedfooddesc",
+      "shortcut": 371,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedfood.png",
       "cost": 1,
       "condition": {
@@ -26,6 +29,7 @@
     "preparedammo": {
       "name_key": "UI_trait_preparedammo",
       "description_key": "UI_trait_preparedammodesc",
+      "shortcut": 372,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedammo.png",
       "cost": 1,
       "condition": {
@@ -35,6 +39,7 @@
     "preparedmedical": {
       "name_key": "UI_trait_preparedmedical",
       "description_key": "UI_trait_preparedmedicaldesc",
+      "shortcut": 373,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedmedical.png",
       "cost": 1,
       "condition": {
@@ -44,6 +49,7 @@
     "preparedrepair": {
       "name_key": "UI_trait_preparedrepair",
       "description_key": "UI_trait_preparedrepairdesc",
+      "shortcut": 374,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedrepair.png",
       "cost": 1,
       "condition": {
@@ -53,6 +59,7 @@
     "preparedcamp": {
       "name_key": "UI_trait_preparedcamp",
       "description_key": "UI_trait_preparedcampdesc",
+      "shortcut": 375,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedcamp.png",
       "cost": 1,
       "condition": {
@@ -62,6 +69,7 @@
     "preparedweapon": {
       "name_key": "UI_trait_preparedweapon",
       "description_key": "UI_trait_preparedweapondesc",
+      "shortcut": 376,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedweapon.png",
       "cost": 1,
       "condition": {
@@ -71,6 +79,7 @@
     "preparedpack": {
       "name_key": "UI_trait_preparedpack",
       "description_key": "UI_trait_preparedpackdesc",
+      "shortcut": 377,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedpack.png",
       "cost": 1,
       "condition": {
@@ -80,6 +89,7 @@
     "preparedcar": {
       "name_key": "UI_trait_preparedcar",
       "description_key": "UI_trait_preparedcardesc",
+      "shortcut": 378,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedcar.png",
       "cost": 1,
       "condition": {
@@ -89,6 +99,7 @@
     "preparedcoordination": {
       "name_key": "UI_trait_preparedcoordination",
       "description_key": "UI_trait_preparedcoordinationdesc",
+      "shortcut": 379,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_preparedcoordination.png",
       "cost": 1,
       "condition": {
@@ -98,6 +109,7 @@
     "swift": {
       "name_key": "UI_trait_swift",
       "description_key": "UI_trait_swiftdesc",
+      "shortcut": 380,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_swift.png",
       "cost": 2,
       "xp_boosts": {
@@ -107,6 +119,7 @@
     "ingenuitive": {
       "name_key": "UI_trait_ingenuitive",
       "description_key": "UI_trait_ingenuitivedesc",
+      "shortcut": 381,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_ingenuitive.png",
       "cost": 9,
       "free_recipes": [
@@ -153,6 +166,7 @@
     "generator": {
       "name_key": "UI_trait_generator",
       "description_key": "UI_trait_generatordesc",
+      "shortcut": 382,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_generator.png",
       "cost": 2,
       "free_recipes": [
@@ -165,6 +179,7 @@
     "olympian": {
       "name_key": "UI_trait_olympian",
       "description_key": "UI_trait_olympiandesc",
+      "shortcut": 383,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_olympian.png",
       "cost": 5,
       "xp_boosts": {
@@ -175,6 +190,7 @@
     "bouncer": {
       "name_key": "UI_trait_bouncer",
       "description_key": "UI_trait_bouncerdesc",
+      "shortcut": 384,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_bouncer.png",
       "cost": 5,
       "xp_boosts": {
@@ -185,6 +201,7 @@
     "martial": {
       "name_key": "UI_trait_martial",
       "description_key": "UI_trait_martialdesc",
+      "shortcut": 385,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_martial.png",
       "cost": 5,
       "xp_boosts": {
@@ -195,6 +212,7 @@
     "flexible": {
       "name_key": "UI_trait_flexible",
       "description_key": "UI_trait_flexibledesc",
+      "shortcut": 386,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_flexible.png",
       "cost": 3,
       "xp_boosts": {
@@ -204,6 +222,7 @@
     "grunt": {
       "name_key": "UI_trait_grunt",
       "description_key": "UI_trait_gruntdesc",
+      "shortcut": 387,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_grunt.png",
       "cost": 4,
       "xp_boosts": {
@@ -214,6 +233,7 @@
     "quiet": {
       "name_key": "UI_trait_quiet",
       "description_key": "UI_trait_quietdesc",
+      "shortcut": 388,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_quiet.png",
       "cost": 2,
       "xp_boosts": {
@@ -223,6 +243,7 @@
     "tinkerer": {
       "name_key": "UI_trait_tinkerer",
       "description_key": "UI_trait_tinkererdesc",
+      "shortcut": 389,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_tinkerer.png",
       "cost": 5,
       "xp_boosts": {
@@ -234,6 +255,7 @@
     "scrapper": {
       "name_key": "UI_trait_scrapper",
       "description_key": "UI_trait_scrapperdesc",
+      "shortcut": 390,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_scrapper.png",
       "cost": 3,
       "xp_boosts": {
@@ -248,6 +270,7 @@
     "wildsman": {
       "name_key": "UI_trait_wildsman",
       "description_key": "UI_trait_wildsmandesc",
+      "shortcut": 391,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_wildsman.png",
       "cost": 8,
       "xp_boosts": {
@@ -266,6 +289,7 @@
     "natural": {
       "name_key": "UI_trait_natural",
       "description_key": "UI_trait_naturaldesc",
+      "shortcut": 392,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_natural.png",
       "cost": 4,
       "xp_boosts": {
@@ -276,6 +300,7 @@
     "bladetwirl": {
       "name_key": "UI_trait_bladetwirl",
       "description_key": "UI_trait_bladetwirldesc",
+      "shortcut": 393,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_bladetwirl.png",
       "cost": 5,
       "xp_boosts": {
@@ -286,6 +311,7 @@
     "blunttwirl": {
       "name_key": "UI_trait_blunttwirl",
       "description_key": "UI_trait_blunttwirldesc",
+      "shortcut": 394,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_blunttwirl.png",
       "cost": 5,
       "xp_boosts": {
@@ -296,6 +322,7 @@
     "scrounger": {
       "name_key": "UI_trait_scrounger",
       "description_key": "UI_trait_scroungerdesc",
+      "shortcut": 395,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_scrounger.png",
       "cost": 5,
       "condition": {
@@ -305,6 +332,7 @@
     "antique": {
       "name_key": "UI_trait_antique",
       "description_key": "UI_trait_antiquedesc",
+      "shortcut": 396,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_antique.png",
       "cost": 6,
       "xp_boosts": {
@@ -314,6 +342,7 @@
     "evasive": {
       "name_key": "UI_trait_evasive",
       "description_key": "UI_trait_evasivedesc",
+      "shortcut": 397,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_evasive.png",
       "cost": 8,
       "xp_boosts": {
@@ -323,12 +352,14 @@
     "blissful": {
       "name_key": "UI_trait_blissful",
       "description_key": "UI_trait_blissfuldesc",
+      "shortcut": 398,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_blissful.png",
       "cost": 3
     },
     "specweapons": {
       "name_key": "UI_trait_specweapons",
       "description_key": "UI_trait_specweaponsdesc",
+      "shortcut": 399,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_specweapons.png",
       "cost": 12,
       "xp_boosts": {
@@ -347,6 +378,7 @@
     "speccrafting": {
       "name_key": "UI_trait_speccrafting",
       "description_key": "UI_trait_speccraftingdesc",
+      "shortcut": 400,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_speccrafting.png",
       "cost": 12,
       "xp_boosts": {
@@ -363,6 +395,7 @@
     "specfood": {
       "name_key": "UI_trait_specfood",
       "description_key": "UI_trait_specfooddesc",
+      "shortcut": 401,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_specfood.png",
       "cost": 12,
       "xp_boosts": {
@@ -379,6 +412,7 @@
     "specguns": {
       "name_key": "UI_trait_specguns",
       "description_key": "UI_trait_specgunsdesc",
+      "shortcut": 402,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_specguns.png",
       "cost": 12,
       "xp_boosts": {
@@ -392,6 +426,7 @@
     "specmove": {
       "name_key": "UI_trait_specmove",
       "description_key": "UI_trait_specmovedesc",
+      "shortcut": 403,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_specmove.png",
       "cost": 12,
       "xp_boosts": {
@@ -407,6 +442,7 @@
     "specaid": {
       "name_key": "UI_trait_specaid",
       "description_key": "UI_trait_specaiddesc",
+      "shortcut": 404,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_specaid.png",
       "cost": 12,
       "xp_boosts": {
@@ -431,6 +467,7 @@
     "gordanite": {
       "name_key": "UI_trait_gordanite",
       "description_key": "UI_trait_gordanitedesc",
+      "shortcut": 405,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_gordanite.png",
       "cost": 6,
       "xp_boosts": {
@@ -440,18 +477,21 @@
     "indefatigable": {
       "name_key": "UI_trait_indefatigable",
       "description_key": "UI_trait_indefatigabledesc",
+      "shortcut": 406,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_indefatigable.png",
       "cost": 10
     },
     "hardy": {
       "name_key": "UI_trait_hardy",
       "description_key": "UI_trait_hardydesc",
+      "shortcut": 407,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_hardy.png",
       "cost": 6
     },
     "problunt": {
       "name_key": "UI_trait_problunt",
       "description_key": "UI_trait_probluntdesc",
+      "shortcut": 408,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_problunt.png",
       "cost": 7,
       "xp_boosts": {
@@ -462,6 +502,7 @@
     "problade": {
       "name_key": "UI_trait_problade",
       "description_key": "UI_trait_probladedesc",
+      "shortcut": 409,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_problade.png",
       "cost": 7,
       "xp_boosts": {
@@ -473,6 +514,7 @@
     "progun": {
       "name_key": "UI_trait_progun",
       "description_key": "UI_trait_progundesc",
+      "shortcut": 410,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_progun.png",
       "cost": 7,
       "xp_boosts": {
@@ -483,12 +525,14 @@
     "actionhero": {
       "name_key": "UI_trait_actionhero",
       "description_key": "UI_trait_actionherodesc",
+      "shortcut": 411,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_actionhero.png",
       "cost": 8
     },
     "prospear": {
       "name_key": "UI_trait_prospear",
       "description_key": "UI_trait_prospeardesc",
+      "shortcut": 412,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_prospear.png",
       "cost": 7,
       "xp_boosts": {
@@ -498,12 +542,14 @@
     "thickblood": {
       "name_key": "UI_trait_thickblood",
       "description_key": "UI_trait_thickblooddesc",
+      "shortcut": 413,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_thickblood.png",
       "cost": 4
     },
     "expertdriver": {
       "name_key": "UI_trait_expertdriver",
       "description_key": "UI_trait_expertdriverdesc",
+      "shortcut": 414,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_expertdriver.png",
       "cost": 5,
       "condition": {
@@ -513,18 +559,21 @@
     "superimmune": {
       "name_key": "UI_trait_superimmune",
       "description_key": "UI_trait_superimmunedesc",
+      "shortcut": 415,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_superimmune.png",
       "cost": 10
     },
     "packmule": {
       "name_key": "UI_trait_packmule",
       "description_key": "UI_trait_packmuledesc",
+      "shortcut": 416,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_packmule.png",
       "cost": 7
     },
     "graverobber": {
       "name_key": "UI_trait_graverobber",
       "description_key": "UI_trait_graverobberdesc",
+      "shortcut": 417,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_graverobber.png",
       "cost": 7,
       "xp_boosts": {
@@ -534,6 +583,7 @@
     "gourmand": {
       "name_key": "UI_trait_gourmand",
       "description_key": "UI_trait_gourmanddesc",
+      "shortcut": 418,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_gourmand.png",
       "cost": 4,
       "xp_boosts": {
@@ -543,6 +593,7 @@
     "gymgoer": {
       "name_key": "UI_trait_gymgoer",
       "description_key": "UI_trait_gymgoerdesc",
+      "shortcut": 419,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_gymgoer.png",
       "cost": 5,
       "xp_boosts": {
@@ -553,12 +604,14 @@
     "leadfoot": {
       "name_key": "UI_trait_leadfoot",
       "description_key": "UI_trait_leadfootdesc",
+      "shortcut": 420,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_leadfoot.png",
       "cost": 2
     },
     "vagabond": {
       "name_key": "UI_trait_vagabond",
       "description_key": "UI_trait_vagabonddesc",
+      "shortcut": 421,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_vagabond.png",
       "cost": 3,
       "xp_boosts": {
@@ -568,30 +621,35 @@
     "quickworker": {
       "name_key": "UI_trait_quickworker",
       "description_key": "UI_trait_quickworkerdesc",
+      "shortcut": 422,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_quickworker.png",
       "cost": 9
     },
     "batteringram": {
       "name_key": "UI_trait_batteringram",
       "description_key": "UI_trait_batteringramdesc",
+      "shortcut": 423,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_batteringram.png",
       "cost": 7
     },
     "fitted": {
       "name_key": "UI_trait_fitted",
       "description_key": "UI_trait_fitteddesc",
+      "shortcut": 424,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_fitted.png",
       "cost": 4
     },
     "tavernbrawler": {
       "name_key": "UI_trait_tavernbrawler",
       "description_key": "UI_trait_tavernbrawlerdesc",
+      "shortcut": 425,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_tavernbrawler.png",
       "cost": 3
     },
     "secondwind": {
       "name_key": "UI_trait_secondwind",
       "description_key": "UI_trait_secondwinddesc",
+      "shortcut": 426,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_secondwind.png",
       "cost": 10,
       "xp_boosts": {
@@ -601,108 +659,126 @@
     "restfulsleeper": {
       "name_key": "UI_trait_restfulsleeper",
       "description_key": "UI_trait_restfulsleeperdesc",
+      "shortcut": 427,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_restfulsleeper.png",
       "cost": 6
     },
     "noxpshooter": {
       "name_key": "UI_trait_noxpshooter",
       "description_key": "UI_trait_noxpshooterdesc",
+      "shortcut": 428,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxpshooter.png",
       "cost": 3
     },
     "noxptechnician": {
       "name_key": "UI_trait_noxptechnician",
       "description_key": "UI_trait_noxptechniciandesc",
+      "shortcut": 429,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxptechnician.png",
       "cost": 3
     },
     "noxpaxe": {
       "name_key": "UI_trait_noxpaxe",
       "description_key": "UI_trait_noxpaxedesc",
+      "shortcut": 430,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxpaxe.png",
       "cost": 3
     },
     "noxpfirstaid": {
       "name_key": "UI_trait_noxpfirstaid",
       "description_key": "UI_trait_noxpfirstaiddesc",
+      "shortcut": 431,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxpfirstaid.png",
       "cost": 3
     },
     "noxpmaintenance": {
       "name_key": "UI_trait_noxpmaintenance",
       "description_key": "UI_trait_noxpmaintenancedesc",
+      "shortcut": 432,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxpmaintenance.png",
       "cost": 3
     },
     "noxpsneaky": {
       "name_key": "UI_trait_noxpsneaky",
       "description_key": "UI_trait_noxpsneakydesc",
+      "shortcut": 433,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noxpsneaky.png",
       "cost": 3
     },
     "terminator": {
       "name_key": "UI_trait_terminator",
       "description_key": "UI_trait_terminatordesc",
+      "shortcut": 434,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_terminator.png",
       "cost": 14
     },
     "unwavering": {
       "name_key": "UI_trait_unwavering",
       "description_key": "UI_trait_unwaveringdesc",
+      "shortcut": 435,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_unwavering.png",
       "cost": 6
     },
     "idealweight": {
       "name_key": "UI_trait_idealweight",
       "description_key": "UI_trait_idealweightdesc",
+      "shortcut": 436,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_idealweight.png",
       "cost": 4
     },
     "quickrest": {
       "name_key": "UI_trait_quickrest",
       "description_key": "UI_trait_quickrestdesc",
+      "shortcut": 437,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_quickrest.png",
       "cost": 3
     },
     "antigun": {
       "name_key": "UI_trait_antigun",
       "description_key": "UI_trait_antigundesc",
+      "shortcut": 438,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_antigun.png",
       "cost": -6
     },
     "noodlelegs": {
       "name_key": "UI_trait_noodlelegs",
       "description_key": "UI_trait_noodlelegsdesc",
+      "shortcut": 439,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_noodlelegs.png",
       "cost": -6
     },
     "motionsickness": {
       "name_key": "UI_trait_motionsickness",
       "description_key": "UI_trait_motionsicknessdesc",
+      "shortcut": 440,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_motionsickness.png",
       "cost": -6
     },
     "paranoia": {
       "name_key": "UI_trait_paranoia",
       "description_key": "UI_trait_paranoiadesc",
+      "shortcut": 441,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_paranoia.png",
       "cost": -4
     },
     "packmouse": {
       "name_key": "UI_trait_packmouse",
       "description_key": "UI_trait_packmousedesc",
+      "shortcut": 442,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_packmouse.png",
       "cost": -7
     },
     "injured": {
       "name_key": "UI_trait_injured",
       "description_key": "UI_trait_injureddesc",
+      "shortcut": 443,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_injured.png",
       "cost": -4
     },
     "drinker": {
       "name_key": "UI_trait_drinker",
       "description_key": "UI_trait_drinkerdesc",
+      "shortcut": 444,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_drinker.png",
       "cost": -14,
       "condition": {
@@ -722,48 +798,56 @@
     "broke": {
       "name_key": "UI_trait_broke",
       "description_key": "UI_trait_brokedesc",
+      "shortcut": 445,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_broke.png",
       "cost": -8
     },
     "butterfingers": {
       "name_key": "UI_trait_butterfingers",
       "description_key": "UI_trait_butterfingersdesc",
+      "shortcut": 446,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_butterfingers.png",
       "cost": -12
     },
     "incomprehensive": {
       "name_key": "UI_trait_incomprehensive",
       "description_key": "UI_trait_incomprehensivedesc",
+      "shortcut": 447,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_incomprehensive.png",
       "cost": -10
     },
     "depressive": {
       "name_key": "UI_trait_depressive",
       "description_key": "UI_trait_depressivedesc",
+      "shortcut": 448,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_depressive.png",
       "cost": -4
     },
     "selfdestructive": {
       "name_key": "UI_trait_selfdestructive",
       "description_key": "UI_trait_selfdestructivedesc",
+      "shortcut": 449,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_selfdestructive.png",
       "cost": -4
     },
     "badteeth": {
       "name_key": "UI_trait_badteeth",
       "description_key": "UI_trait_badteethdesc",
+      "shortcut": 450,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_badteeth.png",
       "cost": -3
     },
     "albino": {
       "name_key": "UI_trait_albino",
       "description_key": "UI_trait_albinodesc",
+      "shortcut": 451,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_albino.png",
       "cost": -5
     },
     "amputee": {
       "name_key": "UI_trait_amputee",
       "description_key": "UI_trait_amputeedesc",
+      "shortcut": 452,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_amputee.png",
       "cost": -16,
       "condition": {
@@ -773,6 +857,7 @@
     "poordriver": {
       "name_key": "UI_trait_poordriver",
       "description_key": "UI_trait_poordriverdesc",
+      "shortcut": 453,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_poordriver.png",
       "cost": -5,
       "condition": {
@@ -782,54 +867,63 @@
     "anemic": {
       "name_key": "UI_trait_anemic",
       "description_key": "UI_trait_anemicdesc",
+      "shortcut": 454,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_anemic.png",
       "cost": -4
     },
     "immunocompromised": {
       "name_key": "UI_trait_immunocompromised",
       "description_key": "UI_trait_immunocompromiseddesc",
+      "shortcut": 455,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_immunocompromised.png",
       "cost": -10
     },
     "ascetic": {
       "name_key": "UI_trait_ascetic",
       "description_key": "UI_trait_asceticdesc",
+      "shortcut": 456,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_ascetic.png",
       "cost": -4
     },
     "fearful": {
       "name_key": "UI_trait_fearful",
       "description_key": "UI_trait_fearfuldesc",
+      "shortcut": 457,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_fearful.png",
       "cost": -7
     },
     "glassbody": {
       "name_key": "UI_trait_glassbody",
       "description_key": "UI_trait_glassbodydesc",
+      "shortcut": 458,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_glassbody.png",
       "cost": -10
     },
     "slowworker": {
       "name_key": "UI_trait_slowworker",
       "description_key": "UI_trait_slowworkerdesc",
+      "shortcut": 459,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_slowworker.png",
       "cost": -9
     },
     "mundane": {
       "name_key": "UI_trait_mundane",
       "description_key": "UI_trait_mundanedesc",
+      "shortcut": 460,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_mundane.png",
       "cost": -9
     },
     "burned": {
       "name_key": "UI_trait_burned",
       "description_key": "UI_trait_burneddesc",
+      "shortcut": 461,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_burned.png",
       "cost": -20
     },
     "deprived": {
       "name_key": "UI_trait_deprived",
       "description_key": "UI_trait_depriveddesc",
+      "shortcut": 462,
       "icon_path": "https://raw.githubusercontent.com/hypnotoadtrance/MoreTraits/898e8d2c26b002c739c09dedc3e8b681c4e147e7/Contents/mods/More Traits/media/ui/Traits/trait_deprived.png",
       "cost": -6
     }
