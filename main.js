@@ -1,6 +1,7 @@
 "use strict";
 
 const BASE = (window.location.origin + window.location.pathname).replace(/index\.html$/i, "");
+const URL_PARAMS = new URLSearchParams(window.location.search);
 
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
@@ -44,61 +45,42 @@ SKILL_NAMES.set("Fishing", "Fishing");
 SKILL_NAMES.set("Trapping", "Trapping");
 SKILL_NAMES.set("Foraging", "Foraging");
 
-/**
- * @param {integer} boost
- * @returns {string?}
- */
- function getXpBoostText(boost) {
-  // TODO: figure out if fitness and strength xp boost is real
-  if (boost < 0) return null;
-  switch (boost) {
-    case 0: return "+25%";
-    case 1: return "+75%";
-    case 2: return "+100%";
-    case 3: return "+125%";
-    default: return "+125%";
-  }
-}
-
 $(window).on("load", function () {
   reload(DEFAULT_MOD_URLS);
 
   $("#setting-is-multiplayer").on("change", function () {
     if (State.instance == null) return;
     const state = State.get();
-    state.settings.isMultiplayer = this.checked;
+    state.preset.settings.isMultiplayer = this.checked;
     // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.saveToCookies();
-    state.settings.saveToCookies();
   });
 
   $("#setting-is-sleep-enabled").on("change", function () {
     if (State.instance == null) return;
     const state = State.get();
-    state.settings.isSleepEnabled = this.checked;
+    state.preset.settings.isSleepEnabled = this.checked;
     // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.saveToCookies();
-    state.settings.saveToCookies();
   });
 
   $("#setting-show-unavailable").on("change", function () {
     if (State.instance == null) return;
     const state = State.get();
-    state.settings.showUnavailable = this.checked;
+    state.preset.settings.showUnavailable = this.checked;
     state.update();
     state.rebuildInterfaceTraitsProfessions();
-    state.settings.saveToCookies();
+    state.saveToCookies();
   });
 
   $("#reset-build").on("click", function () {
     if (State.instance == null) return;
     const state = State.get();
-    state.chosenProfession = null;
-    state.chosenTraits = new Set();
+    state.preset.reset();
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.saveToCookies();
@@ -108,28 +90,24 @@ $(window).on("load", function () {
 /** @param {string[]} modUrls */
 async function reload(modUrls) {
   const expandedModUrls = modUrls.map(expandLink);
+
+  /** @type {Map<string, Mod>} */
   let loadedMods = new Map();
   for (let mod of await Promise.all(expandedModUrls.map(fetchJSON))) {
-    mod.enabled = mod.id === "Vanilla";
     mod.requires = mod.requires || [];
     mod.incompatible = mod.incompatible || [];
     loadedMods.set(mod.id, mod);
   }
 
-  // Check the state of the setting checkboxes on the page, and load them into the settings
-  const settings = Settings.loadFromCookies();
-  $("#setting-is-multiplayer").prop("checked", settings.isMultiplayer);
-  $("#setting-is-sleep-enabled").prop("checked", settings.isSleepEnabled);
-  $("#setting-show-unavailable").prop("checked", settings.showUnavailable);
-  State.instance = new State(loadedMods, settings);
-  State.instance.loadFromCookies();
-  State.instance.rebuildInterfaceFull();
-  State.instance.saveToCookies();
-  State.instance.settings.saveToCookies();
+  State.set(State.loadFromCookies(loadedMods));
+  State.get().applySettingsVisual();
+  State.get().rebuildInterfaceFull();
+  State.get().saveToCookies();
 }
 
 /** @param {Mod} mod */
 function createModElement(mod) {
+  const preset = State.get().preset;
   let modElement = $("<div>").addClass("planner-mod");
   if (mod.workshop_id == null) {
     const modName = $("<span>").text(mod.name);
@@ -139,7 +117,7 @@ function createModElement(mod) {
       .text("Always Enabled");
     modElement.append([modName, modToggleButtonFake]);
   } else {
-    const isIncompatible = mod.incompatible.some(id => State.get().loadedMods.get(id).enabled);
+    const isIncompatible = mod.incompatible.some(id => preset.isModEnabled(id));
     const modAuthor = $("<span>").text(mod.author);
     const modLink = $("<a>").text(mod.name).attr({
       href: steamWorkshopLink(mod.workshop_id),
@@ -149,14 +127,14 @@ function createModElement(mod) {
 
     const modName = $("<span>").append([modLink, " by ", modAuthor]);
     const modToggleButton = $("<button>")
-      .addClass(isIncompatible ? "" : (mod.enabled ? "mod-enabled" : "mod-disabled"))
-      .text(isIncompatible ? "Incompatible" : (mod.enabled ? "Enabled" : "Disabled"));
+      .addClass(isIncompatible ? "" : (preset.isModEnabled(mod.id) ? "mod-enabled" : "mod-disabled"))
+      .text(isIncompatible ? "Incompatible" : (preset.isModEnabled(mod.id) ? "Enabled" : "Disabled"));
     if (isIncompatible) {
       modToggleButton.attr("disabled", true);
     } else {
       modToggleButton.on("click", function () {
         const state = State.get();
-        state.toggleMod(mod);
+        state.toggleMod(mod.id);
         state.rebuildInterfaceFull();
         state.saveToCookies();
       });
@@ -235,14 +213,14 @@ function createProfessionElement(profession) {
     professionElement.attr("title", profession.description);
   }
 
-  if (state.chosenProfession === profession.id) {
+  if (state.preset.profession === profession.id) {
     professionElement.addClass("selected");
   }
 
   professionElement.append(professionNameElement);
   professionElement.on("click", function () {
     const state = State.get();
-    state.chosenProfession = profession.id;
+    state.preset.profession = profession.id;
     state.rebuildInterfaceTraitsProfessions();
     state.saveToCookies();
   });
@@ -250,41 +228,30 @@ function createProfessionElement(profession) {
   return professionElement;
 }
 
-/** @param {Map<string, Mod>} loadedMods */
-function getEnabledModData(loadedMods) {
-  let mods = Array.from(loadedMods.values())
-    .filter(mod => mod.enabled);
-  sortMods(mods);
-  return mergeMods(mods);
-}
-
 class State {
-  /** @param {Map<string, Mod>} loadedMods */
-  constructor(loadedMods, settings = new Settings()) {
+  /**
+   * @param {Map<string, Mod>} loadedMods
+   * @param {Preset} preset
+   * @param {Map<string, Preset>} presets
+   */
+  constructor(loadedMods, preset = new Preset()) {
+    if (!(preset instanceof Preset)) preset = new Preset(preset);
+
     /** @type {Map<string, Mod>} */
     this.loadedMods = loadedMods;
 
     /** @type {ModData} */
-    this.currentModData = getEnabledModData(this.loadedMods);
+    this.currentModData = preset.getEnabledModData(loadedMods);
 
-    /** @type {Set<string>} */
-    this.chosenTraits = new Set();
-
-    /** @type {string?} */
-    this.chosenProfession = null;
-
-    /** @type {Settings} */
-    this.settings = settings;
+    /** @type {Preset} */
+    this.preset = preset;
   }
 
   update() {
-    this.currentModData = getEnabledModData(this.loadedMods);
-    this.chosenTraits = filterSet(this.chosenTraits, id => {
-      const trait = this.currentModData.traits.get(id);
-      return trait != null ? this.isTraitAvailable(trait) : false;
+    this.currentModData = this.preset.getEnabledModData(this.loadedMods);
+    this.preset.filter(this.currentModData, trait => {
+      return this.isTraitAvailable(trait);
     });
-    if (!this.currentModData.professions.has(this.chosenProfession)) this.chosenProfession = null;
-    if (!this.chosenProfession && this.currentModData.professions.has(DEFAULT_PROFESSION)) this.chosenProfession = DEFAULT_PROFESSION;
   }
 
   rebuildInterfaceFull() {
@@ -294,17 +261,17 @@ class State {
   }
 
   rebuildInterfaceTraitsProfessions() {
-    const enabledProfessions = this.getEnabledProfessions();
+    const availableProfessions = this.getAvailableProfessions();
 
-    const enabledTraits = this.getEnabledTraits();
-    enabledTraits.sort((trait1, trait2) => trait1.cost - trait2.cost);
-    const enabledNonChosenTraits = enabledTraits.filter(trait => !this.chosenTraits.has(trait.id));
-    const positiveTraits = enabledNonChosenTraits.filter(trait => !trait.isProfessionTrait && trait.cost > 0);
-    const negativeTraits = enabledNonChosenTraits.filter(trait => !trait.isProfessionTrait && trait.cost < 0);
+    const availableTraits = this.getAvailableTraits();
+    availableTraits.sort((trait1, trait2) => trait1.cost - trait2.cost);
+    const availableNonChosenTraits = availableTraits.filter(trait => !this.preset.traits.has(trait.id));
+    const positiveTraits = availableNonChosenTraits.filter(trait => !trait.isProfessionTrait && trait.cost > 0);
+    const negativeTraits = availableNonChosenTraits.filter(trait => !trait.isProfessionTrait && trait.cost < 0);
     negativeTraits.sort((trait1, trait2) => trait2.cost - trait1.cost);
-    const chosenTraits = enabledTraits.filter(trait => this.isTraitChosen(trait.id));
+    const chosenTraits = availableTraits.filter(trait => this.isTraitChosen(trait.id));
 
-    $("#panel-professions > div.panel-inner").empty().append(enabledProfessions.map(createProfessionElement));
+    $("#panel-professions > div.panel-inner").empty().append(availableProfessions.map(createProfessionElement));
     $("#panel-traits-positive > div.panel-inner").empty().append(positiveTraits.map(createTraitElement));
     $("#panel-traits-negative > div.panel-inner").empty().append(negativeTraits.map(createTraitElement));
     $("#panel-traits-chosen > div.panel-inner").empty().append(chosenTraits.map(createTraitElement));
@@ -325,38 +292,34 @@ class State {
     $("#planner-mods-list").empty().append(loadedMods.map(createModElement));
   }
 
+  applySettingsVisual() {
+    // Set the settings checkboxes to whatever settings this state holds
+    $("#setting-is-multiplayer").prop("checked", this.preset.settings.isMultiplayer);
+    $("#setting-is-sleep-enabled").prop("checked", this.preset.settings.isSleepEnabled);
+    $("#setting-show-unavailable").prop("checked", this.preset.settings.showUnavailable);
+  }
+
   /** @returns {integer} */
   getPointTotal() {
-    const freePoints = this.settings.freePoints;
-    const currentProfession = this.currentModData.professions.get(this.chosenProfession);
+    const freePoints = this.preset.settings.freePoints;
+    const currentProfession = this.currentModData.professions.get(this.preset.profession);
     let base = freePoints + (currentProfession != null ? currentProfession.points : 0);
-    for (const id of this.chosenTraits.values()) {
+    for (const id of this.preset.traits.values()) {
       base -= this.currentModData.traits.get(id).cost;
     }
 
     return base;
   }
 
-  /** @returns {Set<string>} */
-  getEnabledMods() {
-    /** @type {Set<string>} */
-    const enabledMods = new Set();
-    for (const mod of this.loadedMods.values()) {
-      if (mod.enabled && mod.id !== "Vanilla") enabledMods.add(mod.id);
-    }
-
-    return enabledMods;
-  }
-
   /** @returns {Trait[]} */
-  getEnabledTraits() {
+  getAvailableTraits() {
     const allTraits = Array.from(this.currentModData.traits.values());
-    return this.settings.showUnavailable ? allTraits
+    return this.preset.settings.showUnavailable ? allTraits
       : allTraits.filter(trait => this.isTraitAvailable(trait));
   }
 
   /** @returns {Profession[]} */
-  getEnabledProfessions() {
+  getAvailableProfessions() {
     return Array.from(this.currentModData.professions.values());
   }
 
@@ -380,7 +343,7 @@ class State {
       }
     }
 
-    const currentProfession = this.currentModData.professions.get(this.chosenProfession);
+    const currentProfession = this.currentModData.professions.get(this.preset.profession);
     if (currentProfession != null) {
       for (const skill in currentProfession.xpBoosts) {
         putXpBoost(skill, currentProfession.xpBoosts[skill]);
@@ -392,18 +355,18 @@ class State {
 
   /** @returns {boolean} */
   isTraitChosen(id) {
-    const currentProfession = this.currentModData.professions.get(this.chosenProfession);
-    return this.chosenTraits.has(id) || (currentProfession != null && currentProfession.freeTraits.includes(id));
+    const currentProfession = this.currentModData.professions.get(this.preset.profession);
+    return this.preset.traits.has(id) || (currentProfession != null && currentProfession.freeTraits.includes(id));
   }
 
   /** @param {Trait} trait @returns {boolean} */
   isTraitAvailable(trait) {
-    const currentProfession = this.currentModData.professions.get(this.chosenProfession);
-    if (!this.settings.isSleepEnabled && trait.isSleepTrait) return false;
-    if (this.settings.isMultiplayer && trait.isDisabledInMp) return false;
+    const currentProfession = this.currentModData.professions.get(this.preset.profession);
+    if (!this.preset.settings.isSleepEnabled && trait.isSleepTrait) return false;
+    if (this.preset.settings.isMultiplayer && trait.isDisabledInMp) return false;
 
     for (const id of trait.exclusives.values()) {
-      if (this.chosenTraits.has(id)) return false;
+      if (this.preset.traits.has(id)) return false;
       if (currentProfession != null && currentProfession.freeTraits.includes(id)) return false;
     }
 
@@ -412,58 +375,49 @@ class State {
 
   /** @param {Trait} trait */
   toggleTrait(trait) {
-    if (this.chosenTraits.has(trait.id)) {
-      this.chosenTraits.delete(trait.id);
+    if (this.preset.traits.has(trait.id)) {
+      this.preset.traits.delete(trait.id);
     } else {
-      this.chosenTraits.add(trait.id);
+      this.preset.traits.add(trait.id);
     }
   }
 
-  /** @param {Mod} mod */
-  toggleMod(mod) {
-    if (mod.enabled) {
-      this.disableMod(mod);
+  /** @param {string} id */
+  toggleMod(id) {
+    if (this.preset.enabledMods.has(id)) {
+      this.disableMod(id);
     } else {
-      this.enableMod(mod);
+      this.enableMod(id);
     }
   }
 
-  /** @param {Mod} mod */
-  enableMod(mod) {
-    mod.enabled = true;
+  /** @param {string} id */
+  enableMod(id) {
+    this.preset.enabledMods.add(id);
+    const mod = this.loadedMods.get(id);
+    if (mod == null) return;
     for (const requirement of mod.requires) {
-      this.enableMod(this.loadedMods.get(requirement));
+      this.enableMod(requirement);
     }
   }
 
-  /** @param {Mod} mod */
-  disableMod(mod) {
-    mod.enabled = false;
+  /** @param {string} id */
+  disableMod(id) {
+    this.preset.enabledMods.delete(id);
     for (const otherMod of this.loadedMods.values()) {
-      if (otherMod.requires.includes(mod.id)) {
-        this.disableMod(otherMod);
+      if (otherMod.requires.includes(id)) {
+        this.disableMod(otherMod.id);
       }
     }
   }
 
-  loadFromCookies() {
-    const enabledMods = new Set(getOrDefaultCookie("saved_enabled_mods", []));
-    for (const mod of this.loadedMods.values()) {
-      mod.enabled = (mod.id == "Vanilla" || enabledMods.has(mod.id));
-    }
-
-    const { chosenTraits = [], chosenProfession = null } = getOrDefaultCookie("saved_build", {});
-    this.chosenTraits = new Set(chosenTraits);
-    this.chosenProfession = chosenProfession;
+  /** @param {Map<string, Mod>} loadedMods */
+  static loadFromCookies(loadedMods) {
+    return new State(loadedMods, Preset.loadFromCookies());
   }
 
   saveToCookies() {
-    const enabledMods = Array.from(this.getEnabledMods().values());
-    setCookie("saved_enabled_mods", enabledMods);
-    setCookie("saved_build", {
-      chosenTraits: Array.from(this.chosenTraits.values()),
-      chosenProfession: this.chosenProfession
-    });
+    this.preset.saveToCookies();
   }
 
   /** @param {State} state */
@@ -481,13 +435,75 @@ class State {
   }
 }
 
+class Preset {
+  constructor({
+    enabledMods = new Set(),
+    settings = new Settings(),
+    profession = null,
+    traits = new Set(),
+  } = {}) {
+    if (!(enabledMods instanceof Set)) enabledMods = new Set(enabledMods);
+    if (!(settings instanceof Settings)) settings = new Settings(settings);
+    if (!(traits instanceof Set)) traits = new Set(traits);
+
+    /** @type {Set<string>} */
+    this.enabledMods = enabledMods;
+    /** @type {Settings} */
+    this.settings = settings;
+    /** @type {string?} */
+    this.profession = profession;
+    /** @type {Set<string>} */
+    this.traits = traits;
+  }
+
+  /** @param {Map<string, Mod>} loadedMods */
+  getEnabledModData(loadedMods) {
+    let mods = Array.from(loadedMods.values())
+      .filter(mod => this.isModEnabled(mod.id));
+    sortMods(mods);
+    return mergeMods(mods);
+  }
+
+  isModEnabled(id) {
+    return id === "Vanilla" || this.enabledMods.has(id);
+  }
+
+  reset() {
+    this.profession = null;
+    this.traits = new Set();
+  }
+
+  /**
+   * @param {ModData} modData
+   * @param {(trait: Trait) => boolean} predicate
+   */
+  filter(modData, predicate) {
+    if (!modData.professions.has(this.profession)) this.profession = null;
+    if (this.profession == null && modData.professions.has(DEFAULT_PROFESSION)) this.profession = DEFAULT_PROFESSION;
+    this.traits = filterSet(this.traits, id => modData.traits.has(id) && predicate(modData.traits.get(id)));
+  }
+
+  static loadFromCookies() {
+    return new Preset(getOrDefaultCookie("saved_preset", {}));
+  }
+
+  saveToCookies() {
+    setCookie("saved_preset", {
+      settings: this.settings,
+      enabledMods: Array.from(this.enabledMods.values()),
+      profession: this.profession,
+      traits: Array.from(this.traits.values()),
+    });
+  }
+}
+
 class Settings {
   constructor({
     isMultiplayer = false,
     isSleepEnabled = false,
     showUnavailable = false,
     freePoints = 0
-  }) {
+  } = {}) {
     /** @type {boolean} */
     this.isMultiplayer = isMultiplayer;
     /** @type {boolean} */
@@ -504,6 +520,22 @@ class Settings {
 
   saveToCookies() {
     setCookie("saved_settings", this);
+  }
+}
+
+/**
+ * @param {integer} boost
+ * @returns {string?}
+ */
+ function getXpBoostText(boost) {
+  // TODO: figure out if fitness and strength xp boost is real
+  if (boost < 0) return null;
+  switch (boost) {
+    case 0: return "+25%";
+    case 1: return "+75%";
+    case 2: return "+100%";
+    case 3: return "+125%";
+    default: return "+125%";
   }
 }
 
@@ -563,6 +595,20 @@ function sortMods(mods) {
         break;
       }
     }
+  }
+}
+
+/** @param {string} str @returns {string[]} */
+function splitWhitespace(str) {
+  return str.trim().split(/\s+/g).filter(s => s.length !== 0);
+}
+
+/** @param {string} str @param {boolean} defaltValue @returns {boolean} */
+function parseShortBoolean(str, defaultValue) {
+  switch (str) {
+    case "t": case "T": return true;
+    case "f": case "F": return false;
+    default: return defaultValue;
   }
 }
 
