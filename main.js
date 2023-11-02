@@ -240,14 +240,14 @@ class State {
     this.loadedMods = loadedMods;
 
     /** @type {ModData} */
-    this.currentModData = preset.getEnabledModData(loadedMods);
+    this.currentModData = getEnabledModData(loadedMods, preset.enabledMods);
 
     /** @type {Preset} */
     this.preset = preset;
   }
 
   update() {
-    this.currentModData = this.preset.getEnabledModData(this.loadedMods);
+    this.currentModData = getEnabledModData(this.loadedMods, this.preset.enabledMods);
     this.preset.filter(this.currentModData, trait => {
       return this.isTraitAvailable(trait);
     });
@@ -278,7 +278,7 @@ class State {
 
     const skills = this.getSkills();
     for (const skill of SKILL_NAMES.keys()) {
-      if (skills.has(skill) && skills.get(skill) !== 0) {
+      if (skills.has(skill) && (skills.get(skill) !== 0 || skill === "Fitness" || skill === "Strength")) {
         skillsElement.append(createSkillElement(skill, skills.get(skill)));
       }
     }
@@ -412,15 +412,11 @@ class State {
 
   /** @param {Map<string, Mod>} loadedMods */
   static load(loadedMods) {
-    // "It's a bit hacky, I admit, but JavaScript is by design."
-    // https://youtu.be/Uo3cL4nrGOk&t=255
-    const state = new State(loadedMods, Preset.loadFromCookies());
     if (window.location.search.length !== 0) {
-      state.preset = Preset.fromURLParams(window.location.search, state.currentModData.shortcuts);
-      state.update();
+      return new State(loadedMods, Preset.fromURLParams(window.location.search, loadedMods));
+    } else {
+      return new State(loadedMods, Preset.loadFromCookies());
     }
-
-    return state;
   }
 
   save() {
@@ -466,14 +462,10 @@ class Preset {
     this.traits = traits;
   }
 
-  /** @param {Map<string, Mod>} loadedMods */
-  getEnabledModData(loadedMods) {
-    let mods = Array.from(loadedMods.values())
-      .filter(mod => this.isModEnabled(mod.id));
-    sortMods(mods);
-    return mergeMods(mods);
-  }
-
+  /**
+   * @param {string} id
+   * @returns {boolean}
+   */
   isModEnabled(id) {
     return id === "Vanilla" || this.enabledMods.has(id);
   }
@@ -495,25 +487,31 @@ class Preset {
 
   /**
    * @param {URLSearchParams | string} urlParams
-   * @param {Shortcuts} shortcuts
+   * @param {Map<string, Mod>} loadedMods
    * @returns {Preset}
    */
-  static fromURLParams(urlParams, shortcuts) {
+  static fromURLParams(urlParams, loadedMods) {
+    /** @type {Map<integer, string>} */
+    const loadedModShortcuts = new Map();
+    for (const [id, mod] of loadedMods) {
+      loadedModShortcuts.set(mod.shortcut, id);
+    }
+
     if (typeof urlParams === "string") urlParams = new URLSearchParams(urlParams);
     const settingsList = urlParams.has("s") ? splitWhitespace(urlParams.get("s")).map(parseShortBoolean) : [];
-    const enabledMods = urlParams.has("m") ? splitWhitespace(urlParams.get("m")).map(i => parseInt(i, 10)) : [];
-    const profession = urlParams.has("o") ? parseInt(urlParams.get("o"), 10) : null;
-    const traits = urlParams.has("t") ? splitWhitespace(urlParams.get("t")).map(i => parseInt(i, 10)) : [];
+    const enabledModShortcuts = urlParams.has("m") ? splitWhitespace(urlParams.get("m")).map(i => parseInt(i, 10)) : [];
+    const professionShortcut = urlParams.has("o") ? parseInt(urlParams.get("o"), 10) : null;
+    const traitShortcuts = urlParams.has("t") ? splitWhitespace(urlParams.get("t")).map(i => parseInt(i, 10)) : [];
+
+    const enabledMods = new Set(enabledModShortcuts.map(id => loadedModShortcuts.get(id)).filter(value => value != null));
+    const modData = getEnabledModData(loadedMods, enabledMods);
+
+    const profession = modData.shortcuts.professions.get(professionShortcut) || null;
+    const traits = traitShortcuts.map(id => modData.shortcuts.traits.get(id)).filter(value => value != null);
 
     return new Preset({
-      settings: new Settings({
-        isMultiplayer: settingsList[0],
-        isSleepEnabled: settingsList[1],
-        showUnavailable: settingsList[2]
-      }),
-      enabledMods: enabledMods.map(id => shortcuts.mods.get(id)),
-      profession: shortcuts.professions.get(profession),
-      traits: traits.map(id => shortcuts.traits.get(id))
+      settings: Settings.fromArray(settingsList),
+      enabledMods, profession, traits
     });
   }
 
@@ -546,6 +544,18 @@ class Preset {
   }
 }
 
+/**
+ * @param {Map<string, Mod>} loadedMods
+ * @param {Set<string>} enabledMods
+ * @returns {ModData}
+ */
+function getEnabledModData(loadedMods, enabledMods) {
+  let mods = Array.from(loadedMods.values())
+    .filter(mod => mod.id === "Vanilla" || enabledMods.has(mod.id));
+  sortMods(mods);
+  return mergeMods(mods);
+}
+
 class Settings {
   constructor({
     isMultiplayer = false,
@@ -563,12 +573,12 @@ class Settings {
     this.freePoints = freePoints;
   }
 
+  /** @param {[bool, bool, bool]?} array */
   static fromArray(array = []) {
     return new Settings({
       isMultiplayer: array[0],
       isSleepEnabled: array[1],
-      showUnavailable: array[2],
-      freePoints: array[3]
+      showUnavailable: array[2]
     });
   }
 
