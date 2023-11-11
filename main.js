@@ -47,6 +47,12 @@ SKILL_NAMES.set("Foraging", "Foraging");
 $(window).on("load", function () {
   reload(DEFAULT_MOD_URLS);
 
+  $(window).on("keydown", function (event) {
+    if (event.key == "Escape") {
+      $("#planner-overlay").addClass("hide").empty();
+    }
+  });
+
   $("#setting-is-multiplayer").on("change", function () {
     if (State.instance == null) return;
     const state = State.get();
@@ -88,11 +94,18 @@ $(window).on("load", function () {
 
 /** @param {string[]} modUrls */
 async function reload(modUrls) {
+  $("#planner-overlay").removeClass("hide").text("Loading...");
   const expandedModUrls = modUrls.map(expandLink);
+  await Promise.all(expandedModUrls.map(fetchJSON))
+    .then(modsLoadingSuccess, modsLoadingFailure);
+}
 
+/** @param {any[]} mods */
+function modsLoadingSuccess(mods) {
+  $("#planner-overlay").addClass("hide").empty();
   /** @type {Map<string, Mod>} */
   let loadedMods = new Map();
-  for (let mod of await Promise.all(expandedModUrls.map(fetchJSON))) {
+  for (let mod of mods) {
     mod.requires = mod.requires || [];
     mod.incompatible = mod.incompatible || [];
     loadedMods.set(mod.id, mod);
@@ -102,6 +115,11 @@ async function reload(modUrls) {
   State.get().applySettingsVisual();
   State.get().rebuildInterfaceFull();
   State.get().save();
+}
+
+function modsLoadingFailure(error) {
+  $("#planner-overlay").removeClass("hide").text(error.toString());
+  console.log(error);
 }
 
 /** @param {Mod} mod */
