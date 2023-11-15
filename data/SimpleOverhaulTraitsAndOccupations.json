@@ -669,6 +669,14 @@
       "icon_path": "#/data/images/traits/soto_mst/relentless.png",
       "cost": 2
     },
+    "Relentless2": {
+      "name_key": "UI_trait_relentless",
+      "description_key": "UI_trait_relentlessdesc",
+      "shortcut": 463,
+      "icon_path": "#/data/images/traits/soto_mst/relentless.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
     "NinjaWay": {
       "name_key": "UI_trait_ninjaway",
       "description_key": "UI_trait_ninjawaydesc",
@@ -2336,7 +2344,7 @@
       },
       "free_traits": [
         "NightVision2",
-        "MinersEndurance"
+        "Relentless2"
       ]
     },
     "cashierocc": {
@@ -3059,6 +3067,14 @@
       "Relentless"
     ],
     [
+      "Relentless",
+      "Relentless2"
+    ],
+    [
+      "Asthmatic",
+      "Relentless2"
+    ],
+    [
       "Conspicuous",
       "NinjaWay"
     ],
@@ -3219,7 +3235,7 @@
     "UI_trait_SOSmokerDesc": "Has a tobacco addiction.\nSlightly increased endurance loss while running or fighting.\nMay cough when exhausted.\nTobacco smoking reduces stress, unhappiness and hunger.\nAbstaining from smoking increases stress, unhappiness and hunger.\n(Can get rid of this bad habit if do not smoke tobacco for a month.)",
     "UI_trait_Scout2Desc": "Has skills in First Aid and Foraging.",
     "UI_trait_accmetabolism": "Accelerated Metabolism",
-    "UI_trait_accmetabolismdesc": "Trains Strength and Fitness faster if not hungry.\nProne to maintain ideal weight.\n(+30% Strength and Fitness XP if hunger level not higher than Peckish,\n-30% calorie burn if weight is less than 78,\n+30% calorie burn if weight is over than 82.)",
+    "UI_trait_accmetabolismdesc": "Trains Strength and Fitness faster if not hungry.\nProne to maintain ideal weight.\n(+30% Strength and Fitness XP if hunger level not higher than Peckish,\n-30% calorie burn if weight is less than 76,\n+30% calorie burn if weight is over than 84.)",
     "UI_trait_allergic": "Allergic",
     "UI_trait_allergicdesc": "Sneezes involuntary from time to time.\n(May attract zombies.\nSneeze can be muffled with Tissue or Toilet paper.)",
     "UI_trait_automechanic": "Auto Mechanic",
