@@ -48,7 +48,7 @@ $(window).on("load", function () {
   reload(DEFAULT_MOD_URLS);
 
   $(window).on("keydown", function (event) {
-    if (event.key == "Escape") {
+    if (event.key === "Escape") {
       $("#planner-overlay").addClass("hide").empty();
     }
   });
@@ -122,27 +122,34 @@ function modsLoadingFailure(error) {
   console.log(error);
 }
 
+function linkAttr(workshopId) {
+  return {
+    href: steamWorkshopLink(workshopId),
+    target: "_blank",
+    rel: "noopener noreferrer"
+  };
+}
+
 /** @param {Mod} mod */
 function createModElement(mod) {
   const preset = State.get().preset;
   let modElement = $("<div>").addClass("planner-mod");
-  if (mod.workshop_id == null) {
-    const modName = $("<span>").text(mod.name);
+
+  const modAuthor = $("<span>").text(mod.author);
+  const modNameLink = mod.workshop_id != null
+    ? $("<a>").text(mod.name).attr(linkAttr(mod.workshop_id))
+    : $("<span>").text(mod.name);
+  const modName = $("<span>").append([modNameLink, " by ", modAuthor]);
+  modElement.append(modName);
+
+  if (mod.id === "Vanilla") {
     const modToggleButtonFake = $("<button>")
       .attr("disabled", true)
       .addClass("mod-enabled")
       .text("Always Enabled");
-    modElement.append([modName, modToggleButtonFake]);
+    modElement.append(modToggleButtonFake);
   } else {
     const isIncompatible = mod.incompatible.some(id => preset.isModEnabled(id));
-    const modAuthor = $("<span>").text(mod.author);
-    const modLink = $("<a>").text(mod.name).attr({
-      href: steamWorkshopLink(mod.workshop_id),
-      target: "_blank",
-      rel: "noopener noreferrer"
-    });
-
-    const modName = $("<span>").append([modLink, " by ", modAuthor]);
     const modToggleButton = $("<button>")
       .addClass(isIncompatible ? "" : (preset.isModEnabled(mod.id) ? "mod-enabled" : "mod-disabled"))
       .text(isIncompatible ? "Incompatible" : (preset.isModEnabled(mod.id) ? "Enabled" : "Disabled"));
@@ -157,7 +164,7 @@ function createModElement(mod) {
       });
     }
 
-    modElement.append([modName, modToggleButton]);
+    modElement.append(modToggleButton);
   }
 
   return modElement;
