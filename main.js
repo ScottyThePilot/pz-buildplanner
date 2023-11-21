@@ -203,6 +203,7 @@ function createTraitElement(trait) {
       traitElement.on("click", function () {
         const state = State.get();
         state.toggleTrait(trait);
+        state.update();
         state.rebuildInterfaceTraitsProfessions();
         state.save();
       });
@@ -238,6 +239,7 @@ function createProfessionElement(profession) {
   professionElement.on("click", function () {
     const state = State.get();
     state.preset.profession = profession.id;
+    state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
   });
@@ -266,9 +268,7 @@ class State {
 
   update() {
     this.currentModData = getEnabledModData(this.loadedMods, this.preset.enabledMods);
-    this.preset.filter(this.currentModData, trait => {
-      return this.isTraitAvailable(trait);
-    });
+    this.preset.filter(this.currentModData, trait => this.isTraitAvailable(trait));
   }
 
   rebuildInterfaceFull() {
