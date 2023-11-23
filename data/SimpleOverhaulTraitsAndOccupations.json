@@ -3228,7 +3228,7 @@
     "UI_trait_FirstAid2Desc": "Has skills in First Aid.",
     "UI_trait_Gardener2Desc": "Has skills in Farming.",
     "UI_trait_Gymnast2desc": "Has skills in Nimble and Lightfooted.",
-    "UI_trait_Hemophobic2Desc": "Panic when performing first aid on self and butchering animals.\t\nCannot perform first aid on others.\nGets stressed and unhappy when covered in blood.",
+    "UI_trait_Hemophobic2Desc": "Panic when performing first aid on self and butchering animals.\nCannot perform first aid on others.\nGets stressed and unhappy when covered in blood.",
     "UI_trait_Mechanics2Desc": "Knows how to service and repair all types of vehicles.",
     "UI_trait_MechanicsDesc": "Knows how to service and repair standard and heavy vehicles.",
     "UI_trait_SOHikerDesc": "Experienced in hiking long distances.\n(Reduced accumulation of hunger, thirst and fatigue if walking for a while without stopping.\nKnows how to make Snare Trap, a Stick Trap and Wooden Cage Trap.)",

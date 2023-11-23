@@ -16,6 +16,7 @@ const DEFAULT_MOD_URLS = [
   "#/data/ToadTraitsDynamic.json"
 ];
 
+/** @type {Map<string, string>} */
 const SKILL_NAMES = new Map();
 SKILL_NAMES.set("Fitness", "Fitness");
 SKILL_NAMES.set("Strength", "Strength");
@@ -194,9 +195,8 @@ function createTraitElement(trait) {
     $("<span>").text(trait.name)
   ]);
 
-  if (trait.description != null) {
-    traitElement.attr("title", trait.description);
-  }
+  const description = createDescription(trait.description, trait.xpBoosts);
+  traitElement.attr("title", description);
 
   if (trait.isProfessionTrait) {
     traitElement.append(traitNameElement);
@@ -234,9 +234,8 @@ function createProfessionElement(profession) {
     $("<span>").text(profession.name)
   ]);
 
-  if (profession.description != null) {
-    professionElement.attr("title", profession.description);
-  }
+  const description = createDescription(profession.description, profession.xpBoosts, profession.points);
+  professionElement.attr("title", description);
 
   if (state.preset.profession === profession.id) {
     professionElement.addClass("selected");
@@ -362,15 +361,15 @@ class State {
 
     for (const trait of this.currentModData.traits.values()) {
       if (!this.isTraitChosen(trait.id)) continue;
-      for (const skill in trait.xpBoosts) {
-        putXpBoost(skill, trait.xpBoosts[skill]);
+      for (const [skill, boost] of trait.xpBoosts.entries()) {
+        putXpBoost(skill, boost);
       }
     }
 
     const currentProfession = this.currentModData.professions.get(this.preset.profession);
     if (currentProfession != null) {
-      for (const skill in currentProfession.xpBoosts) {
-        putXpBoost(skill, currentProfession.xpBoosts[skill]);
+      for (const [skill, boost] of currentProfession.xpBoosts.entries()) {
+        putXpBoost(skill, boost);
       }
     }
 
@@ -802,7 +801,7 @@ function convertTrait(id, trait, mutualExclusives, lang) {
     isProfessionTrait: trait.is_profession_trait || false,
     isSleepTrait: trait.is_sleep_trait || false,
     isDisabledInMp: trait.is_disabled_in_mp || false,
-    xpBoosts: trait.xp_boosts || {},
+    xpBoosts: new Map(Object.entries(trait.xp_boosts || {})),
     freeRecipes: trait.free_recipes || [],
     exclusives
   };
@@ -823,10 +822,35 @@ function convertProfession(id, profession, traits, lang) {
     shortcut: profession.shortcut,
     icon: profession.icon_path,
     points: profession.points,
-    xpBoosts: profession.xp_boosts || {},
+    xpBoosts: new Map(Object.entries(profession.xp_boosts || {})),
     freeRecipes: profession.free_recipes || [],
     freeTraits: (profession.free_traits || []).filter(t => traits.has(t))
   };
+}
+
+/**
+ * @param {string?} description
+ * @param {Map<string, integer>} xpBoosts
+ * @param {integer?} points
+ * @returns {string}
+ */
+function createDescription(description, xpBoosts = new Map(), points = null) {
+  let descriptionLines = (description || "").split(/\n+/g);
+
+  if (points !== null && points !== undefined) {
+    descriptionLines.push("");
+    descriptionLines.push(points.toString() + " Starting Points");
+  }
+
+  if (xpBoosts.size > 0) descriptionLines.push("");
+  for (const [skill, skillName] of SKILL_NAMES.entries()) {
+    if (!xpBoosts.has(skill)) continue;
+    const boost = xpBoosts.get(skill);
+    const boostText = (boost < 0 ? "" : "+") + boost.toString();
+    descriptionLines.push(boostText + " " + skillName);
+  }
+
+  return descriptionLines.join("\n").trim();
 }
 
 /**
@@ -954,7 +978,7 @@ function steamWorkshopLink(workshop) {
  * @property {boolean} isProfessionTrait
  * @property {boolean} isSleepTrait
  * @property {boolean} isDisabledInMp
- * @property {{ [n: string]: integer }} xpBoosts
+ * @property {Map<string, integer>} xpBoosts
  * @property {string[]} freeRecipes
  * @property {Set<string>} exclusives
  */
@@ -980,7 +1004,7 @@ function steamWorkshopLink(workshop) {
  * @property {integer} shortcut
  * @property {string?} icon
  * @property {integer} points
- * @property {{ [n: string]: integer }} xpBoosts
+ * @property {Map<string, integer>} xpBoosts
  * @property {string[]} freeRecipes
  * @property {string[]} freeTraits
  */
