@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Profession",
+  "description": "A Project Zomboid Occupation",
+  "type": "object",
+  "properties": {
+    "name_key": {
+      "description": "The lang key for this occupation's name",
+      "type": "string"
+    },
+    "description_key": {
+      "description": "The lang key for this occupation's description",
+      "type": "string"
+    },
+    "shortcut": {
+      "description": "A unique integer identifying this occupation, used for preset urls",
+      "type": "integer"
+    },
+    "icon_path": {
+      "description": "The path to the icon for this occupation",
+      "type": ["null", "string"]
+    },
+    "points": {
+      "description": "The base points given when picking this occupation",
+      "type": "integer"
+    },
+    "xp_boosts": {
+      "description": "A table of skills and the XP boosts associated with them",
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "free_recipes": {
+      "description": "A list of recipe names",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "free_traits": {
+      "description": "A list of trait IDs",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "condition": {
+      "$ref": "../schema/condition.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name_key",
+    "shortcut",
+    "icon_path",
+    "points"
+  ]
+}

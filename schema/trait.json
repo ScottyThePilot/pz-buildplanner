@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trait",
+  "description": "A Project Zomboid Trait",
+  "type": "object",
+  "properties": {
+    "name_key": {
+      "description": "The lang key for this trait's name",
+      "type": "string"
+    },
+    "description_key": {
+      "description": "The lang key for this trait's description",
+      "type": "string"
+    },
+    "shortcut": {
+      "description": "A unique integer identifying this trait, used for preset urls",
+      "type": "integer"
+    },
+    "icon_path": {
+      "description": "The path to the icon for this trait",
+      "type": ["null", "string"]
+    },
+    "cost": {
+      "description": "The point cost of this trait",
+      "type": "integer"
+    },
+    "is_profession_trait": {
+      "description": "Whether this trait is locked to a profession and hidden from the list",
+      "type": "boolean"
+    },
+    "is_sleep_trait": {
+      "description": "Whether this trait should be disabled when sleep is disabled",
+      "type": "boolean"
+    },
+    "is_disabled_in_mp": {
+      "description": "Whether this trait should be disabled in multiplayer",
+      "type": "boolean"
+    },
+    "xp_boosts": {
+      "description": "A table of skills and the XP boosts associated with them",
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "free_recipes": {
+      "description": "A list of recipe names",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "condition": {
+      "$ref": "../schema/condition.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name_key",
+    "description_key",
+    "shortcut",
+    "icon_path",
+    "cost"
+  ]
+}

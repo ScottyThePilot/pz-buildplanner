@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Condition",
+  "description": "A condition determining whether or not a profession or trait should be enabled",
+  "oneOf": [
+    {
+      "description": "A boolean, for always true or always false",
+      "type": ["null", "boolean"]
+    },
+    {
+      "description": "A list of conditions, at least one of which must pass",
+      "type": "object",
+      "properties": {
+        "any": {
+          "description": "A list of conditions",
+          "type": "array",
+          "values": {
+            "$ref": "../schema/condition.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "any"
+      ]
+    },
+    {
+      "description": "A list of conditions, all of which must pass",
+      "type": "object",
+      "properties": {
+        "all": {
+          "description": "A list of conditions",
+          "type": "array",
+          "values": {
+            "$ref": "../schema/condition.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "all"
+      ]
+    },
+    {
+      "description": "A mod which must be present for the condition to pass",
+      "type": "object",
+      "properties": {
+        "mod_is_present": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "mod_is_present"
+      ]
+    },
+    {
+      "description": "A mod which must be absent for the condition to pass",
+      "type": "object",
+      "properties": {
+        "mod_is_absent": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "mod_is_absent"
+      ]
+    }
+  ]
+}

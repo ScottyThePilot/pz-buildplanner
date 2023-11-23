@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mod",
+  "description": "A Project Zomboid Mod",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the mod",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the mod",
+      "type": "string"
+    },
+    "author": {
+      "description": "The author/authors of the mod",
+      "type": "string"
+    },
+    "requires": {
+      "description": "A list of mod IDs who must be loaded alongside this one",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "incompatible": {
+      "description": "A list of mod IDs who cannot be loaded alongside this one",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "workshop_id": {
+      "type": "integer"
+    },
+    "shortcut": {
+      "description": "A unique integer identifying this mod, used for preset urls",
+      "type": "integer"
+    },
+    "traits": {
+      "description": "A table of traits included in this mod",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../schema/trait.json"
+      }
+    },
+    "professions": {
+      "description": "A table of professions included in this mod",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../schema/profession.json"
+      }
+    },
+    "mutual_exclusives": {
+      "description": "A list of trait ID pairs indicating those which are mutually exclusive",
+      "type": "array",
+      "items": {
+        "description": "A pair of trait IDs that will be mutually exclusive",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 2,
+        "maxItems": 2,
+        "uniqueItems": true
+      },
+      "uniqueItems": true
+    },
+    "lang": {
+      "description": "A table of language keys and their associated text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "author",
+    "shortcut",
+    "traits",
+    "professions",
+    "mutual_exclusives",
+    "lang"
+  ]
+}
