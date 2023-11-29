@@ -1,0 +1,101 @@
+{
+  "id": "ScottyMoreTraits",
+  "name": "Scotty's Additions: Traits",
+  "author": "ScottyThePilot",
+  "workshop_id": 3094590007,
+  "shortcut": 11,
+  "traits": {
+    "SCT_Foolish": {
+      "name_key": "UI_trait_SCT_Foolish",
+      "description_key": "UI_trait_SCT_FoolishDesc",
+      "shortcut": 469,
+      "icon_path": "#/data/images/traits/scotty_additions/foolish.png",
+      "cost": -1
+    },
+    "SCT_NervesOfSteel": {
+      "name_key": "UI_trait_SCT_NervesOfSteel",
+      "description_key": "UI_trait_SCT_NervesOfSteelDesc",
+      "shortcut": 470,
+      "icon_path": "#/data/images/traits/scotty_additions/nerves_of_steel.png",
+      "cost": 5
+    },
+    "SCT_Worrywart": {
+      "name_key": "UI_trait_SCT_Worrywart",
+      "description_key": "UI_trait_SCT_WorrywartDesc",
+      "shortcut": 471,
+      "icon_path": "#/data/images/traits/scotty_additions/worrywart.png",
+      "cost": -4
+    }
+  },
+  "professions": {},
+  "mutual_exclusives": [
+    [
+      "SCT_NervesOfSteel",
+      "SCT_Worrywart"
+    ],
+    [
+      "SCT_NervesOfSteel",
+      "Smoker"
+    ],
+    [
+      "Hemophobic",
+      "SCT_NervesOfSteel"
+    ],
+    [
+      "Desensitized",
+      "SCT_Worrywart"
+    ],
+    [
+      "Brave",
+      "SCT_Worrywart"
+    ],
+    [
+      "SCT_Worrywart",
+      "Smoker"
+    ],
+    [
+      "Hemophobic",
+      "SCT_Worrywart"
+    ],
+    [
+      "SCT_NervesOfSteel",
+      "SOAlcoholic"
+    ],
+    [
+      "SCT_Worrywart",
+      "SOAlcoholic"
+    ],
+    [
+      "Desensitized2",
+      "SCT_Worrywart"
+    ],
+    [
+      "MSTAlcoholic",
+      "SCT_NervesOfSteel"
+    ],
+    [
+      "MSTAlcoholic",
+      "SCT_Worrywart"
+    ],
+    [
+      "SCT_NervesOfSteel",
+      "drinker"
+    ],
+    [
+      "SCT_Worrywart",
+      "drinker"
+    ],
+    [
+      "SCT_Worrywart",
+      "terminator"
+    ]
+  ],
+  "lang": {
+    "UI_trait_SCT_Foolish": "Foolish",
+    "UI_trait_SCT_FoolishDesc": "Oh, what a fool you are.",
+    "UI_trait_SCT_NervesOfSteel": "Nerves of Steel",
+    "UI_trait_SCT_NervesOfSteelDesc": "Cannot become stressed.",
+    "UI_trait_SCT_Worrywart": "Worrywart",
+    "UI_trait_SCT_WorrywartDesc": "Becomes stressed when panicked.\n(When panicked, stress will increase to the same level as panic.)"
+  }
+}

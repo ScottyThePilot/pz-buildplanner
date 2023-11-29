@@ -1,0 +1,75 @@
+{
+  "id": "ScottyInjuryTraits",
+  "name": "Scotty's Additions: Injury Traits",
+  "author": "ScottyThePilot",
+  "workshop_id": 3094590007,
+  "shortcut": 10,
+  "traits": {
+    "SCT_Injured": {
+      "name_key": "UI_trait_SCT_Injured",
+      "description_key": "UI_trait_SCT_InjuredDesc",
+      "shortcut": 464,
+      "icon_path": "#/data/images/traits/scotty_additions/injured.png",
+      "cost": -2
+    },
+    "SCT_Burned": {
+      "name_key": "UI_trait_SCT_Burned",
+      "description_key": "UI_trait_SCT_BurnedDesc",
+      "shortcut": 465,
+      "icon_path": "#/data/images/traits/scotty_additions/burned.png",
+      "cost": -5
+    },
+    "SCT_FractureArm": {
+      "name_key": "UI_trait_SCT_FractureArm",
+      "description_key": "UI_trait_SCT_FractureArmDesc",
+      "shortcut": 466,
+      "icon_path": "#/data/images/traits/scotty_additions/broken_arm.png",
+      "cost": -6
+    },
+    "SCT_FractureLeg": {
+      "name_key": "UI_trait_SCT_FractureLeg",
+      "description_key": "UI_trait_SCT_FractureLegDesc",
+      "shortcut": 467,
+      "icon_path": "#/data/images/traits/scotty_additions/broken_leg.png",
+      "cost": -8
+    },
+    "SCT_Bitten": {
+      "name_key": "UI_trait_SCT_Bitten",
+      "description_key": "UI_trait_SCT_BittenDesc",
+      "shortcut": 468,
+      "icon_path": "#/data/images/traits/scotty_additions/bitten.png",
+      "cost": -20
+    }
+  },
+  "professions": {},
+  "mutual_exclusives": [
+    [
+      "SCT_Burned",
+      "SCT_Injured"
+    ],
+    [
+      "SCT_Bitten",
+      "SCT_Injured"
+    ],
+    [
+      "SCT_Bitten",
+      "SCT_Burned"
+    ],
+    [
+      "Bitten",
+      "SCT_Bitten"
+    ]
+  ],
+  "lang": {
+    "UI_trait_SCT_Bitten": "Bitten",
+    "UI_trait_SCT_BittenDesc": "Your days are numbered, what will you do?.\n(Starts with a bite on an arm, and is infected. Cannot be immune.)",
+    "UI_trait_SCT_Burned": "Burned",
+    "UI_trait_SCT_BurnedDesc": "Has received severe burns all over your body.\n(Starts with three burns on an arm, leg and your torso.)",
+    "UI_trait_SCT_FractureArm": "Broken Arm",
+    "UI_trait_SCT_FractureArmDesc": "What an unfortunate time to break your arm.\n(Starts with a random arm fracture.)",
+    "UI_trait_SCT_FractureLeg": "Broken Leg",
+    "UI_trait_SCT_FractureLegDesc": "What an unfortunate time to break your leg.\n(Starts with a random leg fracture.)",
+    "UI_trait_SCT_Injured": "Injured",
+    "UI_trait_SCT_InjuredDesc": "Has received moderate injuries.\n(Starts with three scratches or lacerations on an arm, leg and your torso.)"
+  }
+}

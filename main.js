@@ -9,6 +9,8 @@ const DEFAULT_MOD_URLS = [
   "#/data/MoreSimpleTraits.json",
   "#/data/MoreSimpleTraitsMini.json",
   "#/data/MoreSimpleTraitsVanilla.json",
+  "#/data/ScottyInjuryTraits.json",
+  "#/data/ScottyMoreTraits.json",
   "#/data/SimpleOverhaulTraitsAndOccupations.json",
   "#/data/ToadTraits.json",
   "#/data/ToadTraitsDisablePrepared.json",
