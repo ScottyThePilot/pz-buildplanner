@@ -667,7 +667,7 @@
       "description_key": "UI_trait_relentlessdesc",
       "shortcut": 255,
       "icon_path": "#/data/images/traits/soto_mst/relentless.png",
-      "cost": 2
+      "cost": 3
     },
     "Relentless2": {
       "name_key": "UI_trait_relentless",
@@ -719,7 +719,7 @@
       "description_key": "UI_trait_SundayDriverDesc",
       "shortcut": 261,
       "icon_path": "https://pzwiki.net/w/images/a/ad/Trait_sundaydriver.png",
-      "cost": -3
+      "cost": -2
     },
     "ShortSighted": {
       "name_key": "UI_trait_shortsigh",
@@ -814,7 +814,7 @@
       "description_key": "UI_trait_AdrenalineJunkieDesc",
       "shortcut": 274,
       "icon_path": "https://pzwiki.net/w/images/a/ab/Trait_adrenalinejunkie.png",
-      "cost": 2
+      "cost": 4
     },
     "AdrenalineJunkie2": {
       "name_key": "UI_trait_AdrenalineJunkie",
@@ -859,7 +859,7 @@
       "description_key": "UI_trait_cowardlydesc",
       "shortcut": 280,
       "icon_path": "https://pzwiki.net/w/images/1/11/Trait_cowardly.png",
-      "cost": -3
+      "cost": -2
     },
     "Graceful": {
       "name_key": "UI_trait_graceful",
@@ -881,7 +881,7 @@
       "description_key": "UI_trait_clumsydesc",
       "shortcut": 283,
       "icon_path": "https://pzwiki.net/w/images/4/48/Trait_clumsy.png",
-      "cost": -4
+      "cost": -2
     },
     "FastReader": {
       "name_key": "UI_trait_FastReader",
@@ -1092,7 +1092,7 @@
       "description_key": "UI_trait_WeakStomachDesc",
       "shortcut": 311,
       "icon_path": "https://pzwiki.net/w/images/0/02/Trait_weakstomach.png",
-      "cost": -2
+      "cost": -1
     },
     "SensitiveDigestion": {
       "name_key": "UI_trait_sensitivedigestion",
@@ -1113,7 +1113,7 @@
       "description_key": "UI_trait_soalcoholicdesc",
       "shortcut": 314,
       "icon_path": "#/data/images/traits/soto_mst/alcoholic.png",
-      "cost": -6
+      "cost": -5
     },
     "LessSweaty": {
       "name_key": "UI_trait_lesssweaty",
@@ -1345,7 +1345,7 @@
       "description_key": "UI_trait_weathersensitivedesc",
       "shortcut": 346,
       "icon_path": "#/data/images/traits/soto_mst/weather_sensitive.png",
-      "cost": -2,
+      "cost": -1,
       "is_disabled_in_mp": true
     },
     "Snorer": {
@@ -1375,7 +1375,7 @@
       "description_key": "UI_trait_sorelegsdesc",
       "shortcut": 350,
       "icon_path": "#/data/images/traits/soto_mst/sore_legs.png",
-      "cost": -8
+      "cost": -7
     },
     "Axeman": {
       "name_key": "UI_trait_axeman",
@@ -2189,7 +2189,7 @@
       "description_key": "UI_profdesc_stuntman",
       "shortcut": 57,
       "icon_path": "#/data/images/professions/soto/stuntman.png",
-      "points": 0,
+      "points": -1,
       "xp_boosts": {
         "Fitness": 1,
         "Nimble": 1,
@@ -2344,7 +2344,7 @@
       },
       "free_traits": [
         "NightVision2",
-        "Relentless2"
+        "MinersEndurance"
       ]
     },
     "cashierocc": {
@@ -2803,6 +2803,10 @@
       "Hemophobic"
     ],
     [
+      "BladeTools",
+      "Hemophobic"
+    ],
+    [
       "BreathingTech",
       "BreathingTech2"
     ],
@@ -3234,7 +3238,7 @@
     "UI_trait_SOHikerDesc": "Experienced in hiking long distances.\n(Reduced accumulation of hunger, thirst and fatigue if walking for a while without stopping.\nKnows how to make Snare Trap, a Stick Trap and Wooden Cage Trap.)",
     "UI_trait_SOSmokerDesc": "Has a tobacco addiction.\nSlightly increased endurance loss while running or fighting.\nMay cough when exhausted.\nTobacco smoking reduces stress, unhappiness and hunger.\nAbstaining from smoking increases stress, unhappiness and hunger.\n(Can get rid of this bad habit if do not smoke tobacco for a month.)",
     "UI_trait_Scout2Desc": "Has skills in First Aid and Foraging.",
-    "UI_trait_accmetabolism": "Accelerated Metabolism",
+    "UI_trait_accmetabolism": "Ideal Metabolism",
     "UI_trait_accmetabolismdesc": "Trains Strength and Fitness faster if not hungry.\nProne to maintain ideal weight.\n(+30% Strength and Fitness XP if hunger level not higher than Peckish,\n-30% calorie burn if weight is less than 76,\n+30% calorie burn if weight is over than 84.)",
     "UI_trait_allergic": "Allergic",
     "UI_trait_allergicdesc": "Sneezes involuntary from time to time.\n(May attract zombies.\nSneeze can be muffled with Tissue or Toilet paper.)",
@@ -3251,7 +3255,7 @@
     "UI_trait_crusher": "Crusher",
     "UI_trait_cutter": "Cutter",
     "UI_trait_demostronggrip": "Strong Grip",
-    "UI_trait_demostronggripdesc": "Can use Sledgehammer more effectively in combat.\n(Sledgehammer swings faster and cost less endurance.)",
+    "UI_trait_demostronggripdesc": "Can use Sledgehammer more effectively in combat.\n(Sledgehammer swings cost less endurance.)",
     "UI_trait_depressivemood": "Depressive",
     "UI_trait_depressivemooddesc": "Often sad. May become depressed for no reason.\nBad mood can affect productivity.\n(Unhappiness builds up over time.\nSudden depression may occur once every few days.\nReduces XP gain in all skills depending on\nUnhappiness moodle, up to -10%.)",
     "UI_trait_durab": "Durability",
@@ -3293,7 +3297,7 @@
     "UI_trait_mesomorphdesc": "Average body type with no pros or cons.",
     "UI_trait_metalwelder": "Metalwelder",
     "UI_trait_minersendurance": "Miner's Endurance",
-    "UI_trait_minersendurancedesc": "Can use Pickaxe more effectively in combat.\n(Pickaxe swings faster and cost less endurance.)",
+    "UI_trait_minersendurancedesc": "Can use Pickaxe more effectively in combat.\n(Pickaxe swings cost less endurance.)",
     "UI_trait_mushroompicker": "Mushroom Picker",
     "UI_trait_mushroompickerdesc": "Increased chance to find mushrooms in Search mode.",
     "UI_trait_nimble": "Agile",
@@ -3341,6 +3345,6 @@
     "UI_trait_weathersensitive": "Weather Sensitive",
     "UI_trait_weathersensitivedesc": "May experience headaches when the weather changes and when it rains/snows.",
     "UI_trait_woodaxemybeloved": "Wood Axe My Beloved",
-    "UI_trait_woodaxemybeloveddesc": "Gain additional Axe experience when chopping trees.\nCan use Wood Axe more effectively in combat.\n(Wood Axe swings faster and cost less endurance.)"
+    "UI_trait_woodaxemybeloveddesc": "Gain additional Axe experience when chopping trees.\nCan use Wood Axe more effectively in combat.\n(Wood Axe swings cost less endurance.)"
   }
 }
