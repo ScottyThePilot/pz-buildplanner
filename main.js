@@ -5,6 +5,7 @@ const BASE = (window.location.origin + window.location.pathname).replace(/index\
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
   "#/data/Vanilla.json",
+  "#/data/HephasOccupationsAndTraits.json",
   "#/data/MoreDescriptionForTraits4166.json",
   "#/data/MoreSimpleTraits.json",
   "#/data/MoreSimpleTraitsMini.json",
@@ -246,7 +247,8 @@ function createProfessionElement(profession) {
   professionElement.append(professionNameElement);
   professionElement.on("click", function () {
     const state = State.get();
-    state.preset.profession = profession.id;
+    state.selectProfession(profession);
+    //state.preset.profession = profession.id;
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
@@ -380,8 +382,12 @@ class State {
 
   /** @returns {boolean} */
   isTraitChosen(id) {
+    if (this.preset.traits.has(id)) return true;
+    const trait = this.currentModData.traits.get(id);
     const currentProfession = this.currentModData.professions.get(this.preset.profession);
-    return this.preset.traits.has(id) || (currentProfession != null && currentProfession.freeTraits.includes(id));
+    // Mods can grant non-profession traits as "free traits" but they can still be deselected
+    // I don't know if this is a bug, but parity with the game is important, so this enables this behavior
+    return currentProfession != null && currentProfession.freeTraits.includes(id) && trait.isProfessionTrait;
   }
 
   /** @param {Trait} trait @returns {boolean} */
@@ -396,6 +402,18 @@ class State {
     }
 
     return true;
+  }
+
+  /** @param {Profession} profession */
+  selectProfession(profession) {
+    this.preset.profession = profession.id;
+    // As with the above, non-profession "free traits" can be deselected after the profession is selected
+    // If a mod does this, we just enable the trait when you select the profession so that the
+    // (potentially bugged?) behavior is replicated
+    for (const id of profession.freeTraits) {
+      const trait = this.currentModData.traits.get(id);
+      if (!trait.isProfessionTrait) this.preset.traits.add(id);
+    }
   }
 
   /** @param {Trait} trait */
@@ -728,11 +746,15 @@ function mergeObjects(objects) {
  * @returns {ModData}
  */
 function mergeMods(mods) {
+  const removeDefaultProfessions = mods.some(mod => mod.remove_default_professions || false);
+
   const ids = new Set(mods.map(mod => mod.id));
   const mutualExclusives = dedup(mods.flatMap(mod => mod.mutual_exclusives));
   const lang = mergeObjects(mods.map(mod => mod.lang));
   const traitsMerged = mergeObjects(mods.map(mod => mod.traits));
-  const professionsMerged = mergeObjects(mods.map(mod => mod.professions));
+  const professionsMerged = mergeObjects(mods.map(mod => {
+    return removeDefaultProfessions && mod.id == "Vanilla" ? [] : mod.professions;
+  }));
 
   /** @type {Shortcuts} */
   let shortcuts = {

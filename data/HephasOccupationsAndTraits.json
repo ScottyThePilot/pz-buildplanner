@@ -1,0 +1,1839 @@
+{
+  "id": "HephasOccupationsAndTraits",
+  "name": "Hephas Occupations and Traits",
+  "author": "Hephaistos",
+  "workshop_id": 3256482412,
+  "remove_default_professions": true,
+  "shortcut": 12,
+  "traits": {
+    "BlacksmithMaster": {
+      "name_key": "UI_trait_BlacksmithMaster",
+      "description_key": "UI_trait_BlacksmithMasterDesc",
+      "shortcut": 472,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/blacksmith_master.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Cook3": {
+      "name_key": "UI_trait_Cook3",
+      "description_key": "UI_trait_Cook3Desc",
+      "shortcut": 473,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/firepit_chef.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "NightVision2": {
+      "name_key": "UI_trait_NightVision2",
+      "description_key": "UI_trait_NightVision2Desc",
+      "shortcut": 474,
+      "icon_path": "https://pzwiki.net/w/images/0/0f/Trait_nightvision.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Inconspicuous2": {
+      "name_key": "UI_trait_Inconspicuous2",
+      "description_key": "UI_trait_Inconspicuous2Desc",
+      "shortcut": 475,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/inconspicuous.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "tinkerer": {
+      "name_key": "UI_trait_tinkerer",
+      "description_key": "UI_trait_tinkererDesc",
+      "shortcut": 476,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/tinkerer.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "EngineBuilder": {
+      "name_key": "UI_trait_EngineBuilder",
+      "description_key": "UI_trait_EngineBuilderDesc",
+      "shortcut": 477,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/engine_builder.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Herbalist2": {
+      "name_key": "UI_trait_Herbalist2",
+      "description_key": "UI_trait_Herbalist2Desc",
+      "shortcut": 478,
+      "icon_path": "https://pzwiki.net/w/images/b/b6/Trait_herbalist.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Outdoorsman2": {
+      "name_key": "UI_trait_Outdoorsman2",
+      "description_key": "UI_trait_Outdoorsman2Desc",
+      "shortcut": 479,
+      "icon_path": "https://pzwiki.net/w/images/2/2c/Trait_outdoorsman.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Desensitized2": {
+      "name_key": "UI_trait_Desensitized2",
+      "description_key": "UI_trait_Desensitized2Desc",
+      "shortcut": 480,
+      "icon_path": "https://pzwiki.net/w/images/7/72/Trait_desensitized.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Brave2": {
+      "name_key": "UI_trait_Brave2",
+      "description_key": "UI_trait_Brave2Desc",
+      "shortcut": 481,
+      "icon_path": "https://pzwiki.net/w/images/c/c8/Trait_brave.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Handy2": {
+      "name_key": "UI_trait_Handy2",
+      "description_key": "UI_trait_Handy2Desc",
+      "shortcut": 482,
+      "icon_path": "https://pzwiki.net/w/images/a/a1/Trait_handy.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "TrainedGunman": {
+      "name_key": "UI_trait_TrainedGunman",
+      "description_key": "UI_trait_TrainedGunmanDesc",
+      "shortcut": 483,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/trained_gunman.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Agriculturist": {
+      "name_key": "UI_trait_Agriculturist",
+      "description_key": "UI_trait_AgriculturistDesc",
+      "shortcut": 484,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/agriculturist.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "FieldMedic": {
+      "name_key": "UI_trait_FieldMedic",
+      "description_key": "UI_trait_FieldMedicDesc",
+      "shortcut": 485,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/field_medic.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "ShelterBuilder": {
+      "name_key": "UI_trait_ShelterBuilder",
+      "description_key": "UI_trait_ShelterBuilderDesc",
+      "shortcut": 486,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shelter_builder.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "ThreadSmith": {
+      "name_key": "UI_trait_ThreadSmith",
+      "description_key": "UI_trait_ThreadSmithDesc",
+      "shortcut": 487,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/threadsmith.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Tracker": {
+      "name_key": "UI_trait_Tracker",
+      "description_key": "UI_trait_TrackerDesc",
+      "shortcut": 488,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/tracker.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Wanderer": {
+      "name_key": "UI_trait_Wanderer",
+      "description_key": "UI_trait_WandererDesc",
+      "shortcut": 489,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/wanderer.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Trader": {
+      "name_key": "UI_trait_Trader",
+      "description_key": "UI_trait_TraderDesc",
+      "shortcut": 490,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/trader.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "CommSpecialist": {
+      "name_key": "UI_trait_CommSpecialist",
+      "description_key": "UI_trait_CommSpecialistDesc",
+      "shortcut": 491,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/radio_technician.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Guardsmen": {
+      "name_key": "UI_trait_Guardsmen",
+      "description_key": "UI_trait_GuardsmenDesc",
+      "shortcut": 492,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/guardsmen.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Lumberjack": {
+      "name_key": "UI_trait_Lumberjack",
+      "description_key": "UI_trait_LumberjackDesc",
+      "shortcut": 493,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/lumberjack.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Shunned": {
+      "name_key": "UI_trait_Shunned",
+      "description_key": "UI_trait_ShunnedDesc",
+      "shortcut": 494,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shunned_one.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "BagsAndBelts": {
+      "name_key": "UI_trait_BagsAndBelts",
+      "description_key": "UI_trait_BagsAndBeltsDesc",
+      "shortcut": 495,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/bags_and_belts.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
+    "Vern": {
+      "name_key": "UI_trait_Vern",
+      "description_key": "UI_trait_VernDesc",
+      "shortcut": 496,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/vern.png",
+      "cost": 12,
+      "xp_boosts": {
+        "Axe": 3,
+        "Strength": 2
+      }
+    },
+    "AllHailCaesar": {
+      "name_key": "UI_trait_AllHailCaesar",
+      "description_key": "UI_trait_AllHailCaesarDesc",
+      "shortcut": 497,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/all_hail_caesar.png",
+      "cost": 2
+    },
+    "Axe1": {
+      "name_key": "UI_trait_Axe1",
+      "description_key": "UI_trait_Axe1Desc",
+      "shortcut": 498,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/axe1.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Axe": 1
+      }
+    },
+    "Axe2": {
+      "name_key": "UI_trait_Axe2",
+      "description_key": "UI_trait_Axe2Desc",
+      "shortcut": 499,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/axe2.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Axe": 2
+      }
+    },
+    "Axe3": {
+      "name_key": "UI_trait_Axe3",
+      "description_key": "UI_trait_Axe3Desc",
+      "shortcut": 500,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/axe3.png",
+      "cost": 10,
+      "xp_boosts": {
+        "Axe": 3
+      }
+    },
+    "ShortBlunt1": {
+      "name_key": "UI_trait_ShortBlunt1",
+      "description_key": "UI_trait_ShortBlunt1Desc",
+      "shortcut": 501,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt1.png",
+      "cost": 3,
+      "xp_boosts": {
+        "ShortBlunt": 1
+      }
+    },
+    "ShortBlunt2": {
+      "name_key": "UI_trait_ShortBlunt2",
+      "description_key": "UI_trait_ShortBlunt2Desc",
+      "shortcut": 502,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt2.png",
+      "cost": 4,
+      "xp_boosts": {
+        "ShortBlunt": 2
+      }
+    },
+    "ShortBlunt3": {
+      "name_key": "UI_trait_ShortBlunt3",
+      "description_key": "UI_trait_ShortBlunt3Desc",
+      "shortcut": 503,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt3.png",
+      "cost": 6,
+      "xp_boosts": {
+        "ShortBlunt": 3
+      }
+    },
+    "Blunt1": {
+      "name_key": "UI_trait_Blunt1",
+      "description_key": "UI_trait_Blunt1Desc",
+      "shortcut": 504,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "LongBlunt": 1
+      }
+    },
+    "Blunt2": {
+      "name_key": "UI_trait_Blunt2",
+      "description_key": "UI_trait_Blunt2Desc",
+      "shortcut": 505,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "LongBlunt": 2
+      }
+    },
+    "Blunt3": {
+      "name_key": "UI_trait_Blunt3",
+      "description_key": "UI_trait_Blunt3Desc",
+      "shortcut": 506,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "LongBlunt": 3
+      }
+    },
+    "ShortBlade1": {
+      "name_key": "UI_trait_ShortBlade1",
+      "description_key": "UI_trait_ShortBlade1Desc",
+      "shortcut": 507,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade1.png",
+      "cost": 3,
+      "xp_boosts": {
+        "ShortBlade": 1
+      }
+    },
+    "ShortBlade2": {
+      "name_key": "UI_trait_ShortBlade2",
+      "description_key": "UI_trait_Blade2Desc",
+      "shortcut": 508,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "ShortBlade": 2
+      }
+    },
+    "ShortBlade3": {
+      "name_key": "UI_trait_ShortBlade3",
+      "description_key": "UI_trait_ShortBlade3Desc",
+      "shortcut": 509,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "ShortBlade": 3
+      }
+    },
+    "Blade1": {
+      "name_key": "UI_trait_Blade1",
+      "description_key": "UI_trait_Blade1Desc",
+      "shortcut": 510,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade1.png",
+      "cost": 6,
+      "xp_boosts": {
+        "LongBlade": 1
+      }
+    },
+    "Blade2": {
+      "name_key": "UI_trait_Blade2",
+      "description_key": "UI_trait_Blade2Desc",
+      "shortcut": 511,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade2.png",
+      "cost": 8,
+      "xp_boosts": {
+        "LongBlade": 2
+      }
+    },
+    "Blade3": {
+      "name_key": "UI_trait_Blade3",
+      "description_key": "UI_trait_Blade3Desc",
+      "shortcut": 512,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade3.png",
+      "cost": 10,
+      "xp_boosts": {
+        "LongBlade": 3
+      }
+    },
+    "Spear1": {
+      "name_key": "UI_trait_Spear1",
+      "description_key": "UI_trait_Spear1Desc",
+      "shortcut": 513,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/spear1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Spear": 1
+      }
+    },
+    "Spear2": {
+      "name_key": "UI_trait_Spear2",
+      "description_key": "UI_trait_Spear2Desc",
+      "shortcut": 514,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/spear2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Spear": 2
+      }
+    },
+    "Spear3": {
+      "name_key": "UI_trait_Spear3",
+      "description_key": "UI_trait_Spear3Desc",
+      "shortcut": 515,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/spear3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Spear": 3
+      }
+    },
+    "Maint1": {
+      "name_key": "UI_trait_Maint1",
+      "description_key": "UI_trait_Maint1Desc",
+      "shortcut": 516,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/maintenance1.png",
+      "cost": 5,
+      "xp_boosts": {
+        "Maintenance": 1
+      }
+    },
+    "Maint2": {
+      "name_key": "UI_trait_Maint2",
+      "description_key": "UI_trait_Maint2Desc",
+      "shortcut": 517,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/maintenance2.png",
+      "cost": 7,
+      "xp_boosts": {
+        "Maintenance": 2
+      }
+    },
+    "Aim1": {
+      "name_key": "UI_trait_Aim1",
+      "description_key": "UI_trait_Aim1Desc",
+      "shortcut": 518,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming1.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Aiming": 1
+      }
+    },
+    "Aim2": {
+      "name_key": "UI_trait_Aim2",
+      "description_key": "UI_trait_Aim2Desc",
+      "shortcut": 519,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming2.png",
+      "cost": 10,
+      "xp_boosts": {
+        "Aiming": 2
+      }
+    },
+    "Aim3": {
+      "name_key": "UI_trait_Aim3",
+      "description_key": "UI_trait_Aim3Desc",
+      "shortcut": 520,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming3.png",
+      "cost": 12,
+      "xp_boosts": {
+        "Aiming": 3
+      }
+    },
+    "Reload1": {
+      "name_key": "UI_trait_Reload1",
+      "description_key": "UI_trait_Reload1Desc",
+      "shortcut": 521,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading1.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Reloading": 1
+      }
+    },
+    "Reload2": {
+      "name_key": "UI_trait_Reload2",
+      "description_key": "UI_trait_Reload2Desc",
+      "shortcut": 522,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading2.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Reloading": 2
+      }
+    },
+    "Reload3": {
+      "name_key": "UI_trait_Reload3",
+      "description_key": "UI_trait_Reload3Desc",
+      "shortcut": 523,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading3.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Reloading": 3
+      }
+    },
+    "Fishing1": {
+      "name_key": "UI_trait_Fishing1",
+      "description_key": "UI_trait_Fishing1Desc",
+      "shortcut": 524,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/fishing1.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Fishing": 2
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod"
+      ]
+    },
+    "Fishing2": {
+      "name_key": "UI_trait_Fishing2",
+      "description_key": "UI_trait_Fishing2Desc",
+      "shortcut": 525,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/fishing2.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Fishing": 3
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod"
+      ]
+    },
+    "Cooking1": {
+      "name_key": "UI_trait_Cooking1",
+      "description_key": "UI_trait_Cooking1Desc",
+      "shortcut": 526,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/cooking.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Cooking": 1
+      }
+    },
+    "Wood1": {
+      "name_key": "UI_trait_Wood1",
+      "description_key": "UI_trait_Wood1Desc",
+      "shortcut": 527,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Carpentry": 1
+      }
+    },
+    "Wood2": {
+      "name_key": "UI_trait_Wood2",
+      "description_key": "UI_trait_Wood2Desc",
+      "shortcut": 528,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Carpentry": 2
+      }
+    },
+    "Wood3": {
+      "name_key": "UI_trait_Wood3",
+      "description_key": "UI_trait_Wood3Desc",
+      "shortcut": 529,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Carpentry": 3
+      }
+    },
+    "Farm2": {
+      "name_key": "UI_trait_Farm2",
+      "description_key": "UI_trait_Farm2Desc",
+      "shortcut": 530,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/farming2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Farming": 2
+      }
+    },
+    "Farm3": {
+      "name_key": "UI_trait_Farm3",
+      "description_key": "UI_trait_Farm3Desc",
+      "shortcut": 531,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/farming3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Farming": 3
+      }
+    },
+    "Medic2": {
+      "name_key": "UI_trait_Medic2",
+      "description_key": "UI_trait_Medic2Desc",
+      "shortcut": 532,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/firstaid1.png",
+      "cost": 6,
+      "xp_boosts": {
+        "FirstAid": 2
+      }
+    },
+    "Medic3": {
+      "name_key": "UI_trait_Medic3",
+      "description_key": "UI_trait_Medic3Desc",
+      "shortcut": 533,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/firstaid2.png",
+      "cost": 8,
+      "xp_boosts": {
+        "FirstAid": 3
+      }
+    },
+    "Elect1": {
+      "name_key": "UI_trait_Elect1",
+      "description_key": "UI_trait_Elect1Desc",
+      "shortcut": 534,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/electrical1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Electrical": 1
+      }
+    },
+    "Elect2": {
+      "name_key": "UI_trait_Elect2",
+      "description_key": "UI_trait_Elect2Desc",
+      "shortcut": 535,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/electrical2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Electrical": 2
+      }
+    },
+    "Metal1": {
+      "name_key": "UI_trait_Metal1",
+      "description_key": "UI_trait_Metal1Desc",
+      "shortcut": 536,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Metalworking": 1
+      }
+    },
+    "Metal2": {
+      "name_key": "UI_trait_Metal2",
+      "description_key": "UI_trait_Metal2Desc",
+      "shortcut": 537,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Metalworking": 2
+      }
+    },
+    "Metal3": {
+      "name_key": "UI_trait_Metal3",
+      "description_key": "UI_trait_Metal3Desc",
+      "shortcut": 538,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Metalworking": 3
+      }
+    },
+    "Sew1": {
+      "name_key": "UI_trait_Sew1",
+      "description_key": "UI_trait_Sew1Desc",
+      "shortcut": 539,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/sewing1.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Tailoring": 2
+      }
+    },
+    "Sew2": {
+      "name_key": "UI_trait_Sew2",
+      "description_key": "UI_trait_Sew2Desc",
+      "shortcut": 540,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/sewing2.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Tailoring": 3
+      }
+    },
+    "Forage1": {
+      "name_key": "UI_trait_Forage1",
+      "description_key": "UI_trait_Forage1Desc",
+      "shortcut": 541,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging1.png",
+      "cost": 4,
+      "xp_boosts": {
+        "Foraging": 1
+      }
+    },
+    "Forage2": {
+      "name_key": "UI_trait_Forage2",
+      "description_key": "UI_trait_Forage2Desc",
+      "shortcut": 542,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging2.png",
+      "cost": 6,
+      "xp_boosts": {
+        "Foraging": 2
+      }
+    },
+    "Forage3": {
+      "name_key": "UI_trait_Forage3",
+      "description_key": "UI_trait_Forage3Desc",
+      "shortcut": 543,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging3.png",
+      "cost": 8,
+      "xp_boosts": {
+        "Foraging": 3
+      }
+    },
+    "Trap1": {
+      "name_key": "UI_trait_Trap1",
+      "description_key": "UI_trait_Trap1Desc",
+      "shortcut": 544,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping1.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Trapping": 1
+      }
+    },
+    "Trap2": {
+      "name_key": "UI_trait_Trap2",
+      "description_key": "UI_trait_Trap2Desc",
+      "shortcut": 545,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping2.png",
+      "cost": 5,
+      "xp_boosts": {
+        "Trapping": 2
+      }
+    },
+    "Trap3": {
+      "name_key": "UI_trait_Trap3",
+      "description_key": "UI_trait_Trap3Desc",
+      "shortcut": 546,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping3.png",
+      "cost": 7,
+      "xp_boosts": {
+        "Trapping": 3
+      }
+    },
+    "Mechanics3": {
+      "name_key": "UI_trait_Mechanics3",
+      "description_key": "UI_trait_Mechanics3Desc",
+      "shortcut": 547,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/mechanics3.png",
+      "cost": 7,
+      "xp_boosts": {
+        "Mechanics": 2
+      },
+      "free_recipes": [
+        "Basic Mechanics"
+      ]
+    },
+    "Mechanics4": {
+      "name_key": "UI_trait_Mechanics4",
+      "description_key": "UI_trait_Mechanics4Desc",
+      "shortcut": 548,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/mechanics4.png",
+      "cost": 9,
+      "xp_boosts": {
+        "Mechanics": 3
+      },
+      "free_recipes": [
+        "Basic Mechanics",
+        "Intermediate Mechanics"
+      ]
+    },
+    "LightweightTraveler": {
+      "name_key": "UI_trait_LightweightTraveler",
+      "description_key": "UI_trait_LightweightTravelerDesc",
+      "shortcut": 549,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/lightweight_traveler.png",
+      "cost": -6
+    },
+    "QuietMovement": {
+      "name_key": "UI_trait_QuietMovement",
+      "description_key": "UI_trait_QuietMovementDesc",
+      "shortcut": 550,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/sneaking.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Sneaking": 1
+      }
+    },
+    "Agile": {
+      "name_key": "UI_trait_Agile",
+      "description_key": "UI_trait_AgileDesc",
+      "shortcut": 551,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/agile.png",
+      "cost": 3,
+      "xp_boosts": {
+        "Nimble": 1
+      }
+    },
+    "FrogFriend": {
+      "name_key": "UI_trait_FrogFriend",
+      "description_key": "UI_trait_FrogFriendDesc",
+      "shortcut": 552,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/frog_companion.png",
+      "cost": 1
+    },
+    "breathingTechnique": {
+      "name_key": "UI_trait_breathingTechnique",
+      "description_key": "UI_trait_breathingTechniqueDesc",
+      "shortcut": 553,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/breathing_technique.png",
+      "cost": 4
+    },
+    "BrittleBody": {
+      "name_key": "UI_trait_BrittleBody",
+      "description_key": "UI_trait_BrittleBodyDesc",
+      "shortcut": 554,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/brittle_body.png",
+      "cost": -4,
+      "xp_boosts": {
+        "Fitness": -1,
+        "Strength": -1
+      }
+    },
+    "MushroomGatherer": {
+      "name_key": "UI_trait_MushroomGatherer",
+      "description_key": "UI_trait_MushroomGathererDesc",
+      "shortcut": 555,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/mushroom_gatherer.png",
+      "cost": 2
+    },
+    "CoffeeLover": {
+      "name_key": "UI_trait_CoffeeLover",
+      "description_key": "UI_trait_CoffeeLoverDesc",
+      "shortcut": 556,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/coffee_lover.png",
+      "cost": 1
+    },
+    "WineLover": {
+      "name_key": "UI_trait_WineLover",
+      "description_key": "UI_trait_WineLoverDesc",
+      "shortcut": 557,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/winelover.png",
+      "cost": 2
+    },
+    "ComicGeek": {
+      "name_key": "UI_trait_ComicGeek",
+      "description_key": "UI_trait_ComicGeekDesc",
+      "shortcut": 558,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/comic_geek.png",
+      "cost": 1
+    },
+    "BookLover": {
+      "name_key": "UI_trait_BookLover",
+      "description_key": "UI_trait_BookLoverDesc",
+      "shortcut": 559,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/book_lover.png",
+      "cost": 1
+    }
+  },
+  "professions": {
+    "unemployed": {
+      "name_key": "UI_prof_unemployed",
+      "shortcut": 70,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/wanderer.png",
+      "points": 4,
+      "xp_boosts": {
+        "Lightfooted": 1
+      },
+      "free_traits": [
+        "Wanderer"
+      ]
+    },
+    "scout": {
+      "name_key": "UI_prof_scout",
+      "shortcut": 71,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/scout.png",
+      "points": -8,
+      "xp_boosts": {
+        "Lightfooted": 1,
+        "Nimble": 2,
+        "Sneaking": 1
+      },
+      "free_recipes": [
+        "Generator"
+      ],
+      "free_traits": [
+        "NightVision2",
+        "Inconspicuous2"
+      ]
+    },
+    "tinkerer": {
+      "name_key": "UI_prof_tinkerer",
+      "shortcut": 72,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/tinkerer.png",
+      "points": -8,
+      "xp_boosts": {
+        "Electrical": 3,
+        "Mechanics": 1
+      },
+      "free_recipes": [
+        "Basic Mechanics",
+        "Generator",
+        "Make Aerosol bomb",
+        "Make Flame bomb",
+        "Make Pipe bomb",
+        "Make Noise generator",
+        "Make Smoke Bomb"
+      ],
+      "free_traits": [
+        "tinkerer"
+      ]
+    },
+    "fieldmedic": {
+      "name_key": "UI_prof_fieldmedic",
+      "shortcut": 73,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/field_medic.png",
+      "points": -8,
+      "xp_boosts": {
+        "FirstAid": 3,
+        "Foraging": 1,
+        "ShortBlade": 1
+      },
+      "free_recipes": [
+        "Herbalist2"
+      ],
+      "free_traits": [
+        "FieldMedic"
+      ]
+    },
+    "agriculturist": {
+      "name_key": "UI_prof_agriculturist",
+      "shortcut": 74,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/agriculturist.png",
+      "points": -8,
+      "xp_boosts": {
+        "Farming": 3,
+        "Strength": 2
+      },
+      "free_recipes": [
+        "Craft Mildew Cure",
+        "Craft Flies Cure"
+      ],
+      "free_traits": [
+        "Herbalist2",
+        "Agriculturist"
+      ]
+    },
+    "gearhead": {
+      "name_key": "UI_prof_gearhead",
+      "shortcut": 75,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/gearhead.png",
+      "points": -12,
+      "xp_boosts": {
+        "Electrical": 1,
+        "Mechanics": 3,
+        "ShortBlunt": 1
+      },
+      "free_recipes": [
+        "Basic Mechanics",
+        "Intermediate Mechanics",
+        "Advanced Mechanics",
+        "Generator",
+        "Tool Mode",
+        "Weapon Mode"
+      ],
+      "free_traits": [
+        "EngineBuilder"
+      ]
+    },
+    "trademaster": {
+      "name_key": "UI_prof_trademaster",
+      "shortcut": 76,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/trader.png",
+      "points": -8,
+      "xp_boosts": {
+        "Electrical": 1,
+        "Foraging": 1,
+        "Maintenance": 2
+      },
+      "free_traits": [
+        "Trader",
+        "BagsAndBelts"
+      ]
+    },
+    "tracker": {
+      "name_key": "UI_prof_tracker",
+      "shortcut": 77,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/tracker.png",
+      "points": -10,
+      "xp_boosts": {
+        "Foraging": 3,
+        "Trapping": 3
+      },
+      "free_recipes": [
+        "Herbalist",
+        "Craft Mouse Trap",
+        "Craft Snare Trap",
+        "Craft Wooden Box Trap",
+        "Craft Stick Trap",
+        "Craft Trap Box",
+        "Craft Cage Trap"
+      ],
+      "free_traits": [
+        "Outdoorsman2",
+        "NightVision2",
+        "Tracker"
+      ]
+    },
+    "commsspecialist": {
+      "name_key": "UI_prof_commsspecialist",
+      "shortcut": 78,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/comms_specialist.png",
+      "points": -10,
+      "xp_boosts": {
+        "Electrical": 2,
+        "Mechanics": 2,
+        "ShortBlade": 1
+      },
+      "free_recipes": [
+        "Generator",
+        "Build Makeshift Radio",
+        "Build Makeshift HAM Radio",
+        "Build Makeshift Walkie Talkie",
+        "Craft Makeshift HAM Radio",
+        "Make Remote Controller V1",
+        "Make Remote Controller V2",
+        "Make Remote Controller V3",
+        "Make Remote Trigger",
+        "Make Timer",
+        "Craft Makeshift Walkie Talkie"
+      ],
+      "free_traits": [
+        "FastReader2",
+        "CommSpecialist"
+      ]
+    },
+    "contractgun": {
+      "name_key": "UI_prof_contractgun",
+      "shortcut": 79,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/contract_gun.png",
+      "points": -15,
+      "xp_boosts": {
+        "Aiming": 3,
+        "Reloading": 2
+      },
+      "free_traits": [
+        "Desensitized",
+        "TrainedGunman"
+      ]
+    },
+    "watchmen": {
+      "name_key": "UI_prof_watchmen",
+      "shortcut": 80,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/watchman.png",
+      "points": -8,
+      "xp_boosts": {
+        "Nimble": 1,
+        "Spear": 2,
+        "Sprinting": 1
+      },
+      "free_traits": [
+        "Brave2",
+        "Guardsmen"
+      ]
+    },
+    "blacksmith": {
+      "name_key": "UI_prof_blacksmith",
+      "shortcut": 81,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/blacksmith.png",
+      "points": -8,
+      "xp_boosts": {
+        "Metalworking": 3,
+        "ShortBlunt": 1
+      },
+      "free_recipes": [
+        "Make Metal Walls",
+        "Make Metal Fences",
+        "Make Metal Containers",
+        "Make Metal Roof",
+        "Craft Welding Rods",
+        "Make Metal Sheet",
+        "Make Small Metal Sheet"
+      ],
+      "free_traits": [
+        "BlacksmithMaster"
+      ]
+    },
+    "threadsmith": {
+      "name_key": "UI_prof_threadsmith",
+      "shortcut": 82,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/threadsmith.png",
+      "points": -8,
+      "xp_boosts": {
+        "ShortBlade": 2,
+        "Tailoring": 3
+      },
+      "free_traits": [
+        "Dextrous2",
+        "ThreadSmith"
+      ]
+    },
+    "firepitchef": {
+      "name_key": "UI_prof_firepitchef",
+      "shortcut": 83,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/firepit_chef.png",
+      "points": -6,
+      "xp_boosts": {
+        "Cooking": 3,
+        "ShortBlade": 2
+      },
+      "free_recipes": [
+        "Make Cake Batter",
+        "Make Pie Dough",
+        "Make Bread Dough",
+        "Make Biscuits",
+        "Make Cookie Dough",
+        "Make Chocolate Chip Cookie Dough",
+        "Make Oatmeal Cookie Dough",
+        "Make Shortbread Cookie Dough",
+        "Make Sugar Cookie Dough",
+        "Make Pizza",
+        "Chefs Pan Cooking Time",
+        "Chefs Pan Fighting Time"
+      ],
+      "free_traits": [
+        "Cook3",
+        "Nutritionist2"
+      ]
+    },
+    "woodcutter": {
+      "name_key": "UI_prof_woodcutter",
+      "shortcut": 84,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/woodcutter.png",
+      "points": -12,
+      "xp_boosts": {
+        "Axe": 2,
+        "Fitness": 1,
+        "Strength": 1
+      },
+      "free_traits": [
+        "Axeman",
+        "Lumberjack"
+      ]
+    },
+    "shelterbuilder": {
+      "name_key": "UI_prof_shelterbuilder",
+      "shortcut": 85,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/shelter_builder.png",
+      "points": -8,
+      "xp_boosts": {
+        "Carpentry": 3,
+        "Fitness": 1,
+        "LongBlunt": 1
+      },
+      "free_recipes": [
+        "Generator"
+      ],
+      "free_traits": [
+        "Handy2",
+        "ShelterBuilder"
+      ]
+    },
+    "outcast": {
+      "name_key": "UI_prof_outcast",
+      "shortcut": 86,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/outcast.png",
+      "points": 10,
+      "free_traits": [
+        "Illiterate",
+        "Shunned"
+      ]
+    }
+  },
+  "mutual_exclusives": [
+    [
+      "BlacksmithMaster",
+      "Metal1"
+    ],
+    [
+      "BlacksmithMaster",
+      "Metal2"
+    ],
+    [
+      "BlacksmithMaster",
+      "Metal3"
+    ],
+    [
+      "BlacksmithMaster",
+      "ShortBlunt1"
+    ],
+    [
+      "BlacksmithMaster",
+      "ShortBlunt3"
+    ],
+    [
+      "Cook",
+      "Cook3"
+    ],
+    [
+      "Cook3",
+      "Cooking1"
+    ],
+    [
+      "Cook3",
+      "ShortBlade2"
+    ],
+    [
+      "Cook3",
+      "ShortBlade3"
+    ],
+    [
+      "NightVision",
+      "NightVision2"
+    ],
+    [
+      "Inconspicuous",
+      "Inconspicuous2"
+    ],
+    [
+      "Elect1",
+      "tinkerer"
+    ],
+    [
+      "Elect2",
+      "tinkerer"
+    ],
+    [
+      "Mechanics3",
+      "tinkerer"
+    ],
+    [
+      "Mechanics4",
+      "tinkerer"
+    ],
+    [
+      "EngineBuilder",
+      "Mechanics"
+    ],
+    [
+      "EngineBuilder",
+      "Mechanics2"
+    ],
+    [
+      "EngineBuilder",
+      "Mechanics3"
+    ],
+    [
+      "EngineBuilder",
+      "Mechanics4"
+    ],
+    [
+      "Herbalist",
+      "Herbalist2"
+    ],
+    [
+      "Outdoorsman",
+      "Outdoorsman2"
+    ],
+    [
+      "Desensitized",
+      "Desensitized2"
+    ],
+    [
+      "Brave",
+      "Brave2"
+    ],
+    [
+      "Handy",
+      "Handy2"
+    ],
+    [
+      "Aim1",
+      "TrainedGunman"
+    ],
+    [
+      "Aim2",
+      "TrainedGunman"
+    ],
+    [
+      "Aim3",
+      "TrainedGunman"
+    ],
+    [
+      "Reload2",
+      "TrainedGunman"
+    ],
+    [
+      "Reload3",
+      "TrainedGunman"
+    ],
+    [
+      "Agriculturist",
+      "Gardener"
+    ],
+    [
+      "Agriculturist",
+      "Farm2"
+    ],
+    [
+      "Agriculturist",
+      "Farm3"
+    ],
+    [
+      "FieldMedic",
+      "FirstAid"
+    ],
+    [
+      "FieldMedic",
+      "Medic2"
+    ],
+    [
+      "FieldMedic",
+      "Medic3"
+    ],
+    [
+      "ShelterBuilder",
+      "Wood1"
+    ],
+    [
+      "ShelterBuilder",
+      "Wood2"
+    ],
+    [
+      "ShelterBuilder",
+      "Wood3"
+    ],
+    [
+      "Sew1",
+      "ThreadSmith"
+    ],
+    [
+      "Sew2",
+      "ThreadSmith"
+    ],
+    [
+      "Tailor",
+      "ThreadSmith"
+    ],
+    [
+      "Tracker",
+      "Trap1"
+    ],
+    [
+      "Tracker",
+      "Trap2"
+    ],
+    [
+      "Tracker",
+      "Trap3"
+    ],
+    [
+      "Forage1",
+      "Tracker"
+    ],
+    [
+      "Forage2",
+      "Tracker"
+    ],
+    [
+      "Forage3",
+      "Tracker"
+    ],
+    [
+      "Maint1",
+      "Trader"
+    ],
+    [
+      "Maint2",
+      "Trader"
+    ],
+    [
+      "CommSpecialist",
+      "Mechanics3"
+    ],
+    [
+      "CommSpecialist",
+      "Mechanics4"
+    ],
+    [
+      "CommSpecialist",
+      "Elect2"
+    ],
+    [
+      "CommSpecialist",
+      "ShortBlade3"
+    ],
+    [
+      "CommSpecialist",
+      "ShortBlade1"
+    ],
+    [
+      "Aim3",
+      "Guardsmen"
+    ],
+    [
+      "Guardsmen",
+      "Reload3"
+    ],
+    [
+      "Guardsmen",
+      "Spear3"
+    ],
+    [
+      "Guardsmen",
+      "Spear2"
+    ],
+    [
+      "Guardsmen",
+      "Maint1"
+    ],
+    [
+      "Axe2",
+      "Lumberjack"
+    ],
+    [
+      "Axe3",
+      "Lumberjack"
+    ],
+    [
+      "Lumberjack",
+      "Maint2"
+    ],
+    [
+      "Brawler",
+      "Lumberjack"
+    ],
+    [
+      "Axe1",
+      "Vern"
+    ],
+    [
+      "Axe2",
+      "Vern"
+    ],
+    [
+      "Axe3",
+      "Vern"
+    ],
+    [
+      "Aim1",
+      "Vern"
+    ],
+    [
+      "Aim2",
+      "Vern"
+    ],
+    [
+      "Aim3",
+      "Vern"
+    ],
+    [
+      "Brawler",
+      "Vern"
+    ],
+    [
+      "Stout",
+      "Vern"
+    ],
+    [
+      "Strong",
+      "Vern"
+    ],
+    [
+      "Axe1",
+      "Axe3"
+    ],
+    [
+      "Axe2",
+      "Axe3"
+    ],
+    [
+      "Axe3",
+      "Brawler"
+    ],
+    [
+      "ShortBlunt1",
+      "ShortBlunt3"
+    ],
+    [
+      "ShortBlunt2",
+      "ShortBlunt3"
+    ],
+    [
+      "Blunt1",
+      "Blunt3"
+    ],
+    [
+      "Blunt2",
+      "Blunt3"
+    ],
+    [
+      "Blunt3",
+      "Brawler"
+    ],
+    [
+      "ShortBlade1",
+      "ShortBlade3"
+    ],
+    [
+      "ShortBlade2",
+      "ShortBlade3"
+    ],
+    [
+      "Blade1",
+      "Blade3"
+    ],
+    [
+      "Blade2",
+      "Blade3"
+    ],
+    [
+      "Spear1",
+      "Spear3"
+    ],
+    [
+      "Spear2",
+      "Spear3"
+    ],
+    [
+      "Maint1",
+      "Maint2"
+    ],
+    [
+      "Handy",
+      "Maint2"
+    ],
+    [
+      "Handy2",
+      "Maint2"
+    ],
+    [
+      "Aim1",
+      "Aim2"
+    ],
+    [
+      "Aim1",
+      "Aim3"
+    ],
+    [
+      "Aim2",
+      "Hunter"
+    ],
+    [
+      "Aim3",
+      "Hunter"
+    ],
+    [
+      "Reload1",
+      "Reload2"
+    ],
+    [
+      "Reload1",
+      "Reload3"
+    ],
+    [
+      "Fishing1",
+      "Fishing2"
+    ],
+    [
+      "Fishing",
+      "Fishing2"
+    ],
+    [
+      "Wood1",
+      "Wood3"
+    ],
+    [
+      "Wood2",
+      "Wood3"
+    ],
+    [
+      "Farm3",
+      "Gardener"
+    ],
+    [
+      "Farm2",
+      "Farm3"
+    ],
+    [
+      "Medic2",
+      "Medic3"
+    ],
+    [
+      "FirstAid",
+      "Medic3"
+    ],
+    [
+      "Metal1",
+      "Metal3"
+    ],
+    [
+      "Metal2",
+      "Metal3"
+    ],
+    [
+      "Sew2",
+      "Tailor"
+    ],
+    [
+      "Sew1",
+      "Sew2"
+    ],
+    [
+      "Forage1",
+      "Forage3"
+    ],
+    [
+      "Forage2",
+      "Forage3"
+    ],
+    [
+      "Trap1",
+      "Trap3"
+    ],
+    [
+      "Trap2",
+      "Trap3"
+    ],
+    [
+      "Mechanics",
+      "Mechanics4"
+    ],
+    [
+      "Mechanics2",
+      "Mechanics4"
+    ],
+    [
+      "Mechanics3",
+      "Mechanics4"
+    ],
+    [
+      "LightweightTraveler",
+      "Stout"
+    ],
+    [
+      "LightweightTraveler",
+      "Strong"
+    ],
+    [
+      "Athletic",
+      "BrittleBody"
+    ],
+    [
+      "BrittleBody",
+      "Strong"
+    ],
+    [
+      "BrittleBody",
+      "Fit"
+    ],
+    [
+      "BrittleBody",
+      "Jogger"
+    ],
+    [
+      "BrittleBody",
+      "Weak"
+    ],
+    [
+      "BrittleBody",
+      "Unfit"
+    ],
+    [
+      "BrittleBody",
+      "Stout"
+    ],
+    [
+      "BookLover",
+      "ComicGeek"
+    ]
+  ],
+  "lang": {
+    "UI_prof_agriculturist": "Agriculturist",
+    "UI_prof_blacksmith": "Blacksmith",
+    "UI_prof_commsspecialist": "Comms Specialist",
+    "UI_prof_contractgun": "Contract Gun",
+    "UI_prof_fieldmedic": "Field Medic",
+    "UI_prof_firepitchef": "Firepit Chef",
+    "UI_prof_gearhead": "Gearhead",
+    "UI_prof_outcast": "Outcast",
+    "UI_prof_scout": "Scout",
+    "UI_prof_shelterbuilder": "Shelter Builder",
+    "UI_prof_threadsmith": "Threadsmith",
+    "UI_prof_tinkerer": "Tinkerer",
+    "UI_prof_tracker": "Tracker",
+    "UI_prof_trademaster": "Trader",
+    "UI_prof_unemployed": "Wanderer",
+    "UI_prof_watchmen": "Watchman",
+    "UI_prof_woodcutter": "Woodcutter",
+    "UI_trait_Agile": "Agile",
+    "UI_trait_AgileDesc": "Nimble, quick & knows the basics of fluid movement.",
+    "UI_trait_Agriculturist": "Agriculturist",
+    "UI_trait_AgriculturistDesc": "Expert in crop cultivation.\nHighly skilled in managing diverse crops, their specific requirements & growing optimization.",
+    "UI_trait_Aim1": "Aim Basics",
+    "UI_trait_Aim1Desc": "Fundamental training in aiming & shooting.",
+    "UI_trait_Aim2": "Trained Shooter",
+    "UI_trait_Aim2Desc": "Trained survivor in advanced aiming & shooting techniques.",
+    "UI_trait_Aim3": "Marksman",
+    "UI_trait_Aim3Desc": "Highly skilled & trained survivor.\nExcels at precise shooting with ranged weapons.",
+    "UI_trait_AllHailCaesar": "All Hail Caesar",
+    "UI_trait_AllHailCaesarDesc": "Apes! Together! Strong!",
+    "UI_trait_Axe1": "Hatchet Swinger",
+    "UI_trait_Axe1Desc": "Survivor learning basics of hatchet combat",
+    "UI_trait_Axe2": "Axe Wielder",
+    "UI_trait_Axe2Desc": "Seasoned warrior adept in axe combat & is able to cut through both wood & undead flesh with ease.",
+    "UI_trait_Axe3": "Axe Master",
+    "UI_trait_Axe3Desc": "Highly skilled logger & axe handler.\nKnown for their unparalleled ability to cleave through hordes of undeads.",
+    "UI_trait_BagsAndBelts": "Bags and Belts",
+    "UI_trait_BagsAndBeltsDesc": "Trader who is well-versed in efficient bags and belts usage.\nHas higher maximum carrying capacity during their travels and trades.",
+    "UI_trait_BlacksmithMaster": "Expert Blacksmith",
+    "UI_trait_BlacksmithMasterDesc": "Can create exquisite weaponry with rare resources",
+    "UI_trait_Blade1": "Machete Swinger",
+    "UI_trait_Blade1Desc": "Survivor learning the art of sword combat.",
+    "UI_trait_Blade2": "Sword Wielder",
+    "UI_trait_Blade2Desc": "Seasoned warrior skilled in sword combat, adept at slicing through undead.",
+    "UI_trait_Blade3": "Samurai",
+    "UI_trait_Blade3Desc": "Masterful warrior trained in the ancient art of the blade.\nDeadly force that elegantly slices through undead ranks with unparalleled skill & precision",
+    "UI_trait_Blunt1": "Club Initiate",
+    "UI_trait_Blunt1Desc": "Survivor learning basics of long blunt combat",
+    "UI_trait_Blunt2": "Crowbar Specialist",
+    "UI_trait_Blunt2Desc": "Skilled in long blunt combat, adept at breaking through obstacles & undead.",
+    "UI_trait_Blunt3": "Demolisher",
+    "UI_trait_Blunt3Desc": "Powerful fighter wielding long blunt weapons, bulldozes through undead hordes effortlessly.",
+    "UI_trait_BookLover": "Book Lover",
+    "UI_trait_BookLoverDesc": "This survivor treasures two well-preserved books, one of the few really rare finds in the apocalypse.",
+    "UI_trait_Brave2": "Brave",
+    "UI_trait_Brave2Desc": "Less prone to panick",
+    "UI_trait_BrittleBody": "Brittle Body",
+    "UI_trait_BrittleBodyDesc": "Feels like every step is an effort, and every lift a strain.",
+    "UI_trait_CoffeeLover": "Coffee Lover",
+    "UI_trait_CoffeeLoverDesc": "Treasures a rare find: a pack of premium coffee.\nA precious commodity in the apocalypse.",
+    "UI_trait_ComicGeek": "Comic Geek",
+    "UI_trait_ComicGeekDesc": "True comic lover at heart, treasures two well-preserved exemplars.",
+    "UI_trait_CommSpecialist": "Radio Technician",
+    "UI_trait_CommSpecialistDesc": "Highly skilled in operation, crafting & maintenance of communication devices.\nProficient at establishing contact and surveilling frequencies.",
+    "UI_trait_Cook3": "Firepit Chef",
+    "UI_trait_Cook3Desc": "Knows recipes from pre fall & how to decently fry a fresh rat",
+    "UI_trait_Cooking1": "Amateur Cook",
+    "UI_trait_Cooking1Desc": "Skilled at making meals that won't kill you.... instantly.\nConsider it a culinary survival test.",
+    "UI_trait_Desensitized2": "Desensitized",
+    "UI_trait_Desensitized2Desc": "You've seen enough....",
+    "UI_trait_Elect1": "Electrical Apprentice",
+    "UI_trait_Elect1Desc": "Has basic knowledge of electrical systems.",
+    "UI_trait_Elect2": "Electrical Specialist",
+    "UI_trait_Elect2Desc": "Intermediate skill in electrical systems\nProficient in repairing complex circuits & electrical devices.",
+    "UI_trait_EngineBuilder": "Engine Builder",
+    "UI_trait_EngineBuilderDesc": "Highly skilled mechanic.\nKnows the maintenance & repair of all vehicle models.",
+    "UI_trait_Farm2": "Planter",
+    "UI_trait_Farm2Desc": "Highly advanced understanding of crop cultivation\nKnowledgeable in diverse crops & their specific needs for optimal growth.",
+    "UI_trait_Farm3": "Harvester",
+    "UI_trait_Farm3Desc": "Advanced understanding of crop cultivation\nKnowledgeable in diverse crops & their specific needs for optimal growth.",
+    "UI_trait_FieldMedic": "Field Medic",
+    "UI_trait_FieldMedicDesc": "Veteran in emergency care, very experienced in diagnosing & treating injuries & illnesses.\nAdept at using whatever's on hand to provide effective medical aid in the field.",
+    "UI_trait_Fishing1": "Spear Fisher",
+    "UI_trait_Fishing1Desc": "Skilled in spearfishing techniques.",
+    "UI_trait_Fishing2": "Expert Angler",
+    "UI_trait_Fishing2Desc": "Survivor with advanced fishing proficiency.\nAdept at catching a variety of fish with specialized techniques & equipment.",
+    "UI_trait_Forage1": "Nature Seeker",
+    "UI_trait_Forage1Desc": "Keen observer of the natural world.",
+    "UI_trait_Forage2": "Wilderness Warden",
+    "UI_trait_Forage2Desc": "Experienced in navigating diverse terrains and environments.",
+    "UI_trait_Forage3": "Wilderness Sage",
+    "UI_trait_Forage3Desc": "Master of finding ressources in the wild\nPosses highly advanced knowledge of flora & fauna, able to sustain themselves within the wilderness.",
+    "UI_trait_FrogFriend": "Frog Companion",
+    "UI_trait_FrogFriendDesc": "Welcomes a trusty frog friend into your company, providing companionship as you traverse the world.",
+    "UI_trait_Guardsmen": "Guardsmen",
+    "UI_trait_GuardsmenDesc": "Hardened survivor.\nSkilled in perimeter defending against both undead & living threats.",
+    "UI_trait_Handy2": "Handy",
+    "UI_trait_Handy2Desc": "Faster & stronger construction",
+    "UI_trait_Herbalist2": "Herbalist",
+    "UI_trait_Herbalist2Desc": "Can find medicinal herbs & craft medicines & poulitices from them",
+    "UI_trait_Inconspicuous2": "Inconspicuous Scout",
+    "UI_trait_Inconspicuous2Desc": "Familiar with using cover & is less likely to be spotted by zombies.",
+    "UI_trait_LightweightTraveler": "Lightweight Traveler",
+    "UI_trait_LightweightTravelerDesc": "Uncomfortable with carrying too much, this survivor shies away from excessive loads.\nReduced maximum carrying capacity.",
+    "UI_trait_Lumberjack": "Lumberjack",
+    "UI_trait_LumberjackDesc": "An expert in timber harvesting and preparing wood.\nSkilled in felling trees, the undead and the living.",
+    "UI_trait_Maint1": "Basic Maintenance",
+    "UI_trait_Maint1Desc": "Knowledge of basic usage of glue & duct tape.",
+    "UI_trait_Maint2": "Advanced Maintenance",
+    "UI_trait_Maint2Desc": "Knowledge of advanced equipment repairs & basic optimization.",
+    "UI_trait_Mechanics3": "Trained Mechanic",
+    "UI_trait_Mechanics3Desc": "Advanced knowledge in vehicle repair",
+    "UI_trait_Mechanics4": "Expert Mechanic",
+    "UI_trait_Mechanics4Desc": "Specialist in automotive machinery.\nHighly skilled in building & maintaining vehicle systems if provided reference material.",
+    "UI_trait_Medic2": "Medical Assistant",
+    "UI_trait_Medic2Desc": "Proficient in basic medical care\nSkilled in treating injuries, illnesses, & first aid.",
+    "UI_trait_Medic3": "Medical Specialist",
+    "UI_trait_Medic3Desc": "Expert in comprehensive medical care.\nHighly skilled in diagnosing & treating injuries, illnesses & conditions effectively.",
+    "UI_trait_Metal1": "Welder Apprentice",
+    "UI_trait_Metal1Desc": "Has Basic understanding of metalworking",
+    "UI_trait_Metal2": "Welder Specialist",
+    "UI_trait_Metal2Desc": "Advanced skill in metalworking.\nProficient in shaping, joining & repairing metal.",
+    "UI_trait_Metal3": "Welder Expert",
+    "UI_trait_Metal3Desc": "Expert in metalworking techniques.\nHighly skilled in forging & fabricating intricate metal structures using advanced welding methods.",
+    "UI_trait_MushroomGatherer": "Mushroom Gatherer",
+    "UI_trait_MushroomGathererDesc": "Survivor with a keen eye for spotting fungi.\nHowever, they lack knowledge of whether the mushrooms they find are edible or poisonous.",
+    "UI_trait_NightVision2": "Cats Eye",
+    "UI_trait_NightVision2Desc": "Better vision at night",
+    "UI_trait_Outdoorsman2": "Outdoorsman",
+    "UI_trait_Outdoorsman2Desc": "Not affected by harsh weather conditions",
+    "UI_trait_QuietMovement": "Quiet Movement",
+    "UI_trait_QuietMovementDesc": "Survivor who prefers moving quietly.",
+    "UI_trait_Reload1": "Novice Reloader",
+    "UI_trait_Reload1Desc": "Fundamental knowledge of firearm reloading.",
+    "UI_trait_Reload2": "Advanced Reloader",
+    "UI_trait_Reload2Desc": "Experienced survivor in firearm reloading.\nProficient at quicker & smoother reloads under pressure.",
+    "UI_trait_Reload3": "Master Reloader",
+    "UI_trait_Reload3Desc": "Highly proficient in firearm reloading.\nExecutes lightning-fast reloads, minimizing downtime in combat.",
+    "UI_trait_Sew1": "Skilled Sewer",
+    "UI_trait_Sew1Desc": "Intermediate skill in tailoring.",
+    "UI_trait_Sew2": "Master Sewer",
+    "UI_trait_Sew2Desc": "Expert in tailoring techniques\nHighly skilled in designing and crafting clothing & utilizing advanced sewing skills.",
+    "UI_trait_ShelterBuilder": "Shelter Builder",
+    "UI_trait_ShelterBuilderDesc": "Mastery in carpentry and construction.\nRenowned for crafting sturdy & functional shelters, structures & fortifications.",
+    "UI_trait_ShortBlade1": "Dagger Initiate",
+    "UI_trait_ShortBlade1Desc": "Survivor learning basics of knife combat.",
+    "UI_trait_ShortBlade2": "Knife Specialist",
+    "UI_trait_ShortBlade2Desc": "Seasoned warrior skilled in knife combat, adept at silently killing undeads.",
+    "UI_trait_ShortBlade3": "Knife Master",
+    "UI_trait_ShortBlade3Desc": "Masterful fighter wielding knifes.\nStrikes with deadly precision, swiftly taking down undead & living foes.",
+    "UI_trait_ShortBlunt1": "Bludgeon Initiate",
+    "UI_trait_ShortBlunt1Desc": "Survivor learning basics of blunt combat.",
+    "UI_trait_ShortBlunt2": "Baton Specialist",
+    "UI_trait_ShortBlunt2Desc": "Seasoned warrior skilled in blunt combat, adept at taking down obstacles & undead.",
+    "UI_trait_ShortBlunt3": "Juggernaut",
+    "UI_trait_ShortBlunt3Desc": "Brute force in the field, this fighter wields blunt weapons with unmatched power, smashing through undead hordes with ease.",
+    "UI_trait_Shunned": "Shunned One",
+    "UI_trait_ShunnedDesc": "An outcast among survivors, ostracized for reasons unknown or misunderstood by others.",
+    "UI_trait_Spear1": "Spear Initiate",
+    "UI_trait_Spear1Desc": "Survivor learning the art of spear combat.",
+    "UI_trait_Spear2": "Spear Specialist",
+    "UI_trait_Spear2Desc": "Seasoned warrior skilled in spear combat.\nAdept at thrusting through & piercing undead.",
+    "UI_trait_Spear3": "Spear Master",
+    "UI_trait_Spear3Desc": "Masterful fighter wielding spears.\nPerfectly maintains distance, while skewering undead with precision & agility.",
+    "UI_trait_ThreadSmith": "Thread Smith",
+    "UI_trait_ThreadSmithDesc": "Master of the needle and thread & is known for their unparalleled skill in tailoring.\nVery experienced at crafting intricate garments and textile creations.",
+    "UI_trait_Tracker": "Tracker",
+    "UI_trait_TrackerDesc": "Survivor with special tracking skills, able to read the signs of the wilderness.\nWhether it's following the trail of prey or tracking the movements of other survivors, their expertise is highly advanced.",
+    "UI_trait_Trader": "Trader",
+    "UI_trait_TraderDesc": "Resourceful merchant navigating through dangerous places, seeking profit amidst the chaos.",
+    "UI_trait_TrainedGunman": "Trained Gunman",
+    "UI_trait_TrainedGunmanDesc": "Masterful skilled fighter in firearm handling & tactics.\nProficient with various firearms for effective combat against undead & living threats.",
+    "UI_trait_Trap1": "Trap Setter",
+    "UI_trait_Trap1Desc": "Has basic understanding of traps to catch small game.",
+    "UI_trait_Trap2": "Trap Specialist",
+    "UI_trait_Trap2Desc": "Proficient in setting snares & simple traps.",
+    "UI_trait_Trap3": "Trap Expert",
+    "UI_trait_Trap3Desc": "Expert in trapping craft & setup.\nCapable of designing & deploying sophisticated traps to catch elusive prey.",
+    "UI_trait_Vern": "Vern",
+    "UI_trait_VernDesc": "Embrace the Vern way!",
+    "UI_trait_Wanderer": "Wanderer",
+    "UI_trait_WandererDesc": "Lone traveler, weaving their own tale in a harsh world teeming with threats.",
+    "UI_trait_WineLover": "Wine Lover",
+    "UI_trait_WineLoverDesc": "Treasures a rare find: a fine bottle of wine & a delicate wine glass.\nA really rare commodity in the apocalypse.",
+    "UI_trait_Wood1": "Woodwork Novice",
+    "UI_trait_Wood1Desc": "Basic carpentry skills.",
+    "UI_trait_Wood2": "Skilled Carpenter",
+    "UI_trait_Wood2Desc": "Advanced carpentry knowledge.\nProficient in building sturdy structures & furniture.",
+    "UI_trait_Wood3": "Expert Carpenter",
+    "UI_trait_Wood3Desc": "Expert in carpentry\nAdept at repurposing salvaged materials to create durable constructions.",
+    "UI_trait_breathingTechnique": "Seiza Breathing",
+    "UI_trait_breathingTechniqueDesc": "Survivor who has mastered a special breathing technique, allowing them to recover from fatigue (25%) faster while sitting on the ground.",
+    "UI_trait_tinkerer": "Tinkerer",
+    "UI_trait_tinkererDesc": "The go-to tech guru: adept at repairing gadgets by day, and by night-\ntransforms zombies into explosive confetti."
+  }
+}

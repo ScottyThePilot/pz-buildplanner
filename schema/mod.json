@@ -35,6 +35,10 @@
     "workshop_id": {
       "type": "integer"
     },
+    "remove_default_professions": {
+      "description": "A boolean indicating whether having this mod enabled should remove vanilla professions",
+      "type": "boolean"
+    },
     "shortcut": {
       "description": "A unique integer identifying this mod, used for preset urls",
       "type": "integer"
