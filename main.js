@@ -6,6 +6,7 @@ const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
   "#/data/Vanilla.json",
   "#/data/HephasOccupationsAndTraits.json",
+  "#/data/HephasOccupationsAndTraits_WithVanillaProfessions.json",
   "#/data/MoreDescriptionForTraits4166.json",
   "#/data/MoreSimpleTraits.json",
   "#/data/MoreSimpleTraitsMini.json",

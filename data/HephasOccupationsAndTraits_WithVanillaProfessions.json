@@ -1,18 +1,17 @@
 {
-  "id": "HephasOccupationsAndTraits",
-  "name": "Hephas Occupations & Traits",
+  "id": "HephasOccupationsAndTraits_WithVanillaProfessions",
+  "name": "Hephas Occupations & Traits With Vanilla Professions",
   "author": "Hephaistos",
   "incompatible": [
-    "HephasOccupationsAndTraits_WithVanillaProfessions"
+    "HephasOccupationsAndTraits"
   ],
   "workshop_id": 3256482412,
-  "remove_default_professions": true,
-  "shortcut": 12,
+  "shortcut": 13,
   "traits": {
     "BlacksmithMaster": {
       "name_key": "UI_trait_BlacksmithMaster",
       "description_key": "UI_trait_BlacksmithMasterDesc",
-      "shortcut": 472,
+      "shortcut": 569,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/blacksmith_master.png",
       "cost": 0,
       "is_profession_trait": true
@@ -20,7 +19,7 @@
     "Cook3": {
       "name_key": "UI_trait_Cook3",
       "description_key": "UI_trait_Cook3Desc",
-      "shortcut": 473,
+      "shortcut": 570,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/firepit_chef.png",
       "cost": 0,
       "is_profession_trait": true
@@ -28,7 +27,7 @@
     "tinkerer2": {
       "name_key": "UI_trait_tinkerer2",
       "description_key": "UI_trait_tinkerer2Desc",
-      "shortcut": 560,
+      "shortcut": 571,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/tinkerer.png",
       "cost": 0,
       "is_profession_trait": true
@@ -36,7 +35,7 @@
     "EngineBuilder": {
       "name_key": "UI_trait_EngineBuilder",
       "description_key": "UI_trait_EngineBuilderDesc",
-      "shortcut": 477,
+      "shortcut": 572,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/engine_builder.png",
       "cost": 0,
       "is_profession_trait": true
@@ -44,7 +43,7 @@
     "TrainedGunman": {
       "name_key": "UI_trait_TrainedGunman",
       "description_key": "UI_trait_TrainedGunmanDesc",
-      "shortcut": 483,
+      "shortcut": 573,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/trained_gunman.png",
       "cost": 0,
       "is_profession_trait": true
@@ -52,7 +51,7 @@
     "Agriculturist": {
       "name_key": "UI_trait_Agriculturist",
       "description_key": "UI_trait_AgriculturistDesc",
-      "shortcut": 484,
+      "shortcut": 574,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/agriculturist.png",
       "cost": 0,
       "is_profession_trait": true
@@ -60,7 +59,7 @@
     "FieldMedic": {
       "name_key": "UI_trait_FieldMedic",
       "description_key": "UI_trait_FieldMedicDesc",
-      "shortcut": 485,
+      "shortcut": 575,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/field_medic.png",
       "cost": 0,
       "is_profession_trait": true
@@ -68,7 +67,7 @@
     "ShelterBuilder": {
       "name_key": "UI_trait_ShelterBuilder",
       "description_key": "UI_trait_ShelterBuilderDesc",
-      "shortcut": 486,
+      "shortcut": 576,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shelter_builder.png",
       "cost": 0,
       "is_profession_trait": true
@@ -76,7 +75,7 @@
     "ThreadSmith": {
       "name_key": "UI_trait_ThreadSmith",
       "description_key": "UI_trait_ThreadSmithDesc",
-      "shortcut": 487,
+      "shortcut": 577,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/threadsmith.png",
       "cost": 0,
       "is_profession_trait": true
@@ -84,7 +83,7 @@
     "Tracker": {
       "name_key": "UI_trait_Tracker",
       "description_key": "UI_trait_TrackerDesc",
-      "shortcut": 488,
+      "shortcut": 578,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/tracker.png",
       "cost": 0,
       "is_profession_trait": true
@@ -92,7 +91,7 @@
     "Trader": {
       "name_key": "UI_trait_Trader",
       "description_key": "UI_trait_TraderDesc",
-      "shortcut": 490,
+      "shortcut": 579,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/trader.png",
       "cost": 0,
       "is_profession_trait": true
@@ -100,7 +99,7 @@
     "CommSpecialist": {
       "name_key": "UI_trait_CommSpecialist",
       "description_key": "UI_trait_CommSpecialistDesc",
-      "shortcut": 491,
+      "shortcut": 580,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/radio_technician.png",
       "cost": 0,
       "is_profession_trait": true
@@ -108,7 +107,7 @@
     "Guardsmen": {
       "name_key": "UI_trait_Guardsmen",
       "description_key": "UI_trait_GuardsmenDesc",
-      "shortcut": 492,
+      "shortcut": 581,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/guardsmen.png",
       "cost": 0,
       "is_profession_trait": true
@@ -116,7 +115,7 @@
     "Lumberjack": {
       "name_key": "UI_trait_Lumberjack",
       "description_key": "UI_trait_LumberjackDesc",
-      "shortcut": 493,
+      "shortcut": 582,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/lumberjack.png",
       "cost": 0,
       "is_profession_trait": true
@@ -124,7 +123,7 @@
     "Shunned": {
       "name_key": "UI_trait_Shunned",
       "description_key": "UI_trait_ShunnedDesc",
-      "shortcut": 494,
+      "shortcut": 583,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shunned_one.png",
       "cost": 0,
       "is_profession_trait": true
@@ -132,7 +131,7 @@
     "BagsAndBelts": {
       "name_key": "UI_trait_BagsAndBelts",
       "description_key": "UI_trait_BagsAndBeltsDesc",
-      "shortcut": 495,
+      "shortcut": 584,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/bags_and_belts.png",
       "cost": 0,
       "is_profession_trait": true,
@@ -150,7 +149,7 @@
     "LightweightTraveler": {
       "name_key": "UI_trait_LightweightTraveler",
       "description_key": "UI_trait_LightweightTravelerDesc",
-      "shortcut": 549,
+      "shortcut": 585,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/lightweight_traveler.png",
       "cost": -7,
       "condition": {
@@ -167,7 +166,7 @@
     "Lifter": {
       "name_key": "UI_trait_Lifter",
       "description_key": "UI_trait_LifterDesc",
-      "shortcut": 561,
+      "shortcut": 586,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/lifter.png",
       "cost": 7,
       "condition": {
@@ -184,7 +183,7 @@
     "Bleeder": {
       "name_key": "UI_trait_Bleeder",
       "description_key": "UI_trait_BleederDesc",
-      "shortcut": 562,
+      "shortcut": 587,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/bleeder.png",
       "cost": -5,
       "condition": {
@@ -201,7 +200,7 @@
     "Vern": {
       "name_key": "UI_trait_Vern",
       "description_key": "UI_trait_VernDesc",
-      "shortcut": 496,
+      "shortcut": 588,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/vern.png",
       "cost": 12,
       "xp_boosts": {
@@ -212,14 +211,14 @@
     "AllHailCaesar": {
       "name_key": "UI_trait_AllHailCaesar",
       "description_key": "UI_trait_AllHailCaesarDesc",
-      "shortcut": 497,
+      "shortcut": 589,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/all_hail_caesar.png",
       "cost": 2
     },
     "Axe1": {
       "name_key": "UI_trait_Axe1",
       "description_key": "UI_trait_Axe1Desc",
-      "shortcut": 498,
+      "shortcut": 590,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/axe1.png",
       "cost": 4,
       "xp_boosts": {
@@ -229,7 +228,7 @@
     "Axe2": {
       "name_key": "UI_trait_Axe2",
       "description_key": "UI_trait_Axe2Desc",
-      "shortcut": 499,
+      "shortcut": 591,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/axe2.png",
       "cost": 7,
       "xp_boosts": {
@@ -239,7 +238,7 @@
     "Axe3": {
       "name_key": "UI_trait_Axe3",
       "description_key": "UI_trait_Axe3Desc",
-      "shortcut": 500,
+      "shortcut": 592,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/axe3.png",
       "cost": 10,
       "xp_boosts": {
@@ -249,7 +248,7 @@
     "ShortBlunt1": {
       "name_key": "UI_trait_ShortBlunt1",
       "description_key": "UI_trait_ShortBlunt1Desc",
-      "shortcut": 501,
+      "shortcut": 593,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt1.png",
       "cost": 3,
       "xp_boosts": {
@@ -259,7 +258,7 @@
     "ShortBlunt2": {
       "name_key": "UI_trait_ShortBlunt2",
       "description_key": "UI_trait_ShortBlunt2Desc",
-      "shortcut": 502,
+      "shortcut": 594,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt2.png",
       "cost": 4,
       "xp_boosts": {
@@ -269,7 +268,7 @@
     "ShortBlunt3": {
       "name_key": "UI_trait_ShortBlunt3",
       "description_key": "UI_trait_ShortBlunt3Desc",
-      "shortcut": 503,
+      "shortcut": 595,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblunt3.png",
       "cost": 6,
       "xp_boosts": {
@@ -279,7 +278,7 @@
     "Blunt1": {
       "name_key": "UI_trait_Blunt1",
       "description_key": "UI_trait_Blunt1Desc",
-      "shortcut": 504,
+      "shortcut": 596,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt1.png",
       "cost": 4,
       "xp_boosts": {
@@ -289,7 +288,7 @@
     "Blunt2": {
       "name_key": "UI_trait_Blunt2",
       "description_key": "UI_trait_Blunt2Desc",
-      "shortcut": 505,
+      "shortcut": 597,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt2.png",
       "cost": 6,
       "xp_boosts": {
@@ -299,7 +298,7 @@
     "Blunt3": {
       "name_key": "UI_trait_Blunt3",
       "description_key": "UI_trait_Blunt3Desc",
-      "shortcut": 506,
+      "shortcut": 598,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblunt3.png",
       "cost": 8,
       "xp_boosts": {
@@ -309,7 +308,7 @@
     "ShortBlade1": {
       "name_key": "UI_trait_ShortBlade1",
       "description_key": "UI_trait_ShortBlade1Desc",
-      "shortcut": 507,
+      "shortcut": 599,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade1.png",
       "cost": 3,
       "xp_boosts": {
@@ -319,7 +318,7 @@
     "ShortBlade2": {
       "name_key": "UI_trait_ShortBlade2",
       "description_key": "UI_trait_Blade2Desc",
-      "shortcut": 508,
+      "shortcut": 600,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade2.png",
       "cost": 6,
       "xp_boosts": {
@@ -329,7 +328,7 @@
     "ShortBlade3": {
       "name_key": "UI_trait_ShortBlade3",
       "description_key": "UI_trait_ShortBlade3Desc",
-      "shortcut": 509,
+      "shortcut": 601,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/shortblade3.png",
       "cost": 8,
       "xp_boosts": {
@@ -339,7 +338,7 @@
     "Blade1": {
       "name_key": "UI_trait_Blade1",
       "description_key": "UI_trait_Blade1Desc",
-      "shortcut": 510,
+      "shortcut": 602,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade1.png",
       "cost": 6,
       "xp_boosts": {
@@ -349,7 +348,7 @@
     "Blade2": {
       "name_key": "UI_trait_Blade2",
       "description_key": "UI_trait_Blade2Desc",
-      "shortcut": 511,
+      "shortcut": 603,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade2.png",
       "cost": 8,
       "xp_boosts": {
@@ -359,7 +358,7 @@
     "Blade3": {
       "name_key": "UI_trait_Blade3",
       "description_key": "UI_trait_Blade3Desc",
-      "shortcut": 512,
+      "shortcut": 604,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/longblade3.png",
       "cost": 10,
       "xp_boosts": {
@@ -369,7 +368,7 @@
     "Spear1": {
       "name_key": "UI_trait_Spear1",
       "description_key": "UI_trait_Spear1Desc",
-      "shortcut": 513,
+      "shortcut": 605,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/spear1.png",
       "cost": 4,
       "xp_boosts": {
@@ -379,7 +378,7 @@
     "Spear2": {
       "name_key": "UI_trait_Spear2",
       "description_key": "UI_trait_Spear2Desc",
-      "shortcut": 514,
+      "shortcut": 606,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/spear2.png",
       "cost": 6,
       "xp_boosts": {
@@ -389,7 +388,7 @@
     "Spear3": {
       "name_key": "UI_trait_Spear3",
       "description_key": "UI_trait_Spear3Desc",
-      "shortcut": 515,
+      "shortcut": 607,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/spear3.png",
       "cost": 8,
       "xp_boosts": {
@@ -399,7 +398,7 @@
     "Maint1": {
       "name_key": "UI_trait_Maint1",
       "description_key": "UI_trait_Maint1Desc",
-      "shortcut": 516,
+      "shortcut": 608,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/maintenance1.png",
       "cost": 5,
       "xp_boosts": {
@@ -409,7 +408,7 @@
     "Maint2": {
       "name_key": "UI_trait_Maint2",
       "description_key": "UI_trait_Maint2Desc",
-      "shortcut": 517,
+      "shortcut": 609,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/maintenance2.png",
       "cost": 7,
       "xp_boosts": {
@@ -419,7 +418,7 @@
     "Aim1": {
       "name_key": "UI_trait_Aim1",
       "description_key": "UI_trait_Aim1Desc",
-      "shortcut": 518,
+      "shortcut": 610,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming1.png",
       "cost": 6,
       "xp_boosts": {
@@ -429,7 +428,7 @@
     "Aim2": {
       "name_key": "UI_trait_Aim2",
       "description_key": "UI_trait_Aim2Desc",
-      "shortcut": 519,
+      "shortcut": 611,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming2.png",
       "cost": 10,
       "xp_boosts": {
@@ -439,7 +438,7 @@
     "Aim3": {
       "name_key": "UI_trait_Aim3",
       "description_key": "UI_trait_Aim3Desc",
-      "shortcut": 520,
+      "shortcut": 612,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/aiming3.png",
       "cost": 14,
       "xp_boosts": {
@@ -449,7 +448,7 @@
     "Reload1": {
       "name_key": "UI_trait_Reload1",
       "description_key": "UI_trait_Reload1Desc",
-      "shortcut": 521,
+      "shortcut": 613,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading1.png",
       "cost": 2,
       "xp_boosts": {
@@ -459,7 +458,7 @@
     "Reload2": {
       "name_key": "UI_trait_Reload2",
       "description_key": "UI_trait_Reload2Desc",
-      "shortcut": 522,
+      "shortcut": 614,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading2.png",
       "cost": 4,
       "xp_boosts": {
@@ -469,7 +468,7 @@
     "Reload3": {
       "name_key": "UI_trait_Reload3",
       "description_key": "UI_trait_Reload3Desc",
-      "shortcut": 523,
+      "shortcut": 615,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/reloading3.png",
       "cost": 6,
       "xp_boosts": {
@@ -479,7 +478,7 @@
     "Fishing1": {
       "name_key": "UI_trait_Fishing1",
       "description_key": "UI_trait_Fishing1Desc",
-      "shortcut": 524,
+      "shortcut": 616,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/fishing1.png",
       "cost": 6,
       "xp_boosts": {
@@ -493,7 +492,7 @@
     "Fishing2": {
       "name_key": "UI_trait_Fishing2",
       "description_key": "UI_trait_Fishing2Desc",
-      "shortcut": 525,
+      "shortcut": 617,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/fishing2.png",
       "cost": 8,
       "xp_boosts": {
@@ -507,7 +506,7 @@
     "Cooking1": {
       "name_key": "UI_trait_Cooking1",
       "description_key": "UI_trait_Cooking1Desc",
-      "shortcut": 526,
+      "shortcut": 618,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/cooking.png",
       "cost": 2,
       "xp_boosts": {
@@ -517,7 +516,7 @@
     "Wood1": {
       "name_key": "UI_trait_Wood1",
       "description_key": "UI_trait_Wood1Desc",
-      "shortcut": 527,
+      "shortcut": 619,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry1.png",
       "cost": 4,
       "xp_boosts": {
@@ -527,7 +526,7 @@
     "Wood2": {
       "name_key": "UI_trait_Wood2",
       "description_key": "UI_trait_Wood2Desc",
-      "shortcut": 528,
+      "shortcut": 620,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry2.png",
       "cost": 6,
       "xp_boosts": {
@@ -537,7 +536,7 @@
     "Wood3": {
       "name_key": "UI_trait_Wood3",
       "description_key": "UI_trait_Wood3Desc",
-      "shortcut": 529,
+      "shortcut": 621,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/carpentry3.png",
       "cost": 8,
       "xp_boosts": {
@@ -547,7 +546,7 @@
     "Farm2": {
       "name_key": "UI_trait_Farm2",
       "description_key": "UI_trait_Farm2Desc",
-      "shortcut": 530,
+      "shortcut": 622,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/farming2.png",
       "cost": 6,
       "xp_boosts": {
@@ -557,7 +556,7 @@
     "Farm3": {
       "name_key": "UI_trait_Farm3",
       "description_key": "UI_trait_Farm3Desc",
-      "shortcut": 531,
+      "shortcut": 623,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/farming3.png",
       "cost": 8,
       "xp_boosts": {
@@ -567,7 +566,7 @@
     "Medic2": {
       "name_key": "UI_trait_Medic2",
       "description_key": "UI_trait_Medic2Desc",
-      "shortcut": 532,
+      "shortcut": 624,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/firstaid1.png",
       "cost": 6,
       "xp_boosts": {
@@ -577,7 +576,7 @@
     "Medic3": {
       "name_key": "UI_trait_Medic3",
       "description_key": "UI_trait_Medic3Desc",
-      "shortcut": 533,
+      "shortcut": 625,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/firstaid2.png",
       "cost": 8,
       "xp_boosts": {
@@ -587,7 +586,7 @@
     "Elect1": {
       "name_key": "UI_trait_Elect1",
       "description_key": "UI_trait_Elect1Desc",
-      "shortcut": 534,
+      "shortcut": 626,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/electrical1.png",
       "cost": 4,
       "xp_boosts": {
@@ -597,7 +596,7 @@
     "Elect2": {
       "name_key": "UI_trait_Elect2",
       "description_key": "UI_trait_Elect2Desc",
-      "shortcut": 535,
+      "shortcut": 627,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/electrical2.png",
       "cost": 6,
       "xp_boosts": {
@@ -607,7 +606,7 @@
     "Metal1": {
       "name_key": "UI_trait_Metal1",
       "description_key": "UI_trait_Metal1Desc",
-      "shortcut": 536,
+      "shortcut": 628,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking1.png",
       "cost": 4,
       "xp_boosts": {
@@ -617,7 +616,7 @@
     "Metal2": {
       "name_key": "UI_trait_Metal2",
       "description_key": "UI_trait_Metal2Desc",
-      "shortcut": 537,
+      "shortcut": 629,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking2.png",
       "cost": 6,
       "xp_boosts": {
@@ -627,7 +626,7 @@
     "Metal3": {
       "name_key": "UI_trait_Metal3",
       "description_key": "UI_trait_Metal3Desc",
-      "shortcut": 538,
+      "shortcut": 630,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/metalworking3.png",
       "cost": 8,
       "xp_boosts": {
@@ -637,7 +636,7 @@
     "Sew1": {
       "name_key": "UI_trait_Sew1",
       "description_key": "UI_trait_Sew1Desc",
-      "shortcut": 539,
+      "shortcut": 631,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/sewing1.png",
       "cost": 6,
       "xp_boosts": {
@@ -647,7 +646,7 @@
     "Sew2": {
       "name_key": "UI_trait_Sew2",
       "description_key": "UI_trait_Sew2Desc",
-      "shortcut": 540,
+      "shortcut": 632,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/sewing2.png",
       "cost": 8,
       "xp_boosts": {
@@ -657,7 +656,7 @@
     "Forage1": {
       "name_key": "UI_trait_Forage1",
       "description_key": "UI_trait_Forage1Desc",
-      "shortcut": 541,
+      "shortcut": 633,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging1.png",
       "cost": 4,
       "xp_boosts": {
@@ -667,7 +666,7 @@
     "Forage2": {
       "name_key": "UI_trait_Forage2",
       "description_key": "UI_trait_Forage2Desc",
-      "shortcut": 542,
+      "shortcut": 634,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging2.png",
       "cost": 6,
       "xp_boosts": {
@@ -677,7 +676,7 @@
     "Forage3": {
       "name_key": "UI_trait_Forage3",
       "description_key": "UI_trait_Forage3Desc",
-      "shortcut": 543,
+      "shortcut": 635,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/foraging3.png",
       "cost": 8,
       "xp_boosts": {
@@ -687,7 +686,7 @@
     "Trap1": {
       "name_key": "UI_trait_Trap1",
       "description_key": "UI_trait_Trap1Desc",
-      "shortcut": 544,
+      "shortcut": 636,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping1.png",
       "cost": 3,
       "xp_boosts": {
@@ -697,7 +696,7 @@
     "Trap2": {
       "name_key": "UI_trait_Trap2",
       "description_key": "UI_trait_Trap2Desc",
-      "shortcut": 545,
+      "shortcut": 637,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping2.png",
       "cost": 5,
       "xp_boosts": {
@@ -707,7 +706,7 @@
     "Trap3": {
       "name_key": "UI_trait_Trap3",
       "description_key": "UI_trait_Trap3Desc",
-      "shortcut": 546,
+      "shortcut": 638,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/trapping3.png",
       "cost": 7,
       "xp_boosts": {
@@ -717,7 +716,7 @@
     "Mechanics3": {
       "name_key": "UI_trait_Mechanics3",
       "description_key": "UI_trait_Mechanics3Desc",
-      "shortcut": 547,
+      "shortcut": 639,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/mechanics3.png",
       "cost": 7,
       "xp_boosts": {
@@ -730,7 +729,7 @@
     "Mechanics4": {
       "name_key": "UI_trait_Mechanics4",
       "description_key": "UI_trait_Mechanics4Desc",
-      "shortcut": 548,
+      "shortcut": 640,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/mechanics4.png",
       "cost": 9,
       "xp_boosts": {
@@ -744,7 +743,7 @@
     "QuietMovement": {
       "name_key": "UI_trait_QuietMovement",
       "description_key": "UI_trait_QuietMovementDesc",
-      "shortcut": 550,
+      "shortcut": 641,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/sneaking.png",
       "cost": 2,
       "xp_boosts": {
@@ -754,7 +753,7 @@
     "Agile": {
       "name_key": "UI_trait_Agile",
       "description_key": "UI_trait_AgileDesc",
-      "shortcut": 551,
+      "shortcut": 642,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/agile.png",
       "cost": 3,
       "xp_boosts": {
@@ -764,21 +763,21 @@
     "FrogFriend": {
       "name_key": "UI_trait_FrogFriend",
       "description_key": "UI_trait_FrogFriendDesc",
-      "shortcut": 552,
+      "shortcut": 643,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/frog_companion.png",
       "cost": 1
     },
     "breathingTechnique": {
       "name_key": "UI_trait_breathingTechnique",
       "description_key": "UI_trait_breathingTechniqueDesc",
-      "shortcut": 553,
+      "shortcut": 644,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/breathing_technique.png",
       "cost": 4
     },
     "BrittleBody": {
       "name_key": "UI_trait_BrittleBody",
       "description_key": "UI_trait_BrittleBodyDesc",
-      "shortcut": 554,
+      "shortcut": 645,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/brittle_body.png",
       "cost": -6,
       "xp_boosts": {
@@ -789,77 +788,77 @@
     "MushroomGatherer": {
       "name_key": "UI_trait_MushroomGatherer",
       "description_key": "UI_trait_MushroomGathererDesc",
-      "shortcut": 555,
+      "shortcut": 646,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/mushroom_gatherer.png",
       "cost": 2
     },
     "CoffeeLover": {
       "name_key": "UI_trait_CoffeeLover",
       "description_key": "UI_trait_CoffeeLoverDesc",
-      "shortcut": 556,
+      "shortcut": 647,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/coffee_lover.png",
       "cost": 1
     },
     "WineLover": {
       "name_key": "UI_trait_WineLover",
       "description_key": "UI_trait_WineLoverDesc",
-      "shortcut": 557,
+      "shortcut": 648,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/winelover.png",
       "cost": 2
     },
     "ComicGeek": {
       "name_key": "UI_trait_ComicGeek",
       "description_key": "UI_trait_ComicGeekDesc",
-      "shortcut": 558,
+      "shortcut": 649,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/comic_geek.png",
       "cost": 1
     },
     "BookLover": {
       "name_key": "UI_trait_BookLover",
       "description_key": "UI_trait_BookLoverDesc",
-      "shortcut": 559,
+      "shortcut": 650,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/book_lover.png",
       "cost": 1
     },
     "KillerEcstasy": {
       "name_key": "UI_trait_KillerEcstasy",
       "description_key": "UI_trait_KillerEcstasyDesc",
-      "shortcut": 563,
+      "shortcut": 651,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/psyched_killer.png",
       "cost": 6
     },
     "Peaceful": {
       "name_key": "UI_trait_Peaceful",
       "description_key": "UI_trait_PeacefulDesc",
-      "shortcut": 564,
+      "shortcut": 652,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/peaceful_whimp.png",
       "cost": -5
     },
     "DrunkenMaster": {
       "name_key": "UI_trait_DrunkenMaster",
       "description_key": "UI_trait_DrunkenMasterDesc",
-      "shortcut": 565,
+      "shortcut": 653,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/drunken_master.png",
       "cost": 6
     },
     "InsectHunter": {
       "name_key": "UI_trait_InsectHunter",
       "description_key": "UI_trait_InsectHunterDesc",
-      "shortcut": 566,
+      "shortcut": 654,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/insect_hunter.png",
       "cost": 2
     },
     "DislikesHeavyLoad": {
       "name_key": "UI_trait_DislikesHeavyLoad",
       "description_key": "UI_trait_DislikesHeavyLoadDesc",
-      "shortcut": 567,
+      "shortcut": 655,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/dislikes_heavy_load.png",
       "cost": -5
     },
     "LightLoadLover": {
       "name_key": "UI_trait_LightLoadLover",
       "description_key": "UI_trait_LightLoadLoverDesc",
-      "shortcut": 568,
+      "shortcut": 656,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/light_load_lover.png",
       "cost": 6
     }
@@ -867,7 +866,7 @@
   "professions": {
     "unemployed": {
       "name_key": "UI_prof_unemployed",
-      "shortcut": 70,
+      "shortcut": 87,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/wanderer.png",
       "points": 4,
       "xp_boosts": {
@@ -876,7 +875,7 @@
     },
     "scout": {
       "name_key": "UI_prof_scout",
-      "shortcut": 71,
+      "shortcut": 88,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/scout.png",
       "points": -8,
       "xp_boosts": {
@@ -894,7 +893,7 @@
     },
     "tinkerer": {
       "name_key": "UI_prof_tinkerer",
-      "shortcut": 72,
+      "shortcut": 89,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/tinkerer.png",
       "points": -8,
       "xp_boosts": {
@@ -916,7 +915,7 @@
     },
     "fieldmedic": {
       "name_key": "UI_prof_fieldmedic",
-      "shortcut": 73,
+      "shortcut": 90,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/field_medic.png",
       "points": -8,
       "xp_boosts": {
@@ -933,7 +932,7 @@
     },
     "agriculturist": {
       "name_key": "UI_prof_agriculturist",
-      "shortcut": 74,
+      "shortcut": 91,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/agriculturist.png",
       "points": -8,
       "xp_boosts": {
@@ -951,7 +950,7 @@
     },
     "gearhead": {
       "name_key": "UI_prof_gearhead",
-      "shortcut": 75,
+      "shortcut": 92,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/gearhead.png",
       "points": -12,
       "xp_boosts": {
@@ -973,7 +972,7 @@
     },
     "trademaster": {
       "name_key": "UI_prof_trademaster",
-      "shortcut": 76,
+      "shortcut": 93,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/trader.png",
       "points": -8,
       "xp_boosts": {
@@ -987,7 +986,7 @@
     },
     "tracker": {
       "name_key": "UI_prof_tracker",
-      "shortcut": 77,
+      "shortcut": 94,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/tracker.png",
       "points": -10,
       "xp_boosts": {
@@ -1011,7 +1010,7 @@
     },
     "commsspecialist": {
       "name_key": "UI_prof_commsspecialist",
-      "shortcut": 78,
+      "shortcut": 95,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/comms_specialist.png",
       "points": -10,
       "xp_boosts": {
@@ -1039,7 +1038,7 @@
     },
     "contractgun": {
       "name_key": "UI_prof_contractgun",
-      "shortcut": 79,
+      "shortcut": 96,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/contract_gun.png",
       "points": -15,
       "xp_boosts": {
@@ -1053,7 +1052,7 @@
     },
     "watchmen": {
       "name_key": "UI_prof_watchmen",
-      "shortcut": 80,
+      "shortcut": 97,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/watchman.png",
       "points": -8,
       "xp_boosts": {
@@ -1068,7 +1067,7 @@
     },
     "blacksmith": {
       "name_key": "UI_prof_blacksmith",
-      "shortcut": 81,
+      "shortcut": 98,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/blacksmith.png",
       "points": -8,
       "xp_boosts": {
@@ -1090,7 +1089,7 @@
     },
     "threadsmith": {
       "name_key": "UI_prof_threadsmith",
-      "shortcut": 82,
+      "shortcut": 99,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/threadsmith.png",
       "points": -8,
       "xp_boosts": {
@@ -1104,7 +1103,7 @@
     },
     "firepitchef": {
       "name_key": "UI_prof_firepitchef",
-      "shortcut": 83,
+      "shortcut": 100,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/firepit_chef.png",
       "points": -6,
       "xp_boosts": {
@@ -1133,7 +1132,7 @@
     },
     "woodcutter": {
       "name_key": "UI_prof_woodcutter",
-      "shortcut": 84,
+      "shortcut": 101,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/woodcutter.png",
       "points": -12,
       "xp_boosts": {
@@ -1148,7 +1147,7 @@
     },
     "shelterbuilder": {
       "name_key": "UI_prof_shelterbuilder",
-      "shortcut": 85,
+      "shortcut": 102,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/shelter_builder.png",
       "points": -8,
       "xp_boosts": {
@@ -1166,7 +1165,7 @@
     },
     "outcast": {
       "name_key": "UI_prof_outcast",
-      "shortcut": 86,
+      "shortcut": 103,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/outcast.png",
       "points": 10,
       "free_traits": [
