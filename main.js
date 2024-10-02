@@ -181,9 +181,15 @@ function createSkillElement(skill, boost) {
   const skillLevelElement = $("<span>").addClass("skill-level").text(boost);
   const skillLevelBarElement = $("<div>").addClass("skill-level-bar pips");
   for (let i = 0; i < boost; i ++) skillLevelBarElement.append($("<div>").addClass("pip"));
-  const xpBoostText = skill === "Strength" || skill === "Fitness" ? null : getXpBoostText(boost);
+  // According to the wiki (https://pzwiki.net/wiki/Skill#Starting_skill_levels)
+  // strength and fitness are not affected by the skill xp boost system
+  const skillGetsXpBoost = !(skill === "Strength" || skill === "Fitness");
+  const xpBoostText = skillGetsXpBoost ? getXpBoostText(boost) : null;
+  const xpBoostMultiplierText = skillGetsXpBoost
+    ? `This skill receives an effective XP gain multiplier of ${getXpBoostMultiplierText(boost)}.`
+    : "This skill receives no XP boosts.";
   const skillXpBoostElement = $("<span>").addClass("skill-xp-boost").text(xpBoostText || "");
-  return $("<div>").addClass("planner-skill").append([
+  return $("<div>").addClass("planner-skill").attr("title", xpBoostMultiplierText).append([
     skillNameElement, skillLevelElement, skillLevelBarElement, skillXpBoostElement
   ]);
 }
@@ -648,8 +654,7 @@ class Settings {
  * @param {integer} boost
  * @returns {string?}
  */
- function getXpBoostText(boost) {
-  // TODO: figure out if fitness and strength xp boost is real
+function getXpBoostText(boost) {
   if (boost < 0) return null;
   switch (boost) {
     case 0: return "+25%";
@@ -657,6 +662,21 @@ class Settings {
     case 2: return "+100%";
     case 3: return "+125%";
     default: return "+125%";
+  }
+}
+
+/**
+ * @param {integer} boost
+ * @returns {string?}
+ */
+function getXpBoostMultiplierText(boost) {
+  if (boost < 0) return null;
+  switch (boost) {
+    case 0: return "1x";
+    case 1: return "3x";
+    case 2: return "4x";
+    case 3: return "5x";
+    default: return "5x";
   }
 }
 
