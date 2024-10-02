@@ -1,6 +1,6 @@
 "use strict";
 
-const BASE = (window.location.origin + window.location.pathname).replace(/index\.html$/i, "");
+const BASE = (window.location.origin + window.location.pathname).replace(/\/?index\.html$/i, "") + "/";
 
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
@@ -53,9 +53,7 @@ $(window).on("load", function () {
   reload(DEFAULT_MOD_URLS);
 
   $(window).on("keydown", function (event) {
-    if (event.key === "Escape") {
-      $("#planner-overlay").addClass("hide").empty();
-    }
+    if (event.key === "Escape") hideOverlay();
   });
 
   $("#setting-is-multiplayer").on("change", function () {
@@ -97,9 +95,17 @@ $(window).on("load", function () {
   });
 });
 
+function showOverlay(text = "Loading...") {
+  $("#planner-overlay").removeClass("hide").text(text);
+}
+
+function hideOverlay() {
+  $("#planner-overlay").addClass("hide").empty();
+}
+
 /** @param {string[]} modUrls */
 async function reload(modUrls) {
-  $("#planner-overlay").removeClass("hide").text("Loading...");
+  showOverlay();
   const expandedModUrls = modUrls.map(expandLink);
   await Promise.all(expandedModUrls.map(fetchJSON))
     .then(modsLoadingSuccess, modsLoadingFailure);
@@ -107,7 +113,7 @@ async function reload(modUrls) {
 
 /** @param {any[]} mods */
 function modsLoadingSuccess(mods) {
-  $("#planner-overlay").addClass("hide").empty();
+  hideOverlay();
   /** @type {Map<string, Mod>} */
   let loadedMods = new Map();
   for (let mod of mods) {
@@ -123,7 +129,7 @@ function modsLoadingSuccess(mods) {
 }
 
 function modsLoadingFailure(error) {
-  $("#planner-overlay").removeClass("hide").text(error.toString());
+  showOverlay(error.toString());
   console.log(error);
 }
 
