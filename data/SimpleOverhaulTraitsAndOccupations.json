@@ -3275,7 +3275,7 @@
     "UI_trait_fragilehealth": "Fragile",
     "UI_trait_fragilehealthdesc": "Trains Strength and Fitness slower.\nCarrying too much may cause health problems.\n(-30% Strength and Fitness XP,\nHeavy Load moodle gradually reduces health to 50%.)",
     "UI_trait_gasmanagement": "Experienced Refueler",
-    "UI_trait_gasmanagementdesc": "Transfers inventory items, refuels vehicles and drains gasoline faster.\n(-25% inventory transferring time, refueling vehicles and draining gasoline.\nUp to -60% inventory transferring time with \\\"Dextrous\\\" trait.)",
+    "UI_trait_gasmanagementdesc": "Transfers inventory items, refuels vehicles and drains gasoline faster.\n(-25% inventory transferring time, refueling vehicles and draining gasoline.\nUp to -60% inventory transferring time with \"Dextrous\" trait.)",
     "UI_trait_genexp": "Generator Expert",
     "UI_trait_genexpdesc": "Knows how to operate and repair generators.\n(Repairing a generator increases its condition by an additional 5%.)",
     "UI_trait_highsweaty": "Excessive Sweating",

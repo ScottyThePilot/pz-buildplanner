@@ -53,7 +53,7 @@
     "UI_trait_WeakStomachDesc": "Higher chance to have food illness.(+100% chance)\n(Food illness lasts shorter instead of longer (bug).)",
     "UI_trait_agoraphobicdesc": "Gets panicked outdoors.",
     "UI_trait_athleticdesc": "Faster running speed.\nCan run for longer without tiring.\n(-60% endurance loss when running or sprinting.\nCan be gained by training Fitness to level 9.\nLost if Fitness is below 9.)",
-    "UI_trait_axemandesc": "Better at chopping trees.\nFaster axe swing.\n(25% faster against trees, 5% faster against zombies.)",
+    "UI_trait_axemandesc": "Better at chopping trees.\nFaster axe swing.\n(25% faster against trees, 25% faster against zombies.)\n(+50% axe tree damage)",
     "UI_trait_bravedesc": "Less prone to becoming panicked.\n(-70% panic, except for night terrors and phobias.)",
     "UI_trait_claustrodesc": "Gets panicked when indoors.\n(But not in 70-tiles + sized rooms. The smaller the room, the faster the panic increase.)",
     "UI_trait_clumsydesc": "Makes more noise when moving.\n(+20% footstep radius sound,\n+10% chance to trip when run/sprint vaulting a low fence or getting attacked by lunging zombies.\nIncreased chance of falling when bumping into a zombie or survivor.)",

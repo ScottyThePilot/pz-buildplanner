@@ -88,6 +88,14 @@
       "cost": 0,
       "is_profession_trait": true
     },
+    "Wanderer": {
+      "name_key": "UI_trait_Wanderer",
+      "description_key": "UI_trait_WandererDesc",
+      "shortcut": 668,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/wanderer.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
     "Trader": {
       "name_key": "UI_trait_Trader",
       "description_key": "UI_trait_TraderDesc",
@@ -128,6 +136,14 @@
       "cost": 0,
       "is_profession_trait": true
     },
+    "scrapAngler": {
+      "name_key": "UI_trait_ScrapAngler",
+      "description_key": "UI_trait_ScrapAnglerDesc",
+      "shortcut": 669,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/scrap_angler.png",
+      "cost": 0,
+      "is_profession_trait": true
+    },
     "BagsAndBelts": {
       "name_key": "UI_trait_BagsAndBelts",
       "description_key": "UI_trait_BagsAndBeltsDesc",
@@ -151,7 +167,7 @@
       "description_key": "UI_trait_LightweightTravelerDesc",
       "shortcut": 585,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/lightweight_traveler.png",
-      "cost": -7,
+      "cost": -6,
       "condition": {
         "all": [
           {
@@ -803,7 +819,7 @@
       "name_key": "UI_trait_WineLover",
       "description_key": "UI_trait_WineLoverDesc",
       "shortcut": 648,
-      "icon_path": "#/data/images/traits/hephas_occupations_traits/winelover.png",
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/wine_lover.png",
       "cost": 2
     },
     "ComicGeek": {
@@ -832,7 +848,7 @@
       "description_key": "UI_trait_PeacefulDesc",
       "shortcut": 652,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/peaceful_whimp.png",
-      "cost": -5
+      "cost": -4
     },
     "DrunkenMaster": {
       "name_key": "UI_trait_DrunkenMaster",
@@ -861,17 +877,103 @@
       "shortcut": 656,
       "icon_path": "#/data/images/traits/hephas_occupations_traits/light_load_lover.png",
       "cost": 6
+    },
+    "StressEater": {
+      "name_key": "UI_trait_StressEater",
+      "description_key": "UI_trait_StressEaterDesc",
+      "shortcut": 670,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/stress_eater.png",
+      "cost": -5
+    },
+    "Thanathophobic": {
+      "name_key": "UI_trait_Thanathophobic",
+      "description_key": "UI_trait_ThanathophobicDesc",
+      "shortcut": 671,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/thanathophobic.png",
+      "cost": -7
+    },
+    "ChronicPain": {
+      "name_key": "UI_trait_ChronicPain",
+      "description_key": "UI_trait_ChronicPainDesc",
+      "shortcut": 672,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/chronic_pain.png",
+      "cost": -6
+    },
+    "Hoat_CouchPotato": {
+      "name_key": "UI_trait_Hoat_CouchPotato",
+      "description_key": "UI_trait_Hoat_CouchPotatoDesc",
+      "shortcut": 673,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/couch_potato.png",
+      "cost": -9,
+      "xp_boosts": {
+        "Fitness": -2,
+        "Strength": -2
+      }
+    },
+    "Nudist": {
+      "name_key": "UI_trait_Nudist",
+      "description_key": "UI_trait_NudistDesc",
+      "shortcut": 674,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/nudist.png",
+      "cost": -4
+    },
+    "Sprinter": {
+      "name_key": "UI_trait_Sprinter",
+      "description_key": "UI_trait_SprinterDesc",
+      "shortcut": 675,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/sprinter.png",
+      "cost": 4
+    },
+    "MedicalPractitioner": {
+      "name_key": "UI_trait_MedicalPractitioner",
+      "description_key": "UI_trait_MedicalPractitionerDesc",
+      "shortcut": 676,
+      "icon_path": null,
+      "cost": 0,
+      "condition": {
+        "mod_is_present": "BB_FirstAidOverhaul"
+      }
+    },
+    "SoftWalker": {
+      "name_key": "UI_trait_SoftWalker",
+      "description_key": "UI_trait_SoftWalkerDesc",
+      "shortcut": 677,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/soft_walker.png",
+      "cost": 2,
+      "xp_boosts": {
+        "Lightfooted": 1
+      }
+    },
+    "LittleBuddy": {
+      "name_key": "UI_trait_LittleBuddy",
+      "description_key": "UI_trait_LittleBuddyDesc",
+      "shortcut": 678,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/little_buddy.png",
+      "cost": 3
+    },
+    "FlexTaper": {
+      "name_key": "UI_trait_FlexTaper",
+      "description_key": "UI_trait_FlexTaperDesc",
+      "shortcut": 679,
+      "icon_path": "#/data/images/traits/hephas_occupations_traits/flex_taper.png",
+      "cost": 4,
+      "free_recipes": [
+        "Craft Flex Tape"
+      ]
     }
   },
   "professions": {
-    "unemployed": {
-      "name_key": "UI_prof_unemployed",
-      "shortcut": 87,
+    "wanderer": {
+      "name_key": "UI_prof_wanderer",
+      "shortcut": 105,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/wanderer.png",
       "points": 4,
       "xp_boosts": {
         "Lightfooted": 1
-      }
+      },
+      "free_traits": [
+        "Wanderer"
+      ]
     },
     "scout": {
       "name_key": "UI_prof_scout",
@@ -927,7 +1029,8 @@
         "Herbalist2"
       ],
       "free_traits": [
-        "FieldMedic"
+        "FieldMedic",
+        "MedicalPractitioner"
       ]
     },
     "agriculturist": {
@@ -940,8 +1043,8 @@
         "Strength": 2
       },
       "free_recipes": [
-        "Craft Mildew Cure",
-        "Craft Flies Cure"
+        "Make Mildew Cure",
+        "Make Flies Cure"
       ],
       "free_traits": [
         "Herbalist2",
@@ -954,8 +1057,8 @@
       "icon_path": "#/data/images/professions/hephas_occupations_traits/gearhead.png",
       "points": -12,
       "xp_boosts": {
-        "Electrical": 1,
         "Mechanics": 3,
+        "Metalworking": 1,
         "ShortBlunt": 1
       },
       "free_recipes": [
@@ -974,7 +1077,7 @@
       "name_key": "UI_prof_trademaster",
       "shortcut": 93,
       "icon_path": "#/data/images/professions/hephas_occupations_traits/trader.png",
-      "points": -8,
+      "points": -9,
       "xp_boosts": {
         "Electrical": 1,
         "Foraging": 1,
@@ -1171,6 +1274,26 @@
       "free_traits": [
         "Illiterate2",
         "Shunned"
+      ]
+    },
+    "scrapangler": {
+      "name_key": "UI_prof_scrapangler",
+      "shortcut": 106,
+      "icon_path": "#/data/images/professions/hephas_occupations_traits/scrap_angler.png",
+      "points": -8,
+      "xp_boosts": {
+        "Fishing": 3,
+        "Foraging": 1,
+        "Metalworking": 1
+      },
+      "free_recipes": [
+        "Make Fishing Rod",
+        "Fix Fishing Rod",
+        "Make Fishing Net",
+        "Get Wire Back"
+      ],
+      "free_traits": [
+        "scrapAngler"
       ]
     }
   },
@@ -1408,6 +1531,26 @@
       "Lumberjack"
     ],
     [
+      "Fishing",
+      "scrapAngler"
+    ],
+    [
+      "Fishing1",
+      "scrapAngler"
+    ],
+    [
+      "Fishing2",
+      "scrapAngler"
+    ],
+    [
+      "Metal3",
+      "scrapAngler"
+    ],
+    [
+      "Forage3",
+      "scrapAngler"
+    ],
+    [
       "LightweightTraveler",
       "Stout"
     ],
@@ -1524,6 +1667,10 @@
       "ShortBlade3"
     ],
     [
+      "Hunter",
+      "ShortBlade3"
+    ],
+    [
       "Blade1",
       "Blade3"
     ],
@@ -1550,10 +1697,6 @@
     [
       "Handy2",
       "Maint2"
-    ],
-    [
-      "Aim2",
-      "Hunter"
     ],
     [
       "Aim3",
@@ -1686,6 +1829,38 @@
     [
       "KillerEcstasy",
       "Peaceful"
+    ],
+    [
+      "Athletic",
+      "Hoat_CouchPotato"
+    ],
+    [
+      "Hoat_CouchPotato",
+      "Strong"
+    ],
+    [
+      "Fit",
+      "Hoat_CouchPotato"
+    ],
+    [
+      "Hoat_CouchPotato",
+      "Jogger"
+    ],
+    [
+      "Hoat_CouchPotato",
+      "Weak"
+    ],
+    [
+      "Hoat_CouchPotato",
+      "Unfit"
+    ],
+    [
+      "Hoat_CouchPotato",
+      "Stout"
+    ],
+    [
+      "BrittleBody",
+      "Hoat_CouchPotato"
     ]
   ],
   "lang": {
@@ -1698,15 +1873,16 @@
     "UI_prof_gearhead": "Gearhead",
     "UI_prof_outcast": "Outcast",
     "UI_prof_scout": "Scout",
+    "UI_prof_scrapangler": "Scrap Angler",
     "UI_prof_shelterbuilder": "Shelter Builder",
     "UI_prof_threadsmith": "Threadsmith",
     "UI_prof_tinkerer": "Tinkerer",
     "UI_prof_tracker": "Tracker",
     "UI_prof_trademaster": "Trader",
-    "UI_prof_unemployed": "Wanderer",
+    "UI_prof_wanderer": "Wanderer",
     "UI_prof_watchmen": "Watchman",
     "UI_prof_woodcutter": "Woodcutter",
-    "UI_profdesc_unemployed": "Forge your own story",
+    "UI_profdesc_wanderer": "Forge your own story",
     "UI_trait_Agile": "Agile",
     "UI_trait_AgileDesc": "Nimble, quick & knows the basics of fluid movement.",
     "UI_trait_Agriculturist": "Agriculturist",
@@ -1747,6 +1923,8 @@
     "UI_trait_BookLoverDesc": "This survivor treasures two well-preserved books, one of the few really rare finds in the apocalypse.",
     "UI_trait_BrittleBody": "Brittle Body",
     "UI_trait_BrittleBodyDesc": "Feels like every step is an effort, and every lift a strain.",
+    "UI_trait_ChronicPain": "Chronic Pain",
+    "UI_trait_ChronicPainDesc": "Constant pain at night plagues this survivor, making their daily life uncomfortable.\nPainkillers are crucial.\n[Receives random pain levels nightly, ranging from \"Pain\" to \"Severe Pain\" (rarely \"Agony\")]",
     "UI_trait_CoffeeLover": "Coffee Lover",
     "UI_trait_CoffeeLoverDesc": "Treasures a rare find: a pack of premium coffee.\nA precious commodity in the apocalypse.",
     "UI_trait_ComicGeek": "Comic Geek",
@@ -1777,6 +1955,8 @@
     "UI_trait_Fishing1Desc": "Skilled in spearfishing techniques.",
     "UI_trait_Fishing2": "Expert Angler",
     "UI_trait_Fishing2Desc": "Survivor with advanced fishing proficiency.\nAdept at catching a variety of fish with specialized techniques & equipment.",
+    "UI_trait_FlexTaper": "Flex Taper",
+    "UI_trait_FlexTaperDesc": "Knows how to create the ultimate Flex Tape.",
     "UI_trait_Forage1": "Nature Seeker",
     "UI_trait_Forage1Desc": "Keen observer of the natural world.",
     "UI_trait_Forage2": "Wilderness Warden",
@@ -1787,6 +1967,8 @@
     "UI_trait_FrogFriendDesc": "Welcomes a trusty frog friend into your company, providing companionship as you traverse the world.",
     "UI_trait_Guardsmen": "Guardsmen",
     "UI_trait_GuardsmenDesc": "Hardened survivor.\nSkilled in perimeter defending against both undead & living threats.",
+    "UI_trait_Hoat_CouchPotato": "Couch Potato",
+    "UI_trait_Hoat_CouchPotatoDesc": "Always lazy and weak, this survivor has spent more time on the couch than anywhere else.\nHow they survived this long is anyone's guess.",
     "UI_trait_InsectHunter": "Insect Hunter",
     "UI_trait_InsectHunterDesc": "An uncanny knack for spotting insects, this survivor can find bugs where others see none.\nIncreased chances of finding insects in the wilderness.\n[+30% foraging bonus for insects & fishbait]",
     "UI_trait_KillerEcstasy": "Psyched Killer",
@@ -1797,6 +1979,8 @@
     "UI_trait_LightLoadLoverDesc": "This survivor finds happiness and stress relief when carrying a light load, preferring agility and freedom over heavy burdens.\n[+Stress relief & happiness if under 30% of the max carry capacity]",
     "UI_trait_LightweightTraveler": "Lightweight Traveler",
     "UI_trait_LightweightTravelerDesc": "Uncomfortable with carrying too much, this survivor shies away from excessive loads.\nReduced maximum carrying capacity.\n[15kg at max strength]",
+    "UI_trait_LittleBuddy": "Little Buddy",
+    "UI_trait_LittleBuddyDesc": "This survivor is never without their beloved Spiffo doll, their closest companion in a harsh world.\nLosing Spiffo would be the most awful thing that could happen to this survivor.\n[Small boost to stress, boredom, and unhappiness when Spiffo is in inventory, but don't you dare lose Spiffo...You will regret it]",
     "UI_trait_Lumberjack": "Lumberjack",
     "UI_trait_LumberjackDesc": "An expert in timber harvesting and preparing wood.\nSkilled in felling trees, the undead and the living.",
     "UI_trait_Maint1": "Basic Maintenance",
@@ -1819,6 +2003,8 @@
     "UI_trait_Metal3Desc": "Expert in metalworking techniques.\nHighly skilled in forging & fabricating intricate metal structures using advanced welding methods.",
     "UI_trait_MushroomGatherer": "Mushroom Gatherer",
     "UI_trait_MushroomGathererDesc": "Survivor with a keen eye for spotting fungi.\nHowever, they lack knowledge of whether the mushrooms they find are edible or poisonous.\n[+30% foraging bonus to mushrooms]",
+    "UI_trait_Nudist": "Nudist",
+    "UI_trait_NudistDesc": "Prefers the freedom of no clothing. Increases happiness when unclothed but causes discomfort when wearing clothes.\n[Backpacks, shoes, watches, and all \"Accessory\" type items do not count as clothing]",
     "UI_trait_Peaceful": "Peaceful Whimp",
     "UI_trait_PeacefulDesc": "Each zombie kill brings a wave of unease, making you unhappier & more stressed.\nWhat if there are alive and just trapped inside their minds?",
     "UI_trait_QuietMovement": "Quiet Movement",
@@ -1829,6 +2015,8 @@
     "UI_trait_Reload2Desc": "Experienced survivor in firearm reloading.\nProficient at quicker & smoother reloads under pressure.",
     "UI_trait_Reload3": "Master Reloader",
     "UI_trait_Reload3Desc": "Highly proficient in firearm reloading.\nExecutes lightning-fast reloads, minimizing downtime in combat.",
+    "UI_trait_ScrapAngler": "Scrap Angler",
+    "UI_trait_ScrapAnglerDesc": "An expert in fishing with a shallow understanding of makeshift metalworking.\nUtilizing salvaged materials, they craft and maintain their own fishing gear, transforming scrap into fishing tools.",
     "UI_trait_Sew1": "Skilled Sewer",
     "UI_trait_Sew1Desc": "Intermediate skill in tailoring.",
     "UI_trait_Sew2": "Master Sewer",
@@ -1849,12 +2037,20 @@
     "UI_trait_ShortBlunt3Desc": "Brute force in the field, this fighter wields blunt weapons with unmatched power, smashing through undead hordes with ease.",
     "UI_trait_Shunned": "Shunned One",
     "UI_trait_ShunnedDesc": "An outcast among survivors, ostracized for reasons unknown or misunderstood by others.",
+    "UI_trait_SoftWalker": "Soft Walker",
+    "UI_trait_SoftWalkerDesc": "Moves with near silence, making it hard for enemies to detect.",
     "UI_trait_Spear1": "Spear Initiate",
     "UI_trait_Spear1Desc": "Survivor learning the art of spear combat.",
     "UI_trait_Spear2": "Spear Specialist",
     "UI_trait_Spear2Desc": "Seasoned warrior skilled in spear combat.\nAdept at thrusting through & piercing undead.",
     "UI_trait_Spear3": "Spear Master",
     "UI_trait_Spear3Desc": "Masterful fighter wielding spears.\nPerfectly maintains distance, while skewering undead with precision & agility.",
+    "UI_trait_Sprinter": "Sprinter",
+    "UI_trait_SprinterDesc": "Finds joy and relief in sprinting.\n[Slowly gains happiness and reduces boredom while sprinting]",
+    "UI_trait_StressEater": "Stress Eater",
+    "UI_trait_StressEaterDesc": "Feels hungry whenever stressed, leading to increased food consumption during stressful times.\n[Slowly Increases hunger level to \"Hungry\" when under stress]",
+    "UI_trait_Thanathophobic": "Thanathophobic",
+    "UI_trait_ThanathophobicDesc": "Intense fear of death causing the survivor constant stress when injured.\n[Gains constant stress up to \"Agitated\" when under 90% HP]",
     "UI_trait_ThreadSmith": "Thread Smith",
     "UI_trait_ThreadSmithDesc": "Master of the needle and thread & is known for their unparalleled skill in tailoring.\nVery experienced at crafting intricate garments and textile creations.",
     "UI_trait_Tracker": "Tracker",
