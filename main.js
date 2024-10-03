@@ -103,22 +103,43 @@ function hideOverlay() {
   $("#planner-overlay").addClass("hide").empty();
 }
 
+/** @param {string} link @returns {string} */
+function expandLink(link) {
+  if (link.startsWith("#")) {
+    return BASE + link.replace(/^#\/*/, "");
+  } else {
+    return link;
+  }
+}
+
 /** @param {string[]} modUrls */
 async function reload(modUrls) {
   showOverlay();
   const expandedModUrls = modUrls.map(expandLink);
-  await Promise.all(expandedModUrls.map(fetchJSON))
+  await Promise.all(expandedModUrls.map(fetchAndValidateMod))
     .then(modsLoadingSuccess, modsLoadingFailure);
 }
 
-/** @param {any[]} mods */
+async function fetchAndValidateMod(path) {
+  try {
+    const raw = await fetchJSON(path);
+    return new Mod(raw);
+  } catch (error) {
+    throw new Error(`Failed to load ${path}: ${error}`);
+  }
+}
+
+async function fetchJSON(path) {
+  const response = await window.fetch(path);
+  return await response.json();
+}
+
+/** @param {Mod[]} mods */
 function modsLoadingSuccess(mods) {
   hideOverlay();
   /** @type {Map<string, Mod>} */
   let loadedMods = new Map();
-  for (let mod of mods) {
-    mod.requires = mod.requires || [];
-    mod.incompatible = mod.incompatible || [];
+  for (const mod of mods) {
     loadedMods.set(mod.id, mod);
   }
 
@@ -133,12 +154,16 @@ function modsLoadingFailure(error) {
   console.log(error);
 }
 
-function linkAttr(workshopId) {
+function steamWorkshopLinkAttr(workshopId) {
   return {
     href: steamWorkshopLink(workshopId),
     target: "_blank",
     rel: "noopener noreferrer"
   };
+}
+
+function steamWorkshopLink(workshop) {
+  return `https://steamcommunity.com/sharedfiles/filedetails?id=${workshop}`;
 }
 
 /** @param {Mod} mod */
@@ -147,8 +172,8 @@ function createModElement(mod) {
   let modElement = $("<div>").addClass("planner-mod");
 
   const modAuthor = $("<span>").text(mod.author);
-  const modNameLink = mod.workshop_id != null
-    ? $("<a>").text(mod.name).attr(linkAttr(mod.workshop_id))
+  const modNameLink = mod.workshopId != null
+    ? $("<a>").text(mod.name).attr(steamWorkshopLinkAttr(mod.workshopId))
     : $("<span>").text(mod.name);
   const modName = $("<span>").append([modNameLink, " by ", modAuthor]);
   modElement.append(modName);
@@ -200,7 +225,7 @@ function createSkillElement(skill, boost) {
   ]);
 }
 
-/** @param {Trait} trait */
+/** @param {TraitResolved} trait */
 function createTraitElement(trait) {
   const state = State.get();
   let traitElement = $("<div>").addClass("planner-trait");
@@ -238,7 +263,7 @@ function createTraitElement(trait) {
   return traitElement;
 }
 
-/** @param {Profession} profession */
+/** @param {ProfessionResolved} profession */
 function createProfessionElement(profession) {
   const state = State.get();
   let professionElement = $("<div>").addClass("planner-profession");
@@ -261,7 +286,6 @@ function createProfessionElement(profession) {
   professionElement.on("click", function () {
     const state = State.get();
     state.selectProfession(profession);
-    //state.preset.profession = profession.id;
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
@@ -351,14 +375,14 @@ class State {
     return base;
   }
 
-  /** @returns {Trait[]} */
+  /** @returns {TraitResolved[]} */
   getAvailableTraits() {
     const allTraits = Array.from(this.currentModData.traits.values());
     return this.preset.settings.showUnavailable ? allTraits
       : allTraits.filter(trait => this.isTraitAvailable(trait));
   }
 
-  /** @returns {Profession[]} */
+  /** @returns {ProfessionResolved[]} */
   getAvailableProfessions() {
     return Array.from(this.currentModData.professions.values());
   }
@@ -403,7 +427,7 @@ class State {
     return currentProfession != null && currentProfession.freeTraits.includes(id) && trait.isProfessionTrait;
   }
 
-  /** @param {Trait} trait @returns {boolean} */
+  /** @param {TraitResolved} trait @returns {boolean} */
   isTraitAvailable(trait) {
     const currentProfession = this.currentModData.professions.get(this.preset.profession);
     if (!this.preset.settings.isSleepEnabled && trait.isSleepTrait) return false;
@@ -417,10 +441,10 @@ class State {
     return true;
   }
 
-  /** @param {Profession} profession */
+  /** @param {ProfessionResolved} profession */
   selectProfession(profession) {
     this.preset.profession = profession.id;
-    // As with the above, non-profession "free traits" can be deselected after the profession is selected
+    // As stated above, non-profession "free traits" can be deselected after the profession is selected
     // If a mod does this, we just enable the trait when you select the profession so that the
     // (potentially bugged?) behavior is replicated
     for (const id of profession.freeTraits) {
@@ -429,7 +453,7 @@ class State {
     }
   }
 
-  /** @param {Trait} trait */
+  /** @param {TraitResolved} trait */
   toggleTrait(trait) {
     if (this.preset.traits.has(trait.id)) {
       this.preset.traits.delete(trait.id);
@@ -610,7 +634,7 @@ function getEnabledModData(loadedMods, enabledMods) {
   let mods = Array.from(loadedMods.values())
     .filter(mod => mod.id === "Vanilla" || enabledMods.has(mod.id));
   sortMods(mods);
-  return mergeMods(mods);
+  return Mod.merge(mods);
 }
 
 class Settings {
@@ -745,11 +769,6 @@ function sortMods(mods) {
   }
 }
 
-/** @param {string} str @returns {string[]} */
-function splitWhitespace(str) {
-  return str.trim().split(/\s+/g).filter(s => s.length !== 0);
-}
-
 /** @param {string} str @param {boolean} defaltValue @returns {boolean} */
 function parseShortBoolean(str, defaultValue) {
   switch (str) {
@@ -757,126 +776,6 @@ function parseShortBoolean(str, defaultValue) {
     case "f": case "F": return false;
     default: return defaultValue;
   }
-}
-
-/**
- * @template {object} T
- * @param {T[]} objects
- * @returns {T}
- */
-function mergeObjects(objects) {
-  return Object.assign({}, ...objects);
-}
-
-/**
- * @param {Mod[]} mods
- * @returns {ModData}
- */
-function mergeMods(mods) {
-  const removeDefaultProfessions = mods.some(mod => mod.remove_default_professions || false);
-
-  const ids = new Set(mods.map(mod => mod.id));
-  const mutualExclusives = dedup(mods.flatMap(mod => mod.mutual_exclusives));
-  const lang = mergeObjects(mods.map(mod => mod.lang));
-  const traitsMerged = mergeObjects(mods.map(mod => mod.traits));
-  const professionsMerged = mergeObjects(mods.map(mod => {
-    return removeDefaultProfessions && mod.id == "Vanilla" ? [] : mod.professions;
-  }));
-
-  /** @type {Shortcuts} */
-  let shortcuts = {
-    mods: new Map(),
-    traits: new Map(),
-    professions: new Map()
-  };
-
-  for (const mod of mods) {
-    if (shortcuts.mods.has(mod.shortcut))
-      throw new Error(`Shortcut ID for mod ${mod.shortcut} already exists`);
-    shortcuts.mods.set(mod.shortcut, mod.id);
-  }
-
-  /** @type {Map<string, Trait>} */
-  let traits = new Map();
-  for (const id in traitsMerged) {
-    const trait = traitsMerged[id];
-    if (shortcuts.traits.has(trait.shortcut))
-      throw new Error(`Shortcut ID for trait ${trait.shortcut}`);
-    shortcuts.traits.set(trait.shortcut, id);
-    if (testCondition(trait.condition, ids)) {
-      traits.set(id, convertTrait(id, trait, mutualExclusives, lang));
-    }
-  }
-
-  /** @type {Map<string, Profession>} */
-  let professions = new Map();
-  for (const id in professionsMerged) {
-    const profession = professionsMerged[id];
-    if (shortcuts.professions.has(profession.shortcut))
-      throw new Error(`Shortcut ID for profession ${profession.shortcut}`);
-    shortcuts.professions.set(profession.shortcut, id);
-    if (testCondition(profession.condition, ids)) {
-      professions.set(id, convertProfession(id, profession, traits, lang));
-    }
-  }
-
-  return {
-    ids,
-    traits,
-    professions,
-    shortcuts
-  };
-}
-
-/**
- * @param {string} id
- * @param {TraitBase} trait
- * @param {[string, string][]} mutualExclusives
- * @param {{ [n: string]: string }} lang
- * @returns {Trait}
- */
-function convertTrait(id, trait, mutualExclusives, lang) {
-  let exclusives = new Set();
-  for (const [id1, id2] of mutualExclusives) {
-    if (id1 === id) exclusives.add(id2);
-    if (id2 === id) exclusives.add(id1);
-  };
-
-  return {
-    id,
-    name: lang[trait.name_key] || null,
-    description: lang[trait.description_key] || null,
-    shortcut: trait.shortcut,
-    icon: trait.icon_path,
-    cost: trait.cost,
-    isProfessionTrait: trait.is_profession_trait || false,
-    isSleepTrait: trait.is_sleep_trait || false,
-    isDisabledInMp: trait.is_disabled_in_mp || false,
-    xpBoosts: new Map(Object.entries(trait.xp_boosts || {})),
-    freeRecipes: trait.free_recipes || [],
-    exclusives
-  };
-}
-
-/**
- * @param {string} id
- * @param {ProfessionBase} profession
- * @param {Map<string, Trait>} traits
- * @param {{ [n: string]: string }} lang
- * @returns {Profession}
- */
-function convertProfession(id, profession, traits, lang) {
-  return {
-    id,
-    name: lang[profession.name_key] || null,
-    description: lang[profession.description_key] || null,
-    shortcut: profession.shortcut,
-    icon: profession.icon_path,
-    points: profession.points,
-    xpBoosts: new Map(Object.entries(profession.xp_boosts || {})),
-    freeRecipes: profession.free_recipes || [],
-    freeTraits: (profession.free_traits || []).filter(t => traits.has(t))
-  };
 }
 
 /**
@@ -904,24 +803,478 @@ function createDescription(description, xpBoosts = new Map(), points = null) {
   return descriptionLines.join("\n").trim();
 }
 
-/**
- * @param {object|null} condition
- * @param {Set<string>} ids
- * @return {boolean}
- */
-function testCondition(condition, ids) {
-  switch (true) {
-    case condition == null: return true;
-    case Array.isArray(condition.all):
-      return condition.all.every(c => testCondition(c, ids));
-    case Array.isArray(condition.any):
-      return !condition.all.every(c => !testCondition(c, ids));
-    case condition.mod_is_present != null:
-      return ids.has(condition.mod_is_present);
-    case condition.mod_is_absent != null:
-      return !ids.has(condition.mod_is_absent);
-    default: throw new TypeError("Invalid condition");
+class Validator {
+  /**
+   * @param {string|string[]|Set<string>} typeName
+   * @param {(value: any, type: string) => any} validatorFunction
+   * @param {boolean} optionalProperty
+   */
+  constructor(typeName, validatorFunction = function () {}, optionalProperty = false) {
+    /** @type {Set<string>} */
+    this.typeName = typeName instanceof Set ? typeName
+      : new Set(Array.isArray(typeName) ? typeName : [typeName]);
+    /** @type {(value: any, type: string) => any} */
+    this.validatorFunction = validatorFunction;
+    /** @type {boolean} */
+    this.optionalProperty = optionalProperty;
   }
+
+  static isString = Validator.isType("string");
+  static isNumber = Validator.isType("number");
+  static isBoolean = Validator.isType("boolean");
+  static isArray = Validator.isType("array");
+  static isObject = Validator.isType("object");
+
+  /** @param {string|string[]} typeName */
+  static isType(typeName) {
+    return new Validator(typeName);
+  }
+
+  /** @param {(Validator|null)[]} entryValidators */
+  static isArrayTuple(entryValidators) {
+    return new Validator("array", function(array) {
+      if (array.length !== entryValidators.length) {
+        throw new TypeError(`Expected value of type array with length ${entryValidators.length}, found length ${array.length}`);
+      }
+
+      for (let i = 0; i < entryValidators.length; i ++) {
+        if (!entryValidators[i]) continue;
+        entryValidators[i].apply(array[i]);
+      }
+    });
+  }
+
+  /** @param {Validator?} entryValidator */
+  static isArrayList(entryValidator) {
+    return new Validator("array", function(array) {
+      if (!entryValidator) return;
+      for (const value of array) {
+        entryValidator.apply(value);
+      }
+    });
+  }
+
+  /** @param {{ [field: string]: Validator? }} fieldValidators */
+  static isObjectStruct(fieldValidators) {
+    return new Validator("object", function(object) {
+      for (const [key, validator] of Object.entries(fieldValidators)) {
+        if (!validator) continue;
+        if (object.hasOwnProperty(key)) {
+          validator.apply(object[key]);
+        } else if (!validator.optionalProperty) {
+          throw new TypeError(`Expected value of type object with field '${key}' of type (${validator.typeNameText()})`);
+        }
+      }
+    });
+  }
+
+  /** @param {Validator?} fieldValidator */
+  static isObjectMap(fieldValidator) {
+    return new Validator("object", function(object) {
+      if (!fieldValidator) return;
+      for (const value of Object.values(object)) {
+        fieldValidator.apply(value);
+      }
+    });
+  }
+
+  /** @returns {Validator} */
+  asOptionalProperty() {
+    return new Validator(this.typeName, this.validatorFunction, true);
+  }
+
+  /**
+   * @param {any} value
+   * @returns {any}
+   */
+  apply(value) {
+    const actualType = typeDetect(value).toLowerCase();
+    if (!this.typeName.has(actualType)) {
+      throw new TypeError(`Expected value of type (${this.typeNameText()}), found value of type (${actualType})`);
+    } else if (this.validatorFunction) {
+      return (this.validatorFunction)(value, actualType);
+    }
+  }
+
+  /** @returns {string} */
+  typeNameText() {
+    const typeNameList = Array.from(this.typeName.values());
+    switch (typeNameList.length) {
+      case 0: return "nothing";
+      case 1: return typeNameList[0];
+      default: return `${typeNameList.slice(0, -1).join(", ")} or ${typeNameList[typeNameList.length - 1]}`;
+    }
+  }
+}
+
+class Condition {
+  constructor(value) {
+    const validatorOutput = Condition.validator.apply(value);
+    if (typeof validatorOutput === "boolean") {
+      this.variant = "static";
+      /** @type {boolean} */
+      this.value = validatorOutput;
+    } else if (value.hasOwnProperty("any")) {
+      this.variant = "any";
+      /** @type {Condition[]} */
+      this.conditions = Array.prototype.map.call(value.any, (value) => new Condition(value));
+    } else if (value.hasOwnProperty("all")) {
+      this.variant = "all";
+      /** @type {Condition[]} */
+      this.conditions = Array.prototype.map.call(value.all, (value) => new Condition(value));
+    } else if (value.hasOwnProperty("mod_is_present")) {
+      this.variant = "mod_is_present";
+      /** @type {string} */
+      this.mod = value.mod_is_present;
+    } else if (value.hasOwnProperty("mod_is_absent")) {
+      this.variant = "mod_is_absent";
+      /** @type {string} */
+      this.mod = value.mod_is_absent;
+    } else {
+      throw new TypeError("Invalid object");
+    }
+  }
+
+  /** @param {Set<string>} modList */
+  test(modList) {
+    switch (this.variant) {
+      case "static": return this.value;
+      case "any": return this.conditions.some((condition) => condition.test(modList));
+      case "all": return this.conditions.every((condition) => condition.test(modList));
+      case "mod_is_present": return modList.has(this.mod);
+      case "mod_is_absent": return !modList.has(this.mod);
+      default: throw new Error("Invalid condition");
+    }
+  }
+
+  static validatorObject = Validator.isObjectStruct({
+    "any": Validator.isArray.asOptionalProperty(),
+    "all": Validator.isArray.asOptionalProperty(),
+    "mod_is_present": Validator.isString.asOptionalProperty(),
+    "mod_is_absent": Validator.isString.asOptionalProperty()
+  });
+
+  static validator = new Validator(["null", "boolean", "object"], function(value, type) {
+    switch (type) {
+      case "null": return true;
+      case "boolean": return value;
+      case "object":
+        Condition.validatorObject.apply(value);
+        return null;
+      default: throw new Error("Unreachable");
+    }
+  });
+}
+
+class Trait {
+  /**
+   * @param {string} id
+   * @param {TraitBase} object
+   */
+  constructor(id, object) {
+    Trait.validator.apply(object);
+
+    /** @type {string} */
+    this.id = id;
+    /** @type {string} */
+    this.nameKey = object.name_key;
+    /** @type {string} */
+    this.descriptionKey = object.description_key;
+    /** @type {number} */
+    this.shortcut = object.shortcut;
+    /** @type {string?} */
+    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : null;
+    /** @type {number} */
+    this.cost = object.cost;
+    /** @type {boolean} */
+    this.isProfessionTrait = object.hasOwnProperty("is_profession_trait") ? object.is_profession_trait : false;
+    /** @type {boolean} */
+    this.isSleepTrait = object.hasOwnProperty("is_sleep_trait") ? object.is_sleep_trait : false;
+    /** @type {boolean} */
+    this.isDisabledInMp = object.hasOwnProperty("is_disabled_in_mp") ? object.is_disabled_in_mp : false;
+    /** @type {Map<string, number>} */
+    this.xpBoosts = object.hasOwnProperty("xp_boosts") ? new Map(Object.entries(object.xp_boosts)) : new Map();
+    /** @type {string[]} */
+    this.freeRecipes = object.hasOwnProperty("free_recipes") ? object.free_recipes : [];
+    /** @type {Condition?} */
+    this.condition = object.hasOwnProperty("condition") ? new Condition(object.condition) : null;
+  }
+
+  static validator = Validator.isObjectStruct({
+    "name_key": Validator.isString,
+    "description_key": Validator.isString,
+    "shortcut": Validator.isNumber,
+    "icon_path": Validator.isType(["null", "string"]).asOptionalProperty(),
+    "cost": Validator.isNumber,
+    "is_profession_trait": Validator.isBoolean.asOptionalProperty(),
+    "is_sleep_trait": Validator.isBoolean.asOptionalProperty(),
+    "is_disabled_in_mp": Validator.isBoolean.asOptionalProperty(),
+    "xp_boosts": Validator.isObjectMap(Validator.isNumber).asOptionalProperty(),
+    "free_recipes": Validator.isArrayList(Validator.isString).asOptionalProperty(),
+    "condition": null
+  });
+}
+
+class TraitResolved {
+  /**
+   * @param {Trait} trait
+   * @param {Set<[string, string]>} mutualExclusives
+   * @param {Map<string, string>} lang
+   */
+  constructor(trait, mutualExclusives, lang) {
+    /** @type {Set<string>} */
+    let exclusives = new Set();
+    for (const [id1, id2] of mutualExclusives) {
+      if (id1 === trait.id) exclusives.add(id2);
+      if (id2 === trait.id) exclusives.add(id1);
+    };
+
+    /** @type {string} */
+    this.id = trait.id;
+    /** @type {string?} */
+    this.name = lang.get(trait.nameKey) || null;
+    /** @type {string?} */
+    this.description = lang.get(trait.descriptionKey) || null;
+    /** @type {number} */
+    this.shortcut = trait.shortcut;
+    /** @type {string?} */
+    this.icon = trait.iconPath;
+    /** @type {number} */
+    this.cost = trait.cost;
+    /** @type {boolean} */
+    this.isProfessionTrait = trait.isProfessionTrait;
+    /** @type {boolean} */
+    this.isSleepTrait = trait.isSleepTrait;
+    /** @type {boolean} */
+    this.isDisabledInMp = trait.isDisabledInMp;
+    /** @type {Map<string, integer>} */
+    this.xpBoosts = trait.xpBoosts;
+    /** @type {string[]} */
+    this.freeRecipes = trait.freeRecipes;
+    /** @type {Set<string>} */
+    this.exclusives = exclusives;
+  }
+}
+
+class Profession {
+  /**
+   * @param {string} id
+   * @param {ProfessionBase} object
+   */
+  constructor(id, object) {
+    Profession.validator.apply(object);
+
+    /** @type {string} */
+    this.id = id;
+    /** @type {string} */
+    this.nameKey = object.name_key;
+    /** @type {string?} */
+    this.descriptionKey = object.description_key;
+    /** @type {number} */
+    this.shortcut = object.shortcut;
+    /** @type {string?} */
+    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : null;
+    /** @type {number} */
+    this.points = object.points;
+    /** @type {Map<string, number>} */
+    this.xpBoosts = object.hasOwnProperty("xp_boosts") ? new Map(Object.entries(object.xp_boosts)) : new Map();
+    /** @type {string[]} */
+    this.freeRecipes = object.hasOwnProperty("free_recipes") ? object.free_recipes : [];
+    /** @type {string[]} */
+    this.freeTraits = object.hasOwnProperty("free_traits") ? object.free_traits : [];
+    /** @type {Condition?} */
+    this.condition = object.hasOwnProperty("condition") ? new Condition(object.condition) : null;
+  }
+
+  static validator = Validator.isObjectStruct({
+    "name_key": Validator.isString,
+    "description_key": Validator.isString.asOptionalProperty(),
+    "shortcut": Validator.isNumber,
+    "icon_path": Validator.isType(["null", "string"]).asOptionalProperty(),
+    "points": Validator.isNumber,
+    "xp_boosts": Validator.isObjectMap(Validator.isNumber).asOptionalProperty(),
+    "free_recipes": Validator.isArrayList(Validator.isString).asOptionalProperty(),
+    "free_traits": Validator.isArrayList(Validator.isString).asOptionalProperty(),
+    "condition": null
+  });
+}
+
+class ProfessionResolved {
+  /**
+   * @param {Profession} profession
+   * @param {Map<string, Trait>} traits
+   * @param {Map<string, string>} lang
+   */
+  constructor(profession, traits, lang) {
+    /** @type {string} */
+    this.id = profession.id;
+    /** @type {string?} */
+    this.name = lang.get(profession.nameKey) || null;
+    /** @type {string?} */
+    this.description = lang.get(profession.descriptionKey) || null;
+    /** @type {number} */
+    this.shortcut = profession.shortcut;
+    /** @type {string?} */
+    this.icon = profession.iconPath;
+    /** @type {number} */
+    this.points = profession.points;
+    /** @type {Map<string, number>} */
+    this.xpBoosts = profession.xpBoosts;
+    /** @type {string[]} */
+    this.freeRecipes = profession.freeRecipes;
+    /** @type {string[]} */
+    this.freeTraits = profession.freeTraits.filter(t => traits.has(t));
+  }
+}
+
+class Mod {
+  /**
+   * @param {ModBase} object
+   */
+  constructor(object) {
+    Mod.validator.apply(object);
+
+    const mapTrait = ([id, object]) => [id, new Trait(id, object)];
+    const mapProfession = ([id, object]) => [id, new Profession(id, object)];
+
+    /** @type {string} */
+    this.id = object.id;
+    /** @type {string} */
+    this.name = object.name;
+    /** @type {string} */
+    this.author = object.author;
+    /** @type {string[]} */
+    this.requires = object.hasOwnProperty("requires") ? object.requires : [];
+    /** @type {string[]} */
+    this.incompatible = object.hasOwnProperty("incompatible") ? object.incompatible : [];
+    /** @type {number?} */
+    this.workshopId = object.hasOwnProperty("workshop_id") ? object.workshop_id : null;
+    /** @type {boolean} */
+    this.removeDefaultProfessions = object.hasOwnProperty("remove_default_professions") ? object.remove_default_professions : false;
+    /** @type {number} */
+    this.shortcut = object.shortcut;
+    /** @type {Map<string, Trait>} */
+    this.traits = object.hasOwnProperty("traits")
+      ? new Map(Object.entries(object.traits).map(mapTrait)) : new Map();
+    /** @type {Map<string, Profession>} */
+    this.professions = object.hasOwnProperty("professions")
+      ? new Map(Object.entries(object.professions).map(mapProfession)) : new Map();
+    /** @type {Set<[string, string]>} */
+    this.mutualExclusives = object.hasOwnProperty("mutual_exclusives")
+      ? new Set(Array.prototype.map.call(object.mutual_exclusives, sortPair)) : new Set();
+    /** @type {Map<string, string>} */
+    this.lang = object.hasOwnProperty("lang")
+      ? new Map(Object.entries(object.lang)) : new Map();
+  }
+
+  /**
+   * @param {Mod[]} mods
+   * @param {ModData}
+   */
+  static merge(mods) {
+    const removeDefaultProfessions = mods.some((mod) => mod.removeDefaultProfessions);
+
+    const ids = new Set(mods.map(mod => mod.id));
+    const mutualExclusives = mergeSets(mods.map(mod => mod.mutualExclusives));
+    const langMerged = mergeMaps(mods.map(mod => mod.lang));
+    const traitsMerged = mergeMaps(mods.map(mod => mod.traits));
+    const professionsMerged = mergeMaps(mods.map(mod => removeDefaultProfessions && mod.id === "Vanilla" ? [] : mod.professions));
+
+    /** @type {Shortcuts} */
+    let shortcuts = {
+      mods: new Map(),
+      traits: new Map(),
+      professions: new Map()
+    };
+
+    for (const mod of mods) {
+      if (shortcuts.mods.has(mod.shortcut))
+        throw new Error(`Shortcut ID for mod ${mod.shortcut} already exists`);
+      shortcuts.mods.set(mod.shortcut, mod.id);
+    }
+
+    /** @type {Map<string, TraitResolved>} */
+    let traits = new Map();
+    for (const [id, trait] of traitsMerged.entries()) {
+      if (shortcuts.traits.has(trait.shortcut))
+        throw new Error(`Shortcut ID for trait ${trait.shortcut} already exists`);
+      shortcuts.traits.set(trait.shortcut, id);
+      if (trait.condition == null || trait.condition.test(ids)) {
+        traits.set(id, new TraitResolved(trait, mutualExclusives, langMerged));
+      }
+    }
+
+    /** @type {Map<string, ProfessionResolved>} */
+    let professions = new Map();
+    for (const [id, profession] of professionsMerged.entries()) {
+      if (shortcuts.professions.has(profession.shortcut))
+        throw new Error(`Shortcut ID for profession ${profession.shortcut} already exists`);
+      shortcuts.professions.set(profession.shortcut, id);
+      if (profession.condition == null || profession.condition.test(ids)) {
+        professions.set(id, new ProfessionResolved(profession, traitsMerged, langMerged));
+      }
+    }
+
+    return {
+      ids,
+      traits,
+      professions,
+      shortcuts
+    };
+  }
+
+  static validator = Validator.isObjectStruct({
+    "id": Validator.isString,
+    "name": Validator.isString,
+    "author": Validator.isString,
+    "requires": Validator.isArrayList(Validator.isString).asOptionalProperty(),
+    "incompatible": Validator.isArrayList(Validator.isString).asOptionalProperty(),
+    "workshop_id": Validator.isType(["null", "number"]).asOptionalProperty(),
+    "remove_default_professions": Validator.isBoolean.asOptionalProperty(),
+    "shortcut": Validator.isNumber,
+    "traits": Validator.isObject.asOptionalProperty(),
+    "professions": Validator.isObject.asOptionalProperty(),
+    "mutual_exclusives": Validator.isArrayList(Validator.isArrayTuple([Validator.isString, Validator.isString])).asOptionalProperty(),
+    "lang": Validator.isObjectMap(Validator.isString).asOptionalProperty()
+  });
+}
+
+/** @param {string} str @returns {string[]} */
+function splitWhitespace(str) {
+  return str.trim().split(/\s+/g).filter(s => s.length !== 0);
+}
+
+/**
+ * @template K
+ * @template V
+ * @param {Map<K, V>[]} maps
+ * @returns {Map<K, V>}
+ */
+function mergeMaps(maps) {
+  let result = new Map();
+  for (const map of maps) {
+    for (const [key, value] of map) {
+      result.set(key, value);
+    }
+  }
+
+  return result;
+}
+
+/**
+ * @template T
+ * @param {Set<T>[]} sets
+ * @returns {Set<T>}
+ */
+function mergeSets(sets) {
+  let result = new Set();
+  for (const set of sets) {
+    for (const value of set) {
+      result.add(value);
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -931,6 +1284,7 @@ function testCondition(condition, ids) {
  * @returns {Set<T>}
  */
 function filterSet(set, predicate) {
+  // Wow this is ugly, unfortunately I don't care
   return new Set(Array.from(set.values()).filter(predicate));
 }
 
@@ -939,123 +1293,73 @@ function clamp(min, max, value) {
 }
 
 /**
- * @template T
- * @param {T[]} array
- * @return {T[]}
+ * @template {any} T
+ * @param {[T, T]} value
+ * @returns {[T, T]}
  */
-function dedup(array) {
-  return [...new Set(array)];
+function sortPair(value) {
+  const [a, b] = value;
+  return a > b ? [b, a] : value;
 }
-
-/**
- * @param {string} str
- * @return {string}
- */
-function capitalize(str) {
-  return str[0].toUpperCase() + str.slice(1).toLowerCase();
-}
-
-async function fetchJSON(path) {
-  const response = await window.fetch(path);
-  return await response.json();
-}
-
-/** @param {string} link @returns {string} */
-function expandLink(link) {
-  if (link.startsWith("#")) {
-    return BASE + link.replace(/^#\/*/, "");
-  } else {
-    return link;
-  }
-}
-
-function steamWorkshopLink(workshop) {
-  return `https://steamcommunity.com/sharedfiles/filedetails?id=${workshop}`;
-}
-
-/**
- * @typedef {object} Mod
- * @property {string} id
- * @property {string} name
- * @property {integer} shortcut
- * @property {string} author
- * @property {string[]} requires
- * @property {string[]} incompatible
- * @property {integer} workshop_id
- * @property {{ [n: string]: TraitBase }?} traits
- * @property {{ [n: string]: ProfessionBase }?} professions
- * @property {[string, string][]?} mutual_exclusives
- * @property {{ [n: string]: string }?} lang
- */
 
 /**
  * @typedef {object} ModData
  * @property {Set<string>} ids
- * @property {Map<string, Trait>} traits
- * @property {Map<string, Profession>} professions
+ * @property {Map<string, TraitResolved>} traits
+ * @property {Map<string, ProfessionResolved>} professions
  * @property {Shortcuts} shortcuts
  */
 
 /**
  * @typedef {object} Shortcuts
- * @property {Map<integer, string>} mods
- * @property {Map<integer, string>} traits
- * @property {Map<integer, string>} professions
+ * @property {Map<number, string>} mods
+ * @property {Map<number, string>} traits
+ * @property {Map<number, string>} professions
  */
 
 /**
+ * The expected schema of mods as output from `JSON.parse`
+ * @typedef {object} ModBase
+ * @property {string} id
+ * @property {string} name
+ * @property {string} author
+ * @property {string[]?} requires
+ * @property {string[]?} incompatible
+ * @property {number} workshop_id
+ * @property {boolean?} remove_default_professions
+ * @property {number} shortcut
+ * @property {{ [id: string]: TraitBase }?} traits
+ * @property {{ [id: string]: ProfessionBase }?} professions
+ * @property {[string, string][]?} mutual_exclusives
+ * @property {{ [key: string]: string }?} lang
+ */
+
+/**
+ * The expected schema of traits as output from `JSON.parse`
  * @typedef {object} TraitBase
  * @property {string} name_key
  * @property {string} description_key
- * @property {integer} shortcut
+ * @property {number} shortcut
  * @property {string?} icon_path
- * @property {integer} cost
+ * @property {number} cost
  * @property {boolean?} is_profession_trait
  * @property {boolean?} is_sleep_trait
  * @property {boolean?} is_disabled_in_mp
- * @property {{ [n: string]: integer }?} xp_boosts
+ * @property {{ [skill: string]: number }?} xp_boosts
  * @property {string[]?} free_recipes
  * @property {object?} condition
  */
 
 /**
- * @typedef {object} Trait
- * @property {string} id
- * @property {string?} name
- * @property {string?} description
- * @property {integer} shortcut
- * @property {string?} icon
- * @property {integer} cost
- * @property {boolean} isProfessionTrait
- * @property {boolean} isSleepTrait
- * @property {boolean} isDisabledInMp
- * @property {Map<string, integer>} xpBoosts
- * @property {string[]} freeRecipes
- * @property {Set<string>} exclusives
- */
-
-/**
+ * The expected schema of professions as output from `JSON.parse`.
  * @typedef {object} ProfessionBase
  * @property {string} name_key
  * @property {string?} description_key
- * @property {integer} shortcut
+ * @property {number} shortcut
  * @property {string?} icon_path
- * @property {integer} points
- * @property {{ [n: string]: integer }?} xp_boosts
+ * @property {number} points
+ * @property {{ [skill: string]: number }?} xp_boosts
  * @property {string[]?} free_recipes
  * @property {string[]?} free_traits
  * @property {object?} condition
- */
-
-/**
- * @typedef {object} Profession
- * @property {string} id
- * @property {string?} name
- * @property {string?} description
- * @property {integer} shortcut
- * @property {string?} icon
- * @property {integer} points
- * @property {Map<string, integer>} xpBoosts
- * @property {string[]} freeRecipes
- * @property {string[]} freeTraits
  */
