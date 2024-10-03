@@ -448,8 +448,12 @@ class State {
     // If a mod does this, we just enable the trait when you select the profession so that the
     // (potentially bugged?) behavior is replicated
     for (const id of profession.freeTraits) {
-      const trait = this.currentModData.traits.get(id);
-      if (!trait.isProfessionTrait) this.preset.traits.add(id);
+      if (this.currentModData.traits.has(id)) {
+        const trait = this.currentModData.traits.get(id);
+        if (!trait.isProfessionTrait) this.preset.traits.add(id);
+      } else {
+        console.log(`Trait ${id} does not exist`);
+      }
     }
   }
 
@@ -702,11 +706,11 @@ function getXpBoostText(boost) {
 function getXpBoostMultiplierText(boost) {
   if (boost < 0) return null;
   switch (boost) {
-    case 0: return "1x";
-    case 1: return "3x";
-    case 2: return "4x";
-    case 3: return "5x";
-    default: return "5x";
+    case 0: return "1.00x";
+    case 1: return "4.00x";
+    case 2: return "5.32x";
+    case 3: return "6.64x";
+    default: return "6.64x";
   }
 }
 
