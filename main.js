@@ -116,11 +116,11 @@ function expandLink(link) {
 async function reload(modUrls) {
   showOverlay();
   const expandedModUrls = modUrls.map(expandLink);
-  await Promise.all(expandedModUrls.map(fetchAndValidateMod))
+  await Promise.all(expandedModUrls.map(loadAndValidateMod))
     .then(modsLoadingSuccess, modsLoadingFailure);
 }
 
-async function fetchAndValidateMod(path) {
+async function loadAndValidateMod(path) {
   try {
     const raw = await fetchJSON(path);
     return new Mod(raw);
@@ -151,7 +151,7 @@ function modsLoadingSuccess(mods) {
 
 function modsLoadingFailure(error) {
   showOverlay(error.toString());
-  console.log(error);
+  console.error(error);
 }
 
 function steamWorkshopLinkAttr(workshopId) {
@@ -448,12 +448,8 @@ class State {
     // If a mod does this, we just enable the trait when you select the profession so that the
     // (potentially bugged?) behavior is replicated
     for (const id of profession.freeTraits) {
-      if (this.currentModData.traits.has(id)) {
-        const trait = this.currentModData.traits.get(id);
-        if (!trait.isProfessionTrait) this.preset.traits.add(id);
-      } else {
-        console.log(`Trait ${id} does not exist`);
-      }
+      const trait = this.currentModData.traits.get(id);
+      if (!trait.isProfessionTrait) this.preset.traits.add(id);
     }
   }
 
@@ -748,7 +744,7 @@ function getOrDefaultCookie(cookieName, defaultValue) {
     if (cookieContent == null) return defaultValue;
     return JSON.parse(cookieContent);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return defaultValue;
   }
 }
@@ -1106,7 +1102,7 @@ class Profession {
 class ProfessionResolved {
   /**
    * @param {Profession} profession
-   * @param {Map<string, Trait>} traits
+   * @param {Map<string, TraitResolved>} traits
    * @param {Map<string, string>} lang
    */
   constructor(profession, traits, lang) {
@@ -1215,7 +1211,9 @@ class Mod {
         throw new Error(`Shortcut ID for profession ${profession.shortcut} already exists`);
       shortcuts.professions.set(profession.shortcut, id);
       if (profession.condition == null || profession.condition.test(ids)) {
-        professions.set(id, new ProfessionResolved(profession, traitsMerged, langMerged));
+        // `traits` is supplied here instead of `traitsMerged` because it has filtered out
+        // traits that will not be included due to their conditions not being fulfilled
+        professions.set(id, new ProfessionResolved(profession, traits, langMerged));
       }
     }
 
