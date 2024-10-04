@@ -38,7 +38,9 @@ body a:hover {
   color: #8be;
 }
 
-button, input[type=text], input[type=number] {
+button, select, option, input[type=text], input[type=number], label {
+  font-size: 100%;
+  display: inline-block;
   color: #fff;
   background-color: transparent;
   border: 1px solid #fff;
@@ -46,14 +48,36 @@ button, input[type=text], input[type=number] {
   padding: 1px 3px;
 }
 
-button:hover {
+label {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+button:hover, select:hover {
   color: #bbb;
   border-color: #bbb;
 }
 
-button:active {
+button:active, select:active {
   color: #777;
   border-color: #777;
+}
+
+select, option {
+  background-color: #000;
+}
+
+select {
+  /* in firefox the select box shows as 19px height compared to the button's 17.8px */
+  /* this fixes it somehow, making select boxes 17.8px height */
+  appearance: menulist-button;
+}
+
+option {
+  padding: 0;
+  border: none;
 }
 
 input[type=text], input[type=number] {
@@ -120,12 +144,12 @@ div.pips {
   padding: 4rem;
 }
 
-#planner-main button:disabled {
+#planner-main button:disabled, #planner-main select:disabled {
   color: #d00;
   border-color: #d00;
 }
 
-#planner-main button:disabled:hover {
+#planner-main button:disabled:hover, #planner-main select:disabled:hover {
   color: #c00;
   border-color: #c00;
 }
@@ -214,11 +238,33 @@ div.pips {
   width: 2rem;
 }
 
-#planner-settings {
+#planner-controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#planner-settings, #planner-presets {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+}
+
+#planner-settings {
   gap: 1rem;
+  margin-right: auto;
+}
+
+#planner-presets {
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+#presets-selector {
+  min-width: 16rem;
 }
 
 #setting-free-points {

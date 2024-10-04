@@ -1,6 +1,6 @@
 "use strict";
 
-const BASE = (window.location.origin + window.location.pathname).replace(/\/?index\.html$/i, "") + "/";
+const BASE = (window.location.origin + window.location.pathname).replace(/\/*(?:index\.html)?$/i, "") + "/";
 
 const DEFAULT_PROFESSION = "unemployed";
 const DEFAULT_MOD_URLS = [
@@ -57,41 +57,83 @@ $(window).on("load", function () {
   });
 
   $("#setting-is-multiplayer").on("change", function () {
-    if (State.instance == null) return;
     const state = State.get();
+
     state.preset.settings.isMultiplayer = this.checked;
-    // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
   });
 
   $("#setting-is-sleep-enabled").on("change", function () {
-    if (State.instance == null) return;
     const state = State.get();
+
     state.preset.settings.isSleepEnabled = this.checked;
-    // update is required to filter out now-unavailable chosen traits
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
   });
 
   $("#setting-show-unavailable").on("change", function () {
-    if (State.instance == null) return;
     const state = State.get();
+
     state.preset.settings.showUnavailable = this.checked;
-    state.update();
+    //state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
   });
 
   $("#reset-build").on("click", function () {
-    if (State.instance == null) return;
     const state = State.get();
+
+    state.selectedPresetName = null;
     state.preset.reset();
     state.update();
+    state.rebuildInterfacePresets();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
+  });
+
+  $("#presets-selector").on("change", function () {
+    const state = State.get();
+
+    const presetName = this.value;
+    if (state.presets.has(presetName)) {
+      state.selectedPresetName = presetName;
+      state.preset = state.presets.get(presetName).clone();
+      state.update();
+      state.applySettingsVisual();
+      state.rebuildInterfaceFull();
+      state.save();
+    }
+  })
+
+  $("#presets-save").on("click", function () {
+    const state = State.get();
+
+    const defaultName = state.selectedPresetName || undefined;
+    const presetName = window.prompt("Enter a name for this preset", defaultName);
+    if (presetName != null) {
+      state.selectedPresetName = presetName;
+      state.presets.set(presetName, state.preset.clone());
+      state.update();
+      state.rebuildInterfacePresets();
+      state.save();
+    }
+  });
+
+  $("#presets-delete").on("click", function () {
+    const state = State.get();
+
+    if (state.presets.has(state.selectedPresetName)) {
+      if (window.confirm(`Are you sure you want to delete the preset "${state.selectedPresetName}"?`)) {
+        state.presets.delete(state.selectedPresetName);
+        state.selectedPresetName = null;
+        state.update();
+        state.rebuildInterfacePresets();
+        state.save();
+      }
+    }
   });
 });
 
@@ -103,34 +145,35 @@ function hideOverlay() {
   $("#planner-overlay").addClass("hide").empty();
 }
 
-/** @param {string} link @returns {string} */
-function expandLink(link) {
-  if (link.startsWith("#")) {
-    return BASE + link.replace(/^#\/*/, "");
+/** @param {string} url @returns {string} */
+function expandUrl(url) {
+  if (url.startsWith("#")) {
+    return BASE + url.replace(/^#\/*/, "");
   } else {
-    return link;
+    return url;
   }
 }
 
-/** @param {string[]} modUrls */
-async function reload(modUrls) {
+/** @param {string[]} urls */
+async function reload(urls) {
   showOverlay();
-  const expandedModUrls = modUrls.map(expandLink);
-  await Promise.all(expandedModUrls.map(loadAndValidateMod))
+  await Promise.all(urls.map(loadAndValidateMod))
     .then(modsLoadingSuccess, modsLoadingFailure);
 }
 
-async function loadAndValidateMod(path) {
+async function loadAndValidateMod(url) {
+  const expandedUrl = expandUrl(url);
   try {
-    const raw = await fetchJSON(path);
+    const raw = await fetchJSON(expandedUrl);
     return new Mod(raw);
   } catch (error) {
-    throw new Error(`Failed to load ${path}: ${error}`);
+    throw new Error(`Failed to load ${url}: ${error}`);
   }
 }
 
-async function fetchJSON(path) {
-  const response = await window.fetch(path);
+async function fetchJSON(url) {
+  const response = await window.fetch(url);
+  if (!response.ok) throw new Error(`Response status: ${response.status}`);
   return await response.json();
 }
 
@@ -143,10 +186,10 @@ function modsLoadingSuccess(mods) {
     loadedMods.set(mod.id, mod);
   }
 
-  State.set(State.load(loadedMods));
-  State.get().applySettingsVisual();
-  State.get().rebuildInterfaceFull();
-  State.get().save();
+  const state = State.set(State.load(loadedMods));
+  state.applySettingsVisual();
+  state.rebuildInterfaceFull();
+  state.save();
 }
 
 function modsLoadingFailure(error) {
@@ -231,7 +274,7 @@ function createTraitElement(trait) {
   let traitElement = $("<div>").addClass("planner-trait");
   let traitNameElement = $("<div>").addClass("planner-trait-name").append([
     $("<div>").addClass("planner-trait-icon-container").append(trait.icon ? [
-      $("<img>").addClass("planner-trait-icon").attr("src", expandLink(trait.icon))
+      $("<img>").addClass("planner-trait-icon").attr("src", expandUrl(trait.icon))
     ] : []),
     $("<span>").text(trait.name)
   ]);
@@ -270,7 +313,7 @@ function createProfessionElement(profession) {
   let professionNameElement = $("<div>").addClass("planner-profession-name");
   professionNameElement.append([
     $("<div>").addClass("planner-profession-icon-container").append(profession.icon ? [
-      $("<img>").addClass("planner-profession-icon").attr("src", expandLink(profession.icon))
+      $("<img>").addClass("planner-profession-icon").attr("src", expandUrl(profession.icon))
     ] : []),
     $("<span>").text(profession.name)
   ]);
@@ -294,14 +337,34 @@ function createProfessionElement(profession) {
   return professionElement;
 }
 
+/**
+ * @param {string} name
+ * @param {boolean} selected
+ */
+function createPresetOptionElement(name, selected = false) {
+  let attrs = { "value": name };
+  if (selected) attrs["selected"] = true;
+  return $("<option>").attr(attrs).text(name);
+}
+
+/**
+ * @param {boolean} selected
+ */
+function createPresetOptionElementPlaceholder(selected = false) {
+  let attrs = { "hidden": true, "disabled": true };
+  if (selected) attrs["selected"] = true;
+  return $("<option>").attr(attrs);
+}
+
 class State {
   /**
    * @param {Map<string, Mod>} loadedMods
    * @param {Preset} preset
    * @param {Map<string, Preset>} presets
    */
-  constructor(loadedMods, preset = new Preset()) {
+  constructor(loadedMods, preset = new Preset(), presets = new Map()) {
     if (!(preset instanceof Preset)) preset = new Preset(preset);
+    if (!(presets instanceof Map)) presets = new Map(Object.entries(presets));
 
     /** @type {Map<string, Mod>} */
     this.loadedMods = loadedMods;
@@ -309,18 +372,31 @@ class State {
     /** @type {ModData} */
     this.currentModData = getEnabledModData(loadedMods, preset.enabledMods);
 
+    /** @type {string?} */
+    this.selectedPresetName = null;
+
     /** @type {Preset} */
     this.preset = preset;
+
+    /** @type {Map<string, Preset>} */
+    this.presets = presets;
+
+    this.filter();
   }
 
   update() {
     this.currentModData = getEnabledModData(this.loadedMods, this.preset.enabledMods);
+    this.filter();
+  }
+
+  filter() {
     this.preset.filter(this.currentModData, trait => this.isTraitAvailable(trait));
   }
 
   rebuildInterfaceFull() {
     this.update();
     this.rebuildInterfaceTraitsProfessions();
+    this.rebuildInterfacePresets();
     this.rebuildInterfaceMods();
   }
 
@@ -349,6 +425,13 @@ class State {
     }
 
     setPoints(this.getPointTotal());
+  }
+
+  rebuildInterfacePresets() {
+    const presetOptions = Array.from(this.presets.keys())
+      .map(name => createPresetOptionElement(name, name === this.selectedPresetName));
+    const presetOptionPlaceholder = createPresetOptionElementPlaceholder(!this.presets.has(this.selectedPresetName));
+    $("#presets-selector").empty().append([presetOptionPlaceholder, ...presetOptions]);
   }
 
   rebuildInterfaceMods() {
@@ -493,23 +576,28 @@ class State {
 
   /** @param {Map<string, Mod>} loadedMods */
   static load(loadedMods) {
-    if (window.location.search.length !== 0) {
-      return new State(loadedMods, Preset.fromURLParams(window.location.search, loadedMods));
-    } else {
-      return new State(loadedMods, Preset.loadFromCookies());
-    }
+    const preset = window.location.search.length !== 0
+      ? Preset.fromURLParams(window.location.search, loadedMods)
+      : Preset.loadFromCookiesSavedPreset();
+    const presets = Preset.loadFromCookiesSavedPresets();
+    return new State(loadedMods, preset, presets);
   }
 
   save() {
     const url = new URL(window.location.href);
     url.search = "?" + this.preset.toURLParams().toString();
     window.history.replaceState(null, null, url);
-    this.preset.saveToCookies();
+    Preset.saveToCookiesSavedPreset(this.preset);
+    Preset.saveToCookiesSavedPresets(this.presets);
   }
 
-  /** @param {State} state */
+  /**
+   * @param {State} state
+   * @returns {State}
+   */
   static set(state) {
     State.instance = state;
+    return state;
   }
 
   /** @returns {State} */
@@ -520,6 +608,8 @@ class State {
       return State.instance;
     }
   }
+
+  static instance = null;
 }
 
 class Preset {
@@ -541,6 +631,15 @@ class Preset {
     this.profession = profession;
     /** @type {Set<string>} */
     this.traits = traits;
+  }
+
+  clone() {
+    return new Preset({
+      enabledMods: new Set(this.enabledMods),
+      settings: this.settings.clone(),
+      profession: this.profession,
+      traits: new Set(this.traits)
+    });
   }
 
   /**
@@ -611,17 +710,35 @@ class Preset {
     return urlParams;
   }
 
-  static loadFromCookies() {
-    return new Preset(getOrDefaultCookie("saved_preset", {}));
-  }
-
-  saveToCookies() {
-    setCookie("saved_preset", {
+  toObject() {
+    return {
       settings: this.settings,
       enabledMods: Array.from(this.enabledMods.values()),
       profession: this.profession,
       traits: Array.from(this.traits.values()),
-    });
+    };
+  }
+
+  /** @returns {Preset} */
+  static loadFromCookiesSavedPreset() {
+    return new Preset(getOrDefaultCookie("saved_preset", {}));
+  }
+
+  /** @returns {Map<string, Preset>} */
+  static loadFromCookiesSavedPresets() {
+    const mapEntries = ([key, object]) => [key, new Preset(object)];
+    return new Map(Object.entries(getOrDefaultCookie("saved_presets", {})).map(mapEntries));
+  }
+
+  /** @param {Preset} preset */
+  static saveToCookiesSavedPreset(preset) {
+    setCookie("saved_preset", preset.toObject());
+  }
+
+  /** @param {Map<string, Preset>} presets */
+  static saveToCookiesSavedPresets(presets) {
+    const mapEntries = ([name, preset]) => [name, preset.toObject()];
+    setCookie("saved_presets", Object.fromEntries(Array.from(presets.entries()).map(mapEntries)));
   }
 }
 
@@ -652,6 +769,10 @@ class Settings {
     this.showUnavailable = showUnavailable;
     /** @type {integer} */
     this.freePoints = freePoints;
+  }
+
+  clone() {
+    return new Settings(this);
   }
 
   /** @param {[bool, bool, bool]?} array */
@@ -832,7 +953,7 @@ class Validator {
 
   /** @param {(Validator|null)[]} entryValidators */
   static isArrayTuple(entryValidators) {
-    return new Validator("array", function(array) {
+    return new Validator("array", function (array) {
       if (array.length !== entryValidators.length) {
         throw new TypeError(`Expected value of type array with length ${entryValidators.length}, found length ${array.length}`);
       }
@@ -846,7 +967,7 @@ class Validator {
 
   /** @param {Validator?} entryValidator */
   static isArrayList(entryValidator) {
-    return new Validator("array", function(array) {
+    return new Validator("array", function (array) {
       if (!entryValidator) return;
       for (const value of array) {
         entryValidator.apply(value);
@@ -856,7 +977,7 @@ class Validator {
 
   /** @param {{ [field: string]: Validator? }} fieldValidators */
   static isObjectStruct(fieldValidators) {
-    return new Validator("object", function(object) {
+    return new Validator("object", function (object) {
       for (const [key, validator] of Object.entries(fieldValidators)) {
         if (!validator) continue;
         if (object.hasOwnProperty(key)) {
@@ -870,7 +991,7 @@ class Validator {
 
   /** @param {Validator?} fieldValidator */
   static isObjectMap(fieldValidator) {
-    return new Validator("object", function(object) {
+    return new Validator("object", function (object) {
       if (!fieldValidator) return;
       for (const value of Object.values(object)) {
         fieldValidator.apply(value);
@@ -954,7 +1075,7 @@ class Condition {
     "mod_is_absent": Validator.isString.asOptionalProperty()
   });
 
-  static validator = new Validator(["null", "boolean", "object"], function(value, type) {
+  static validator = new Validator(["null", "boolean", "object"], function (value, type) {
     switch (type) {
       case "null": return true;
       case "boolean": return value;

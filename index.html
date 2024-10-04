@@ -54,18 +54,28 @@
         </div>
       </div>
 
-      <div id="planner-settings">
-        <div title="Show/hide singleplayer-only traits">
-          <input type="checkbox" id="setting-is-multiplayer">
-          <label for="setting-is-multiplayer">Multiplayer?</label>
+      <div id="planner-controls">
+        <div id="planner-settings">
+          <div title="Show/hide singleplayer-only traits">
+            <input type="checkbox" id="setting-is-multiplayer">
+            <label for="setting-is-multiplayer">Multiplayer?</label>
+          </div>
+          <div title="Show/hide sleep related traits">
+            <input type="checkbox" id="setting-is-sleep-enabled">
+            <label for="setting-is-sleep-enabled">Sleep Enabled?</label>
+          </div>
+          <div title="Show/hide traits that cannot be chosen due to settings or mutual exclusivity">
+            <input type="checkbox" id="setting-show-unavailable">
+            <label for="setting-show-unavailable">Show Unavailable Traits?</label>
+          </div>
         </div>
-        <div title="Show/hide sleep related traits">
-          <input type="checkbox" id="setting-is-sleep-enabled">
-          <label for="setting-is-sleep-enabled">Sleep Enabled?</label>
-        </div>
-        <div title="Show/hide traits that cannot be chosen due to settings or mutual exclusivity">
-          <input type="checkbox" id="setting-show-unavailable">
-          <label for="setting-show-unavailable">Show Unavailable Traits?</label>
+        <div id="planner-presets">
+          <label for="presets">Select a preset:</label>
+          <select name="presets" id="presets-selector">
+            <option hidden disabled selected value="null"></option>
+          </select>
+          <button id="presets-save">Save</button>
+          <button id="presets-delete">Delete</button>
         </div>
       </div>
 
