@@ -255,12 +255,20 @@ div.pips {
 
 #planner-settings {
   gap: 1rem;
+  flex-wrap: wrap;
   margin-right: auto;
 }
 
 #planner-presets {
   gap: 0.25rem;
   margin-left: auto;
+  min-width: 0;
+}
+
+#planner-presets label[for=presets] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #presets-selector {
@@ -319,6 +327,7 @@ div.panel > div.panel-bottom {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  gap: 1rem;
 }
 
 @media (hover: none) {
