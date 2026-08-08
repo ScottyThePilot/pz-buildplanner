@@ -230,7 +230,7 @@ function createModElement(mod) {
   } else {
     const isIncompatible = mod.incompatible.some(id => preset.isModEnabled(id));
     const modToggleButton = $("<button>")
-      .addClass(isIncompatible ? "" : (preset.isModEnabled(mod.id) ? "mod-enabled" : "mod-disabled"))
+      .addClass(isIncompatible ? "mod-incompatible" : (preset.isModEnabled(mod.id) ? "mod-enabled" : "mod-disabled"))
       .text(isIncompatible ? "Incompatible" : (preset.isModEnabled(mod.id) ? "Enabled" : "Disabled"));
     if (isIncompatible) {
       modToggleButton.attr("disabled", true);

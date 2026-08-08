@@ -311,6 +311,14 @@ div.pips {
   background-color: #c00;
 }
 
+#planner-mods-list div.planner-mod button.mod-incompatible {
+  background-color: #c70;
+}
+
+#planner-mods-list div.planner-mod button:hover.mod-incompatible {
+  background-color: #b60;
+}
+
 #planner-mods-list {
   height: 100%;
 }
