@@ -582,8 +582,8 @@ class State {
   static load(loadedMods) {
     const preset = window.location.search.length !== 0
       ? Preset.fromURLParams(window.location.search, loadedMods)
-      : Preset.loadFromCookiesSavedPreset();
-    const presets = Preset.loadFromCookiesSavedPresets();
+      : Preset.loadFromLocalStorageSavedPreset();
+    const presets = Preset.loadFromLocalStorageSavedPresets();
     return new State(loadedMods, preset, presets);
   }
 
@@ -591,8 +591,8 @@ class State {
     const url = new URL(window.location.href);
     url.search = "?" + this.preset.toURLParams().toString();
     window.history.replaceState(null, null, url);
-    Preset.saveToCookiesSavedPreset(this.preset);
-    Preset.saveToCookiesSavedPresets(this.presets);
+    Preset.saveToLocalStorageSavedPreset(this.preset);
+    Preset.saveToLocalStorageSavedPresets(this.presets);
   }
 
   /**
@@ -724,25 +724,25 @@ class Preset {
   }
 
   /** @returns {Preset} */
-  static loadFromCookiesSavedPreset() {
-    return new Preset(getOrDefaultCookie("saved_preset", {}));
+  static loadFromLocalStorageSavedPreset() {
+    return new Preset(getOrDefaultLocalStorage("saved_preset", {}));
   }
 
   /** @returns {Map<string, Preset>} */
-  static loadFromCookiesSavedPresets() {
+  static loadFromLocalStorageSavedPresets() {
     const mapEntries = ([key, object]) => [key, new Preset(object)];
-    return new Map(Object.entries(getOrDefaultCookie("saved_presets", {})).map(mapEntries));
+    return new Map(Object.entries(getOrDefaultLocalStorage("saved_presets", {})).map(mapEntries));
   }
 
   /** @param {Preset} preset */
-  static saveToCookiesSavedPreset(preset) {
-    setCookie("saved_preset", preset.toObject());
+  static saveToLocalStorageSavedPreset(preset) {
+    setLocalStorage("saved_preset", preset.toObject());
   }
 
   /** @param {Map<string, Preset>} presets */
-  static saveToCookiesSavedPresets(presets) {
+  static saveToLocalStorageSavedPresets(presets) {
     const mapEntries = ([name, preset]) => [name, preset.toObject()];
-    setCookie("saved_presets", Object.fromEntries(Array.from(presets.entries()).map(mapEntries)));
+    setLocalStorage("saved_presets", Object.fromEntries(Array.from(presets.entries()).map(mapEntries)));
   }
 }
 
@@ -796,12 +796,12 @@ class Settings {
     ];
   }
 
-  static loadFromCookies() {
-    return new Settings(getOrDefaultCookie("saved_settings", {}));
+  static loadFromLocalStorage() {
+    return new Settings(getOrDefaultLocalStorage("saved_settings", {}));
   }
 
-  saveToCookies() {
-    setCookie("saved_settings", this);
+  saveToLocalStorage() {
+    setLocalStorage("saved_settings", this);
   }
 }
 
@@ -851,23 +851,23 @@ function getPointsPolarity(points) {
 }
 
 /**
- * @param {string} cookieName
+ * @param {string} key
  * @param {any} value
  */
-function setCookie(cookieName, value) {
-  Cookies.set(cookieName, JSON.stringify(value));
+function setLocalStorage(key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value));
 }
 
 /**
- * @param {string} cookieName
+ * @param {string} key
  * @param {any} defaultValue
  * @returns {any}
  */
-function getOrDefaultCookie(cookieName, defaultValue) {
+function getOrDefaultLocalStorage(key, defaultValue) {
   try {
-    const cookieContent = Cookies.get(cookieName);
-    if (cookieContent == null) return defaultValue;
-    return JSON.parse(cookieContent);
+    const content = window.localStorage.getItem(key);
+    if (content == null) return defaultValue;
+    return JSON.parse(content);
   } catch (err) {
     console.error(err);
     return defaultValue;

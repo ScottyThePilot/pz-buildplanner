@@ -2,7 +2,7 @@
 
 A character build planner for Project Zomboid with support for mods (modded traits and occupations).
 
-The build planner uses cookies to save the state of your build between sessions so
+The build planner uses your browser's local storage to save the state of your build between sessions so
 that you can continue working on a build after you've closed the tab.
 
 To share your build with a friend, all you have to do is copy the current URL and send it to them.
