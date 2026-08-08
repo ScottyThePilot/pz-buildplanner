@@ -2,9 +2,13 @@
 
 const BASE = (window.location.origin + window.location.pathname).replace(/\/*(?:index\.html)?$/i, "") + "/";
 
+/** @param {string} url @returns {string} */
+function expandUrl(url) {
+  return new URL(url.replace(/^#\//i, "./"), BASE).href;
+}
+
 const DEFAULT_PROFESSION = "unemployed";
-const DATA_MANIFEST_URL = "#/data_manifest.json";
-const DATA_MANIFEST_CONTENTS_ROOT = "#/data";
+const DATA_MANIFEST_URL = "./data_manifest.json";
 
 /** @type {Map<string, string>} */
 const SKILL_NAMES = new Map();
@@ -129,15 +133,6 @@ function showOverlay(text = "Loading...") {
 
 function hideOverlay() {
   $("#planner-overlay").addClass("hide").empty();
-}
-
-/** @param {string} url @returns {string} */
-function expandUrl(url) {
-  if (url.startsWith("#")) {
-    return BASE + url.replace(/^#\/*/, "");
-  } else {
-    return url;
-  }
 }
 
 async function reload() {
