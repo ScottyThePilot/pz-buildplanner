@@ -9,21 +9,21 @@
       "name_key": "UI_trait_SCT_Foolish",
       "description_key": "UI_trait_SCT_FoolishDesc",
       "shortcut": 469,
-      "icon_path": "#/data/images/traits/scotty_additions/foolish.png",
+      "icon_path": "./data/images/traits/scotty_additions/foolish.png",
       "cost": -1
     },
     "SCT_NervesOfSteel": {
       "name_key": "UI_trait_SCT_NervesOfSteel",
       "description_key": "UI_trait_SCT_NervesOfSteelDesc",
       "shortcut": 470,
-      "icon_path": "#/data/images/traits/scotty_additions/nerves_of_steel.png",
+      "icon_path": "./data/images/traits/scotty_additions/nerves_of_steel.png",
       "cost": 5
     },
     "SCT_Worrywart": {
       "name_key": "UI_trait_SCT_Worrywart",
       "description_key": "UI_trait_SCT_WorrywartDesc",
       "shortcut": 471,
-      "icon_path": "#/data/images/traits/scotty_additions/worrywart.png",
+      "icon_path": "./data/images/traits/scotty_additions/worrywart.png",
       "cost": -4
     }
   },

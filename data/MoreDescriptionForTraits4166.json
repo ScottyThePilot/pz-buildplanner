@@ -30,7 +30,7 @@
     "UI_trait_FastLearnerDesc": "Increases XP gains.\n(+30% xp for all skills, except Fitness and Strength)",
     "UI_trait_FastReaderDesc": "Takes less time to read books.\n(+30% reading speed)",
     "UI_trait_FishingDesc": "(Knows how to craft and fix a fishing rod.)",
-    "UI_trait_GardenerDesc": "(Knows how to make Mildew Spray and Flies Spray to cure plant diseases.)",
+    "UI_trait_GardenerDesc": "Knows how to make Mildew Spray and Flies Spray to cure plant diseases.",
     "UI_trait_HerbalistDesc": "Can find medicinal herbs and craft medicines and poultices from them.\nCan also identify poisonous wild food.",
     "UI_trait_HighThirstDesc": "Needs more water to survive.\n(+100% thirst.)",
     "UI_trait_HikerDesc": "Knows how to make Stick Traps, Snare Traps, and Wooden Cage Traps.",

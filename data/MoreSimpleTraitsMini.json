@@ -14,7 +14,7 @@
       "name_key": "UI_trait_sneaky",
       "description_key": "UI_trait_sneakydesc",
       "shortcut": 128,
-      "icon_path": "#/data/images/traits/soto_mst/sneaky.png",
+      "icon_path": "./data/images/traits/soto_mst/sneaky.png",
       "cost": 2,
       "xp_boosts": {
         "Sneaking": 1
@@ -24,7 +24,7 @@
       "name_key": "UI_trait_lightfooted",
       "description_key": "UI_trait_lightfooteddesc",
       "shortcut": 129,
-      "icon_path": "#/data/images/traits/soto_mst/lightfooted.png",
+      "icon_path": "./data/images/traits/soto_mst/lightfooted.png",
       "cost": 2,
       "xp_boosts": {
         "Lightfooted": 1
@@ -34,7 +34,7 @@
       "name_key": "UI_trait_nimble",
       "description_key": "UI_trait_nimbledesc",
       "shortcut": 130,
-      "icon_path": "#/data/images/traits/soto_mst/agile.png",
+      "icon_path": "./data/images/traits/soto_mst/agile.png",
       "cost": 3,
       "xp_boosts": {
         "Nimble": 1
@@ -44,7 +44,7 @@
       "name_key": "UI_trait_amforager",
       "description_key": "UI_trait_amforagerdesc",
       "shortcut": 131,
-      "icon_path": "#/data/images/traits/soto_mst/forager.png",
+      "icon_path": "./data/images/traits/soto_mst/forager.png",
       "cost": 3,
       "xp_boosts": {
         "Foraging": 1
@@ -54,7 +54,7 @@
       "name_key": "UI_trait_amtrapper",
       "description_key": "UI_trait_amtrapperdesc",
       "shortcut": 132,
-      "icon_path": "#/data/images/traits/soto_mst/trapper.png",
+      "icon_path": "./data/images/traits/soto_mst/trapper.png",
       "cost": 3,
       "xp_boosts": {
         "Trapping": 1
@@ -71,7 +71,7 @@
       "name_key": "UI_trait_amcook",
       "description_key": "UI_trait_amcookdesc",
       "shortcut": 133,
-      "icon_path": "#/data/images/traits/soto_mst/scullion.png",
+      "icon_path": "./data/images/traits/soto_mst/scullion.png",
       "cost": 3,
       "xp_boosts": {
         "Cooking": 1
@@ -81,7 +81,7 @@
       "name_key": "UI_trait_amelectrician",
       "description_key": "UI_trait_amelectriciandesc",
       "shortcut": 134,
-      "icon_path": "#/data/images/traits/soto_mst/electrical_technician.png",
+      "icon_path": "./data/images/traits/soto_mst/electrical_technician.png",
       "cost": 4,
       "xp_boosts": {
         "Electrical": 1
@@ -91,7 +91,7 @@
       "name_key": "UI_trait_ammechanic",
       "description_key": "UI_trait_ammechanicdesc",
       "shortcut": 135,
-      "icon_path": "#/data/images/traits/soto_mst/auto_mechanic.png",
+      "icon_path": "./data/images/traits/soto_mst/auto_mechanic.png",
       "cost": 4,
       "xp_boosts": {
         "Mechanics": 1
@@ -101,7 +101,7 @@
       "name_key": "UI_trait_amcarpenter",
       "description_key": "UI_trait_amcarpenterdesc",
       "shortcut": 136,
-      "icon_path": "#/data/images/traits/soto_mst/carpenter.png",
+      "icon_path": "./data/images/traits/soto_mst/carpenter.png",
       "cost": 4,
       "xp_boosts": {
         "Carpentry": 1
@@ -111,7 +111,7 @@
       "name_key": "UI_trait_ammetalworker",
       "description_key": "UI_trait_ammetalworkerdesc",
       "shortcut": 137,
-      "icon_path": "#/data/images/traits/soto_mst/metalwelder.png",
+      "icon_path": "./data/images/traits/soto_mst/metalwelder.png",
       "cost": 4,
       "xp_boosts": {
         "Metalworking": 1
@@ -121,7 +121,7 @@
       "name_key": "UI_trait_durabile",
       "description_key": "UI_trait_durabiledesc",
       "shortcut": 138,
-      "icon_path": "#/data/images/traits/soto_mst/durability.png",
+      "icon_path": "./data/images/traits/soto_mst/durability.png",
       "cost": 3,
       "xp_boosts": {
         "Maintenance": 1
@@ -131,7 +131,7 @@
       "name_key": "UI_trait_shortbladefan",
       "description_key": "UI_trait_shortbladefandesc",
       "shortcut": 139,
-      "icon_path": "#/data/images/traits/soto_mst/stabber.png",
+      "icon_path": "./data/images/traits/soto_mst/stabber.png",
       "cost": 2,
       "xp_boosts": {
         "ShortBlade": 1
@@ -141,7 +141,7 @@
       "name_key": "UI_trait_shortbluntfan",
       "description_key": "UI_trait_shortbluntfandesc",
       "shortcut": 140,
-      "icon_path": "#/data/images/traits/soto_mst/crusher.png",
+      "icon_path": "./data/images/traits/soto_mst/crusher.png",
       "cost": 3,
       "xp_boosts": {
         "ShortBlunt": 1
@@ -151,7 +151,7 @@
       "name_key": "UI_trait_cutter",
       "description_key": "UI_trait_cutterdesc",
       "shortcut": 141,
-      "icon_path": "#/data/images/traits/soto_mst/cutter.png",
+      "icon_path": "./data/images/traits/soto_mst/cutter.png",
       "cost": 4,
       "xp_boosts": {
         "Axe": 1
@@ -161,7 +161,7 @@
       "name_key": "UI_trait_spearman",
       "description_key": "UI_trait_spearmandesc",
       "shortcut": 142,
-      "icon_path": "#/data/images/traits/soto_mst/lancer.png",
+      "icon_path": "./data/images/traits/soto_mst/lancer.png",
       "cost": 4,
       "xp_boosts": {
         "Spear": 1
@@ -171,7 +171,7 @@
       "name_key": "UI_trait_swordsman",
       "description_key": "UI_trait_swordsmandesc",
       "shortcut": 143,
-      "icon_path": "#/data/images/traits/soto_mst/swordsman.png",
+      "icon_path": "./data/images/traits/soto_mst/swordsman.png",
       "cost": 4,
       "xp_boosts": {
         "LongBlade": 1
@@ -181,7 +181,7 @@
       "name_key": "UI_trait_gunfan",
       "description_key": "UI_trait_gunfandesc",
       "shortcut": 144,
-      "icon_path": "#/data/images/traits/soto_mst/shooter2.png",
+      "icon_path": "./data/images/traits/soto_mst/shooter2.png",
       "cost": 4,
       "xp_boosts": {
         "Aiming": 1,
