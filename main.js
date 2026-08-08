@@ -3,22 +3,8 @@
 const BASE = (window.location.origin + window.location.pathname).replace(/\/*(?:index\.html)?$/i, "") + "/";
 
 const DEFAULT_PROFESSION = "unemployed";
-const DEFAULT_MOD_URLS = [
-  "#/data/Vanilla.json",
-  "#/data/HephasOccupationsAndTraits.json",
-  "#/data/HephasOccupationsAndTraits_WithVanillaProfessions.json",
-  "#/data/MoreDescriptionForTraits4166.json",
-  "#/data/MoreSimpleTraits.json",
-  "#/data/MoreSimpleTraitsMini.json",
-  "#/data/MoreSimpleTraitsVanilla.json",
-  "#/data/ScottyInjuryTraits.json",
-  "#/data/ScottyMoreTraits.json",
-  "#/data/SimpleOverhaulTraitsAndOccupations.json",
-  "#/data/ToadTraits.json",
-  "#/data/ToadTraitsDisablePrepared.json",
-  "#/data/ToadTraitsDisableSpec.json",
-  "#/data/ToadTraitsDynamic.json"
-];
+const DATA_MANIFEST_URL = "#/data_manifest.json";
+const DATA_MANIFEST_CONTENTS_ROOT = "#/data";
 
 /** @type {Map<string, string>} */
 const SKILL_NAMES = new Map();
@@ -50,7 +36,7 @@ SKILL_NAMES.set("Trapping", "Trapping");
 SKILL_NAMES.set("Foraging", "Foraging");
 
 $(window).on("load", function () {
-  reload(DEFAULT_MOD_URLS);
+  reload();
 
   $(window).on("keydown", function (event) {
     if (event.key === "Escape") hideOverlay();
@@ -154,13 +140,31 @@ function expandUrl(url) {
   }
 }
 
-/** @param {string[]} urls */
-async function reload(urls) {
+async function reload() {
   showOverlay();
-  await Promise.all(urls.map(loadAndValidateMod))
+  await loadAndValidateMods()
     .then(modsLoadingSuccess, modsLoadingFailure);
 }
 
+/** @param {string} url @returns {Promise<string[]>} */
+async function loadDataManifest() {
+  const dataManifestUrl = expandUrl(DATA_MANIFEST_URL);
+  try {
+    return await fetchJSON(dataManifestUrl);
+    return urls;
+  } catch (error) {
+    throw new Error(`Failed to load ${url}: ${error}`);
+  }
+}
+
+/** @returns {Promise<string[]>} */
+async function loadAndValidateMods() {
+  const urls = await loadDataManifest();
+  const mods = await Promise.all(urls.map(loadAndValidateMod));
+  return mods;
+}
+
+/** @param {string} url @returns {Promise<Mod>} */
 async function loadAndValidateMod(url) {
   const expandedUrl = expandUrl(url);
   try {
