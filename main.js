@@ -141,14 +141,13 @@ async function reload() {
     .then(modsLoadingSuccess, modsLoadingFailure);
 }
 
-/** @param {string} url @returns {Promise<string[]>} */
+/** @returns {Promise<any>} */
 async function loadDataManifest() {
   const dataManifestUrl = expandUrl(DATA_MANIFEST_URL);
   try {
     return await fetchJSON(dataManifestUrl);
-    return urls;
   } catch (error) {
-    throw new Error(`Failed to load ${url}: ${error}`);
+    throw new Error(`Failed to load data manifest`);
   }
 }
 
@@ -170,6 +169,7 @@ async function loadAndValidateMod(url) {
   }
 }
 
+/** @param {string} url @returns {Promise<any>} */
 async function fetchJSON(url) {
   const response = await window.fetch(url);
   if (!response.ok) throw new Error(`Response status: ${response.status}`);
@@ -191,6 +191,7 @@ function modsLoadingSuccess(mods) {
   state.save();
 }
 
+/** @param {Error} error */
 function modsLoadingFailure(error) {
   showOverlay(error.toString());
   console.error(error);
