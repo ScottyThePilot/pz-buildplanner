@@ -775,7 +775,7 @@ class Settings {
     return new Settings(this);
   }
 
-  /** @param {[bool, bool, bool]?} array */
+  /** @param {[boolean, boolean, boolean]?} array */
   static fromArray(array = []) {
     return new Settings({
       isMultiplayer: array[0],
@@ -1029,42 +1029,101 @@ class Validator {
 }
 
 class Condition {
-  constructor(value) {
-    const validatorOutput = Condition.validator.apply(value);
+  constructor() {
+    if (this.constructor === Condition) {
+      throw new Error("Cannot instantiate abstract class");
+    }
+  }
+
+  /** @param {Set<string>} modList @returns {boolean} */
+  test(modList) {
+    throw new Error("Invalid condition");
+  }
+
+  static from(value) {
+    const validatorOutput = Condition.validator.apply(value ?? true);
     if (typeof validatorOutput === "boolean") {
-      this.variant = "static";
-      /** @type {boolean} */
-      this.value = validatorOutput;
+      return new Condition.Static(validatorOutput);
     } else if (value.hasOwnProperty("any")) {
-      this.variant = "any";
-      /** @type {Condition[]} */
-      this.conditions = Array.prototype.map.call(value.any, (value) => new Condition(value));
+      return new Condition.Any(value["any"].map((value) => Condition.from(value)));
     } else if (value.hasOwnProperty("all")) {
-      this.variant = "all";
-      /** @type {Condition[]} */
-      this.conditions = Array.prototype.map.call(value.all, (value) => new Condition(value));
+      return new Condition.All(value["all"].map((value) => Condition.from(value)));
     } else if (value.hasOwnProperty("mod_is_present")) {
-      this.variant = "mod_is_present";
-      /** @type {string} */
-      this.mod = value.mod_is_present;
+      return new Condition.ModIsPresent(value["mod_is_present"]);
     } else if (value.hasOwnProperty("mod_is_absent")) {
-      this.variant = "mod_is_absent";
-      /** @type {string} */
-      this.mod = value.mod_is_absent;
+      return new Condition.ModIsAbsent(value["mod_is_absent"]);
     } else {
       throw new TypeError("Invalid object");
     }
   }
 
-  /** @param {Set<string>} modList */
-  test(modList) {
-    switch (this.variant) {
-      case "static": return this.value;
-      case "any": return this.conditions.some((condition) => condition.test(modList));
-      case "all": return this.conditions.every((condition) => condition.test(modList));
-      case "mod_is_present": return modList.has(this.mod);
-      case "mod_is_absent": return !modList.has(this.mod);
-      default: throw new Error("Invalid condition");
+  static Static = class ConditionStatic extends Condition {
+    /** @param {boolean} value */
+    constructor(value) {
+      super();
+      /** @type {boolean} */
+      this.value = value;
+    }
+
+    /** @param {Set<string>} modList @returns {boolean} */
+    test(modList) {
+      return this.value;
+    }
+  }
+
+  static Any = class ConditionAny extends Condition {
+    /** @param {Condition[]} conditions */
+    constructor(conditions) {
+      super();
+      /** @type {Condition[]} */
+      this.conditions = conditions;
+    }
+
+    /** @param {Set<string>} modList @returns {boolean} */
+    test(modList) {
+      return this.conditions.some((condition) => condition.test(modList));
+    }
+  }
+
+  static All = class ConditionAll extends Condition {
+    /** @param {Condition[]} conditions */
+    constructor(conditions) {
+      super();
+      /** @type {Condition[]} */
+      this.conditions = conditions;
+    }
+
+    /** @param {Set<string>} modList @returns {boolean} */
+    test(modList) {
+      return this.conditions.every((condition) => condition.test(modList))
+    }
+  }
+
+  static ModIsPresent = class ConditionModIsPresent extends Condition {
+    /** @param {string} mod */
+    constructor(mod) {
+      super();
+      /** @type {string} */
+      this.mod = mod;
+    }
+
+    /** @param {Set<string>} modList @returns {boolean} */
+    test(modList) {
+      return modList.has(this.mod);
+    }
+  }
+
+  static ModIsAbsent = class ConditionModIsAbsent extends Condition {
+    /** @param {string} mod */
+    constructor(mod) {
+      super();
+      /** @type {string} */
+      this.mod = mod;
+    }
+
+    /** @param {Set<string>} modList @returns {boolean} */
+    test(modList) {
+      return !modList.has(this.mod);
     }
   }
 
@@ -1118,7 +1177,7 @@ class Trait {
     /** @type {string[]} */
     this.freeRecipes = object.hasOwnProperty("free_recipes") ? object.free_recipes : [];
     /** @type {Condition?} */
-    this.condition = object.hasOwnProperty("condition") ? new Condition(object.condition) : null;
+    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : null;
   }
 
   static validator = Validator.isObjectStruct({
@@ -1204,7 +1263,7 @@ class Profession {
     /** @type {string[]} */
     this.freeTraits = object.hasOwnProperty("free_traits") ? object.free_traits : [];
     /** @type {Condition?} */
-    this.condition = object.hasOwnProperty("condition") ? new Condition(object.condition) : null;
+    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : null;
   }
 
   static validator = Validator.isObjectStruct({
@@ -1403,7 +1462,7 @@ function mergeSets(sets) {
 /**
  * @template T
  * @param {Set<T>} set
- * @param {(value: T) => bool} predicate
+ * @param {(value: T) => boolean} predicate
  * @returns {Set<T>}
  */
 function filterSet(set, predicate) {
