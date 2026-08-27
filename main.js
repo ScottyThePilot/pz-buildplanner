@@ -251,18 +251,18 @@ function createModElement(mod) {
   return modElement;
 }
 
-/** @param {string} skill @param {number} boost */
-function createSkillElement(skill, boost) {
+/** @param {string} skill @param {number} level */
+function createSkillElement(skill, level) {
   const skillNameElement = $("<span>").addClass("skill-name").text(SKILL_NAMES.get(skill));
-  const skillLevelElement = $("<span>").addClass("skill-level").text(boost);
+  const skillLevelElement = $("<span>").addClass("skill-level").text(level);
   const skillLevelBarElement = $("<div>").addClass("skill-level-bar pips");
-  for (let i = 0; i < boost; i ++) skillLevelBarElement.append($("<div>").addClass("pip"));
-  // According to the wiki (https://pzwiki.net/wiki/Skill#Starting_skill_levels)
+  for (let i = 0; i < level; i ++) skillLevelBarElement.append($("<div>").addClass("pip"));
+  // According to the wiki (https://web.archive.org/web/20241109160632/https://pzwiki.net/wiki/Skill#Starting_skill_levels#Starting_skill_levels)
   // strength and fitness are not affected by the skill xp boost system
   const skillGetsXpBoost = !(skill === "Strength" || skill === "Fitness");
-  const xpBoostText = skillGetsXpBoost ? getXpBoostText(boost) : null;
+  const xpBoostText = skillGetsXpBoost ? getXpBoostText(skill, level) : undefined;
   const xpBoostMultiplierText = skillGetsXpBoost
-    ? `This skill receives an effective XP gain multiplier of ${getXpBoostMultiplierText(boost)}.`
+    ? `This skill receives an effective XP gain multiplier of ${getXpBoostMultiplierText(skill, level)}.`
     : "This skill receives no XP boosts.";
   const skillXpBoostElement = $("<span>").addClass("skill-xp-boost").text(xpBoostText ?? "");
   return $("<div>").addClass("planner-skill").attr("title", xpBoostMultiplierText).append([
@@ -287,7 +287,7 @@ function createTraitElement(trait) {
   if (trait.isProfessionTrait) {
     traitElement.append(traitNameElement);
   } else {
-    const costText = (trait.cost < 0 ? "+" : "-") + Math.abs(trait.cost);
+    const costText = getPointsPolaritySign(trait.cost) + Math.abs(trait.cost);
     traitElement.append([traitNameElement, $("<span>").text(costText)]);
 
     if (state.isTraitAvailable(trait)) {
@@ -801,12 +801,44 @@ class Settings {
 }
 
 /**
- * @param {number} boost
+ * @param {string} skill
+ * @param {number} level
+ * @returns {number?}
+ */
+function getXpBoostActual(skill, level) {
+  if (level < 0) return undefined;
+  level = Math.min(level, 3);
+  switch (skill) {
+    case "Strength": return 1.0;
+    case "Fitness": return 1.0;
+    case "Sprinting":
+      return [1.00, 1.25, 1.33, 1.66][level];
+    default:
+      return [0.25, 1.00, 1.33, 1.66][level];
+  }
+}
+
+/**
+ * @param {string} skill
+ * @param {number} level
+ * @returns {number?}
+ */
+function getXpBoostActualRelative(skill, level) {
+  if (level < 0) return undefined;
+  if (level === 0 || skill === "Strength" || skill === "Fitness") return 1.0;
+  const boostAtZero = getXpBoostActual(skill, 0);
+  const boostAtLevel = getXpBoostActual(skill, level);
+  return boostAtLevel / boostAtZero;
+}
+
+/**
+ * @param {string} skill
+ * @param {number} level
  * @returns {string?}
  */
-function getXpBoostText(boost) {
-  if (boost < 0) return undefined;
-  switch (boost) {
+function getXpBoostText(skill, level) {
+  if (level < 0) return undefined;
+  switch (level) {
     case 0: return "+25%";
     case 1: return "+75%";
     case 2: return "+100%";
@@ -816,24 +848,27 @@ function getXpBoostText(boost) {
 }
 
 /**
- * @param {number} boost
+ * @param {string} skill
+ * @param {number} level
  * @returns {string?}
  */
-function getXpBoostMultiplierText(boost) {
-  if (boost < 0) return undefined;
-  switch (boost) {
-    case 0: return "1.00x";
-    case 1: return "4.00x";
-    case 2: return "5.32x";
-    case 3: return "6.64x";
-    default: return "6.64x";
-  }
+function getXpBoostMultiplierText(skill, level) {
+  return getXpBoostActualRelative(skill, level).toFixed(2) + "x";
 }
 
 /** @param {number} points */
 function setPoints(points) {
   $("#points").text(points.toString())
     .attr("class", getPointsPolarity(points));
+}
+
+/** @param {number} points */
+function getPointsPolaritySign(points) {
+  switch (true) {
+    case points > 0: return "+";
+    case points < 0: return "-";
+    default: return "";
+  }
 }
 
 /** @param {number} points */
