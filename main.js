@@ -1,6 +1,6 @@
 "use strict";
 
-const BASE = (window.location.origin + window.location.pathname).replace(/\/*(?:index\.html)?$/i, "") + "/";
+const BASE = new URL("./", window.location.origin + window.location.pathname).href;
 
 /** @param {string} url @returns {string} */
 function expandUrl(url) {
@@ -49,7 +49,7 @@ $(window).on("load", function () {
   $("#setting-is-multiplayer").on("change", function () {
     const state = State.get();
 
-    state.preset.settings.isMultiplayer = this.checked;
+    state.preset.settings.isMultiplayer = $(this).prop("checked");
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
@@ -58,7 +58,7 @@ $(window).on("load", function () {
   $("#setting-is-sleep-enabled").on("change", function () {
     const state = State.get();
 
-    state.preset.settings.isSleepEnabled = this.checked;
+    state.preset.settings.isSleepEnabled = $(this).prop("checked");
     state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
@@ -67,7 +67,7 @@ $(window).on("load", function () {
   $("#setting-show-unavailable").on("change", function () {
     const state = State.get();
 
-    state.preset.settings.showUnavailable = this.checked;
+    state.preset.settings.showUnavailable = $(this).prop("checked");
     //state.update();
     state.rebuildInterfaceTraitsProfessions();
     state.save();
@@ -76,7 +76,7 @@ $(window).on("load", function () {
   $("#reset-build").on("click", function () {
     const state = State.get();
 
-    state.selectedPresetName = null;
+    state.selectedPresetName = undefined;
     state.preset.reset();
     state.update();
     state.rebuildInterfacePresets();
@@ -87,7 +87,7 @@ $(window).on("load", function () {
   $("#presets-selector").on("change", function () {
     const state = State.get();
 
-    const presetName = this.value;
+    const presetName = $(this).prop("value");
     if (state.presets.has(presetName)) {
       state.selectedPresetName = presetName;
       state.preset = state.presets.get(presetName).clone();
@@ -101,7 +101,7 @@ $(window).on("load", function () {
   $("#presets-save").on("click", function () {
     const state = State.get();
 
-    const defaultName = state.selectedPresetName || undefined;
+    const defaultName = state.selectedPresetName ?? undefined;
     const presetName = window.prompt("Enter a name for this preset", defaultName);
     if (presetName != null) {
       state.selectedPresetName = presetName;
@@ -118,7 +118,7 @@ $(window).on("load", function () {
     if (state.presets.has(state.selectedPresetName)) {
       if (window.confirm(`Are you sure you want to delete the preset "${state.selectedPresetName}"?`)) {
         state.presets.delete(state.selectedPresetName);
-        state.selectedPresetName = null;
+        state.selectedPresetName = undefined;
         state.update();
         state.rebuildInterfacePresets();
         state.save();
@@ -151,7 +151,7 @@ async function loadDataManifest() {
   }
 }
 
-/** @returns {Promise<string[]>} */
+/** @returns {Promise<Mod[]>} */
 async function loadAndValidateMods() {
   const urls = await loadDataManifest();
   const mods = await Promise.all(urls.map(loadAndValidateMod));
@@ -197,6 +197,7 @@ function modsLoadingFailure(error) {
   console.error(error);
 }
 
+/** @param {string|number} workshopId @returns {string} */
 function steamWorkshopLinkAttr(workshopId) {
   return {
     href: steamWorkshopLink(workshopId),
@@ -205,8 +206,9 @@ function steamWorkshopLinkAttr(workshopId) {
   };
 }
 
-function steamWorkshopLink(workshop) {
-  return `https://steamcommunity.com/sharedfiles/filedetails?id=${workshop}`;
+/** @param {string|number} workshopId @returns {string} */
+function steamWorkshopLink(workshopId) {
+  return `https://steamcommunity.com/sharedfiles/filedetails?id=${workshopId}`;
 }
 
 /** @param {Mod} mod */
@@ -218,12 +220,12 @@ function createModElement(mod) {
   const modNameLink = mod.workshopId != null
     ? $("<a>").text(mod.name).attr(steamWorkshopLinkAttr(mod.workshopId))
     : $("<span>").text(mod.name);
-  const modName = $("<span>").append([modNameLink, " by ", modAuthor]);
+  const modName = $("<span>").append(...[modNameLink, " by ", modAuthor]);
   modElement.append(modName);
 
   if (mod.id === "Vanilla") {
     const modToggleButtonFake = $("<button>")
-      .attr("disabled", true)
+      .attr("disabled", "true")
       .addClass("mod-enabled")
       .text("Always Enabled");
     modElement.append(modToggleButtonFake);
@@ -233,7 +235,7 @@ function createModElement(mod) {
       .addClass(isIncompatible ? "mod-incompatible" : (preset.isModEnabled(mod.id) ? "mod-enabled" : "mod-disabled"))
       .text(isIncompatible ? "Incompatible" : (preset.isModEnabled(mod.id) ? "Enabled" : "Disabled"));
     if (isIncompatible) {
-      modToggleButton.attr("disabled", true);
+      modToggleButton.attr("disabled", "true");
     } else {
       modToggleButton.on("click", function () {
         const state = State.get();
@@ -249,7 +251,7 @@ function createModElement(mod) {
   return modElement;
 }
 
-/** @param {string} skill @param {integer} boost */
+/** @param {string} skill @param {number} boost */
 function createSkillElement(skill, boost) {
   const skillNameElement = $("<span>").addClass("skill-name").text(SKILL_NAMES.get(skill));
   const skillLevelElement = $("<span>").addClass("skill-level").text(boost);
@@ -262,7 +264,7 @@ function createSkillElement(skill, boost) {
   const xpBoostMultiplierText = skillGetsXpBoost
     ? `This skill receives an effective XP gain multiplier of ${getXpBoostMultiplierText(boost)}.`
     : "This skill receives no XP boosts.";
-  const skillXpBoostElement = $("<span>").addClass("skill-xp-boost").text(xpBoostText || "");
+  const skillXpBoostElement = $("<span>").addClass("skill-xp-boost").text(xpBoostText ?? "");
   return $("<div>").addClass("planner-skill").attr("title", xpBoostMultiplierText).append([
     skillNameElement, skillLevelElement, skillLevelBarElement, skillXpBoostElement
   ]);
@@ -342,18 +344,14 @@ function createProfessionElement(profession) {
  * @param {boolean} selected
  */
 function createPresetOptionElement(name, selected = false) {
-  let attrs = { "value": name };
-  if (selected) attrs["selected"] = true;
-  return $("<option>").attr(attrs).text(name);
+  return $("<option>").attr({ "selected": selected, "value": name }).text(name);
 }
 
 /**
  * @param {boolean} selected
  */
 function createPresetOptionElementPlaceholder(selected = false) {
-  let attrs = { "hidden": true, "disabled": true };
-  if (selected) attrs["selected"] = true;
-  return $("<option>").attr(attrs);
+  return $("<option>").attr({ "selected": selected, "hidden": true, "disabled": true });
 }
 
 class State {
@@ -373,7 +371,7 @@ class State {
     this.currentModData = getEnabledModData(loadedMods, preset.enabledMods);
 
     /** @type {string?} */
-    this.selectedPresetName = null;
+    this.selectedPresetName = undefined;
 
     /** @type {Preset} */
     this.preset = preset;
@@ -446,7 +444,7 @@ class State {
     $("#setting-show-unavailable").prop("checked", this.preset.settings.showUnavailable);
   }
 
-  /** @returns {integer} */
+  /** @returns {number} */
   getPointTotal() {
     const freePoints = this.preset.settings.freePoints;
     const currentProfession = this.currentModData.professions.get(this.preset.profession);
@@ -470,17 +468,17 @@ class State {
     return Array.from(this.currentModData.professions.values());
   }
 
-  /** @returns {Map<string, integer>} */
+  /** @returns {Map<string, number>} */
   getSkills() {
-    /** @type {Map<string, integer>} */
+    /** @type {Map<string, number>} */
     let xpBoosts = new Map();
     xpBoosts.set("Fitness", 5);
     xpBoosts.set("Strength", 5);
 
-    /** @type {(skill: string, boost: integer) => void} */
+    /** @type {(skill: string, boost: number) => void} */
     const putXpBoost = (skill, boost) => {
       const boostCurrent = xpBoosts.get(skill);
-      xpBoosts.set(skill, clamp(0, 10, (boostCurrent || 0) + boost));
+      xpBoosts.set(skill, clamp(0, 10, (boostCurrent ?? 0) + boost));
     };
 
     for (const trait of this.currentModData.traits.values()) {
@@ -586,7 +584,7 @@ class State {
   save() {
     const url = new URL(window.location.href);
     url.search = "?" + this.preset.toURLParams().toString();
-    window.history.replaceState(null, null, url);
+    window.history.replaceState(null, "", url);
     Preset.saveToLocalStorageSavedPreset(this.preset);
     Preset.saveToLocalStorageSavedPresets(this.presets);
   }
@@ -609,14 +607,15 @@ class State {
     }
   }
 
-  static instance = null;
+  /** @type {State?} */
+  static instance = undefined;
 }
 
 class Preset {
   constructor({
     enabledMods = new Set(),
     settings = new Settings(),
-    profession = null,
+    profession = undefined,
     traits = new Set(),
   } = {}) {
     if (!(enabledMods instanceof Set)) enabledMods = new Set(enabledMods);
@@ -651,7 +650,7 @@ class Preset {
   }
 
   reset() {
-    this.profession = null;
+    this.profession = undefined;
     this.traits = new Set();
   }
 
@@ -660,7 +659,7 @@ class Preset {
    * @param {(trait: Trait) => boolean} predicate
    */
   filter(modData, predicate) {
-    if (!modData.professions.has(this.profession)) this.profession = null;
+    if (!modData.professions.has(this.profession)) this.profession = undefined;
     if (this.profession == null && modData.professions.has(DEFAULT_PROFESSION)) this.profession = DEFAULT_PROFESSION;
     this.traits = filterSet(this.traits, id => modData.traits.has(id) && predicate(modData.traits.get(id)));
   }
@@ -671,7 +670,7 @@ class Preset {
    * @returns {Preset}
    */
   static fromURLParams(urlParams, loadedMods) {
-    /** @type {Map<integer, string>} */
+    /** @type {Map<number, string>} */
     const loadedModShortcuts = new Map();
     for (const [id, mod] of loadedMods) {
       loadedModShortcuts.set(mod.shortcut, id);
@@ -680,13 +679,13 @@ class Preset {
     if (typeof urlParams === "string") urlParams = new URLSearchParams(urlParams);
     const settingsList = urlParams.has("s") ? splitWhitespace(urlParams.get("s")).map(parseShortBoolean) : [];
     const enabledModShortcuts = urlParams.has("m") ? splitWhitespace(urlParams.get("m")).map(i => parseInt(i, 10)) : [];
-    const professionShortcut = urlParams.has("o") ? parseInt(urlParams.get("o"), 10) : null;
+    const professionShortcut = urlParams.has("o") ? parseInt(urlParams.get("o"), 10) : undefined;
     const traitShortcuts = urlParams.has("t") ? splitWhitespace(urlParams.get("t")).map(i => parseInt(i, 10)) : [];
 
     const enabledMods = new Set(enabledModShortcuts.map(id => loadedModShortcuts.get(id)).filter(value => value != null));
     const modData = getEnabledModData(loadedMods, enabledMods);
 
-    const profession = modData.shortcuts.professions.get(professionShortcut) || null;
+    const profession = modData.shortcuts.professions.get(professionShortcut) ?? undefined;
     const traits = traitShortcuts.map(id => modData.shortcuts.traits.get(id)).filter(value => value != null);
 
     return new Preset({
@@ -767,7 +766,7 @@ class Settings {
     this.isSleepEnabled = isSleepEnabled;
     /** @type {boolean} */
     this.showUnavailable = showUnavailable;
-    /** @type {integer} */
+    /** @type {number} */
     this.freePoints = freePoints;
   }
 
@@ -802,11 +801,11 @@ class Settings {
 }
 
 /**
- * @param {integer} boost
+ * @param {number} boost
  * @returns {string?}
  */
 function getXpBoostText(boost) {
-  if (boost < 0) return null;
+  if (boost < 0) return undefined;
   switch (boost) {
     case 0: return "+25%";
     case 1: return "+75%";
@@ -817,11 +816,11 @@ function getXpBoostText(boost) {
 }
 
 /**
- * @param {integer} boost
+ * @param {number} boost
  * @returns {string?}
  */
 function getXpBoostMultiplierText(boost) {
-  if (boost < 0) return null;
+  if (boost < 0) return undefined;
   switch (boost) {
     case 0: return "1.00x";
     case 1: return "4.00x";
@@ -831,18 +830,18 @@ function getXpBoostMultiplierText(boost) {
   }
 }
 
-/** @param {integer} points */
+/** @param {number} points */
 function setPoints(points) {
   $("#points").text(points.toString())
     .attr("class", getPointsPolarity(points));
 }
 
-/** @param {integer} points */
+/** @param {number} points */
 function getPointsPolarity(points) {
   switch (true) {
     case points > 0: return "positive";
     case points < 0: return "negative";
-    default: return null;
+    default: return undefined;
   }
 }
 
@@ -901,14 +900,14 @@ function parseShortBoolean(str, defaultValue) {
 
 /**
  * @param {string?} description
- * @param {Map<string, integer>} xpBoosts
- * @param {integer?} points
+ * @param {Map<string, number>} xpBoosts
+ * @param {number?} points
  * @returns {string}
  */
-function createDescription(description, xpBoosts = new Map(), points = null) {
-  let descriptionLines = (description || "").split(/\n+/g);
+function createDescription(description, xpBoosts = new Map(), points = undefined) {
+  let descriptionLines = (description ?? "").split(/\n+/g);
 
-  if (points !== null && points !== undefined) {
+  if (points != null) {
     descriptionLines.push("");
     descriptionLines.push(points.toString() + " Starting Points");
   }
@@ -1095,7 +1094,7 @@ class Condition {
 
     /** @param {Set<string>} modList @returns {boolean} */
     test(modList) {
-      return this.conditions.every((condition) => condition.test(modList))
+      return this.conditions.every((condition) => condition.test(modList));
     }
   }
 
@@ -1140,7 +1139,7 @@ class Condition {
       case "boolean": return value;
       case "object":
         Condition.validatorObject.apply(value);
-        return null;
+        return undefined;
       default: throw new Error("Unreachable");
     }
   });
@@ -1163,7 +1162,7 @@ class Trait {
     /** @type {number} */
     this.shortcut = object.shortcut;
     /** @type {string?} */
-    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : null;
+    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : undefined;
     /** @type {number} */
     this.cost = object.cost;
     /** @type {boolean} */
@@ -1177,7 +1176,7 @@ class Trait {
     /** @type {string[]} */
     this.freeRecipes = object.hasOwnProperty("free_recipes") ? object.free_recipes : [];
     /** @type {Condition?} */
-    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : null;
+    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : undefined;
   }
 
   static validator = Validator.isObjectStruct({
@@ -1212,9 +1211,9 @@ class TraitResolved {
     /** @type {string} */
     this.id = trait.id;
     /** @type {string?} */
-    this.name = lang.get(trait.nameKey) || null;
+    this.name = lang.get(trait.nameKey) ?? undefined;
     /** @type {string?} */
-    this.description = lang.get(trait.descriptionKey) || null;
+    this.description = lang.get(trait.descriptionKey) ?? undefined;
     /** @type {number} */
     this.shortcut = trait.shortcut;
     /** @type {string?} */
@@ -1227,7 +1226,7 @@ class TraitResolved {
     this.isSleepTrait = trait.isSleepTrait;
     /** @type {boolean} */
     this.isDisabledInMp = trait.isDisabledInMp;
-    /** @type {Map<string, integer>} */
+    /** @type {Map<string, number>} */
     this.xpBoosts = trait.xpBoosts;
     /** @type {string[]} */
     this.freeRecipes = trait.freeRecipes;
@@ -1253,7 +1252,7 @@ class Profession {
     /** @type {number} */
     this.shortcut = object.shortcut;
     /** @type {string?} */
-    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : null;
+    this.iconPath = object.hasOwnProperty("icon_path") ? object.icon_path : undefined;
     /** @type {number} */
     this.points = object.points;
     /** @type {Map<string, number>} */
@@ -1263,7 +1262,7 @@ class Profession {
     /** @type {string[]} */
     this.freeTraits = object.hasOwnProperty("free_traits") ? object.free_traits : [];
     /** @type {Condition?} */
-    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : null;
+    this.condition = object.hasOwnProperty("condition") ? Condition.from(object.condition) : undefined;
   }
 
   static validator = Validator.isObjectStruct({
@@ -1289,9 +1288,9 @@ class ProfessionResolved {
     /** @type {string} */
     this.id = profession.id;
     /** @type {string?} */
-    this.name = lang.get(profession.nameKey) || null;
+    this.name = lang.get(profession.nameKey) ?? undefined;
     /** @type {string?} */
-    this.description = lang.get(profession.descriptionKey) || null;
+    this.description = lang.get(profession.descriptionKey) ?? undefined;
     /** @type {number} */
     this.shortcut = profession.shortcut;
     /** @type {string?} */
@@ -1328,7 +1327,7 @@ class Mod {
     /** @type {string[]} */
     this.incompatible = object.hasOwnProperty("incompatible") ? object.incompatible : [];
     /** @type {number?} */
-    this.workshopId = object.hasOwnProperty("workshop_id") ? object.workshop_id : null;
+    this.workshopId = object.hasOwnProperty("workshop_id") ? object.workshop_id : undefined;
     /** @type {boolean} */
     this.removeDefaultProfessions = object.hasOwnProperty("remove_default_professions") ? object.remove_default_professions : false;
     /** @type {number} */
